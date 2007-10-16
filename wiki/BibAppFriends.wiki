@@ -12,4 +12,4 @@ Hi!  If you think the BibApp could be an important tool for your school, drop yo
   * Tim Donohue - University of Illinois at Urbana-Champaign | tdonohue@uiuc.edu
   * Matt Cordial - University of Illinois at Urbana-Champaign | cordial@uiuc.edu
   * Mark Wood - Indiana University - Purdue University Indianapolis | mwood@IUPUI.Edu
-
+  * John Furfey - MBLWHOI Library at Woods Hole, MA | jfurfey@mbl.edu
