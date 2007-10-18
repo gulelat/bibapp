@@ -1,0 +1,46 @@
+#summary Refactoring the Citation model for a Version 1.0.
+#labels Phase-Design,Phase-Requirements
+
+== Data Definition ==
+
+===Column - Definition===
+
+|| type || ActiveRecord Citation SubClass, a la Single Table Inheritance ||
+|| title_primary || Full Title ||
+|| title_secondary || ||
+|| title_tertiary || ||
+|| affiliation || Author Affiliation Address ||
+|| year || Publication Year ||
+|| volume || Publication Volume ||
+|| issue || Publication Issue ||
+|| start_page || Publication Start Page ||
+|| end_page || Publication End Page ||
+|| abstract || Abstract ||
+|| notes || Notes ||
+|| links || DOIs, Publisher Links, Author Links, etc. ||
+|| citation_archive_uri || Archival URI, from an Institutional Repository ||
+|| title_dupe_key || Auto-generated Title Deduplication Key ||
+|| issn_isbn_dupe_key || Auto-generated ISSN/ISBN Deduplication Key ||
+|| citation_state_id || Foreign Key for: unverified (1), duplicate (2), verified (3) ||
+|| citation_archive_state_id || Foreign Key for: archival state--rights unknown (1), ready for archiving (2), etc. ||
+|| publication_id || Foreign Key for Publication record ||
+|| publisher_id || Foreign Key for Publisher record ||
+|| bump_value || Auto-generated value, used within deduplication process to favor data sources ||
+|| archived_at || Timestamp for archived records ||
+|| created_at || Timestamp for creation ||
+|| updated_at || Timestamp for last update ||
+|| data_source_id || Foreign Key for data source ||
+|| data_source_external_id || External Key for record: PMID, etc. ||
+|| serialized_data || YAML-ized data for record ||
+|| original_data || Original un-parsed data for record ||
+
+== Programming ==
+
+Order of Operation:
+  # Clean SVN - Moving 0.4 to branch, refactoring directly on Trunk
+  # Write migration from 0.4 to 0.8 architecture
+  # Test and retest
+
+
+
+
