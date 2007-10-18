@@ -34,6 +34,14 @@
 || serialized_data || YAML-ized data for record ||
 || original_data || Original un-parsed data for record ||
 
+=== New/Rethought Table - Purpose ===
+
+|| Authors || New table to capture Citation.Authors ||
+|| Authorships || Not new, but now maps Citations to Authors (instead of People) ||
+|| Citations || Not new, but much more normalized--now includes serialized and original data fields to re-process citation without re-reading files ||
+|| Publications || Not new, but now much more normalized--the only location of ISSN/ISBN data ||
+|| Publishers || Not new, but again more normalized--the only location of Publisher data || Users || New table to hold Users, who "claim ownership" of one or more Author records--People table is gone (deprecated) || 
+
 === Programming - Moving from 0.4 to 0.8 ===
 
 Order of Operation:
