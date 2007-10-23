@@ -64,18 +64,18 @@ The group felt that the meeting was productive and energizing. We are hopeful th
 =====UIUC=====
 
   * BibApp install with two departments
-  ** Speech Communications
-  ** History (have archived about 13 papers from History in IDEALS using BibApp)
+    * Speech Communications
+    * History (have archived about 13 papers from History in IDEALS using BibApp)
   * Interested in IR population
   * Long-term possibilities
-  ** Collaboration
-  ** Collection development: distribution of money, data-driven discussions / decisions
-  ** Analysis of current scholarly publishing activities as well as historical trends.
-  ** Analysis of formal and informal interdisciplinary activities occurring on campus
+    * Collaboration
+    * Collection development: distribution of money, data-driven discussions / decisions
+    * Analysis of current scholarly publishing activities as well as historical trends.
+    * Analysis of formal and informal interdisciplinary activities occurring on campus
   * Parallel to "Summary of Engineering Research" project
-  ** Annual review and research report for UIUC's CoE
-  ** Produced in collaboration with CoE publications office
-  ** Glossy for distribution
+    * Annual review and research report for UIUC's CoE
+    * Produced in collaboration with CoE publications office
+    * Glossy for distribution
 
 ====Feedback from user testing====
 
@@ -104,23 +104,23 @@ In general, the group decided that we need to focus first on building a scalable
 =====Funding=====
 
   * External
-  ** Mellon and IMLS
-  ** Mellon likes a strong connection to faculty
-  ** Everyone is interested in the changing nature of scholarly communication
-  ** Understanding publishing practices
+    * Mellon and IMLS
+    * Mellon likes a strong connection to faculty
+    * Everyone is interested in the changing nature of scholarly communication
+    * Understanding publishing practices
   * Locally
-  ** Where is the funding?
+    * Where is the funding?
 
 =====Similar Projects=====
 
   * Citation Managers
-  ** [http://www.zotero.org/ Zotero]
-  ** [http://www.refworks.com/ RefWorks]
+    * [http://www.zotero.org/ Zotero]
+    * [http://www.refworks.com/ RefWorks]
   * Faculty Publication Databases
-  ** [http://vivo.cornell.edu/ Cornell's VIVO]
-  ** [https://pro.osu.edu/ Ohio State's OSU:pro]
+    * [http://vivo.cornell.edu/ Cornell's VIVO]
+    * [https://pro.osu.edu/ Ohio State's OSU:pro]
   * Literature review
-  ** Blummer B. (2007) The Availability of Faculty Publication Databases from Library Web Pages. Journal of Web Librarianship, 1(2), 27-55.
+    * Blummer B. (2007) The Availability of Faculty Publication Databases from Library Web Pages. Journal of Web Librarianship, 1(2), 27-55.
 
 =====Version 1.0 - Requirements=====
 
@@ -135,17 +135,17 @@ In general, the group decided that we need to focus first on building a scalable
   * More SHERPA
   * Focus on current campus collaboration
   * Authorities
-  ** Author names
-  ** Journals / Sources
-  ** Publishers
+    * Author names
+    * Journals / Sources
+    * Publishers
   * Cited references?
 
 ====Administrative Todos====
 
   * Next Steps
-  ** Scope for Version 1.0
-  ** Time commitment and timeline
-  ** Funding sources
+    * Scope for Version 1.0
+    * Time commitment and timeline
+    * Funding sources
 
 ===Friday - Programming and pragmatics===
 
@@ -156,8 +156,8 @@ Friday's discussion was highly technical.  The group talked mainly about refacto
 =====Citation model=====
 
   * Goal: Develop a robust "citation repository"
-  ** Highest priority
-  ** "Keel" of the application
+    * Highest priority
+    * "Keel" of the application
 
 =====DB architecture=====
 
@@ -167,9 +167,9 @@ Table name (previous name)
   * Authors
   * Authorships
   * Citations
-  ** Citation Types (Reftypes)
-  ** Citation States
-  ** Citation Archive States (Archive Statuses)
+    * Citation Types (Reftypes)
+    * Citation States
+    * Citation Archive States (Archive Statuses)
   * Groups
   * Memberships
   * Roles
