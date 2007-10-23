@@ -5,37 +5,44 @@
 ==Version 1.0 - Requirements==
 
   * Authentication and Authorization
-  * Citation ingest
-  * Citation reuse
+  * Citations
+    * Citation ingest
+    * Citation reuse
   * Time
 
 ===Authentication and Authorization===
 
-===Citation ingest===
+===Citations===
+
+Read the [CitationModelRefactor] page to better understand the re-architecture for version 1.0.
+
+====Citation ingest====
 
   * Goals:
     # Simple workflow for adding citations
     # Support for many citation types: Journal Article, Books, etc.
     # Support for common standards
     # Automated de-duplication
-
-=====Description=====
-
-To be successful, the BibApp needs to be a robust citation repository first and foremost.  We need to ensure data ingest remains simple and intuitive, lowing the bar for participation and administration.
-
   * Success criteria:
     # One
     # Two
     # Three
 
-===Citation reuse===
+=====Description=====
+
+To be successful, the BibApp needs to be a robust citation repository first and foremost.  We need to ensure data ingest remains simple and intuitive, lowing the bar for participation and administration.
+
+
+====Citation reuse====
 
   * Goals:
-    # Simple 
+    # Goal 1
+  * Success criteria:
+    # Example
 
 ===Time===
 
-==Version 2.0 - Suggestions==
+==Version 2.0 - Suggested Features==
 
   * Interoperability
   * More SHERPA
