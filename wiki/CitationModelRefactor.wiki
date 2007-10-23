@@ -49,3 +49,10 @@ Order of Operation:
   # Clean SVN - Moving 0.4 to branch, refactoring directly on Trunk
   # Write migration from 0.4 to 0.8 architecture
   # Test and retest
+
+=====TODO LIST====
+
+  * Test implement 1.0 architecture
+  * Citation import: MD5 hash of serialized data, if superdupe? do not re-import or deduplicate
+  * Set foreign keys function (set: publisher, publication, authorships)
+  * Clean import hash function (before create)
