@@ -53,12 +53,12 @@ The group felt that the meeting was productive and energizing. We are hopeful th
 =====UW-Madison=====
 
   * Began as pilot for the College of Engineering
-  ** Recruit content for the Institutional Repository (MINDS@UW)
-  ** Analyze retention of faculty copyright
+    * Recruit content for the Institutional Repository (MINDS@UW)
+    * Analyze retention of faculty copyright
   * Adopted by UW-Madison Libraries' Office of Scholarly Communication and Publishing as a "campus" project
   * Awarded a $10,000 Brittingham grant
-  ** Objective 1: Pursue expansion at UW-Madison to School of Medicine and a Humanities department
-  ** Objective 2: Obtain end-user feedback from faculty, researchers and administrators to position the application for success
+    * Objective 1: Pursue expansion at UW-Madison to School of Medicine and a Humanities department
+    * Objective 2: Obtain end-user feedback from faculty, researchers and administrators to position the application for success
   * Archived 1,412 peer-reviewed IEEE and AIP papers in MINDS@UW
 
 =====UIUC=====
