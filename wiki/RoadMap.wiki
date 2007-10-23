@@ -1,0 +1,47 @@
+#summary BibApp Project Roadmap
+
+*TODO*: Expand this page.
+
+==Version 1.0 - Requirements==
+
+  * Authentication and Authorization
+  * Citation ingest
+  * Citation reuse
+  * Time
+
+===Authentication and Authorization===
+
+===Citation ingest===
+
+  * Goals:
+    # Simple workflow for adding citations
+    # Support for many citation types: Journal Article, Books, etc.
+    # Support for common standards
+    # Automated de-duplication
+
+=====Description=====
+
+To be successful, the BibApp needs to be a robust citation repository first and foremost.  We need to ensure data ingest remains simple and intuitive, lowing the bar for participation and administration.
+
+  * Success criteria:
+    # One
+    # Two
+    # Three
+
+===Citation reuse===
+
+  * Goals:
+    # Simple 
+
+===Time===
+
+==Version 2.0 - Suggestions==
+
+  * Interoperability
+  * More SHERPA
+  * Focus on current campus collaboration
+  * Authorities
+    * Author names
+    * Journals / Sources
+    * Publishers
+  * Cited references?
