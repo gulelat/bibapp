@@ -1,3 +1,6 @@
+#summary Notes from UIUC/UW-Madison September BibApp Meeting
+#labels Minutes
+
 =2007.09 - BibApp - UIUC and UW-Madison=
 
 ===Summary of meeting===
