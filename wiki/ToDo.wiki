@@ -1,0 +1,8 @@
+#summary Random list of todos
+#labels Phase-Design
+
+===Citation ingest===
+
+  * Implement simple arXiv API
+  * Implement simple pubmed API ingest
+  * Implement simple ISI ingest
