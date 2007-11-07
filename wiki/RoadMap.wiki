@@ -34,7 +34,7 @@
        * Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
        * Alternate route: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
           * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.
-          * This page on [http://www.zorched.net/2007/06/04/active-directory-authentication-for-ruby-on-rails/ Active Directory authentication] does the same thing, but it just uses <code>request.env[”REMOTE_USER”]</code> to access that Request variable.
+          * This page on [http://www.zorched.net/2007/06/04/active-directory-authentication-for-ruby-on-rails/ Active Directory authentication] does the same thing, but it just uses `request.env[”REMOTE_USER”]` to access that Request variable.
 
 ===Citations===
 
