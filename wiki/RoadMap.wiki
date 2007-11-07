@@ -12,6 +12,28 @@
 
 ===Authentication and Authorization===
 
+   * Goals:
+     # Simple Authorization
+       * Preferable to use an existing Rails plugin or Ruby gem
+       * Authorization "roles" will be assigned to "groups"
+       * Assume no hierarchy to "groups", to keep things simple
+     # Simple, but Dynamic Authentication
+       * Preferable to use an existing Rails plugin or Ruby gem
+       * Cannot "assume" any particular local authentication mechanism 
+
+   * Recommendations:
+     # Authorization
+       * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected.
+       * Possible Roles (need better definition & agreement)
+         * *Admin* - Overall BibApp Administrator
+         * *Librarian* - Can perform all data-related tasks (e.g. add, remove, edit data)
+         * *Editor* - Can edit or enter in new data
+         * *Data-Entry* - Can only enter in new data
+         * *Packager* - Can export citations into "packages" to prepare for a repository
+     # Authentication
+       * Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
+
+
 ===Citations===
 
 Read the [CitationModelRefactor] page to better understand the re-architecture for version 1.0.
