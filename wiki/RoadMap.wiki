@@ -23,7 +23,7 @@
 
    * Recommendations:
      # Authorization
-       * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected.
+       * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
        * Possible Roles (need better definition & agreement)
          * *Admin* - Overall BibApp Administrator
          * *Librarian* - Can perform all data-related tasks (e.g. add, remove, edit data)
