@@ -36,9 +36,9 @@
             * Doesn't force you into an authentication method.  You are responsible for writing your own manner of authenticating - Dynamic!
             * Doesn't force you into using a particular model, controller, etc.
          * Disadvantages:
-            * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to probably develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, etc) which could be chosen from.
+            * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to probably develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up BibApp.
        * Alternate route #1: Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
-            * Not sure if this is dynamic enough to support external authentication methods (where a already authenticated username is passed to BibApp).
+            * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to BibApp).
        * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
           * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.
           
