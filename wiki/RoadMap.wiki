@@ -27,8 +27,8 @@
        * Possible Roles (need better definition & agreement)
          * *Admin* - Overall BibApp Administrator
          * *Librarian* - Can perform all data-related tasks (e.g. add, remove, edit data)
-         * *Editor* - Can edit or enter in new data
-         * *Data-Entry* - Can only enter in new data
+         * *Editor* - Can edit or enter in new data (cannot remove)
+         * *Data-Entry* - Can only enter in new data (cannot edit/remove)
          * *Packager* - Can export citations into "packages" to prepare for a repository
      # Authentication
        * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth] plugin?
