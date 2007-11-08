@@ -40,7 +40,7 @@
        * Alternate route #1: Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
             * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to BibApp).
        * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
-          * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.
+          * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
           
 ===Citations===
 
