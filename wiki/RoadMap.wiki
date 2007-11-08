@@ -19,7 +19,7 @@
        * Assume no hierarchy to "groups" - keep things simple!
      # Simple, but Dynamic Authentication
        * Preferable to use an existing Rails plugin or Ruby gem
-       * Cannot assume any particular local authentication mechanism - Configurable!
+       * Cannot assume any particular local authentication mechanism - Configurable & Extendable!
 
    * Recommendations:
      # Authorization
