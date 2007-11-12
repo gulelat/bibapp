@@ -1,11 +1,11 @@
-#summary Authentication and Authorization redesign plans for BibApp version 1.0
+#summary Authentication and Authorization redesign plans for !BibApp version 1.0
 
 == Authentication ==
 
 === Goals ===
       * Preferable to use an existing Rails plugin or Ruby gem
       * Cannot assume any particular local authentication mechanism - Configurable & Extendable!
-      * Out-of-the-box, BibApp should minimally support basic HTTP authentication (with an encrypted password in the database).  Should be easily extendable/configurable to support other authentication mechanisms.
+      * Out-of-the-box, !BibApp should minimally support basic HTTP authentication (with an encrypted password in the database).  Should be easily extendable/configurable to support other authentication mechanisms.
 
 === Plugin Recommendations ===
       * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth] plugin?
@@ -13,37 +13,48 @@
             * Doesn't force you into an authentication method.  You are responsible for writing your own manner of authenticating - Dynamic!
             * Doesn't force you into using a particular model, controller, etc.
          * Disadvantages:
-            * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up  BibApp.
+            * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up !BibApp.
        * Alternate route #1: Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
-           * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to BibApp).
+           * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to !BibApp).
        * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
            * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
 
 == Authorization ==
 
 === Goals ===
-      * Preferable to use an existing Rails plugin or Ruby gem
-      * Authorization "roles" will be assigned to "users"
-      * Should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
+   * Preferable to use an existing Rails plugin or Ruby gem
+   * Authorization "roles" will be assigned to "users"
+   * Should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
+      * !BibApp [[objects]] include: Groups (i.e. departments/units), Authors, and/or Citations
+      * (e.g.) "Tim" has "Librarian" role on group "University Library" (Group role)
+      * (e.g.) "Matt" has "Editor" role on author "Matt Cordial" (Author role)
+      * (e.g.) "Ben" has "Editor" role on citation #2345 (Individual Citation role)
 
 === Plugin Recommendations ===
  
 Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
 
 
-=== BibApp Roles ===
+=== !BibApp Roles ===
 
 These roles are not finalized, but have been discussed and generally agreed upon.
 
-
-   * _Role:_ *Admin*
-      * Overall BibApp Administrator.  Can do anything in system.  Generally in charge of administrating user accounts and roles.
-   * _Role:_ *Librarian*
-      * Can perform all data-related tasks, including authority control tasks.  Generally is in charge of cleaning up the data, manual de-duping, and establishing authorities.  Librarians can also package up citations for import into a repository.
-   * _Role:_ *Editor* 
-      * Can add, edit or remove data.  May perform some manual de-duping, but cannot establish authorities or perform packaging, as a Librarian can.
-   * _Role:_ *Author*
-      * Can only add, edit or remove data about an author. _This role may be unnecessary, as it may just be an "editor" role on an "author" object._
-   * _Role:_ *Public*
-      * General public role.  Just has rights to view, search, browse data in the system.  _This role may be unnecessary, as it is just the absence of any of the above roles._
+_Role:_ *Admin*
+   * Overall !BibApp Administrator.  Can do anything in system.  Generally in charge of administrating user accounts and roles.
+_Role:_ *Librarian*
+   * Can perform all data-related tasks, including authority control tasks.  Generally is in charge of cleaning up the data, manual de-duping, and establishing authorities.  Librarians can also package up citations for import into a repository.
+_Role:_ *Editor* 
+   * Can add, edit or remove data.  May perform some manual de-duping, but cannot establish authorities or perform packaging, as a Librarian can.
+_Role:_ *Author*
+   * Can only add, edit or remove data about an author. _This role may be unnecessary, as it may just be an "editor" role on an "author" object._
+_Role:_ *Public*
+   * General public role.  Just has rights to view, search, browse data in the system.  _This role may be unnecessary, as it is just the absence of any of the above roles._
      
+
+*_Example Usage:_*
+    * Remember, authorization should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
+      * "Eric" has "Admin" role on BibApp (_Application role_)
+      * "Tim" has "Librarian" role on group "University Library" (_Group role_)
+      * "Matt" has "Editor" role on author "Matt Cordial" (_Author role_)
+      * "Ben" has "Editor" role on citation #2345 (_Individual Citation role_)
+    * _Note:_ It will likely not be common to assign roles to individual citations (see last example above).  But, the BibApp authorization system should still support it, as it is just another [[object]] within BibApp.
