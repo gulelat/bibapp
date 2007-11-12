@@ -21,7 +21,7 @@ The !BibApp needs have a simple and straightforward Authorization system, which 
      # Simple Authorization
        * Preferable to use an existing Rails plugin or Ruby gem
        * Authorization "roles" will be assigned to "users"
-       * Should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
+       * Should follow a basic "sentence-like" structure: "{user} has {role} on {object}"
      # Simple, but Dynamic Authentication
        * Preferable to use an existing Rails plugin or Ruby gem
        * Cannot assume any particular local authentication mechanism - Configurable & Extendable!
