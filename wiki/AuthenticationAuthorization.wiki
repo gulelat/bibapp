@@ -1,6 +1,6 @@
 #summary Authentication and Authorization redesign plans for !BibApp version 1.0
 
-== Authentication ==
+== I. Authentication ==
 
 === Goals ===
       * Preferable to use an existing Rails plugin or Ruby gem
@@ -8,7 +8,7 @@
       * Out-of-the-box, !BibApp should minimally support basic HTTP authentication (with an encrypted password in the database).  Should be easily extendable/configurable to support other authentication mechanisms.
 
 === Plugin Recommendations ===
-      * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth] plugin?
+      * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth]  plugin?
          * Advantages:
             * Doesn't force you into an authentication method.  You are responsible for writing your own manner of authenticating - Dynamic!
             * Doesn't force you into using a particular model, controller, etc.
@@ -19,7 +19,10 @@
        * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
            * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
 
-== Authorization ==
+
+
+
+== II. Authorization ==
 
 === Goals ===
    * Preferable to use an existing Rails plugin or Ruby gem
