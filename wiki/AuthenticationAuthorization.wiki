@@ -24,11 +24,8 @@
 === Goals ===
    * Preferable to use an existing Rails plugin or Ruby gem
    * Authorization "roles" will be assigned to "users"
-   * Should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
-      * !BibApp [[objects]] include: Groups (i.e. departments/units), Authors, and/or Citations
-      * (e.g.) "Tim" has "Librarian" role on group "University Library" (Group role)
-      * (e.g.) "Matt" has "Editor" role on author "Matt Cordial" (Author role)
-      * (e.g.) "Ben" has "Editor" role on citation #2345 (Individual Citation role)
+   * Should follow a basic "sentence-like" structure: "{user} has {role} on {object}"
+      * !BibApp {objects} include: Groups (i.e. departments/units), Authors, and/or Citations
 
 === Plugin Recommendations ===
  
@@ -52,8 +49,8 @@ _Role:_ *Public*
      
 
 *_Example Usage:_*
-    * Remember, authorization should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
-      * "Eric" has "Admin" role on BibApp (_Application role_)
+    * Remember, authorization should follow a basic "sentence-like" structure: "{user} has {role} on {object}"
+      * "Eric" has "Admin" role on !BibApp (_Application role_)
       * "Tim" has "Librarian" role on group "University Library" (_Group role_)
       * "Matt" has "Editor" role on author "Matt Cordial" (_Author role_)
       * "Ben" has "Editor" role on citation #2345 (_Individual Citation role_)
