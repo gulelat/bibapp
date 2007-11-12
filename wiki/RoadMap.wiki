@@ -13,9 +13,9 @@
 ===Authentication and Authorization===
 
 
-=====Description=====
+====Description====
 
-The BibApp needs have a simple and straightforward Authorization system, which can provide many different levels of access to data within the system.  In addition, it needs a very dynamic authentication system, which can be easily extended for local authentication mechanisms.  However, it also needs to support a variety of common authentication mechanisms out-of-the-box.   More detailed information can be found on the AuthenticationAuthorization page.
+The !BibApp needs have a simple and straightforward Authorization system, which can provide many different levels of access to data within the system.  In addition, it needs a very dynamic authentication system, which can be easily extended for local authentication mechanisms.  However, it also needs to support a variety of common authentication mechanisms out-of-the-box.   More detailed information can be found on the AuthenticationAuthorization page.
 
    * Goals:
      # Simple Authorization
@@ -25,7 +25,7 @@ The BibApp needs have a simple and straightforward Authorization system, which c
      # Simple, but Dynamic Authentication
        * Preferable to use an existing Rails plugin or Ruby gem
        * Cannot assume any particular local authentication mechanism - Configurable & Extendable!
-       * Out-of-the-box, BibApp should minimally support basic HTTP authentication (with an encrypted password in the database).  Should be easily extendable/configurable to support other authentication mechanisms.
+       * Out-of-the-box, !BibApp should minimally support basic HTTP authentication (with an encrypted password in the database).  Should be easily extendable/configurable to support other authentication mechanisms.
 
           
 ===Citations===
@@ -46,7 +46,7 @@ Read the [CitationModelRefactor] page to better understand the re-architecture f
 
 =====Description=====
 
-To be successful, the BibApp needs to be a robust citation repository first and foremost.  We need to ensure data ingest remains simple and intuitive, lowing the bar for participation and administration.
+To be successful, the !BibApp needs to be a robust citation repository first and foremost.  We need to ensure data ingest remains simple and intuitive, lowing the bar for participation and administration.
 
 
 ====Citation reuse====
