@@ -58,3 +58,4 @@ _Role:_ *Public*
       * "Matt" has "Editor" role on author "Matt Cordial" (_Author-based role_)
       * "Ben" has "Editor" role on citation #2345 (_Citation-based role_)
     * _Note:_ It will likely not be common to assign roles to individual citations (see last example above).  But, the !BibApp authorization system should still support it, as it is just another {object} within !BibApp.
+    * Roles should cascade!  So, if you are an "Editor" on a group, you are also and "Editor" on all authors in that group, and all citations of those authors.
