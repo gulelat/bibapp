@@ -76,3 +76,16 @@ Potential Author variants:
   * Larson, F
 
 Maybe all the Larson, E(star) are correct (I have published under all these names), so I select the checkbox next to each name variant.  Lastly, I select one of these variants as my "preferred" name: Larson, E.W.
+
+== Rendering Citations ==
+
+Now we have Publication, Publisher and Author authorities, so let's use them.  For each Citation, we collect publication_id, publisher_id and authorships(citation_id:author_id).      When we query the database to render a list of citations, we can run additional queries to locate authority (ex. Publication.authority.name).
+
+What's wrong with this picture?  Another person (Erica Larson) has logged in to the BibApp and selected Larson, E as one of her author variants.  When she sees her list of Citations within the system, it shows many of my publications as her own.
+
+=== More workflow ===
+
+Looking over her list of Citations, Erica Larson might select the _wrongly assigned authorships_ and...
+
+Sorry.  I'll need to finish this in the future.
+- EL
