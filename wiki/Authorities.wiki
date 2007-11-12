@@ -18,7 +18,7 @@ Citation data collected for 48 People in the Engineering Physics department at U
 
 We'll start with the simple case.  For Publications and Publishers, we collect every string variant of their names:
 
-*Note*: It's probably a very good idea to compare based on a cleaned version of the authority values, to eliminate missed matches on capitalization and puncctuation. Things of the form "American Institute of Physics" to "americaninstituteofphysics":
+*Note*: It's probably a very good idea to compare based on a cleaned version of the authority values, to eliminate matches missed because of capitalization and punctuation. Things of the form "American Institute of Physics" to "americaninstituteofphysics":
 
 {{{
 name.gsub!(/[^A-Za-z0-9]+/, '').downcase!
