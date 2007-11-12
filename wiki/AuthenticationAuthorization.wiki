@@ -27,11 +27,23 @@
       * Should follow a basic "sentence-like" structure: "[[user]] has [[role]] on [[object]]"
 
 === Plugin Recommendations ===
-       * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
-       * Possible Roles (need better definition & agreement)
-         * *Admin* - Overall BibApp Administrator
-         * *Librarian* - Can perform all data-related tasks (e.g. add, remove, edit data)
-         * *Editor* - Can edit or enter in new data (cannot remove)
-         * *Data-Entry* - Can only enter in new data (cannot edit/remove)
-         * *Packager* - Can export citations into "packages" to prepare for a repository
+ 
+Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
+
+
+=== BibApp Roles ===
+
+These roles are not finalized, but have been discussed and generally agreed upon.
+
+
+   * _Role:_ *Admin*
+      * Overall BibApp Administrator.  Can do anything in system.  Generally in charge of administrating user accounts and roles.
+   * _Role:_ *Librarian*
+      * Can perform all data-related tasks, including authority control tasks.  Generally is in charge of cleaning up the data, manual de-duping, and establishing authorities.  Librarians can also package up citations for import into a repository.
+   * _Role:_ *Editor* 
+      * Can add, edit or remove data.  May perform some manual de-duping, but cannot establish authorities or perform packaging, as a Librarian can.
+   * _Role:_ *Author*
+      * Can only add, edit or remove data about an author. _This role may be unnecessary, as it may just be an "editor" role on an "author" object._
+   * _Role:_ *Public*
+      * General public role.  Just has rights to view, search, browse data in the system.  _This role may be unnecessary, as it is just the absence of any of the above roles._
      
