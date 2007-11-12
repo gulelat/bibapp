@@ -50,8 +50,8 @@ _Role:_ *Public*
 
 *_Example Usage:_*
     * Remember, authorization should follow a basic "sentence-like" structure: "{user} has {role} on {object}"
-      * "Eric" has "Admin" role on !BibApp (_Application role_)
-      * "Tim" has "Librarian" role on group "University Library" (_Group role_)
-      * "Matt" has "Editor" role on author "Matt Cordial" (_Author role_)
-      * "Ben" has "Editor" role on citation #2345 (_Individual Citation role_)
-    * _Note:_ It will likely not be common to assign roles to individual citations (see last example above).  But, the BibApp authorization system should still support it, as it is just another [[object]] within BibApp.
+      * "Eric" has "Admin" role on !BibApp (_Application-based role_)
+      * "Tim" has "Librarian" role on group "University Library" (_Group-based role_)
+      * "Matt" has "Editor" role on author "Matt Cordial" (_Author-based role_)
+      * "Ben" has "Editor" role on citation #2345 (_Citation-based role_)
+    * _Note:_ It will likely not be common to assign roles to individual citations (see last example above).  But, the !BibApp authorization system should still support it, as it is just another {object} within !BibApp.
