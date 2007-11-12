@@ -2,35 +2,35 @@
 
 = Authentication =
 
-* Goals:
-   * Preferable to use an existing Rails plugin or Ruby gem
-   * Cannot assume any particular local authentication mechanism - Configurable & Extendable!
+   * Goals:
+      * Preferable to use an existing Rails plugin or Ruby gem
+      * Cannot assume any particular local authentication mechanism - Configurable & Extendable!
 
-* Recommendations:
-    * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth] plugin?
-      * Advantages:
-         * Doesn't force you into an authentication method.  You are responsible for writing your own manner of authenticating - Dynamic!
-         * Doesn't force you into using a particular model, controller, etc.
-      * Disadvantages:
-         * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to probably develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up BibApp.
-    * Alternate route #1: Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
-        * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to BibApp).
-    * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
-        * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
+   * Recommendations:
+      * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth] plugin?
+         * Advantages:
+            * Doesn't force you into an authentication method.  You are responsible for writing your own manner of authenticating - Dynamic!
+            * Doesn't force you into using a particular model, controller, etc.
+         * Disadvantages:
+            * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to probably develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up  BibApp.
+       * Alternate route #1: Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
+           * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to BibApp).
+       * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
+           * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
 
 = Authorization =
 
-* Goals:
-   * Preferable to use an existing Rails plugin or Ruby gem
-   * Authorization "roles" will be assigned to "users"
-   * Sentence structure: "[user] has [role] on [object]"
+   * Goals:
+      * Preferable to use an existing Rails plugin or Ruby gem
+      * Authorization "roles" will be assigned to "users"
+      * Sentence structure: "[user] has [role] on [object]"
 
-* Recommendations:
-    * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
-    * Possible Roles (need better definition & agreement)
-      * *Admin* - Overall BibApp Administrator
-      * *Librarian* - Can perform all data-related tasks (e.g. add, remove, edit data)
-      * *Editor* - Can edit or enter in new data (cannot remove)
-      * *Data-Entry* - Can only enter in new data (cannot edit/remove)
-      * *Packager* - Can export citations into "packages" to prepare for a repository
+   * Recommendations:
+       * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
+       * Possible Roles (need better definition & agreement)
+         * *Admin* - Overall BibApp Administrator
+         * *Librarian* - Can perform all data-related tasks (e.g. add, remove, edit data)
+         * *Editor* - Can edit or enter in new data (cannot remove)
+         * *Data-Entry* - Can only enter in new data (cannot edit/remove)
+         * *Packager* - Can export citations into "packages" to prepare for a repository
      
