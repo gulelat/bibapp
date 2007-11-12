@@ -19,7 +19,7 @@
        * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
            * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
 
-
+_To-Do:_ Fill in more details on Authentication
 
 
 == II. Authorization ==
@@ -32,7 +32,7 @@
 
 === Plugin Recommendations ===
  
-Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
+  Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
 
 
 === !BibApp Roles ===
