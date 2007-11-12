@@ -33,9 +33,30 @@ Each Publisher record contains an "authority_id" field, where we can self-join t
 
 The same simple technique can be applied to Publication records.
 
+=== Publication Example ===
+
+  # Acta Astronaut. | 0094-5765
+  # Acta Astronaut. (UK) | 0094-5765
+  # Acta Astronautica | 0094-5765
+
+Here "Acta Astronautica" is the chosen authority record, so each record above #3 can reference #3 in their authority_id field.
+
 == Author Authorities ==
 
-Author authorities are much more difficult.  In the BibApp's new architecture, Users will select a list of their "author" names.  I'll use myself as an example:
+Author authorities are much more difficult.  In the BibApp's new architecture, we no longer add Citations to the application via Authors to produce Authorships.  Now we simply load Citation data collected for people at our institution.  Each Citation is processed to discover the individual Author names associated with the Citation.
+
+=== Citation Example ===
+
+Dong, Liang, Jiang, Hongrui. (2007). Autonomous microfluidics with stimuli-responsive hydrogels. Soft Matter, 3(10), 1223-1230.
+
+The two author stings above are:
+
+  * Dong, Liang
+  * Jiang, Hongrui
+
+=== Workflow ===
+
+I'll use myself as an example:
 
 User name: Eric William Larson
 
@@ -43,11 +64,13 @@ I login to the BibApp for the first time and the website asks me to select my Au
 
 Potential Author variants:
 
+  * Larson, D
   * Larson, E
   * Larson, EW
   * Larson, E.W.
   * Larson, Eric W.
   * Larson, Eric WM.
   * Larson, Eric William 
+  * Larson, F
 
-Maybe they are all correct (I have published under all these names), so I select the checkbox next to each name variant.  Lastly, I select one of these variants as my "preferred" name: Larson, E.W.
+Maybe all the Larson, E* are correct (I have published under all these names), so I select the checkbox next to each name variant.  Lastly, I select one of these variants as my "preferred" name: Larson, E.W.
