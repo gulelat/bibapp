@@ -77,16 +77,16 @@ _Role:_ *Editor*
 
 Admittedly, this lack of cascading/inheritance is a little confusing at first.  But, luckily it is relatively easy to override so that we can get the cascading/inheritance we desire in !BibApp.
 
-=== BibAppAuthDemo ===
+=== !BibAppAuthDemo ===
 
-To better prototype out our Authorization for !BibApp, I've created a BibAppAuthDemo.  This same demo project will eventually be used to prototype out Authentication options, and get them working in conjunction with Authorization.
+To better prototype out our Authorization for !BibApp, I've created a !BibAppAuthDemo prototype project.  This same demo project will eventually be used to prototype out Authentication options, and get them working in conjunction with Authorization.
 
-After you download BibAppAuthDemo and install it locally, the primary test page for the demo is at:
+After you download !BibAppAuthDemo and install it locally, the primary test page for the demo is at:
 http://localhost:3000/users/list
 
 The demo comes with some basic test data to get you started.  But, it should *work* to allow you to add more data, and really play around with how I'm proposing Authorization should work in !BibApp 1.0.
 
-==== Notes on BibAppAuthDemo ====
+==== Notes on !BibAppAuthDemo ====
 
   * Despite all the limitations of the "Authorization Plugin" mentioned above, I was able to override default actions of the plugin so that it can better understand and support the inheritance/cascading of roles that we desire for !BibApp.   This overriding takes place in the _User_ model, specifically look for these methods:
 {{{
@@ -117,3 +117,19 @@ The demo comes with some basic test data to get you started.  But, it should *wo
   * The '!BibAppAuthDemo' uses 3 Classes of objects which can have authorization roles set on them: `System`, `Group`, `Author` 
     * For simplicity, I didn't get into Citations, but it will be easily implemented similar to the `Group` -> `Author` relationship
   * The `System` Class is a special Model which is NOT stored in the Database (I'm using the [http://agilewebdevelopment.com/plugins/activerecord_base_without_table ActiveRecord::Base Without Tables] plugin to do this). It's whole purpose is to give us a place to assign global/system-wide roles.  So, if a user is given an "admin on System" role, I've set it up so that he/she is an 'admin' on EVERYTHING in !BibApp.  Similarly, if you are an 'editor on System', you are an 'editor' on EVERYTHING.
+  * Group-based roles are setup to cascade down to authors within that group!  So, if you are a 'librarian' on a group named "University Library", you are also a 'librarian' on EVERY author who is a member of that group.   This concept could be replicated to allow Author-based roles to cascade down to their Citations in a similar fashion.
+  * A few points which may or may not be entirely straightforward:
+    * In BibAppAuthDemo, roles cascade _as-is_.  This means if you are an "editor" on a group named 'University Library', then you are ONLY given "editor" permissions on all the authors in that group.  You are NOT given "admin" or "librarian" permissions on those authors.
+    * Because of this cascading, you only need to specify the MINIMAL role necessary to perform an action.  This is nice, since it shortens "permit" statements (a part of Authorization plugin).  For example, if it's an action an 'editor' can do, you can just specify:
+{{{
+permit 'editor' do
+   #action for editor, librarian, or admin
+end
+}}}
+    * Normally, you would need to provide a large OR of all possible roles:
+{{{
+permit 'editor' or 'librarian' or 'admin' do
+   #action for editor, librarian, or admin
+end
+}}}
+    * Take a look at the variety of samples within the 'Group' and 'Author' Controllers.  There's also a 'Test' controller with even more examples of these simple 'permit' statements.
