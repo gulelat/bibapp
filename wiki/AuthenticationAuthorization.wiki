@@ -81,10 +81,12 @@ Admittedly, this lack of cascading/inheritance is a little confusing at first.  
 
 To better prototype out our Authorization for !BibApp, I've created a !BibAppAuthDemo prototype project.  This same demo project will eventually be used to prototype out Authentication options, and get them working in conjunction with Authorization.
 
-After you [http://groups.google.com/group/bibapp/web/BibAppAuthDemo.zip download BibAppAuthDemo] and install it locally, the primary test page for the demo is at:
-http://localhost:3000/users/list
-
-The demo comes with some basic test data to get you started.  But, it should *work* to allow you to add more data, and really play around with how I'm proposing Authorization should work in !BibApp 1.0.
+Here's a few notes to get you started with this prototype:
+  * First, [http://groups.google.com/group/bibapp/web/BibAppAuthDemo.zip download BibAppAuthDemo] and install it locally.  Make sure to modify the `config/database.yml` for your setup!
+  * Run `rake db:migrate` of course, to generate the database and some basic test data.
+  * Startup Mongrel, and visit: http://localhost:3000/users/list
+  * From here, you'll see some test data.  To "login" as a particular user (and get his/her role(s) in the system), just click "Make Current User" next to that user.  _There is NO login functionality here yet, since this is currently just a prototype of authorization!_
+  * Feel free to change, add, remove data, roles, users, etc.  Everything should work! (But, obviously there may be some unnoticed bugs, as this is just a prototype). 
 
 ==== Notes on !BibAppAuthDemo ====
 
