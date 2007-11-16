@@ -51,7 +51,7 @@ _Role:_ *Public*
    * General public role.  Just has rights to view, search, browse data in the system.  _This role may be unnecessary, as it is just the absence of any of the above roles._
      
 
-*_Example Usage:_*
+*_Example Role Assignments:_*
     * Remember, authorization should follow a basic "sentence-like" structure: "{user} has {role} on {object}"
       * "Eric" has "Admin" role on !BibApp (_Application-based role_)
       * "Tim" has "Librarian" role on group "University Library" (_Group-based role_)
