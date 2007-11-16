@@ -116,7 +116,7 @@ Here's a few notes to get you started with this prototype:
    end
 		
 }}}
-  * The '!BibAppAuthDemo' uses 3 Classes of objects which can have authorization roles set on them: `System`, `Group`, `Author` 
+  * The '!BibAppAuthDemo' uses 3 Classes of objects which can have authorization roles set on them: `System`, `Group`, and `Author` models
     * For simplicity, I didn't get into Citations, but it will be easily implemented similar to the `Group` -> `Author` relationship
   * The `System` Class is a special Model which is NOT stored in the Database (I'm using the [http://agilewebdevelopment.com/plugins/activerecord_base_without_table ActiveRecord::Base Without Tables] plugin to do this). It's whole purpose is to give us a place to assign global/system-wide roles.  So, if a user is given an "admin on System" role, I've set it up so that he/she is an 'admin' on EVERYTHING in !BibApp.  Similarly, if you are an 'editor on System', you are an 'editor' on EVERYTHING.
   * Group-based roles are setup to cascade down to authors within that group!  So, if you are a 'librarian' on a group named "University Library", you are also a 'librarian' on EVERY author who is a member of that group.   This concept could be replicated to allow Author-based roles to cascade down to their Citations in a similar fashion.
