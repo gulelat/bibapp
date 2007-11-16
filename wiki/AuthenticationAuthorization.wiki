@@ -77,3 +77,43 @@ _Role:_ *Editor*
 
 Admittedly, this lack of cascading/inheritance is a little confusing at first.  But, luckily it is relatively easy to override so that we can get the cascading/inheritance we desire in !BibApp.
 
+=== BibAppAuthDemo ===
+
+To better prototype out our Authorization for !BibApp, I've created a BibAppAuthDemo.  This same demo project will eventually be used to prototype out Authentication options, and get them working in conjunction with Authorization.
+
+After you download BibAppAuthDemo and install it locally, the primary test page for the demo is at:
+http://localhost:3000/users/list
+
+The demo comes with some basic test data to get you started.  But, it should *work* to allow you to add more data, and really play around with how I'm proposing Authorization should work in !BibApp 1.0.
+
+==== Notes on BibAppAuthDemo ====
+
+  * Despite all the limitations of the "Authorization Plugin" mentioned above, I was able to override default actions of the plugin so that it can better understand and support the inheritance/cascading of roles that we desire for !BibApp.   This overriding takes place in the _User_ model, specifically look for these methods:
+{{{
+   #Override has_role? to support cascading roles based on the
+   # role hierarchy defined for BibApp
+   #
+   # Returns if user has a specified role.
+   def has_role?( role_name, authorizable_obj = nil )
+
+     #Lots of code which overrides the default settings of Authorization plugin
+     
+   end
+
+   #Checks to see if user has a specified role on ANY instance
+   #of the passed in Class.
+   #
+   # (e.g.) has_any_role?('editor', Group) 
+   #
+   # The above would check if the user has the 'editor' role
+   # on ANY group within the system.
+   def has_any_role?( role_name, authorizable_class )
+
+     #A custom method, based on the Authorization plugin
+     
+   end
+		
+}}}
+  * The '!BibAppAuthDemo' uses 3 Classes of objects which can have authorization roles set on them: `System`, `Group`, `Author` 
+    * For simplicity, I didn't get into Citations, but it will be easily implemented similar to the `Group` -> `Author` relationship
+  * The `System` Class is a special Model which is NOT stored in the Database (I'm using the [http://agilewebdevelopment.com/plugins/activerecord_base_without_table ActiveRecord::Base Without Tables] plugin to do this). It's whole purpose is to give us a place to assign global/system-wide roles.  So, if a user is given an "admin on System" role, I've set it up so that he/she is an 'admin' on EVERYTHING in !BibApp.  Similarly, if you are an 'editor on System', you are an 'editor' on EVERYTHING.
