@@ -133,3 +133,22 @@ permit 'editor' or 'librarian' or 'admin' do
 end
 }}}
     * Take a look at the variety of samples within the 'Group' and 'Author' Controllers.  There's also a 'Test' controller with even more examples of these simple 'permit' statements.
+
+==== More Notes on Cascading Roles ====
+
+Here's some example roles in !BibAppAuthDemo, and details of what permissions you automatically inherit in those roles. Again, these are _not final_, but just how I implemented them in !BibAppAuthDemo
+
+  * `admin` role on `System` class
+    * Role has full access on EVERYTHING in !BibAppAuthDemo.  This user can do anything...no limitations!
+  * `editor` role on `System` class
+    * Role has 'editor' access on EVERYTHING in !BibAppAuthDemo.  However, that means this role is not permitted to perform *any* actions specifically marked with 'librarian' or 'admin'.
+    * Role has access to create, edit, delete Groups or Authors in system. (Although not enforced in this prototype, I'd envision this role could NOT create/edit/delete new Users or Roles in system)
+  * `librarian` role on group named 'University Library'
+    * Role inherits `librarian` permissions on every Author in that group.  Would also inherit `librarian` permissions on every Citation of every Author in that group.
+    * Role also has the permissions to create new Authors to add to this group.  
+    * As implemented, it currently does _NOT_ allow for creation of new Groups (since this role is specific to a _single group_).  It also does _NOT_ allow for deletion of this specific Group. *(This is something worth discussing in more detail)*
+  * `editor` role on author named "Timothy G Donohue"
+    * Role inherits `editor` permissions on every Citation of this author.
+    * As such, this role permits user to add/edit/remove citations from this author.
+    * As implemented, it does _NOT_ allow for creation of new Authors (since this role is specific to a _single author_).  Currently it also does _NOT_ allow for deletion of this Author either. (I'd envision there would be a "suppress" option available, where this `editor` could actually suppress this Author so that the Author page was not viewable/searchable). *(This is something worth discussing in more detail)*
+    * _Note:_ This is the role I currently envision would be assigned to users when they click "This is Me" on an Author.  This would allow them to manage their Author information, and add/edit/remove their citations into the system. *(Worth discussing: Should this role also be allowed to assign additional Users the `editor` role on this same author? - i.e. give others the ability to edit their author info)*
