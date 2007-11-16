@@ -30,12 +30,8 @@ _To-Do:_ Fill in more details on Authentication
    * Should follow a basic "sentence-like" structure: "{user} has {role} on {object}"
       * !BibApp {objects} include: Groups (i.e. departments/units), Authors, and/or Citations
 
-=== Plugin Recommendations ===
- 
-  Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
 
-
-=== !BibApp Roles ===
+=== Proposed !BibApp Roles ===
 
 These roles are not finalized, but have been discussed and generally agreed upon.
 
@@ -60,3 +56,24 @@ _Role:_ *Editor*
       * "Ben" has "Editor" role on citation #2345 (_Citation-based role_)
     * _Note:_ It will likely not be common to assign roles to individual citations (see last example above).  But, the !BibApp authorization system should still support it, as it is just another {object} within !BibApp.
     * Roles should cascade!  So, if you are an "Editor" on a group, you are also an "Editor" on all authors within that group, and all citations of those authors.
+
+
+=== Plugin Recommendations ===
+ 
+   * Use "[http://www.writertopia.com/developers/authorization Authorization plugin]", which seems to provide very clean [http://www.rubyinside.com/authorization-permissions-plugin-for-rails-154.html role-based authorization using dynamic methods].  Also seems to be highly recommended/respected (e.g. [http://www.vaporbase.com/postings/Authorization_in_Rails Authorization in Rails]).
+
+==== Limitations of Plugin ====
+
+  * Out-of-the-box, it does NOT come with any ability to cascade or inherit roles.  So, this plugin doesn't know that an "admin" role also encompasses all the tasks that a "librarian" can perform.  This makes sense, since this plugin cannot "understand" what a role means.  
+  * In the same manner, it doesn't understand that a role on a "Group" cascades down to "Authors" within that group.  Again, it doesn't attempt to determine this based on the database architecture or anything.
+  * There are three "types" of roles supported by this plugin:
+    # Generic roles:  (e.g.) "admin".  
+      * Just says you are an 'admin', but doesn't really say over WHAT
+    # Class roles: (e.g.) "admin of Group" 
+      * Says you have an 'admin' role over the Group class
+    # Object instance roles: (e.g.) "admin of group called 'University Library'" 
+      * Says you are an 'admin' of the 'University Library' group only (and no other group instances)
+  * There is also no inheritance/cascading of these role "types".  So, if you are an "admin", this does NOT cascade so that you are also an "admin of Group" (or any other Class or object).  Similarly, if you are an "admin of Group", it does NOT give you 'admin' permissions over specific group instances, like a group called 'University Library'.
+
+Admittedly, this lack of cascading/inheritance is a little confusing at first.  But, luckily it is relatively easy to override so that we can get the cascading/inheritance we desire in !BibApp.
+
