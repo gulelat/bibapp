@@ -147,7 +147,7 @@ Here's some example roles in !BibAppAuthDemo, and details of what permissions yo
     * Role has access to create, edit, delete Groups or Authors in system. (Although not enforced in this prototype, I'd envision this role could NOT create/edit/delete new Users or Roles in system)
   * `librarian` role on group named 'University Library'
     * Role inherits `librarian` permissions on every Author in that group.  Would also inherit `librarian` permissions on every Citation of every Author in that group.
-    * Role also has the permissions to create new Authors to add to this group.  
+    * Role also has the permissions to create new Authors to add to this group, or remove authors from this group.  
     * As implemented, it currently does _NOT_ allow for creation of new Groups (since this role is specific to a _single group_).  It also does _NOT_ allow for deletion of this specific Group. *(This is something worth discussing in more detail)*
   * `editor` role on author named "Timothy G Donohue"
     * Role inherits `editor` permissions on every Citation of this author.
