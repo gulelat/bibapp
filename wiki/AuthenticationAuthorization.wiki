@@ -86,7 +86,7 @@ Here's a few notes to get you started with this prototype:
   * Run `rake db:migrate` of course, to generate the database and some basic test data.
   * Startup Mongrel, and visit: http://localhost:3000/users/list
   * From here, you'll see some test data.  To "login" as a particular user (and get his/her role(s) in the system), just click "Make Current User" next to that user.  _There is NO login functionality here yet, since this is currently just a prototype of authorization!_
-  * Non of this is really "fancy".  It's mostly just scaffolding, and some overriding of the "Authorization Plugin" to allow for cascading/inheriting of roles in !BibApp (see below for more details)
+  * None of this is really "fancy".  It's mostly just scaffolding, and some overriding of the "Authorization Plugin" to allow for cascading/inheriting of roles in !BibApp (see below for more details)
   * Feel free to change, add, remove data, roles, users, etc.  Everything should work! (But, obviously there may be some unnoticed bugs, as this is just a prototype). 
 
 ==== Notes on !BibAppAuthDemo ====
