@@ -120,16 +120,16 @@ The demo comes with some basic test data to get you started.  But, it should *wo
   * Group-based roles are setup to cascade down to authors within that group!  So, if you are a 'librarian' on a group named "University Library", you are also a 'librarian' on EVERY author who is a member of that group.   This concept could be replicated to allow Author-based roles to cascade down to their Citations in a similar fashion.
   * A few points which may or may not be entirely straightforward:
     * In BibAppAuthDemo, roles cascade _as-is_.  This means if you are an "editor" on a group named 'University Library', then you are ONLY given "editor" permissions on all the authors in that group.  You are NOT given "admin" or "librarian" permissions on those authors.
-    * Because of this cascading, you only need to specify the MINIMAL role necessary to perform an action.  This is nice, since it shortens "permit" statements (a part of Authorization plugin).  For example, if it's an action an 'editor' can do, you can just specify:
+    * Because of this cascading, you only need to specify the MINIMAL role necessary to perform an action.  This is nice, since it shortens "permit" statements (a part of Authorization plugin).  For example, if it's an action you need a minimum of 'editor' permissions to perform, you can just specify:
 {{{
 permit 'editor' do
-   #action for editor, librarian, or admin
+   #action can be performed by editor, librarian, or admin
 end
 }}}
     * Normally, you would need to provide a large OR of all possible roles:
 {{{
 permit 'editor' or 'librarian' or 'admin' do
-   #action for editor, librarian, or admin
+   #action can be performed by editor, librarian, or admin
 end
 }}}
     * Take a look at the variety of samples within the 'Group' and 'Author' Controllers.  There's also a 'Test' controller with even more examples of these simple 'permit' statements.
