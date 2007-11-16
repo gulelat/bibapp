@@ -45,10 +45,11 @@ _Role:_ *Librarian*
    * Can perform all data-related tasks, including authority control tasks.  Generally is in charge of cleaning up the data, manual de-duping, and establishing authorities.  Librarians can also package up citations for import into a repository.
 _Role:_ *Editor* 
    * Can add, edit or remove data.  May perform some manual de-duping, but cannot establish authorities or perform packaging, as a Librarian can.
-_Role:_ *Author*
-   * Can only add, edit or remove data about an author. _This role may be unnecessary, as it may just be an "editor" role on an "author" object._
-_Role:_ *Public*
-   * General public role.  Just has rights to view, search, browse data in the system.  _This role may be unnecessary, as it is just the absence of any of the above roles._
+~~_Role:_ *Author*~~
+   * Can only add, edit or remove data about an author. _This role looks to be unnecessary, as it seems to be an "editor" role on an "author" object._  However, if we determine there *is* a difference, we can add this role back in later.
+
+~~_Role:_ *Public*~~
+   * General public role.  Just has rights to view, search, browse data in the system.  _*This role is unnecessary*, as it is just the absence of any of the above roles._
      
 
 *_Example Role Assignments:_*
