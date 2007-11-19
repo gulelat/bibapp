@@ -74,7 +74,7 @@ _Role:_ *Editor*
     # Object instance roles: (e.g.) "admin of group called 'University Library'" 
       * Says you are an 'admin' of the 'University Library' group only (and no other group instances)
   * There is also no inheritance/cascading of these role "types".  So, if you are an "admin", this does NOT cascade so that you are also an "admin of Group" (or any other Class or object).  Similarly, if you are an "admin of Group", it does NOT give you 'admin' permissions over specific group instances, like a group called 'University Library'.
-  * For BibApp 1.0, we will be mostly using "Object instance roles", as they provide roles on specific objects in the system.  There will be a few exceptions where "Class roles" are necessary (see !BibAppAuthDemo below).  But, we should avoid assigning "Generic roles", since these do not assign a role to an object (and also do not cascade).
+  * For !BibApp 1.0, we will be mostly using "Object instance roles", as they provide roles on specific objects in the system.  There will be a few exceptions where "Class roles" are necessary (see !BibAppAuthDemo below).  But, we should avoid assigning "Generic roles", since these do not assign a role to an object (and also do not cascade).
 
 Admittedly, this lack of cascading/inheritance is a little confusing at first.  But, luckily it is relatively easy to override so that we can get the cascading/inheritance we desire in !BibApp.
 
