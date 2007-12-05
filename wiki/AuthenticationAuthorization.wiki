@@ -8,18 +8,25 @@
       * Out-of-the-box, !BibApp should minimally support basic HTTP authentication (with an encrypted password in the database).  Should be easily extendable/configurable to support other authentication mechanisms.
 
 === Plugin Recommendations ===
-      * Use [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth]  plugin?
-         * Advantages:
+
+      * After more analysis, unsure of proper plugin to use to build BibApp Authentication.  Possible Options:
+        * [http://agilewebdevelopment.com/plugins/simple_http_auth Simple HTTP Auth]  plugin?
+          * Advantages:
             * Doesn't force you into an authentication method.  You are responsible for writing your own manner of authenticating - Dynamic!
             * Doesn't force you into using a particular model, controller, etc.
-         * Disadvantages:
+          * Disadvantages:
             * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up !BibApp.
-       * Alternate route #1: Use "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
-           * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to !BibApp).
-       * Alternate route #2: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin
+            * *Does not seem to play well with 'authorization' plugin!*  This 'Simple HTTP Auth' plugin is expecting you to specify controller(s) which "requires_authentication", and the authentication method within that same controller.  However, the 'authorization' plugin is expecting to redirect to a single controller whenever authentication is deemed necessary.
+       * "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
+          * Advantages:
+            * Plays well with 'authorization' plugin
+            * Easy to get basic username/password authentication up and running
+          * Disadvantages:
+            * Not sure if this is dynamic enough to support external authentication methods (where an already authenticated username is passed to !BibApp).  May require quite a bit of customization to support!
+       * Alternate route?: [http://blog.craz8.com/authenticate-as-remote-user-plugin/ Authenticate as Remote User] plugin - _Requires More Close Analysis_
            * This plugin only assumes username is passed in a Request variable...by default looks for the Apache "REMOTE_USER" header, but it looks to be easily configurable.  Not sure if this is dynamic enough though, as it looks to be built more for Apache-based authentication.
 
-_To-Do:_ Fill in more details on Authentication
+_*To-Do:*_ Fill in more details on Authentication.  Make decision on proper plugin to use.
 
 
 == II. Authorization ==
