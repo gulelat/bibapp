@@ -16,7 +16,7 @@
         * Doesn't force you into using a particular model, controller, etc.
       * Disadvantages:
         * A little more work for us.  It also doesn't maintain your user database or anything.  We'd need to develop a few example authentication methods (e.g. simple HTTP, Active Directory/LDAP, OpenID, etc.) which could be selected from when setting up !BibApp.
-        * *Does not seem to play well with 'authorization' plugin!*  This 'Simple HTTP Auth' plugin is expecting you to specify controller(s) which "requires_authentication", and the authentication method within that same controller.  However, the 'authorization' plugin is expecting to redirect to a single controller whenever authentication is deemed necessary.
+        * *Does not seem to play well with 'authorization' plugin!*  This 'Simple HTTP Auth' plugin is expecting you to specify controller(s) which "requires_authentication", and the authentication method within that same controller.  However, the 'authorization' plugin is expecting to redirect to a single controller whenever authentication is deemed necessary.  (*In simple terms:* The basic problem is that this 'Simple HTTP Auth' plugin unfortunately overlaps a little too much into _authorization_, which looks like it will make it difficult to integration with the rails `authorization` plugin.)
     # "[http://railscasts.com/episodes/67 restful_authentication]" plugin?
       * Advantages:
         * Plays well with 'authorization' plugin
