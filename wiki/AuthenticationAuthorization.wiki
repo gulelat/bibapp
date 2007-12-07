@@ -99,7 +99,7 @@ Here's a few notes to get you started with this prototype:
   * None of this is really "fancy".  It's mostly just scaffolding, and some overriding of the "Authorization Plugin" to allow for cascading/inheriting of roles in !BibApp (see below for more details)
   * Feel free to change, add, remove data, roles, users, etc.  Everything should work! (But, obviously there may be some unnoticed bugs, as this is just a prototype). 
 
-==== Notes on !BibAppAuthDemo ====
+==== Semi-Technical Notes on !BibAppAuthDemo ====
 
   * Despite all the limitations of the "Authorization Plugin" mentioned above, I was able to override default actions of the plugin so that it can better understand and support the inheritance/cascading of roles that we desire for !BibApp.   This overriding takes place in the _User_ model, specifically look for these methods:
 {{{
@@ -148,9 +148,9 @@ end
 }}}
     * Take a look at the variety of samples within the 'Group' and 'Author' Controllers.  There's also a 'Test' controller with even more examples of these simple 'permit' statements.
 
-==== More Notes on Cascading Roles ====
+==== How Roles Cascade ====
 
-Here's some example roles in !BibAppAuthDemo, and details of what permissions you automatically inherit in those roles. Again, these are _not final_, but just how I implemented them in !BibAppAuthDemo
+Here's some example roles in !BibAppAuthDemo, and details of what permissions you automatically inherit in those roles. Again, these are _not final_, but just how I implemented them in !BibAppAuthDemo.  I wanted to make very explicit how I chose to cascade roles, so that we can determine if there are better ways to support cascading roles in !BibApp 1.0:
 
   * `admin` role on `System` class
     * Role has full access on EVERYTHING in !BibAppAuthDemo.  This user can do anything...no limitations!
