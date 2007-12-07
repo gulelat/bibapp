@@ -46,14 +46,14 @@ These roles are not finalized, but have been discussed and generally agreed upon
 
 _Role:_ *Admin*
    * Generally can:
-     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation)
+     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
      * Add/Edit/Remove roles or users from system
      * All other tasks which can be performed by a `librarian` or `editor`
    * Generally cannot:
      * No limitations...this user has FULL RIGHTS
 _Role:_ *Librarian*
    * Generally can:
-     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation)
+     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
      * Assign or Remove `librarian` or `editor` roles to/from user accounts *(??)*
      * Package up items for repository
      * Create/Edit/Delete/Hide metadata, establish "authorities"
@@ -63,7 +63,7 @@ _Role:_ *Librarian*
      * Assign an `admin` role to any user
 _Role:_ *Editor* 
    * Generally can:
-     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation)
+     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
      * Assign or Remove `editor` role to/from user accounts *(??)*
      * Package up items for repository *(??)*
      * Create/Edit/Delete/Hide metadata
