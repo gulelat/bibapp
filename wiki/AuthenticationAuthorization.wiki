@@ -45,11 +45,33 @@ _*To-Do:*_ Fill in more details on Authentication.  Make decision on proper plug
 These roles are not finalized, but have been discussed and generally agreed upon.
 
 _Role:_ *Admin*
-   * Overall !BibApp Administrator.  Can do anything in system.  Generally in charge of administrating user accounts and roles.
+   * Generally can:
+     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation)
+     * Add/Edit/Remove roles or users from system
+     * All other tasks which can be performed by a `librarian` or `editor`
+   * Generally cannot:
+     * No limitations...this user has FULL RIGHTS
 _Role:_ *Librarian*
-   * Can perform all data-related tasks, including authority control tasks.  Generally is in charge of cleaning up the data, manual de-duping, and establishing authorities.  Librarians can also package up citations for import into a repository.
+   * Generally can:
+     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation)
+     * Assign or Remove `librarian` or `editor` roles to/from user accounts *(??)*
+     * Package up items for repository
+     * Create/Edit/Delete/Hide metadata, establish "authorities"
+   * Generally cannot:
+     * Remove user accounts from system *(??)*
+     * Create NEW roles or user accounts *(??)*
+     * Assign an `admin` role to any user
 _Role:_ *Editor* 
-   * Can add, edit or remove data.  May perform some manual de-duping, but cannot establish authorities or perform packaging, as a Librarian can.
+   * Generally can:
+     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation)
+     * Assign or Remove `editor` role to/from user accounts *(??)*
+     * Package up items for repository *(??)*
+     * Create/Edit/Delete/Hide metadata
+   * Generally cannot:
+     * Remove user accounts from system *(??)*
+     * Create NEW roles or user accounts *(??)*
+     * Assign an `admin` or `librarian` role to any user
+     * Establish "authorities" *(??)*
 ~~_Role:_ *Author*~~
    * Can only add, edit or remove data about an author. _This role looks to be unnecessary, as it seems to be an "editor" role on an "author" object._  However, if we determine there *is* a difference, we can add this role back in later.
 
