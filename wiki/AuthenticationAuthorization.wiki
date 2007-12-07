@@ -152,9 +152,9 @@ end
 
 Here's some example roles in !BibAppAuthDemo, and details of what permissions you automatically inherit in those roles. Again, these are _not final_, but just how I implemented them in !BibAppAuthDemo.  I wanted to make very explicit how I chose to cascade roles, so that we can determine if there are better ways to support cascading roles in !BibApp 1.0:
 
-  * `admin` role on `System` class
+  * `admin` role on !BibApp `System`
     * Role has full access on EVERYTHING in !BibAppAuthDemo.  This user can do anything...no limitations!
-  * `editor` role on `System` class
+  * `editor` role on !BibApp `System`
     * Role has 'editor' access on EVERYTHING in !BibAppAuthDemo.  However, that means this role is not permitted to perform *any* actions specifically marked with 'librarian' or 'admin'.
     * Role has access to create, edit, delete Groups or Authors in system. (Although not enforced in this prototype, I'd envision this role could NOT create/edit/delete new Users or Roles in system)
   * `librarian` role on group named 'University Library'
