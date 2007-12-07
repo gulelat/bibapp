@@ -55,7 +55,7 @@ _Role:_ *Librarian*
    * Generally can:
      * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
      * Assign or Remove `librarian` or `editor` roles (in same context) to/from user accounts *(??)*
-     * Package up items for repository
+     * Package up items for external repository
      * Create/Edit/Delete/Hide metadata, establish "authorities"
    * Generally cannot:
      * Remove user accounts from system *(??)*
@@ -65,7 +65,7 @@ _Role:_ *Editor*
    * Generally can:
      * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
      * Assign or Remove `editor` role (in same context) to/from user accounts *(??)*
-     * Package up items for repository *(??)*
+     * Package up items for external repository *(??)*
      * Create/Edit/Delete/Hide metadata
    * Generally cannot:
      * Remove user accounts from system *(??)*
