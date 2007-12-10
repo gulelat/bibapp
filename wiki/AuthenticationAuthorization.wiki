@@ -48,30 +48,21 @@ _Role:_ *Admin*
    * Generally can:
      * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
      * Add/Edit/Remove roles or users from system
-     * All other tasks which can be performed by a `librarian` or `editor`
+     * All other tasks which can be performed by a `editor`
    * Generally cannot:
      * No limitations...this user has FULL RIGHTS
-_Role:_ *Librarian*
+_Role:_ *Editor* 
    * Generally can:
      * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
-     * Assign or Remove `librarian` or `editor` roles (in same context) to/from user accounts *(??)*
+     * Assign or Remove `editor` role (in same context) to/from user accounts
      * Package up items for external repository
      * Create/Edit/Delete/Hide metadata, establish "authorities"
    * Generally cannot:
      * Remove user accounts from system *(??)*
      * Create NEW roles or user accounts *(??)*
      * Assign an `admin` role to any user
-_Role:_ *Editor* 
-   * Generally can:
-     * Create/Edit/Delete/Hide any object (i.e. Group/Author/Citation) within this role's "context"
-     * Assign or Remove `editor` role (in same context) to/from user accounts *(??)*
-     * Package up items for external repository *(??)*
-     * Create/Edit/Delete/Hide metadata
-   * Generally cannot:
-     * Remove user accounts from system *(??)*
-     * Create NEW roles or user accounts *(??)*
-     * Assign an `admin` or `librarian` role to any user
-     * Establish "authorities" *(??)*
+~~_Role:_ *Librarian*~~
+   * _This role was determined to be unnecessary.  After further discussion it was decided that there was no signficant difference between a 'librarian' and an 'editor.'_
 ~~_Role:_ *Author*~~
    * Can only add, edit or remove data about an author. _This role looks to be unnecessary, as it seems to be an "editor" role on an "author" object._  However, if we determine there *is* a difference, we can add this role back in later.
 
