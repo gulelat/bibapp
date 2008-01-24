@@ -1,0 +1,17 @@
+#summary A brainstormed list of ways to interact with the BibApp.
+
+= Personas =
+
+In Alan Cooper style, here is a list of named characters we might expect to interact with the BibApp:
+
+* Dr. Helen Troia: Assistant Professor, Department of Basketology
+
+Dr. Troia is going up for tenure next year. She hopes that the BibApp will help her prepare her CV for her tenure package. She already uses it to keep her departmental webpage up-to-date, as she has very little time to update the page herself.
+
+* Cassandra Athens: Webmaster, Department of Basketology
+
+Cassandra just started maintaining the Basketology websites. She is eager to help Basketology put its best face forward, though the new web-design guidelines coming down from the university's communications department cramp her style. Whatever the BibApp can easily do to reduce Cassandra's workload is welcome -- but Cassandra warns you, it had better work with her existing content management system!
+
+* Menelaus Fox: liaison librarian to the Department of Basketology
+
+The Basketology department is coming up for reaccreditation soon, and Menelaus is tasked with evaluating the library's Basketology collection, and bolstering it where necessary. He is interested to know where Basketology faculty publish. Menelaus is not very tech-savvy, and he is perennially pressed for time.
