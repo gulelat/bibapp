@@ -6,3 +6,4 @@
   * Implement simple arXiv API
   * Implement simple pubmed API ingest
   * Implement simple ISI ingest
+  * Re-Implement import for newer RefWorks format.  The old XML format is now marked as deprecated.  Maybe we can import the RefWorks "tagged" format?  Or BibTeX?
