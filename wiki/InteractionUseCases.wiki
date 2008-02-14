@@ -37,6 +37,7 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
   * Adding publications to a faculty member's BibApp site as they appear (Helen, Menelaus)
     * Encoding for cut-and-pasted citations?
     * TinyMCE gizmo for cut-and-pastes from Word?
+    * Wisconsin Tech Search's form? Borrow their sanity-checking code?
   * Searching the Basketology department for interesting new research (Helen, outsiders)
   * Receiving a feed or emailed notification of new research based on defined search terms (Helen)
   * Automatically notifying a faculty member by email that a preprint or postprint is eligible for repository deposit (Ulysses or Menelaus)
