@@ -48,5 +48,6 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
   * Automatically notifying a faculty member by email that a preprint or postprint is eligible for repository deposit (Ulysses or Menelaus)
   * Easily adding a preprint or postprint for deposit into the repository, with all necessary embargoes handled automatically (Helen)
   * Establish authority forms for journal titles and publishers. (Menelaus)
+    * Scrape OCLC or Ulrich's? OCLC ISSN web service? http://xissn.worldcat.org/xissnadmin/index.htm
   * Person wants to import a citation into their favorite reference manager.
     * COinS?
