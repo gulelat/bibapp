@@ -39,7 +39,9 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * top X journals
     * journal authority? publisher authority?
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
-  * Adding publications to a faculty member's BibApp site as they appear (Helen, Menelaus)
+  * Adding publications to a faculty member's BibApp site as they appear (Helen, Menelaus, Cassandra)
+    * Import function (batch) - who can do it? authorization
+    * what about approval?
     * Encoding for cut-and-pasted citations?
     * TinyMCE gizmo for cut-and-pastes from Word?
     * Wisconsin Tech Search's form? Borrow their sanity-checking code?
