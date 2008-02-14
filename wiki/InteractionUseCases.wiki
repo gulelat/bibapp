@@ -57,8 +57,10 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * Once a preprint/postprint goes into archival repository it's cleaned from BibApp?
     * 'attachmentfu' rails plugin may help with this?
     * NIH content a part of this?
+    * BibApp should NOT handle embargo?? - BibApp may communicate the embargo period to an archival repository, but the repository needs to handle the actual embargo?
   * Establish authority forms for journal titles and publishers. (Menelaus)
     * Scrape OCLC or Ulrich's? OCLC ISSN web service? http://xissn.worldcat.org/xissnadmin/index.htm
     * XML dump of one BibApp instance's publisher/title authority info, for import into someone else's instance.
   * Person wants to import a citation into their favorite reference manager.
     * COinS?
+  * Create a new group in BibApp
