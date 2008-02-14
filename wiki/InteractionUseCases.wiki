@@ -49,6 +49,6 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
   * Easily adding a preprint or postprint for deposit into the repository, with all necessary embargoes handled automatically (Helen)
   * Establish authority forms for journal titles and publishers. (Menelaus)
     * Scrape OCLC or Ulrich's? OCLC ISSN web service? http://xissn.worldcat.org/xissnadmin/index.htm
-    * XML dump of one instance's publisher/title authority info, for import into someone else's instance.
+    * XML dump of one BibApp instance's publisher/title authority info, for import into someone else's instance.
   * Person wants to import a citation into their favorite reference manager.
     * COinS?
