@@ -46,7 +46,9 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * TinyMCE gizmo for cut-and-pastes from Word?
     * Wisconsin Tech Search's form? Borrow their sanity-checking code?
     * asynchronous worker to avoid server load at batch import; request submitted right away, but results may not be instantaneous.
-  * Searching the Basketology department for interesting new research (Helen, outsiders)
+  * Searching & Browsingthe Basketology department for interesting new research (Helen, outsiders)
+    * Solr - better understanding of capabilities - spell check, "find similar research"
+    * Aquifer project - talk to Tom Habing (UIUC)
   * Receiving a feed or emailed notification of new research based on defined search terms (Helen)
   * Automatically notifying a faculty member by email that a preprint or postprint is eligible for repository deposit (Ulysses or Menelaus)
   * Easily adding a preprint or postprint for deposit into the repository, with all necessary embargoes handled automatically (Helen)
