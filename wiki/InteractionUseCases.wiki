@@ -25,13 +25,12 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
   * An automatically-updated list of publications for a faculty member's website. Should be style-able and usable with generic CMSes (Cassandra, Helen)
     * Citation groupings? 
     * Like Feed2JS? 
-    * What about citation styles -- could leverage Zotero citation export code? 
+    * What about citation styles -- could leverage Zotero citation export code? CSL (XML citation format) http://xbiblio.sourceforge.net/csl/
     * Preferences - Choose a format and preview the results.
     * No auth necessary for the export piece; many different people on campus will want the exported info.
     * What about server load? Caching? Updated nightly? Asynchronous workers (via cron)?
     * Building random collections of cites, perhaps via faceted search/browse.
     * RSS feeds!
-    * CSL (XML citation format) http://xbiblio.sourceforge.net/csl/
   * A well-formatted list of publications to be imported into word-processing software for a CV. (Helen)
   * A report of the journals Basketology faculty have published in (Menelaus)
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
