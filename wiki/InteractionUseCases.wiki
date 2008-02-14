@@ -57,10 +57,16 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * Once a preprint/postprint goes into archival repository it's cleaned from BibApp?
     * 'attachmentfu' rails plugin may help with this?
     * NIH content a part of this?
-    * BibApp should NOT handle embargo?? - BibApp may communicate the embargo period to an archival repository, but the repository needs to handle the actual embargo?
+    * BibApp should NOT handle embargo? - BibApp may communicate the embargo period to an archival repository, but the repository needs to handle the actual embargo?
   * Establish authority forms for journal titles and publishers. (Menelaus)
     * Scrape OCLC or Ulrich's? OCLC ISSN web service? http://xissn.worldcat.org/xissnadmin/index.htm
     * XML dump of one BibApp instance's publisher/title authority info, for import into someone else's instance.
   * Person wants to import a citation into their favorite reference manager.
     * COinS?
-  * Create a new group in BibApp
+  * Create a new group in BibApp and add people to those groups in a relatively automated fashion?
+  * People who leave University...what happens in BibApp?
+    * Need a way to show they are NOT in the university anymore.  However, they should still remain in BibApp.  Should also be able to export data to another institution using BibApp
+    * Need a start/end date for people at University.  Useful to filter out citations appropriately
+  * What if a Group changes name or is subsumed into another Group
+    * a way to be able to look historically at groups.  What did this group look like and publish in 10, 20 years ago
+      
