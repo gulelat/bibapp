@@ -35,6 +35,7 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
   * A report of the journals Basketology faculty have published in (Menelaus)
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
   * Adding publications to a faculty member's BibApp site as they appear (Helen, Menelaus)
+    * Encoding for cut-and-pasted citations?
   * Searching the Basketology department for interesting new research (Helen, outsiders)
   * Receiving a feed or emailed notification of new research based on defined search terms (Helen)
   * Automatically notifying a faculty member by email that a preprint or postprint is eligible for repository deposit (Ulysses or Menelaus)
