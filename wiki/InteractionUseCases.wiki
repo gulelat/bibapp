@@ -23,6 +23,7 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
 = Interactions =
 
   * An automatically-updated list of publications for a faculty member's website. Should be style-able and usable with generic CMSes (Cassandra, Helen)
+    * (Citation groupings? Like Feed2JS? What about citation styles -- could leverage Zotero citation export code? Choose a format and preview the results.)
   * A well-formatted list of publications to be imported into word-processing software for a CV. (Helen)
   * A report of the journals Basketology faculty have published in (Menelaus)
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
