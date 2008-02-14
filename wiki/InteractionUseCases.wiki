@@ -50,8 +50,13 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * Solr - better understanding of capabilities - spell check, "find similar research"
     * Aquifer project - talk to Tom Habing (UIUC)
   * Receiving a feed or emailed notification of new research based on defined search terms (Helen)
+    * creating feed from search - similar to first interaction in this list
   * Automatically notifying a faculty member by email that a preprint or postprint is eligible for repository deposit (Ulysses or Menelaus)
   * Easily adding a preprint or postprint for deposit into the repository, with all necessary embargoes handled automatically (Helen)
+    * Way to actually *save* a preprint/postprint into BibApp ("staging repository")
+    * Once a preprint/postprint goes into archival repository it's cleaned from BibApp?
+    * attachmentfu - rails plugin?
+    * NIH content come into this?
   * Establish authority forms for journal titles and publishers. (Menelaus)
     * Scrape OCLC or Ulrich's? OCLC ISSN web service? http://xissn.worldcat.org/xissnadmin/index.htm
     * XML dump of one BibApp instance's publisher/title authority info, for import into someone else's instance.
