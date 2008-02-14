@@ -26,12 +26,15 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * Citation groupings? 
     * Like Feed2JS? 
     * What about citation styles -- could leverage Zotero citation export code? CSL (XML citation format) http://xbiblio.sourceforge.net/csl/
-    * Preferences - Choose a format and preview the results.
+    * Preferences - Choose a citation style or organization setup and preview the results.
     * No auth necessary for the export piece; many different people on campus will want the exported info.
     * What about server load? Caching? Updated nightly? Asynchronous workers (via cron)?
     * Building random collections of cites, perhaps via faceted search/browse.
     * RSS feeds!
   * A well-formatted list of publications to be imported into word-processing software for a CV. (Helen)
+    * to Endnote or RefWorks
+    * dump an RTF
+    * let them copy/paste text
   * A report of the journals Basketology faculty have published in (Menelaus)
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
   * Adding publications to a faculty member's BibApp site as they appear (Helen, Menelaus)
