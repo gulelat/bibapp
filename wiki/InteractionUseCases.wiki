@@ -27,7 +27,7 @@ Ulysses knows he must fill the repository he runs as quickly as possible if he i
     * Like Feed2JS? 
     * What about citation styles -- could leverage Zotero citation export code? 
     * Preferences - Choose a format and preview the results.
-    * No auth necessary for the export piece.
+    * No auth necessary for the export piece; many different people on campus will want the exported info.
     * What about server load? Caching? Updated nightly? Asynchronous workers (via cron)?
   * A well-formatted list of publications to be imported into word-processing software for a CV. (Helen)
   * A report of the journals Basketology faculty have published in (Menelaus)
