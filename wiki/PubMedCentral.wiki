@@ -1,0 +1,3 @@
+#summary Info about PubMedCentral submission
+
+  * [http://www.nihms.nih.gov/web-help/index.html Screencasts and slideshows] on depositing to PMC. Still no API, sorry!
