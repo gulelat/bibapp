@@ -1,0 +1,9 @@
+#summary Links to information on SWORD
+
+  * [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD wiki page]
+  * [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD_formats SWORD package format list] - there are a lot of these, but we'd be using the METS one.
+  * [https://lists.sourceforge.net/lists/listinfo/sword-app-tech SWORD mailing list] including archives. (DSalo is subscribed to this already; tech questions appear to be welcome there.)
+
+Julie Allinson's email: j.allinson@gmail.com
+
+We might want to ping somebody over there to let them know that BibApp is implementing this.
