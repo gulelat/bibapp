@@ -49,7 +49,7 @@ Here "Acta Astronautica" is the chosen authority record, so each record above #3
 
 == Author Authorities ==
 
-Author authorities are much more difficult.  In the BibApp's new architecture, we no longer add Citations to the application via Authors to produce Authorships.  Now we simply load Citation data collected for people at our institution.  Each Citation is processed to discover the individual Author names associated with the Citation.
+Author authorities are much more difficult.  In the BibApp's new architecture, we no longer add Citations to the application via Authors to produce Authorships.  Now we simply load Citation data collected for people at our institution.  Each Citation is processed to discover the individual AuthorStrings (names) associated with the Citation.
 
 === Citation Example ===
 
