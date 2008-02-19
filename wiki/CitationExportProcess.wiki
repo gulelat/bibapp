@@ -4,7 +4,11 @@
 
 Once citations have been [CitationImportProcess imported] into !BibApp, there are ways to export them into other formats/systems.  
 
-In !BibApp, _exporting_ a citation should not be confused with _archiving_ a citation.  Exporting a citation is essentially obtaining a copy of the citation in whatever electronic format (e.g. BibTeX, !EndNote, etc.) you deem necessary.  Archiving a citation is a special type of 'export' where the citation and associated content files are used to generate a submission information package (SIP) which can then be sent to a supported archival system (e.g. DSpace, Fedora, EPrints, etc.)
+In !BibApp, _exporting_ a citation should not be confused with _archiving or packaging_ a citation.  
+
+*Exporting* a citation is essentially obtaining a copy of the citation in whatever electronic format (e.g. BibTeX, !EndNote, etc.) you deem necessary.  
+
+*Archiving* a citation is a special type of 'export' where the citation and associated content files are used to generate a submission information package (SIP) which can then be sent to a supported archival system (e.g. DSpace, Fedora, EPrints, etc.)
 
 = Export Formats =
 
