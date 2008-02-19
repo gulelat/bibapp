@@ -1,4 +1,4 @@
-#summary Describes the Citation Import Process for BibApp  (DRAFT ONLY)
+#summary Describes the Citation Import Process for BibApp  (*DRAFT ONLY*)
 
 = Introduction =
 
@@ -19,11 +19,13 @@ The citation parsers and importers for the above formats were developed specific
 
 The status of a citation is an important part of the lifecycle and visibility of the citation in !BibApp.  Citations currently undergo the following status values:
 
-  * _incomplete_ - Citation is missing information and requires review.
-  * _possible duplicate_ - The system has reason to suspect this _may_ be a duplicate, but cannot be absolutely certain.  The citation requires review.
-  * _complete_ - Citation is complete and has been accepted into BibApp
-  * _archive pending_ - Content files have been associated with this Citation, and it is waiting to be exported to an archival system.
-  * _in archive_ - Citation and its associated content files have been successfully saved into an archival system.  A unique identifier has been assigned by the archival system, and is linked to from !BibApp when viewing the citation.
+|| *Status* || *Description* || *Visibility* ||
+|| _incomplete_ || Citation is missing information and requires review. || Citation is visible, but somehow marked as incomplete ||
+|| _possible duplicate_ || The system has reason to suspect this _may_ be a duplicate, but cannot be absolutely certain. The citation requires review. || Citation is visible, but somehow marked as potential duplicate ||
+|| _complete_ || Citation is complete and has been accepted into BibApp || Citation is visible as normal ||
+|| _archive pending_ || Content files have been associated with this Citation, and it is waiting to be exported to an archival system. || Citation is visible, but somehow marked as archive pending ||
+|| _in archive_ || Citation and its associated content files have been successfully saved into an archival system.  A unique identifier has been assigned by the archival system, and is linked to from !BibApp when viewing the citation. || Citation is visible with a link to content files in archival system ||
+
 
 = Import Process  =
 
