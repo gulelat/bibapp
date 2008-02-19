@@ -4,7 +4,7 @@
 
 Once citations have been [CitationImportProcess imported] into !BibApp, there are ways to export them into other formats/systems.  
 
-In !BibApp, _exporting_ a citation should not be confused with _archiving_ a citation.  Exporting a citation is essentially obtaining a copy of the citation in whatever electronic format (e.g. !BibTeX, !EndNote, etc.) you deem necessary.  Archiving a citation is a special type of 'export' where the citation and associated content files are used to generate a submission information package (SIP) which can then be sent to a supported archival system (e.g. DSpace, Fedora, EPrints, etc.)
+In !BibApp, _exporting_ a citation should not be confused with _archiving_ a citation.  Exporting a citation is essentially obtaining a copy of the citation in whatever electronic format (e.g. BibTeX, !EndNote, etc.) you deem necessary.  Archiving a citation is a special type of 'export' where the citation and associated content files are used to generate a submission information package (SIP) which can then be sent to a supported archival system (e.g. DSpace, Fedora, EPrints, etc.)
 
 = Export Formats =
 
@@ -26,24 +26,16 @@ Any additional SIP formats are TBD.
 
 = Archiving Process =
 
-The citation import process is detailed graphically in the below *Citation Import Flow Chart*.  This section describes this step-by-step process in a little more detail.
+The citation archiving process is detailed graphically in the below *Citation Archive Flow Chart*.  This section describes this step-by-step process in a little more detail.
 
-  # *Citation Parsing* - Based on the import format (_see above_), the citation is parsed into its various components.  The parsed citation is only available in system memory.
-  # *Completion Check* - The parsed citation is checked for completeness.  For !BibApp, "completeness" is defined as having all the necessary fields which !BibApp uses to check for duplicates.  
-    * The fields currently required for "completeness" include (_these fields are not finalized!_):
-      * year
-      * start page
-      * title OR (first author and ISSN/ISBN)
-    * *Duplication Check* - Assuming the new citation is found to be complete, !BibApp searches the existing citations to determine if this new citation is a duplicate.  
-      * If it is a duplicate, the new citation is discarded and the user is notified the citation was a duplicate.  
-      * If it is not a duplicate the citation is marked as "complete" and the process continues.  
-      * If the citation partially matches another, but is not a definite duplicate, the citation is marked as "possible duplicate" and the process continues.
-  # *Determine Authorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" authorships is detailed *<INCLUDE LINK>*
-  # *Extract External Identifiers* - Citations which are pulled from external systems often come with unique system identifiers (e.g. a !PubMed ID, OCLC #, LSSN, etc.)  Rather than discard these external system identifiers, we save them for later processing.  The hope is that "incomplete" (or potentially incorrect) citations can be filled out in more detail by querying these various external systems using the unique identifier(s).  
-    * For example, if we have an "incomplete" citation but we were given its !PubMed ID, we can potentially kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
-  # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [Authorities] page
-  # *Save Citation* - Assuming *all* of the above steps have completed without errors, the new citation (and related extracted information) is saved into the !BibApp database.  If any processing resulted in an error, the user who entered the citation is informed and the citation is _not_ saved.
+  # *Attach Content File(s) to Citation* (_User_) - A !BibApp User uploads content file(s) which correspond to a particular citation in the system.   A folder is generated with the `citation_id` of the citation, and the citation's content file(s) are temporarily saved there.
+  # *Accept Archive License Agreement* (_User_) - The !BibApp User must also accept the license agreement for whatever archival system the content is being sent to.  This should likely happen at the same time the content file(s) are attached.   Once a user has signed the agreement _and_ attached content files, the citation is given a status of "archive pending".
+  # *Observer Notifies Admin* (_Automated_) - A !BibApp Administrator is notified whenever citations are updated to the "archive pending" status.  Once there are one or more citations marked with this status, the Administrator can choose to generate packages for these citation(s). (_This will likely be a manual process to kick off package generation, at least initially._)
+  # *Initial Packaging Process* (_Admin_) - The !BibApp Administrator generates "archive-ready" submission information packages (SIP) for citations marked "archive pending".  These packages are stored locally for now.
+  # *Package Sent to Archive* (_Admin_) - Depending on the archival system, this process may be automated, semi-automated, or entirely manual.  In some way the archival system is given the generated submission information packages.  In return, !BibApp expects the archival system to provide a URI for the final, archived item.  This URI is important since it allows !BibApp to provide a link to the downloadable content within the archival system.
+  # *Update Citation Information* (_Admin_) - Once the citation's package has been accepted into the archival system and a URI has been obtained, the !BibApp Administrator updates the citation information in !BibApp to include this new URI.  In addition, the temporary content files are removed from !BibApp
 
+_Note:_ All steps marked "(_Admin_)" above are likely to require some manual intervention to be carried out by a !BibApp administrative user.  In future versions of !BibApp, some of these steps may be better automated.
 
 
 = Citation Archive Flow Chart =
