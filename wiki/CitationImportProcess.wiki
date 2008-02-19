@@ -7,7 +7,7 @@ Citation management starts with the import of new citations.  This page details 
 = Import Formats =
 
 !BibApp currently accepts the following citation import formats:
-  * *[http://www.refworks.com/ RefWorks] XML* - This is the now _deprecated_ XML format from !RefWorks.  This deprecated XML format is _different_ from the new "!RefWorks XML Format", which is much more difficult to parse consistently.  We are looking into a replacement !RefWorks export format, since this older XML format will soon be obsolete.
+  * *[http://www.refworks.com/ RefWorks] XML* (deprecated) - This is the now _deprecated_ XML format from !RefWorks.  This deprecated XML format is _different_ from the new "!RefWorks XML Format", which is much more difficult to parse consistently.  We are looking into a replacement !RefWorks export format, since this older XML format will soon be obsolete.
   * *[http://www.ncbi.nlm.nih.gov/PubMed/ PubMed's] MEDLINE format*
   * *[http://www.refman.com/support/risformat_intro.asp RIS] format*
 
