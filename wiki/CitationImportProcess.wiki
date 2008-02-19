@@ -25,8 +25,8 @@ The status of a citation is an important part of the lifecycle and visibility of
 || _incomplete_ || Citation is missing information and requires review. || Citation is visible, but somehow marked as incomplete ||
 || _possible duplicate_ || The system has reason to suspect this _may_ be a duplicate, but cannot be absolutely certain. The citation requires review. || Citation is visible, but somehow marked as potential duplicate ||
 || _complete_ || Citation is complete and has been accepted into BibApp || Citation is visible as normal ||
-|| _archive pending_ || Content files have been associated with this Citation, and it is waiting to be exported to an archival system. || Citation is visible, but somehow marked as archive pending ||
-|| _in archive_ || Citation and its associated content files have been successfully saved into an archival system.  A unique identifier has been assigned by the archival system, and is linked to from !BibApp when viewing the citation. || Citation is visible with a link to content files in archival system ||
+|| _archive pending_ || Content files have been associated with this Citation, and it is waiting to be exported to an archival system.  See the CitationExportProcess for more info on when this status is set. || Citation is visible, but somehow marked as archive pending ||
+|| _in archive_ || Citation and its associated content files have been successfully saved into an archival system.  A unique identifier has been assigned by the archival system, and is linked to from !BibApp when viewing the citation.  See the CitationExportProcess for more info on when this status is set. || Citation is visible with a link to content files in archival system ||
 
 
 
