@@ -6,14 +6,14 @@ Citation management starts with the import of new citations.  This page details 
 
 = Import Formats =
 
-BibApp currently accepts the following citation import formats:
-  * *[http://www.refworks.com/ RefWorks] XML* - This is the now _deprecated_ XML format from RefWorks.  The new "RefWorks XML Format" is much more difficult to parse at this time.
+!BibApp currently accepts the following citation import formats:
+  * *[http://www.refworks.com/ RefWorks] XML* - This is the now _deprecated_ XML format from RefWorks.  The new "RefWorks XML Format" is much more difficult to parse, and cannot be used as a replacement.  We are looking into a replacement !RefWorks export format, since this older XML format will soon be obsolete.
   * *[http://www.ncbi.nlm.nih.gov/PubMed/ PubMed's] MEDLINE format*
-  * *[http://www.refman.com/support/risformat_intro.asp RIS format]*
+  * *[http://www.refman.com/support/risformat_intro.asp RIS] format*
 
-BibApp also supports manual entry of citations through a Citation web form.  There are already plans to support further formats, so feel free to make suggestions!
+!BibApp also supports manual entry of citations through a Citation web form.  There are already plans to support further formats, so feel free to make suggestions!
 
-The citation parsers and importers for the above formats were developed specifically for BibApp.  They are available in the `/vendor/plugins/` directory when you download BibApp.  Once they are more stable, they will likely also be available as Rails Plugins.
+The citation parsers and importers for the above formats were developed specifically for BibApp.  They are available in the `/vendor/plugins/` directory when you download !BibApp.  Once they are more stable, they will likely also be available as Rails Plugins.
 
 = Import Formats =
 
