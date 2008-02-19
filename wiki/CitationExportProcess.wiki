@@ -28,6 +28,10 @@ Any additional SIP formats are TBD.
 
 The citation archiving process is detailed graphically in the below *Citation Archive Flow Chart*.  This section describes this step-by-step process in a little more detail.
 
+*Prerequisites:*
+  * Citations must have a status of "complete" before they can be archived.  For more information on Citation Status values, see the CitationImportProcess
+
+*Process:*
   # *Attach Content File(s) to Citation* (_User_) - A !BibApp User uploads content file(s) which correspond to a particular citation in the system.   A folder is generated with the `citation_id` of the citation, and the citation's content file(s) are temporarily saved there.
   # *Accept Archive License Agreement* (_User_) - The !BibApp User must also accept the license agreement for whatever archival system the content is being sent to.  This should likely happen at the same time the content file(s) are attached.   Once a user has signed the agreement _and_ attached content files, the citation is given a status of "archive pending".
   # *Observer Notifies Admin* (_Automated_) - A !BibApp Administrator is notified whenever citations are updated to the "archive pending" status.  Once there are one or more citations marked with this status, the Administrator can choose to generate packages for these citation(s). (_This will likely be a manual process to kick off package generation, at least initially._)
