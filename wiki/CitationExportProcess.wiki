@@ -1,0 +1,55 @@
+#summary Describes the Citation Export / Archiving Process for BibApp  (DRAFT ONLY)
+
+= Introduction =
+
+Once citations have been [CitationImportProcess imported] into !BibApp, there are ways to export them into other formats/systems.  
+
+This page details not only various export formats available, but also the process of saving a citation (and related content files) to an external archival system (e.g. DSpace, Fedora, EPrints, etc.)
+
+In !BibApp, _exporting_ a citation should not be confused with _archiving_ a citation.  Exporting a citation is essentially obtaining a copy of the citation in whatever electronic format (e.g. BibTeX, EndNote, etc.) you deem necessary.  Archiving a citation is a special type of 'export' where the citation and associated content files are used to generate a submission information package (SIP) which can then be sent to a supported archival system.
+
+= Export Formats =
+
+Exporting a citation gives you a copy of the citation in a format of your choice.  Currently, !BibApp _plans_ to provide the following citation export formats (_These are not finalized!_):
+  * *[http://www.bibtex.org/ BibTeX] format*
+  * *[http://www.endnote.com/ EndNote] format*
+  * *[http://xbiblio.sourceforge.net/csl/ Citation Style Language (CSL)]*
+  * *RSS feeds* - via [http://feed2js.org/ Feed2JS]?
+
+= Package Formats =
+
+After associating content file(s) with a citation, you can generate a Submission Information Package (SIP) suitable for sending to the archival system of your choice.
+
+Currently, !BibApp _plans_ to generate the following SIP formats (_These are not finalized!_):
+  * *[http://www.ukoln.ac.uk/repositories/digirep/index/SWORD Simple Web-service Offering Repository Deposit (SWORD)] Atom Publishing Protocol (APP)* - As SWORD will soon be supported by [http://www.dspace.org DSpace], [http://www.fedora.info/ Fedora] and [http://www.eprints.org/ EPrints], the SWORD Atom protocol can be used to submit packages to any of these systems
+  * *National Institute of Health (NIH) acceptable format* - The exact format is TBD, but we want to help meet the requirement that NIH funded research needs to be deposited in [http://www.pubmedcentral.nih.gov/ PubMed Central]
+
+Any additional SIP formats are TBD.
+
+= Archiving Process =
+
+The citation import process is detailed graphically in the below *Citation Import Flow Chart*.  This section describes this step-by-step process in a little more detail.
+
+  # *Citation Parsing* - Based on the import format (_see above_), the citation is parsed into its various components.  The parsed citation is only available in system memory.
+  # *Completion Check* - The parsed citation is checked for completeness.  For !BibApp, "completeness" is defined as having all the necessary fields which !BibApp uses to check for duplicates.  
+    * The fields currently required for "completeness" include (_these fields are not finalized!_):
+      * year
+      * start page
+      * title OR (first author and ISSN/ISBN)
+    * *Duplication Check* - Assuming the new citation is found to be complete, !BibApp searches the existing citations to determine if this new citation is a duplicate.  
+      * If it is a duplicate, the new citation is discarded and the user is notified the citation was a duplicate.  
+      * If it is not a duplicate the citation is marked as "complete" and the process continues.  
+      * If the citation partially matches another, but is not a definite duplicate, the citation is marked as "possible duplicate" and the process continues.
+  # *Determine Authorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" authorships is detailed *<INCLUDE LINK>*
+  # *Extract External Identifiers* - Citations which are pulled from external systems often come with unique system identifiers (e.g. a !PubMed ID, OCLC #, LSSN, etc.)  Rather than discard these external system identifiers, we save them for later processing.  The hope is that "incomplete" (or potentially incorrect) citations can be filled out in more detail by querying these various external systems using the unique identifier(s).  
+    * For example, if we have an "incomplete" citation but we were given its !PubMed ID, we can potentially kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
+  # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [Authorities] page
+  # *Save Citation* - Assuming *all* of the above steps have completed without errors, the new citation (and related extracted information) is saved into the !BibApp database.  If any processing resulted in an error, the user who entered the citation is informed and the citation is _not_ saved.
+
+
+
+= Citation Archive Flow Chart =
+
+The below diagram attempts to layout the processing that occurs when a citation has content files associated and is approved for sending to an archival system.  Click on the diagram to view a larger version.
+
+[http://www.gliffy.com/publish/1371427/ http://www.gliffy.com/pubdoc/1371427/M.jpg]
