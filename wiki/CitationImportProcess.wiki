@@ -55,6 +55,6 @@ The citation import process is detailed graphically in the below *Citation Impor
 
 = Citation Import Flow Chart =
 
-The below diagram attempts to layout the processing that occurs whenever a new citation is imported into BibApp.
+The below diagram attempts to layout the processing that occurs whenever a new citation is imported into !BibApp.  Click on the diagram to view a larger version.
 
 [http://www.gliffy.com/publish/1371391/ http://www.gliffy.com/pubdoc/1371391/M.jpg]
