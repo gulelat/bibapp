@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Citation management starts with the import of new citations.  This page details how to load citations into BibApp.  It details the citation parsing and processing that occurs behind the scenes, as well as the beginning of the citation lifecycle.
+Citation management starts with the import of new citations.  This page details how new citations are parsed, processed and loaded into !BibApp.
 
 = Import Formats =
 
@@ -46,8 +46,8 @@ The citation import process is detailed graphically in the below *Citation Impor
       * If it is not a duplicate the citation is marked as "complete" and the process continues.  
       * If the citation partially matches another, but is not a definite duplicate, the citation is marked as "possible duplicate" and the process continues.
   # *Determine Authorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" authorships is detailed *<INCLUDE LINK>*
-  # *Extract External Identifiers* - Citations which are pulled from external systems often come with unique system identifiers (e.g. a !PubMed ID, OCLC #, LSSN, etc.)  Rather than discard these external system identifiers, we save them for later processing.  The hope is that "incomplete" (or incorrect) citations can be filled out in more detail by querying these various external systems using the unique identifier.  
-    * For example, if we have an "incomplete" citation but also have its !PubMed ID, we can  kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
+  # *Extract External Identifiers* - Citations which are pulled from external systems often come with unique system identifiers (e.g. a !PubMed ID, OCLC #, LSSN, etc.)  Rather than discard these external system identifiers, we save them for later processing.  The hope is that "incomplete" (or potentially incorrect) citations can be filled out in more detail by querying these various external systems using the unique identifier(s).  
+    * For example, if we have an "incomplete" citation but we were given its !PubMed ID, we can potentially kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
   # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [Authorities] page
   # *Save Citation* - Assuming *all* of the above steps have completed without errors, the new citation (and related extracted information) is saved into the !BibApp database.  If any processing resulted in an error, the user who entered the citation is informed and the citation is _not_ saved.
 
