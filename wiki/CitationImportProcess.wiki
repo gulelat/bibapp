@@ -1,4 +1,4 @@
-#summary Describes the Citation Import Process for BibApp  (*DRAFT ONLY*)
+#summary Describes the Citation Import Process for BibApp  (DRAFT ONLY)
 
 = Introduction =
 
@@ -15,6 +15,8 @@ Citation management starts with the import of new citations.  This page details 
 
 The citation parsers and importers for the above formats were developed specifically for !BibApp.  They are available in the `/vendor/plugins/` directory when you download !BibApp.  Once they are more stable, they will likely also be available as Rails Plugins.
 
+
+
 = Citation Status =
 
 The status of a citation is an important part of the lifecycle and visibility of the citation in !BibApp.  Citations currently undergo the following status values:
@@ -25,6 +27,8 @@ The status of a citation is an important part of the lifecycle and visibility of
 || _complete_ || Citation is complete and has been accepted into BibApp || Citation is visible as normal ||
 || _archive pending_ || Content files have been associated with this Citation, and it is waiting to be exported to an archival system. || Citation is visible, but somehow marked as archive pending ||
 || _in archive_ || Citation and its associated content files have been successfully saved into an archival system.  A unique identifier has been assigned by the archival system, and is linked to from !BibApp when viewing the citation. || Citation is visible with a link to content files in archival system ||
+
+
 
 
 = Import Process  =
@@ -46,6 +50,8 @@ The citation import process is detailed graphically in the below *Citation Impor
     * For example, if we have an "incomplete" citation but also have its !PubMed ID, we can  kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
   # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [Authorities] page
   # *Save Citation* - Assuming *all* of the above steps have completed without errors, the new citation (and related extracted information) is saved into the !BibApp database.  If any processing resulted in an error, the user who entered the citation is informed and the citation is _not_ saved.
+
+
 
 = Citation Import Flow Chart =
 
