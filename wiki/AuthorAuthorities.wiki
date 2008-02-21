@@ -1,0 +1,64 @@
+#summary One-sentence summary of this page.
+#labels Phase-Design
+
+== Author Authorities ==
+
+Author authorities are much more difficult.  In the BibApp's new architecture, we no longer add Citations to the application via Authors to produce Authorships.  Now we simply load Citation data collected for people at our institution.  Each Citation is processed to discover the individual AuthorStrings (names) associated with the Citation.
+
+=== Citation Example ===
+
+Dong, Liang, Jiang, Hongrui. (2007). Autonomous microfluidics with stimuli-responsive hydrogels. Soft Matter, 3(10), 1223-1230.
+
+The two author stings above are:
+
+  * Dong, Liang
+  * Jiang, Hongrui
+
+=== Workflow ===
+
+I'll use myself as an example:
+
+User name: Eric William Larson
+
+I login to the BibApp for the first time and the website asks me to select my Author names.  I type in my last name to filter the AuthorString index.  Here's what I see:
+
+Potential Author variants:
+
+  * Larson, D
+  * ---
+  * Larson, E
+  * Larson, EW
+  * Larson, E.W.
+  * Larson, Eric W.
+  * Larson, Eric WM.
+  * Larson, Eric William
+  * ---
+  * Larson, F
+
+Maybe all the {{{Larson, E*}}} AuthorStrings are correct (I have published under all these name variants), so I select the checkbox next to AuthorString to create a new PenName associatation record, tying my Person to each AuthorString.  Lastly, I select one of these variants as my "preferred" name: Larson, E.W.
+
+Now I have created 6 PenNames for myself (Person 1: Eric William Larson).  Anytime a new Citation is entered into the BibApp for any of these strings {{{Larson, E*}}} PenNames, the BibApp will automatically create an Authorship row, creating the association between Citation and Person (Eric William Larson).
+
+== It's not _that_ simple! ==
+
+The above is great if no one else "claims" one of my selected PenNames.  When Erica Larson (Person 2: Erica Larson) enters the application and selects "Larson, E" as one of her PenNames, what should we do?
+
+Every Authorship row, associating a Person to a Citation needs to have a "status" and "score" attribute.
+
+Status options: "calculated", "verified", "denied"
+Score: integer representing "how certain we feel the record is valid"
+
+Now to handle Erica's case:
+
+  # Create Authorship rows associating Erica (Person 2) to all "Larson, E" AuthorString related Citations.
+  # For each Authorship record above set the Authorship.status attribute to "calculated"
+
+Now two people claiming the "Larson, E" AuthorString have Authorship records for some Citations... this could be correct if the AuthorString appeared twice in the citation (probably unlikely).
+
+Who's the real author? 
+
+Sorry.  I'll *still* need to finish this in the future. :)
+
+== Rendering Citations ==
+
+Now we have Publication, Publisher and Author authorities, so let's use them.  For each Citation, we collect publication_id, publisher_id and authorships(citation_id:author_string_id:person_id).  When we query the database to render a list of citations, we can run additional queries to locate authority (ex. Publication.authority.name).
