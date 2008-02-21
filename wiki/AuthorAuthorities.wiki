@@ -3,7 +3,9 @@
 
 == Introduction ==
 
-Author authority control requires a lot of hard work.  The real goal of Author authority control is to map a *real* Person (John Smith) to Citations (Citation1, Citation2...) capturing _verified_ Authorships (John Smith most definitely _wrote_ Citation1).
+Author authority control requires [https://mail2.cni.org/Lists/CNI-ANNOUNCE/Message/113246.html a lot of hard work].  
+
+So who wrote what?
 
 People --> Authorships <-- Citations
 
@@ -37,9 +39,9 @@ Potential Author variants:
   * ---
   * Larson, F
 
-Maybe all the {{{Larson, E*}}} AuthorStrings are correct (I have published under all these name variants), so I select the checkbox next to AuthorString to create a new PenName associatation record, tying my Person to each AuthorString.  Lastly, I select one of these variants as my "preferred" name: Larson, E.W.
+Maybe all the {{{Larson, E*}}} AuthorStrings are correct (I have published under all these name variants), so I select the checkbox next to AuthorString to create a new PenName association record, tying my Person to each AuthorString.  Lastly, I select one of these variants as my "preferred" name: Larson, E.W.
 
-Now I have created 6 PenNames for myself (Person 1: Eric William Larson).  Anytime a new Citation is entered into the BibApp for any of these strings {{{Larson, E*}}} PenNames, the BibApp will automatically create an Authorship row, creating the association between Citation and Person (Eric William Larson).
+Now I have created 6 PenNames for myself (Person 1: Eric William Larson).  Anytime a new Citation is entered into the BibApp for any of those AuthorStrings {{{Larson, E*}}}, the BibApp will automatically create an Authorship row, creating the association between Citation and Person (Eric William Larson).
 
 == It's not _that_ simple! ==
 
@@ -55,16 +57,20 @@ Now to handle Erica's case:
   # Create Authorship rows associating Erica (Person 2) to all "Larson, E" AuthorString related Citations.
   # For each Authorship record above set the Authorship.status attribute to "calculated"
 
-Now two people claiming the "Larson, E" AuthorString have Authorship records for some Citations... this could be correct if the AuthorString appeared twice in the citation (probably unlikely).
+Now two people claiming the "Larson, E" AuthorString have Authorship records for some Citations... this could be correct if the same AuthorString appeared twice in the citation (probably unlikely).
 
-Who's the real author? 
+== Who's the real author? ==
 
-Sorry.  I'll *still* need to finish this in the future. :)
+Authorship "status" and "score" help us clean up the mess.  In the BibApp, there are three ways to create Authorship records:
 
-== Rendering Citations ==
+  # Generic citation batch import (no Person associated)
+  # Targeted citation batch import (imported for a Person)
+  # Single citation insert (add for a Person)
 
-Now we have Publication, Publisher and Author authorities, so let's use them.  For each Citation, we collect publication_id, publisher_id and authorships(citation_id:author_string_id:person_id).  When we query the database to render a list of citations, we can run additional queries to locate authority (ex. Publication.authority.name).
+If we're adding a targeted batch import or a single citation via a web form, we're simultaneously verifying the Authorship record connecting the Person to the Citation.
 
-== Authorship Assignment Flow Chart ==
+If we're generically adding citations to application, we need to start (smartly) guessing who the real author is.  Take a look at the flow chart below.  This picture illustrates our plans for machine scoring the authorships we batch import:
+
+=== Authorship Assignment Flow Chart ===
 
 [http://www.gliffy.com/publish/1371131/ http://www.gliffy.com/pubdoc/1371131/M.jpg]
