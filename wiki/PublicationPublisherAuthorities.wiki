@@ -1,4 +1,5 @@
-#summary Publication and Publisher authority control (DRAFT)
+#summary Publication and Publisher authority control (DRAFT ONLY)
+#labels Phase-Design
 
 == Publication / Publisher Authorities ==
 
