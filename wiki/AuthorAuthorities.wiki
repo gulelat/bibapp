@@ -17,9 +17,9 @@ From this Citation, we know these truths:
   * Co-Authorship: "Dong, Liang" and "Jiang, Hongrui" wrote this article together
   * Year: "2007"
   * Publication: "Soft Matter"
-  * Title keywords: "microfluidics" and "hydrogels"
+  * Title keywords: "microfluidics" and "stimuli"
 
-=== BibApp's Workflow ===
+=== BibApp's Author Authority Workflow ===
 
 I'll use myself as an example:
 
