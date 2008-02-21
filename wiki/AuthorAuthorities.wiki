@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Author authority control (DRAFT ONLY)
 #labels Phase-Design
 
 == Author Authorities ==
