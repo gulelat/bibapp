@@ -1,9 +1,11 @@
 #summary Author authority control (DRAFT ONLY)
 #labels Phase-Design
 
-== Author Authorities ==
+== Introduction ==
 
-Author authorities are much more difficult.  In the BibApp's new architecture, we no longer add Citations to the application via Authors to produce Authorships.  Now we simply load Citation data collected for people at our institution.  Each Citation is processed to discover the individual AuthorStrings (names) associated with the Citation.
+Author authority control requires a lot of hard work.  The real goal of Author authority control is to map a *real* Person (John Smith) to Citations (Citation1, Citation2...) capturing _verified_ Authorships (John Smith most definitely _wrote_ Citation1).
+
+People --> Authorships <-- Citations
 
 === Citation Example ===
 
@@ -62,3 +64,7 @@ Sorry.  I'll *still* need to finish this in the future. :)
 == Rendering Citations ==
 
 Now we have Publication, Publisher and Author authorities, so let's use them.  For each Citation, we collect publication_id, publisher_id and authorships(citation_id:author_string_id:person_id).  When we query the database to render a list of citations, we can run additional queries to locate authority (ex. Publication.authority.name).
+
+== Authorship Assignment Flow Chart ==
+
+[http://www.gliffy.com/publish/1371131/ http://www.gliffy.com/pubdoc/1371131/M.jpg]
