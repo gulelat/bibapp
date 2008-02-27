@@ -82,11 +82,14 @@ Based on four data fields:
 
 Calculate authorships in the following way. Get all verified citations for person. For each citation.
 
-|| Field  || Maximum Score || Scoring Algorithm ||
+|| *Field*  || *Maximum Score* || *Scoring Algorithm* ||
 || Yearspan || 25 points || If matches = 25 pts ||
 || Publication || 25 points || If matches = 25 pts ||
-|| Co-authors || 25points || `(25/total) * matching`  where 'total' is count of number of co-authors in citation, and 'matching' is the # that match ||
-|| Keywords || 25points || `(25/total) * matching`  where 'total' is count of number of keywords in citation, and 'matching' is the # that match ||
+|| Co-authors || 25 points || `(25/total) * matching`  where 'total' is count of number of co-authors in citation, and 'matching' is the # that match ||
+|| Keywords || 25 points || `(25/total) * matching`  where 'total' is count of number of keywords in citation, and 'matching' is the # that match ||
+|| _Total_ || 100 points || Add scores above for total || 
+
+
   
 *TODO* Give better example of this algorithm!
 
