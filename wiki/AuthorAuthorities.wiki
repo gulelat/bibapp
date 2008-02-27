@@ -72,6 +72,25 @@ If we're adding a targeted batch import or a single citation via a web form, we'
 
 If we're generically adding citations to application, we need to start (smartly) guessing who the real author is.  Take a look at the flow chart below.  This picture illustrates our plans for machine scoring the authorships we batch import:
 
+=== First stab at Algorithm ===
+
+Based on four data fields:
+  * Yearspan (range between year of first and last verified authorships)
+  * Publication (just the publication title, not publisher?)
+  * Verified Co-Authorships
+  * Verified Keywords
+
+Calculate authorships in the following way. Get all verified citations for person. For each citation.
+
+|| Field  || Maximum Score || Scoring Algorithm ||
+|| Yearspan || 25 points || If matches = 25 pts ||
+|| Publication || 25 points || If matches = 25 pts ||
+|| Co-authors || 25points || `(25/total) * matching`  where 'total' is count of number of co-authors in citation, and 'matching' is the # that match ||
+|| Keywords || 25points || `(25/total) * matching`  where 'total' is count of number of keywords in citation, and 'matching' is the # that match ||
+  
+*TODO* Give better example of this algorithm!
+
+
 === Authorship Assignment Flow Chart ===
 
 [http://www.gliffy.com/publish/1371131/ http://www.gliffy.com/pubdoc/1371131/M.jpg]
