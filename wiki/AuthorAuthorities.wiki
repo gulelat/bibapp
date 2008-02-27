@@ -80,14 +80,14 @@ Based on four data fields:
   * Verified Co-Authorships
   * Verified Keywords
 
-Calculate authorships in the following way. Get all verified citations for person. For each citation.
+Calculate authorships in the following way. Get all verified citations for person. For each citation, calculate the score using the following algorithm:
 
 || *Field*  || *Maximum Score* || *Scoring Algorithm* ||
 || Yearspan || 25 points || If matches = 25 pts ||
 || Publication || 25 points || If matches = 25 pts ||
 || Co-authors || 25 points || `(25/total) * matching`  where 'total' is count of number of co-authors in citation, and 'matching' is the # that match ||
 || Keywords || 25 points || `(25/total) * matching`  where 'total' is count of number of keywords in citation, and 'matching' is the # that match ||
-|| _Total_ || 100 points || Add scores above for total || 
+|| _Total_ || 100 points || Add scores above for total.  Verified citations are then used to calculate the score of other un-verified citations. || 
 
 
   
