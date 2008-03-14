@@ -7,3 +7,4 @@
   * Implement simple pubmed API ingest
   * Implement simple ISI ingest
   * Re-Implement import for newer RefWorks format.  The old XML format is now marked as deprecated.  Maybe we can import the RefWorks "tagged" format?  Or BibTeX?
+  * Citation Parser will throw a "ran out of buffer space" error if you attempt to bulk load a large number of citations at once
