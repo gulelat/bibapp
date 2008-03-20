@@ -28,6 +28,19 @@ Currently, !BibApp _plans_ to generate the following SIP formats (_These are not
 
 Any additional SIP formats are TBD.
 
+= Citation Archival Status =
+
+The status of archiving a citation helps !BibApp administrators to keep track of which citations can be archived, which are impractical to archive, etc.  Citations currently undergo the following Archival status values:
+
+|| *Status* || *Description* ||
+|| _Not Ready, rights unknown_ || This is the initial archival status for all citations.  The Citation has not been analyzed for archiving. ||
+|| _Ready for archiving_ || The system has determined that this citation could be archived (based on information received from [[http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO]]. || 
+|| _Archiving is impractical_ || A !BibApp Administrator has determined that it would be impractical to attempt to archive this citation.  Likely, there are either Copyright/IP issues with archiving, or else there is no content file available. || 
+|| _File collected_ || The content file(s) associated with the citation have been located and collected.  They have been uploaded into BibApp. ||
+|| _Ready to generate export file for repository_ || All content file(s) have been located, and necessary permissions have been obtained to allow this citation to be archived. ||
+|| _Export file has been generated_ || A repository-ready SIP (Submission Information Package) has been exported from BibApp.  This SIP includes the content file(s) along will all necessary citation metadata. ||
+|| _Repository record created, URL known_ || The repository-ready SIP was accepted into the repository, and a unique URL was returned.  This URL has been linked to from the citation in BibApp. ||
+
 = Archiving Process =
 
 The citation archiving process is detailed graphically in the below *Citation Archive Flow Chart*.  This section describes this step-by-step process in a little more detail.
