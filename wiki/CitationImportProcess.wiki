@@ -22,13 +22,11 @@ The citation parsers and importers for the above formats were developed specific
 The status of a citation is an important part of the lifecycle and visibility of the citation in !BibApp.  Citations currently undergo the following status values:
 
 || *Status* || *Description* || *Visibility* ||
+|| _processing_ || Citation has been successfully parsed, but it waiting on further processing || Citation is not visible ||
+|| _duplicate_ || The system has reason to suspect this _citation_ is a duplicate.  It will be removed from the system during next cleanup. || Citation is not visible ||
+|| _accepted_ || Citation is complete and has been accepted into BibApp || Citation is visible as normal ||
 || _incomplete_ || Citation is missing information and requires review. || Citation is visible, but somehow marked as incomplete ||
-|| _possible duplicate_ || The system has reason to suspect this _may_ be a duplicate, but cannot be absolutely certain. The citation requires review. || Citation is visible, but somehow marked as potential duplicate ||
-|| _complete_ || Citation is complete and has been accepted into BibApp || Citation is visible as normal ||
-|| _archive pending_ || Content files have been associated with this Citation, and it is waiting to be exported to an archival system.  See the CitationExportProcess for more info on when this status is set. || Citation is visible, but somehow marked as archive pending ||
-|| _in archive_ || Citation and its associated content files have been successfully saved into an archival system.  A unique identifier has been assigned by the archival system, and is linked to from !BibApp when viewing the citation.  See the CitationExportProcess for more info on when this status is set. || Citation is visible with a link to content files in archival system ||
-
-
+|| _deleted_ || Citation has been marked for deletion, and will be removed during the next cleanup. || Citation is not visible. ||
 
 
 = Import Process  =
@@ -43,9 +41,8 @@ The citation import process is detailed graphically in the below *Citation Impor
       * title OR (first author and ISSN/ISBN)
     * *Duplication Check* - Assuming the new citation is found to be complete, !BibApp searches the existing citations to determine if this new citation is a duplicate.  
       * If it is a duplicate, the new citation is discarded and the user is notified the citation was a duplicate.  
-      * If it is not a duplicate the citation is marked as "complete" and the process continues.  
-      * If the citation partially matches another, but is not a definite duplicate, the citation is marked as "possible duplicate" and the process continues.
-  # *Determine Authorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" authorships is detailed *<INCLUDE LINK>*
+      * If it is not a duplicate (or it cannot be determined) the citation is marked as "accepted" and the process continues.  
+  # *Determine Contributorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" contributorships is detailed *<INCLUDE LINK>*
   # *Extract External Identifiers* - Citations which are pulled from external systems often come with unique system identifiers (e.g. a !PubMed ID, OCLC #, LSSN, etc.)  Rather than discard these external system identifiers, we save them for later processing.  The hope is that "incomplete" (or potentially incorrect) citations can be filled out in more detail by querying these various external systems using the unique identifier(s).  
     * For example, if we have an "incomplete" citation but we were given its !PubMed ID, we can potentially kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
   # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [Authorities] page
