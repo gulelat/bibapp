@@ -24,7 +24,7 @@ The status of a citation is an important part of the lifecycle and visibility of
 || *Status* || *Description* || *Visibility* ||
 || _processing_ || Citation has been successfully parsed, but it waiting on further processing || Citation is not visible ||
 || _duplicate_ || The system has reason to suspect this _citation_ is a duplicate.  It will be removed from the system during next cleanup. || Citation is not visible ||
-|| _accepted_ || Citation is complete and has been accepted into BibApp || Citation is visible as normal ||
+|| _accepted_ || Citation is complete and has been accepted into !BibApp || Citation is visible as normal ||
 || _incomplete_ || Citation is missing information and requires review. || Citation is visible, but somehow marked as incomplete ||
 || _deleted_ || Citation has been marked for deletion, and will be removed during the next cleanup. || Citation is not visible. ||
 
@@ -42,7 +42,7 @@ The citation import process is detailed graphically in the below *Citation Impor
     * *Duplication Check* - Assuming the new citation is found to be complete, !BibApp searches the existing citations to determine if this new citation is a duplicate.  
       * If it is a duplicate, the new citation is discarded and the user is notified the citation was a duplicate.  
       * If it is not a duplicate (or it cannot be determined) the citation is marked as "accepted" and the process continues.  
-  # *Determine Contributorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" contributorships is detailed *<INCLUDE LINK>*
+  # *Determine Contributorships* - As one of the more complex processes within !BibApp, the decision process of how we determine or "guess" contributorships is detailed on the AuthorAuthorities page.
   # *Extract External Identifiers* - Citations which are pulled from external systems often come with unique system identifiers (e.g. a !PubMed ID, OCLC #, LSSN, etc.)  Rather than discard these external system identifiers, we save them for later processing.  The hope is that "incomplete" (or potentially incorrect) citations can be filled out in more detail by querying these various external systems using the unique identifier(s).  
     * For example, if we have an "incomplete" citation but we were given its !PubMed ID, we can potentially kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
   # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [Authorities] page
