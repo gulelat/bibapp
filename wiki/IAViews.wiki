@@ -11,26 +11,30 @@ This is a list of views, their purposes, and interaction requirements.
 Citation data.
 
   * *Index/List*
-    * Purpose: Provide a list of all the citations captured within the application.  Citations can be "claimed" or "unclaimed", which indicates their mapped association to People within the database.
-    * UX Actions: filter, sort, search
-    * Links: OpenURL, direct link (if captured in IR)
+    * Purpose: Provide a list of all the Citations captured within the application.  Citations can be "claimed" or "unclaimed", which indicates their mapped association to People within the database.
+    * UX: Solr - filter, sort, search
+    * Links: IP address "smart" OpenURL, direct link (if captured in IR)
+    * Params: ?status=archived
   * *Show*
     * Purpose: Provide a "full" view of the Citation and associated data.
     * Formats: HTML | XML | JSON | CSL
     * Includes: People, Groups, Tags
     * Wishlist: Count of views, downloads
-  * New
-  * Edit
-    * Upload File
+  * *New/Edit*
+    * Purpose: Add a new Citation or edit an existing Citation to the application
+    * UX: Ajax auto-suggest for authors, publications, nice JS for tagging
+    * Upload File(s?)
 
 === People Views ===
 
-  * Index/List
-  * Show
+  * *Index/List*
+    * Purpose: Provide a list of all People within the application
+    * UX: A-Z pagination, Ajax lookup/filter
+  * *Show*
+    * Purpose: Provide a "full" view of a Person and their associated data.
     * Formats: HTML | XML | JSON | FOAF
-    * Includes:
-      * Memberships: Group name | Title
-      * Contributorships: Citation | Status
+    * Includes: Research Description, Memberships, Contributorships
+    * UX: Solr-based contributorship filtering (search,facets,sorting)
   * New
   * Edit
 
@@ -110,7 +114,11 @@ Citation data.
   * Archiving
     * Package
     * Process
+  * Citations
+    * Duplicates
+      * View "close" duplicates
+      * View "possibles": no-dupe-key citations
   * Contributorships
-    * Verify/Deny
+    * Mass Verify/Deny
   * Personalize
-    * Configuration 
+    * Configuration
