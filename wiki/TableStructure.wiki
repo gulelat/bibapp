@@ -1,6 +1,7 @@
 #summary Table Structure for proposed Version 1.0
 #labels Phase-Requirements,Phase-Design
 
+= OUT OF DATE - 4.2008 =
 
 == Basic Table Structure ==
 
