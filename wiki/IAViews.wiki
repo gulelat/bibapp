@@ -8,9 +8,17 @@ This is a list of views, their purposes, and interaction requirements.
 
 === Citation Views ===
 
-  * Index/List
-  * Show
+Citation data.
+
+  * *Index/List*
+    * Purpose: Provide a list of all the citations captured within the application.  Citations can be "claimed" or "unclaimed", which indicates their mapped association to People within the database.
+    * UX Actions: filter, sort, search
+    * Links: OpenURL, direct link (if captured in IR)
+  * *Show*
+    * Purpose: Provide a "full" view of the Citation and associated data.
     * Formats: HTML | XML | JSON | CSL
+    * Includes: People, Groups, Tags
+    * Wishlist: Count of views, downloads
   * New
   * Edit
     * Upload File
