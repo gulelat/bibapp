@@ -1,0 +1,108 @@
+#summary BibApp Views
+
+= Introduction =
+
+This is a list of views, their purposes, and interaction requirements.
+
+= Details =
+
+=== Citation Views ===
+
+  * Index/List
+  * Show
+    * Formats: HTML | XML | JSON | CSL
+  * New
+  * Edit
+    * Upload File
+
+=== People Views ===
+
+  * Index/List
+  * Show
+    * Formats: HTML | XML | JSON | FOAF
+    * Includes:
+      * Memberships: Group name | Title
+      * Contributorships: Citation | Status
+  * New
+  * Edit
+
+=== NameStrings Views ===
+
+  * Index/List
+  * Show
+    * Includes:
+      * Citations
+
+=== PenNames Views ===
+
+  * Index/List
+    * Person
+  * New/Edit/Destroy
+
+=== Group Views ===
+
+  * Index/List
+  * Show
+    * Includes:
+      * People
+      * Contributorships
+  * New
+  * Edit
+    * Set Parent Group 
+
+=== Membership Views ===
+  
+  * Index/List
+    * Person
+  * New/Edit/Destroy
+
+=== Contributorship Views ===
+
+  * Index/List
+    * Person
+    * Group
+    * Archival Analysis
+  * Show
+  * Verify/Deny
+
+=== Publisher Views ===
+
+  * Index/List
+  * Show
+  * New
+  * Edit
+  * Authorities
+
+=== Publication Views ===
+
+  * Index/List
+  * Show
+  * New
+  * Edit
+  * Authorities
+
+=== ExternalService Views ===
+
+  * Index/List
+  * Show
+  * New
+  * Edit
+
+=== Search ===
+
+  * Results
+
+=== Administration Views ===
+
+  * Authentication
+    * Login
+  * Authorization
+    * Grant rights
+    * Destroy rights
+  * Archiving
+    * Package
+    * Process
+  * Contributorships
+    * Verify/Deny
+  * Personalize
+    * Configuration 
