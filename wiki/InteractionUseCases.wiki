@@ -47,13 +47,13 @@ Asklepios is a well-known senior Basketologist, chair of the Basketology departm
     * Preferences - Choose a citation style or organization setup and preview the results.
     * No auth necessary for the export piece; many different people on campus will want the exported info.
     * What about server load? Caching? Updated nightly? Asynchronous workers (via cron)?
-    * Building random collections of cites, perhaps via faceted search/browse. (Senator Bedfellow)
+    * Building random collections of cites, perhaps via faceted search/browse. (Senator Nestor)
     * RSS feeds!
   * A well-formatted list of publications to be imported into word-processing software for a CV. (Helen)
     * to Endnote or RefWorks
     * dump an RTF
     * let them copy/paste text
-  * A report of the journals Basketology faculty have published in (Menelaus, Senator Bedfellow)
+  * A report of the journals Basketology faculty have published in (Menelaus, Senator Nestor)
     * top X journals
     * journal authority? publisher authority?
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
@@ -64,10 +64,10 @@ Asklepios is a well-known senior Basketologist, chair of the Basketology departm
     * TinyMCE gizmo for cut-and-pastes from Word?
     * Wisconsin Tech Search's form? Borrow their sanity-checking code?
     * asynchronous worker to avoid server load at batch import; request submitted right away, but results may not be instantaneous.
-  * Searching & Browsingthe Basketology department for interesting new research (Helen, outsiders)
+  * Searching & Browsingthe Basketology department for interesting new research (Helen, Andromache, Senator Nestor, Paris, Asklepios)
     * Solr - better understanding of capabilities - spell check, "find similar research"
     * Solr in Aquifer project - talk to Tom Habing (UIUC)
-  * Receiving a feed or emailed notification of new research based on defined search terms (Helen)
+  * Receiving a feed or emailed notification of new research based on defined search terms (Helen, Asklepios)
     * creating feed from search - similar to first interaction in this list
   * Automatically notifying a faculty member by email that a preprint or postprint is eligible for repository deposit (Ulysses or Menelaus)
   * Easily adding a preprint or postprint for deposit into the repository, with all necessary embargoes handled automatically (Helen)
@@ -79,7 +79,7 @@ Asklepios is a well-known senior Basketologist, chair of the Basketology departm
   * Establish authority forms for journal titles and publishers. (Menelaus)
     * Scrape OCLC or Ulrich's? OCLC ISSN web service? http://xissn.worldcat.org/xissnadmin/index.htm
     * XML dump of one BibApp instance's publisher/title authority info, for import into someone else's instance.
-  * Person wants to import a citation into their favorite reference manager.
+  * Person wants to import a citation into their favorite reference manager. (Helen, Paris, Asklepios)
     * COinS?
   * Create a new group in BibApp and add people to those groups in a relatively automated fashion?
   * People who leave University...what happens in BibApp?
