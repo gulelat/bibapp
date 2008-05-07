@@ -6,25 +6,25 @@
 
 In Alan Cooper style, here is a list of named characters we might expect to interact with the BibApp:
 
-*Dr. Helen Troia: Assistant Professor, Department of Basketology*
+*Dr. Helen Troia: Assistant Professor, Department of Basketology, Achaea University*
 
-Dr. Troia is going up for tenure next year. She hopes that the BibApp will help her prepare her CV for her tenure package. She already uses it to keep her departmental webpage up-to-date, as she has very little time to update the page herself. Dr. Troia has heard vaguely that open access threatens her favorite publisher, but does not have strong opinions on the subject herself.
+Dr. Troia is going up for tenure at Achaea University next year. She hopes that the BibApp will help her prepare her CV for her tenure package. She already uses it to keep her departmental webpage up-to-date, as she has very little time to update the page herself. Dr. Troia has heard vaguely that open access threatens her favorite publisher, but does not have strong opinions on the subject herself.
 
-*Cassandra Athens: Webmaster, Department of Basketology*
+*Cassandra Athens: Webmaster, Department of Basketology, Achaea University*
 
 Cassandra just started maintaining the Basketology websites. She is eager to help Basketology put its best face forward, though the new web-design guidelines coming down from the university's communications department cramp her style. Whatever the BibApp can easily do to reduce Cassandra's workload is welcome -- but Cassandra warns you, it had better work with her existing content management system!
 
-*Menelaus Fox: liaison librarian to the Department of Basketology*
+*Menelaus Fox: liaison librarian to the Department of Basketology, Achaea University*
 
 The Basketology department is coming up for reaccreditation soon, and Menelaus is tasked with evaluating the library's Basketology collection, and bolstering it where necessary. He is interested to know where Basketology faculty publish. Menelaus is not very tech-savvy, and he is perennially pressed for time. He doesn't know anything about open access or self-archiving.
 
-*Ulysses Acqua: manager, university library's DSpace repository*
+*Ulysses Acqua: manager, university library's DSpace repository, Achaea University*
 
 Ulysses knows he must fill the repository he runs as quickly as possible if he is to keep his job. He is an enthusiastic booster of open access. He has a reasonable level of technical savvy, but DSpace confuses him at times.
 
 *Senator Pylia Nestor: state senator*
 
-Senator Nestor is a staunch supporter of the university; in tough budget times, she needs all the political ammunition she can scare up. Basketology is a hot field these days; if Senator Nestor can demonstrate that the university is active and influential in this field, she can impress her colleagues. She would like her staff to be able to find recently-published articles on Basketology by university faculty, reporting numbers back to her for use in a floor speech. If they can download full-text, so much the better.
+Senator Nestor is a staunch supporter of Achaea University; in tough budget times, she needs all the political ammunition she can scare up. Basketology is a hot field these days; if Senator Nestor can demonstrate that the university is active and influential in this field, she can impress her colleagues. She would like her staff to be able to find recently-published articles on Basketology by university faculty, reporting numbers back to her for use in a floor speech. If they can download full-text, so much the better.
 
 *Paris Ilium: prospective graduate student*
 
@@ -32,9 +32,9 @@ Paris is a senior at Troy Tech, interested in graduate study of Basketology. He 
 
 *Andromache Elis, journalist*
 
-Andromache often has to write news stories about events or phenomena outside her sphere of knowledge. She relies on the university to turn up experts in the most bizarre specialties imaginable. She would love a central place to keyword-search faculty listings to turn up people she can interview.
+Andromache often has to write news stories about events or phenomena outside her sphere of knowledge. She relies on Achaea University to turn up experts in the most bizarre specialties imaginable. She would love a central place to keyword-search faculty listings to turn up people she can interview.
 
-*Dr. Asklepios Caduceus, Basketologist*
+*Dr. Asklepios Caduceus, Basketologist, University of Crete*
 
 Asklepios is a well-known senior Basketologist, chair of the Basketology department at the University of Crete. He edits one of the top journals in the field. He has an opening in his department, and is looking over Basketology websites for young up-and-comers he might raid from their current institutions. He is also perennially interested in finding capable peer-reviewers for the journal he runs.
 
