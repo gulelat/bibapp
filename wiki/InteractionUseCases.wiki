@@ -22,18 +22,21 @@ The Basketology department is coming up for reaccreditation soon, and Menelaus i
 
 Ulysses knows he must fill the repository he runs as quickly as possible if he is to keep his job. He is an enthusiastic booster of open access. He has a reasonable level of technical savvy, but DSpace confuses him at times.
 
-----
+*Senator Nestor: state senator*
 
-*TODO: Fill out non-affiliated personas*
+Senator Nestor is a staunch supporter of the university; in tough budget times, she needs all the political ammunition she can scare up. Basketology is a hot field these days; if Senator Nestor can demonstrate that the university is active and influential in this field, she can impress her colleagues. She would like her staff to be able to find recently-published articles on Basketology by university faculty, reporting numbers back to her for use in a floor speech. If they can download full-text, so much the better.
 
-*Site Visitor - Head Hunter*
+*Paris Ilium: prospective graduate student*
 
-I'm just looking for the next person to hirer away from the university.
+Paris is a senior at Troy Tech, interested in graduate study of Basketology. He is surveying websites for the top Basketology departments in the country. The slicker and more up-to-date a departmental website seems to him, the more impressed he is with the department. He also appreciates knowing what faculty research specialties are (as represented by their interest statements and recent publications), and how faculty present themselves and their interests online.
 
-*Site Visitor - Journal Editor*
+*Andromache Elis, journalist*
 
-I'm looking for faculty members who might review articles for me.
+Andromache often has to write news stories about events or phenomena outside her sphere of knowledge. She relies on the university to turn up experts in the most bizarre specialties imaginable. She would love a central place to keyword-search faculty listings to turn up people she can interview.
 
+*Asklepios Caduceus, Basketologist*
+
+Asklepios is a well-known senior Basketologist, chair of the Basketology department at the University of Crete. He edits one of the top journals in the field. He has an opening in his department, and is looking over Basketology websites for young up-and-comers he might raid from their current institutions. He is also perennially interested in finding capable peer-reviewers for the journal he runs.
 
 = Interactions =
 
@@ -44,13 +47,13 @@ I'm looking for faculty members who might review articles for me.
     * Preferences - Choose a citation style or organization setup and preview the results.
     * No auth necessary for the export piece; many different people on campus will want the exported info.
     * What about server load? Caching? Updated nightly? Asynchronous workers (via cron)?
-    * Building random collections of cites, perhaps via faceted search/browse.
+    * Building random collections of cites, perhaps via faceted search/browse. (Senator Bedfellow)
     * RSS feeds!
   * A well-formatted list of publications to be imported into word-processing software for a CV. (Helen)
     * to Endnote or RefWorks
     * dump an RTF
     * let them copy/paste text
-  * A report of the journals Basketology faculty have published in (Menelaus)
+  * A report of the journals Basketology faculty have published in (Menelaus, Senator Bedfellow)
     * top X journals
     * journal authority? publisher authority?
   * Adding a new faculty member to the department's BibApp instance; previous publications must be imported, a new faculty webpage generated, and photo and descriptive information added (Helen, Cassandra, Menelaus?)
