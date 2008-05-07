@@ -22,7 +22,7 @@ The Basketology department is coming up for reaccreditation soon, and Menelaus i
 
 Ulysses knows he must fill the repository he runs as quickly as possible if he is to keep his job. He is an enthusiastic booster of open access. He has a reasonable level of technical savvy, but DSpace confuses him at times.
 
-*Senator Nestor: state senator*
+*Senator Pylia Nestor: state senator*
 
 Senator Nestor is a staunch supporter of the university; in tough budget times, she needs all the political ammunition she can scare up. Basketology is a hot field these days; if Senator Nestor can demonstrate that the university is active and influential in this field, she can impress her colleagues. She would like her staff to be able to find recently-published articles on Basketology by university faculty, reporting numbers back to her for use in a floor speech. If they can download full-text, so much the better.
 
