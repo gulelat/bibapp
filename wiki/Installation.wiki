@@ -1,4 +1,4 @@
-#summary Installation Instructions for BibApp
+#summary Installation Instructions for BibApp -- STILL A DRAFT
 
 == Introduction ==
 
