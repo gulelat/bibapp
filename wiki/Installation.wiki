@@ -19,9 +19,38 @@ Currently, because of a small development team, we've some recommendations for y
 !BibApp *requires* the following software to function properly:
   * [http://www.ruby-lang.org/ Ruby] 1.8.5 or later
     * Check your version by running `ruby --version` at command line
+  * [http://www.rubygems.org/ RubyGems] 1.0.1 or later
+    * Check your version by running `gem --version` at command line
   * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (_note:_ Java 1.5 is also sometimes called Java 5.x, similarly Java 1.6 is also called 6.x)
     * Check your version by running `java -version` at command line
 
 !BibApp gives you a few options when it comes to your database.  However, we currently *recommend* you install _one_ of the following:
   * [http://www.mysql.com/ MySQL] 4.1 or 5.0
   * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work)
+
+_Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
+
+That's everything you need to get started...
+
+== Get Started with BibApp ==
+
+Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
+  * [http://www.rubyonrails.org/ Rails] 2.0.2
+  * [http://lucene.apache.org/solr/ Solr]
+  * A variety of [http://www.rubygems.org/ Ruby Gems] and Rails Plugins
+
+=== Ruby Gem Pre-requisites ===
+
+Unfortunately, we cannot bundle every Ruby Gem within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you must install:
+  * Database Driver Gem - based on your database of choice
+    * For MySQL - install the `mysql` gem:  
+     {{{ gem install mysql }}}
+    * For PostgreSQL - install the `postgresql` gem:
+     {{{ gem install postgresql }}}
+  * Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended
+     {{{ 
+     gem install mongrel 
+     gem install mongrel_cluster 
+     }}}
+  * [http://code.whytheluckystiff.net/hpricot/ HPricot] - an HTML parser used by !BibApp
+     {{{ gem install hpricot }}}   
