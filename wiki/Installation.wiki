@@ -1,0 +1,23 @@
+#summary Installation Instructions for BibApp
+
+= Introduction =
+
+BibApp is a [http://www.rubyonrails.org/ Ruby on Rails] 2.0 web application.  If you are familiar with installing Ruby on Rails applications, BibApp should be no different!  If this is your first time with Ruby on Rails, don't worry...we've tried to make things easy on you.
+
+At a basic level, Ruby on Rails applications require the following:
+  * A Web server
+  * A Database
+  * Ruby and..
+  * Rails
+
+Currently, because of a small development team, we've some recommendations for your Rails setup for BibApp.  You may be able to get away with other Ruby on Rails setups, but we haven't verified they all work with BibApp, yet. 
+
+= Software Pre-requisities =
+
+BibApp should run on any Operating System.  Currently we've had it successfully running on Linux, Mac OSX and Windows XP.
+
+BibApp requires the following software to function properly:
+  * [http://www.ruby-lang.org/ Ruby] 1.8.5 or later
+    * Check your version by running 'ruby --version' at command line
+  * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (note: Java 1.5 is also sometimes called Java 5.x, similarly 1.6 is also called 6.x)
+    * Check your version by running 'java -version' at command line
