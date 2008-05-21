@@ -47,7 +47,7 @@ Unfortunately, we cannot bundle every Ruby Gem within !BibApp.  We've tried to m
      {{{ gem install mysql -- --with-mysql-dir=/path/to/mysql }}}
     * If you are using PostgreSQL, install the `postgres` gem:
      {{{ gem install postgres -- --with-pgsql-dir=/path/to/pgsql }}}
-  * Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended
+  * Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended.  We also recommend running several mongrel instances in a cluster (though, if you are just trying out !BibApp, this isn't really necessary).
      {{{ 
      gem install mongrel 
      gem install mongrel_cluster 
