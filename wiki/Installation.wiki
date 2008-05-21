@@ -43,10 +43,10 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 
 Unfortunately, we cannot bundle every Ruby Gem within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you must install:
   * Database Driver Gem - based on your database of choice
-    * For MySQL - install the `mysql` gem:  
-     {{{ gem install mysql }}}
-    * For PostgreSQL - install the `postgresql` gem:
-     {{{ gem install postgresql }}}
+    * If you are using MySQL, install the `mysql` gem:  
+     {{{ gem install mysql -- --with-mysql-dir=/path/to/mysql }}}
+    * If you are using PostgreSQL, install the `postgres` gem:
+     {{{ gem install postgres -- --with-pgsql-dir=/path/to/pgsql }}}
   * Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended
      {{{ 
      gem install mongrel 
