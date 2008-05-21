@@ -32,7 +32,7 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-== Get Started with BibApp ==
+== Get Started with !BibApp ==
 
 Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
   * [http://www.rubyonrails.org/ Rails] 2.0.2
