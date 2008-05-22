@@ -6,8 +6,8 @@
   * Item (Timeframe | Owner)
 
   * Documentation (June | Everyone)
-  ** Rails
-  ** Solr
+    * Rails
+    * Solr
   ** SVN export
   ** Installation
   *** Personalization
