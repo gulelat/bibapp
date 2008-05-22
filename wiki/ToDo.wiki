@@ -8,40 +8,41 @@
   * Documentation (June | Everyone)
     * Rails
     * Solr
-  ** SVN export
-  ** Installation
-  *** Personalization
-  *** Hpricot (compiled C code)
+    * SVN export
+    * Installation
+      * Personalization
+      * Hpricot (compiled C code)
 
   * Authorization / Authentication (May | Tim)
-  ** Implement Tim's test code 
+    * Implement Tim's test code 
 
   * IP-aware OpenURLs (Soon | Eric)
-  ** Umlaut's code contains needed gem
-  ** ResolverRegistry (written by Ross Singer and Ed Summers)
+    * Umlaut's code contains needed gem
+    * ResolverRegistry (written by Ross Singer and Ed Summers)
 
   * Search (Soon | Eric)
-  ** ~~Pagination~~
-  ** ~~Sorting~~
-  ** Add querying for ISSN
-  ** Add querying for Publication | Publisher | Person | Group
-  ** Synonym rings? At least start / grok Solr use (IEEE = Institute of Electrical and Electronics Engineers...)
+    * ~~Pagination~~
+    * ~~Sorting~~
+    * Add querying for ISSN
+    * Add querying for Publication | Publisher | Person | Group
+    * Synonym rings? At least start / grok Solr use (IEEE = Institute of Electrical and Electronics Engineers...)
 
 
   * Styles (Ongoing | Eric)
-  ** Filters
-  ** Groups index
-  ** People index
+    * Filters
+    * Groups index
+    * People index
 
   * Views (Ongoing | Everyone?)
-  ** Admin view
-  ** People/index view should allow filtering via group_id
-  ** Groups/index view should allow filtering via (parent_group_id)
-  ** Groups/index view: Parent/Child groups presentation
-  ** Citations/show view: Abstract / keywords show when copyright is clear
+    * Admin view
+    * People/index view should allow filtering via group_id
+    * Groups/index view should allow filtering via (parent_group_id)
+    * Groups/index view: Parent/Child groups presentation
+    * Groups/show view: *Bug* - Publisher and Publication links to link directly to filtered set of Publisher / Group related citations
+    * Citations/show view: Abstract / keywords show when copyright is clear
 
   * Citation ingest (June? | Conference call)
-  ** Implement simple pubmed API ingest
-  ** Implement simple ISI ingest
-  ** Implement simple arXiv API
-  ** Add newer RefWorks XML format
+    * Implement simple pubmed API ingest
+    * Implement simple ISI ingest
+    * Implement simple arXiv API
+    * Add newer RefWorks XML format
