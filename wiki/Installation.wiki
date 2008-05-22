@@ -44,13 +44,19 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 Unfortunately, we cannot bundle every Ruby Gem within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you must install:
   * Database Driver Gem - based on your database of choice
     * If you are using MySQL, install the `mysql` gem:  
-     {{{ gem install mysql -- --with-mysql-dir=/path/to/mysql }}}
+     {{{ 
+     gem install mysql -- --with-mysql-dir=/path/to/mysql 
+     }}}
     * If you are using PostgreSQL, install the `postgres` gem:
-     {{{ gem install postgres -- --with-pgsql-dir=/path/to/pgsql }}}
+     {{{ 
+     gem install postgres -- --with-pgsql-dir=/path/to/pgsql 
+     }}}
   * Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended.  We also recommend running several mongrel instances in a cluster (though, if you are just trying out !BibApp, this isn't really necessary).
      {{{ 
      gem install mongrel 
      gem install mongrel_cluster 
      }}}
-  * [http://code.whytheluckystiff.net/hpricot/ HPricot] - an HTML parser used by !BibApp
-     {{{ gem install hpricot }}}   
+  * [http://code.whytheluckystiff.net/hpricot/ HPricot] - an HTML parser used by !BibApp.  This gem unfortunately cannot be packaged with !BibApp as it uses underlying C code which must be compiled on each operating system (But, don't worry, it compiles automatically!)
+     {{{ 
+     gem install hpricot 
+     }}}   
