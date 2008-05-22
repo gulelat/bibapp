@@ -75,20 +75,6 @@ There are two different ways to install !BibApp:
     }}}
   # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
 
-=== Setup Your !BibApp Database ===
-
-You'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  Now, it's just a matter of creating a new database!  One thing to note is that you'll want to remember the _name_ you give the database, as we'll need to edit a !BibApp configuration file in the next step!
-
-   * *For MySQL:*  Connect to MySQL, and create a UTF8 database named 'bibapp' as follows (_NOTE:_ you can choose your own database name):
-      {{{
-      CREATE DATABASE bibapp CHARACTER SET = 'utf8';
-      }}}
-   
-   * *For PostgreSQL:* Use the following command line script to create a database named 'bibapp' with a database owner of 'bibapp_user' (_NOTE:_ You can choose your own database name and user name):
-      {{{
-      createdb -U bibapp_user -E UNICODE bibapp
-      }}}
-
 
 === Configure !BibApp ===
 
@@ -102,7 +88,7 @@ Once you've pulled down the code, you'll need to edit the !BibApp configurations
 
 You'll need to remove the .example extension from each of these files and personalize the contents as necessary.  In the end you should end up with the following:
 
-  * database.yml - Your local database settings
+  * database.yml - Your local database settings 
   * ldap.yml - Your campus LDAP directory settings
   * personalize.rb - Your BibApp personalization settings
   * solr.yml - Your Solr port settings (may not require changes)
@@ -111,3 +97,27 @@ You'll need to remove the .example extension from each of these files and person
   {{{
    TODO:  ADD MORE INFORMATION ABOUT VARIOUS CONFIGURATIONS!!
   }}}
+
+
+=== Setup Your !BibApp Database ===
+
+Now, you'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  Now, it's just a matter of creating a new database!  
+
+Make sure your database is named the same as the 'database' setting in your `config/database.yml` file!  In addition, you should login as the user specified in your `config/database.yml` when creating your database (to ensure that user owns the database) 
+
+
+   * *For MySQL:*  Connect to MySQL, and create a UTF8 database named 'bibapp' using the following SQL query:
+      {{{
+      CREATE DATABASE bibapp CHARACTER SET = 'utf8';
+      }}}
+   
+   * *For PostgreSQL:* Use the following command line script to create a database named 'bibapp' with a database owner of 'bibapp_user': 
+      {{{
+      createdb -U bibapp_user -E UNICODE bibapp
+      }}}
+
+Now you can generate the BibApp database structure into your new database!  From within your [bibapp] directory:
+    {{{
+    rake db:migrate
+    }}}
+You should see a large number of 'migration' messages scroll by.  That's perfectly normal! But, if any errors appear, there are problems which you will have to resolve *before* !BibApp will function properly!
