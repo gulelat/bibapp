@@ -53,3 +53,8 @@
     * Implement simple ISI ingest
     * Implement simple arXiv API
     * Add newer RefWorks XML format
+
+  * Tests (Ongoing | Everyone?)
+    * Add Fixtures
+    * Write functional tests for all controllers
+    * Write unit tests for all models
