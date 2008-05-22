@@ -42,7 +42,7 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
   * [http://lucene.apache.org/solr/ Solr] - Used for all the !BibApp browse/search interfaces
   * A variety of [http://www.rubygems.org/ Ruby Gems] and Rails Plugins. It's worth highlighting a few custom plugins created specifically for !BibApp:
     * `citation_parser` and `citation_importer` - These custom plugins parse citations from our various supported input formats, and import the data into our database structure.
-    * `sword_client` - This is our custom SWORD (Simple Web-service Offering Repository Deposit) client.  It lets us deposit research (both metadata and files) directly to your local repository from !BibApp.
+    * `sword_client` - This is our custom [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets us deposit research (both metadata and files) directly to your local repository from !BibApp.
 
 === Ruby Gem Pre-requisites ===
 
