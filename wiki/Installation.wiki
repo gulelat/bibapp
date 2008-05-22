@@ -131,10 +131,12 @@ You should see a large number of 'migration' messages scroll by.  That's perfect
 You're almost there!
 
 In order to startup !BibApp on your server, you must do *both* of the following (from within your _{bibapp}_ directory):
-  * Start Solr - This handles all the fancy browsing and searching in !BibApp
+  * _Start Solr:_ Solr handles all the fancy browsing and searching in !BibApp
     * On Linux / Mac OSX : `rake solr:start`
     * On Windows : `rake solr:start_win`
-  * Start your web server - We're assuming you installed Mongrel here!
+  * _Start your web server:_ We're assuming you installed Mongrel, for the sake of these instructions.
      {{{
      mongrel_rails start
      }}}
+
+Try it out!  Assuming your web server is on port 3000 (which is Mongrel's default), you should have !BibApp running at:  http://localhost:3000/
