@@ -26,7 +26,7 @@
     * Add querying for ISSN
     * Add querying for Publication | Publisher | Person | Group
     * Synonym rings? At least start / grok Solr use (IEEE = Institute of Electrical and Electronics Engineers...)
-
+    * Way to easily refresh/recreate SpellChecker index (add to `rake solr:refresh_index`, maybe?)
 
   * Styles (Ongoing | Eric)
     * Filters
@@ -40,6 +40,13 @@
     * Groups/index view: Parent/Child groups presentation
     * Groups/show view: *Bug* - Publisher and Publication links to link directly to filtered set of Publisher / Group related citations
     * Citations/show view: Abstract / keywords show when copyright is clear
+    * Citations/index view: way to browse/filter a list of all Citations directly?
+    * Citations/apa templates: Create APA templates for all Citation types (or at least a "default" APA template which can be used if a type-specific one isn't found)
+    * Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)
+    * Publishers/new view: Cleanup? - especially giant select box
+    * Publications/new view: Cleanup? - especially giant select box
+    * Persion/new view: Cleanup? - put LDAP search at Top?
+    
 
   * Citation ingest (June? | Conference call)
     * Implement simple pubmed API ingest
