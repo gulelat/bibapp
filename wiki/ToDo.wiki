@@ -1,7 +1,7 @@
 #summary The 1.0 TODO List
 #labels Phase-Design
 
-=== BibApp 1.0 Todo: ===
+=== !BibApp 1.0 Todo: ===
 
   * Item (Timeframe | Owner)
 
@@ -46,6 +46,7 @@
     * Publishers/new view: Cleanup? - especially giant select box
     * Publications/new view: Cleanup? - especially giant select box
     * Persion/new view: Cleanup? - ~~put LDAP search at Top~~
+    * Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)
     
 
   * Citation ingest (June? | Conference call)
