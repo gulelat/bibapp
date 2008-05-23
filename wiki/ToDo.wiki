@@ -45,7 +45,7 @@
     * Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)
     * Publishers/new view: Cleanup? - especially giant select box
     * Publications/new view: Cleanup? - especially giant select box
-    * Persion/new view: Cleanup? - put LDAP search at Top?
+    * Persion/new view: Cleanup? - ~~put LDAP search at Top~~
     
 
   * Citation ingest (June? | Conference call)
