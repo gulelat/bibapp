@@ -9,7 +9,7 @@
     * Rails
     * Solr
     * SVN export
-    * Installation
+    * Installation - Started at [Installation]
       * Personalization
       * Hpricot (compiled C code)
 
