@@ -81,13 +81,13 @@ There are two different ways to install !BibApp:
   # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
 
   {{{
-  NOTE: Throughout the remainder of these instructions we use the placeholder "[[bibapp]]"
+  NOTE: Throughout the remainder of these instructions we use the placeholder [bibapp]
   to represent the location where you have installed the BibApp code!
   }}}
 
 === Configure !BibApp ===
 
-Once you've pulled down the code, you'll need to edit the !BibApp configurations for your local settings.  In the `[[bibapp]]/config` directory, look for the following "example" configurations:
+Once you've pulled down the code, you'll need to edit the !BibApp configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
 
   * database.yml.example
   * ldap.yml.example
@@ -125,7 +125,7 @@ Make sure your database is named the same as the 'database' setting in your `con
       createdb -U bibapp_user -E UNICODE bibapp
       }}}
 
-Now you can generate the !BibApp database structure into your new database!  From within your _[[bibapp]]_ directory:
+Now you can generate the !BibApp database structure into your new database!  From within your `[bibapp]` directory:
     {{{
     rake db:migrate
     }}}
@@ -135,7 +135,7 @@ You should see a large number of 'migration' messages scroll by.  That's perfect
 
 You're almost there!
 
-In order to startup !BibApp on your server, you must do *both* of the following (from within your _[[bibapp]]_ directory):
+In order to startup !BibApp on your server, you must do *both* of the following (from within your `[bibapp]` directory):
   * _Start Solr:_ Solr handles all the fancy browsing and searching in !BibApp
     * On Linux / Mac OS X : `rake solr:start`
     * On Windows : `rake solr:start_win`
