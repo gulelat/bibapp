@@ -12,6 +12,8 @@
     * Installation - Started at [Installation]
       * Personalization
       * Hpricot (compiled C code)
+    * SHERPA RoMEO
+      * update script??
 
   * Authorization / Authentication (May | Tim)
     * Implement Tim's test code 
