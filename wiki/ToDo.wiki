@@ -23,11 +23,8 @@
     * ResolverRegistry (written by Ross Singer and Ed Summers)
 
   * Search (Soon | Eric)
-    * ~~Pagination~~
-    * ~~Sorting~~
     * Add querying for ISSN
     * Add querying for Publication | Publisher | Person | Group
-    * Synonym rings? At least start / grok Solr use (IEEE = Institute of Electrical and Electronics Engineers...)
     * Way to easily refresh/recreate SpellChecker index (add to `rake solr:refresh_index`, maybe?)
 
   * Styles (Ongoing | Eric)
