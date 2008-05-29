@@ -18,10 +18,6 @@
   * Authorization / Authentication (May | Tim)
     * Implement Tim's test code 
 
-  * IP-aware OpenURLs (Soon | Eric)
-    * Umlaut's code contains needed gem
-    * ResolverRegistry (written by Ross Singer and Ed Summers)
-
   * Search (Soon | Eric)
     * Add querying for ISSN
     * Add querying for Publication | Publisher | Person | Group
