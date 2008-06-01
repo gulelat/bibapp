@@ -23,7 +23,6 @@
     * Way to easily refresh/recreate SpellChecker index (add to `rake solr:refresh_index`, maybe?)
 
   * Styles (Ongoing | Eric)
-    * Filters
     * Groups index
     * People index
 
