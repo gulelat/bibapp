@@ -22,7 +22,7 @@
     * List only bugs here, not features...
     * Advanced Search?
 
-  * SHERPA RoMEO data
+  * SHERPA RoMEO data (Eric)
     * *Frozen for 0.7 release - 2008.06.02*
     * Sherpa's api data is not cached on their server
     * net/http will *always* timeout
