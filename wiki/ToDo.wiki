@@ -34,7 +34,6 @@
     * Groups/index view: Parent/Child groups presentation
     * Groups/show view: *Bug* - Publisher and Publication links to link directly to filtered set of Publisher / Group related citations
     * Citations/show view: Abstract / keywords show when copyright is clear
-    * Citations/index view: way to browse/filter a list of all Citations directly?
     * Citations/apa templates: Create APA templates for all Citation types (or at least a "default" APA template which can be used if a type-specific one isn't found)
     * Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)
     * Publishers/new view: Cleanup? - especially giant select box
