@@ -18,9 +18,10 @@
   * Authorization / Authentication (May | Tim)
     * Implement Tim's test code 
 
-  * Search (Soon | Eric)
-    * Add querying for Publication | Publisher | Person | Group
-    * Way to easily refresh/recreate SpellChecker index (add to `rake solr:refresh_index`, maybe?)
+  * Search (Eric)
+    * Frozen for 0.7 release - 2008.06.02
+    * List only bugs here, not features...
+    * Advanced Search?
 
   * Styles (Ongoing | Eric)
     * Groups index
