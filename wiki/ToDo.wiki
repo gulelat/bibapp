@@ -39,7 +39,9 @@
     * Publications/new view: Cleanup? - especially giant select box
     * Persion/new view: Cleanup? - ~~put LDAP search at Top~~
     * Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)
-    
+
+  * Person
+    * *Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr 
 
   * Citation ingest (June? | Conference call)
     * Implement simple pubmed API ingest
