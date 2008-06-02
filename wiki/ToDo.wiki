@@ -12,16 +12,24 @@
     * Installation - Started at [Installation]
       * Personalization
       * Hpricot (compiled C code)
-    * SHERPA RoMEO
-      * update script??
+    * SHERPA data
 
   * Authorization / Authentication (May | Tim)
     * Implement Tim's test code 
 
   * Search (Eric)
-    * Frozen for 0.7 release - 2008.06.02
+    * *Frozen for 0.7 release - 2008.06.02*
     * List only bugs here, not features...
     * Advanced Search?
+
+  * SHERPA RoMEO data
+    * *Frozen for 0.7 release - 2008.06.02*
+    * Sherpa's api data is not cached on their server
+    * net/http will *always* timeout
+    * added /public/sherpa/publishers.xml file
+    * Publisher.update_sherpa_data method groks over this xml file
+    * Update will have to be via a manual download
+    * We'll include a local copy in BibApp truck
 
   * Styles (Ongoing | Eric)
     * Groups index
