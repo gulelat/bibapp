@@ -15,7 +15,10 @@
     * SHERPA data
 
   * Authorization / Authentication (May | Tim)
-    * Implement Tim's test code 
+    * Implement Tim's test code
+
+  * Citations (Anyone | ASAP)
+    * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
 
   * Search (Eric)
     * *Frozen for 0.7 release - 2008.06.02*
