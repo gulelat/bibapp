@@ -64,7 +64,7 @@
     * Implement simple pubmed API ingest
     * Implement simple ISI ingest
     * Implement simple arXiv API
-    * Add newer RefWorks XML format
+    * ~~Add newer RefWorks XML format~~
     * Better error handling for bulk ingest!  Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
 
   * Tests (Ongoing | Everyone?)
