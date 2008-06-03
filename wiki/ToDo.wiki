@@ -54,6 +54,7 @@
     * Publication lists (in general):  Is there anyway to filter out the "Unknown" publication name which appears for Books?
     * Persion/new view: Cleanup? - ~~put LDAP search at Top~~
     * Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)
+    * Memberships/index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
 
   * Person
     * *Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr 
