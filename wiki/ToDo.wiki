@@ -22,7 +22,9 @@
 
   * Search (Eric)
     * *Frozen for 0.7 release - 2008.06.02*
-    * List only bugs here, not features...
+    * *Bugs:*
+    * ~~Add param for rows~~
+    * Add rows param to filters
     * Advanced Search?
 
   * SHERPA RoMEO data (Eric)
