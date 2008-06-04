@@ -23,10 +23,12 @@
   * Search (Eric)
     * *Frozen for 0.7 release - 2008.06.02*
     * *Bugs:*
-    * ~~Add param for rows~~
-    * Add rows param to filters
-    * Add rows param to search form select options 
-    * Advanced Search?
+      * ~~Add param for rows~~
+      * Add rows param to filters
+      * Add rows param to search form select options
+    * *Missing Features:*
+      * Advanced Search?
+      * XSLT2RSS?
 
   * SHERPA RoMEO data (Eric)
     * *Frozen for 0.7 release - 2008.06.02*
