@@ -3,9 +3,9 @@
 
 === !BibApp 1.0 Todo: ===
 
-  * Item (Timeframe | Owner)
+  * *Item (Timeframe | Owner)*
 
-  * Documentation (June | Everyone)
+  * *Documentation (June | Everyone - Eric)*
     * Rails
     * Solr
     * SVN export
@@ -14,13 +14,13 @@
       * Hpricot (compiled C code)
     * SHERPA data
 
-  * Authorization / Authentication (May | Tim)
+  * *Authorization / Authentication (May | Tim)*
     * Implement Tim's test code
 
-  * Citations (Anyone | ASAP)
+  * *Citations (Anyone | ASAP)*
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
 
-  * Search (Eric)
+  * *Search (Eric)*
     * *Frozen for 0.7 release - 2008.06.02*
     * *Bugs:*
       * ~~Add param for rows~~
@@ -30,7 +30,7 @@
       * Advanced Search?
       * XSLT2RSS?
 
-  * SHERPA RoMEO data (Eric)
+  * *SHERPA RoMEO data (Eric)*
     * *Frozen for 0.7 release - 2008.06.02*
     * Sherpa's api data is not cached on their server
     * net/http will *always* timeout
@@ -39,14 +39,15 @@
     * Update will have to be via a manual download
     * We'll include a local copy in BibApp truck
 
-  * Styles (Ongoing | Eric)
+  * *Styles / IA (Ongoing | Eric)*
     * Groups index
     * People index
+    * Print CSS
 
-  * Terminology (June | Everyone?)
+  * *Terminology (June | Everyone?)*
     * Remove 'citation' terminology...replace with 'research'?
 
-  * Views (Ongoing | Everyone?)
+  * *Views (Ongoing | Everyone?)*
     * Admin view
     * People/index view should allow filtering via group_id
     * Groups/index view should allow filtering via (parent_group_id)
@@ -62,17 +63,17 @@
     * Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)
     * Memberships/index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
 
-  * Person
+  * *Person*
     * *Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr 
 
-  * Citation ingest (June? | Conference call)
+  * *Citation ingest (June? | Conference call)*
     * Implement simple pubmed API ingest
     * Implement simple ISI ingest
     * Implement simple arXiv API
     * ~~Add newer RefWorks XML format~~
     * Better error handling for bulk ingest!  Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
 
-  * Tests (Ongoing | Everyone?)
+  * *Tests (Ongoing | Everyone?)*
     * Add Fixtures
     * Write functional tests for all controllers
     * Write unit tests for all models
