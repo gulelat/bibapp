@@ -26,7 +26,7 @@
       * ~~Add param for rows~~
       * Add rows param to filters
       * Add rows param to search form select options
-      * "Nano*" and "nano*" return different results!?!
+      * `"Nano*"` and `"nano*"` return different results!?!
     * *Missing Features:*
       * Advanced Search?
       * XSLT2RSS?
