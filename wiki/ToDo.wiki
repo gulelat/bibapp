@@ -58,7 +58,7 @@
     * Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)
     * Publishers/new view: Cleanup? - especially giant select box
     * Publications/new view: Cleanup? - especially giant select box
-    * Publication lists (in general):  Is there anyway to filter out the "Unknown" publication name which appears for Books?
+    * ~~Publication lists (in general):  Is there anyway to filter out the "Unknown" publication name which appears for Books?~~
     * Persion/new view: Cleanup? - ~~put LDAP search at Top~~
     * PenNames/new view: Suggestions are totally wacky... remove initial last_name search?
     * Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)
