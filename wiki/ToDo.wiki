@@ -25,6 +25,7 @@
     * *Bugs:*
     * ~~Add param for rows~~
     * Add rows param to filters
+    * Add rows param to search form select options 
     * Advanced Search?
 
   * SHERPA RoMEO data (Eric)
