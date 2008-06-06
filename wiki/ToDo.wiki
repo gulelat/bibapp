@@ -54,8 +54,8 @@
     * Groups/index view should allow filtering via (parent_group_id)
     * Groups/index view: Parent/Child groups presentation
     * Citations/show view: Abstract / keywords show when copyright is clear
-    * Citations/apa templates: Create APA templates for all Citation types (or at least a "default" APA template which can be used if a type-specific one isn't found)
-    * Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)
+    * ~~Citations/apa templates: Create APA templates for all Citation types (or at least a "default" APA template which can be used if a type-specific one isn't found)~~
+    * ~~Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)~~
     * ~~Publishers/new view: Cleanup? - especially giant select box~~
     * ~~Publications/new view: Cleanup? - especially giant select box~~
     * ~~Publication lists (in general):  Is there anyway to filter out the "Unknown" publication name which appears for Books?~~
@@ -65,7 +65,8 @@
     * Memberships/index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
 
   * *Person*
-    * *Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr 
+    * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
+    * *Possible Bug* - Updating all Preson.citations in Solr does not happen when a membership is deleted.
 
   * *Citation ingest (June? | Conference call)*
     * Implement simple pubmed API ingest
