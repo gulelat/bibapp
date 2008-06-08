@@ -70,6 +70,7 @@
 
   * *Membership*
     * A person should be allowed to have multiple memberships to the same group.  This will require some new logic.  Currently throughout the application it is required that there only be one membership for each person and group.
+    * *Bug*: Adding a title to a membership does not save.
 
   * *Citation ingest (June? | Conference call)*
     * Implement simple pubmed API ingest
