@@ -6,8 +6,8 @@
 
   * Authentication and Authorization
   * Citations
-    * Citation ingest
-    * Citation reuse
+    * Citation import
+    * Citation export
   * Time
 
 ===Authentication and Authorization===
