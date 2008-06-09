@@ -1,4 +1,4 @@
-#summary Describes the Citation Import Process for BibApp  (DRAFT ONLY)
+#summary Describes the Citation Import Process for BibApp 1.0 (Not fully implemented)
 
 = Introduction =
 
@@ -7,15 +7,14 @@ Citation management starts with the import of new citations.  This page details 
 = Import Formats =
 
 !BibApp currently accepts the following citation import formats:
-  * *[http://www.refworks.com/ RefWorks] XML* (deprecated) - This XML export format has been _deprecated_ by !RefWorks.  This deprecated XML format is _different_ from the new "!RefWorks XML Format", which is much more difficult to parse consistently.  We are looking into a replacement !RefWorks export format, since this older XML format will soon be obsolete.
+  * *[http://www.refworks.com/ RefWorks] XML* - Refworks' currently supported XML export format.
+  * *[http://www.refworks.com/ RefWorks] XML* (deprecated) - This XML export format has been _deprecated_ by !RefWorks.  This deprecated XML format is _different_ from the new "!RefWorks XML Format".
   * *[http://www.ncbi.nlm.nih.gov/PubMed/ PubMed's] MEDLINE format*
   * *[http://www.refman.com/support/risformat_intro.asp RIS] format*
 
 !BibApp also supports manual entry of citations through a Citation web form.  There are already plans to support further formats, so feel free to make suggestions!
 
 The citation parsers and importers for the above formats were developed specifically for !BibApp.  They are available in the `/vendor/plugins/` directory when you download !BibApp.  Once they are more stable, they will likely also be available as Rails Plugins.
-
-
 
 = Citation Status =
 
@@ -47,8 +46,6 @@ The citation import process is detailed graphically in the below *Citation Impor
     * For example, if we have an "incomplete" citation but we were given its !PubMed ID, we can potentially kick off a behind-the-scenes process to pull down any missing citation information from !PubMed using that unique !PubMed ID.
   # *Extract Publication Information* - Publication (e.g. Journal Title) and Publisher information is also a complex problem in !BibApp.  As anyone who has seen many citations can attest, publication and publisher names never seem to appear the same way twice!  Dealing with "Authorities" for Publication and Publisher names is being detailed on the [PublicationPublisherAuthorities] page
   # *Save Citation* - Assuming *all* of the above steps have completed without errors, the new citation (and related extracted information) is saved into the !BibApp database.  If any processing resulted in an error, the user who entered the citation is informed and the citation is _not_ saved.
-
-
 
 = Citation Import Flow Chart =
 
