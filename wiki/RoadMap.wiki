@@ -48,3 +48,4 @@
   * Improve SHERPA data
   * Focus on current campus collaboration
   * Cited references
+  * Potentially automate deposits to PubMed Central?
