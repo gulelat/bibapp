@@ -1,5 +1,0 @@
-#summary Notable projects that do similar things to the BibApp.
-
-= VIVO =
-
-[http://vivo.cornell.edu/ VIVO] and its associated [http://vitro.mannlib.cornell.edu/ VITRO] engine is an application that creates theme-able, browsable, and searchable faculty researcher pages and department listings. Notably, it takes in RSS search feeds in much the same manner as does BibApp.
