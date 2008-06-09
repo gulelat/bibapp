@@ -15,11 +15,20 @@ BibApp is open source and leverages several exciting technologies to its advanta
     * [http://www.therailsway.com/ The Rails Way] (no longer active, but a great resource)
 
 === Ruby ===
-  * [http://www.ruby-lang.org/en/ Visit the Ruby Lang homepage]
-  * [http://tryruby.hobix.com/ Online Ruby Tutorial]
+
+  * Read *the* book
+    * [http://www.manning.com/black/ Ruby for Rails]
+  * Visit these excellent sites
+    * [http://www.ruby-lang.org/en/ Ruby Language homepage]
+    * [http://tryruby.hobix.com/ Online Ruby Tutorial]
+    * [http://poignantguide.net/ruby/ Why's (Poignant) Guide to Ruby] (the one and only)
+
 
 === Solr ==
-  * Visit the Solr homepage
-  * Visit the Solr wiki
-  * Sign up for the email listservs
-    * 
+
+  * Visit these excellent sites
+    * [http://wiki.apache.org/solr/ Visit the Solr wiki]
+    * [http://lucene.apache.org/solr/ Solr homepage]
+  * [http://lucene.apache.org/solr/mailing_lists.html Sign up for the email listservs]:
+    * Users - great for people implementing BibApp
+    * Developers - group for people hacking Solr
