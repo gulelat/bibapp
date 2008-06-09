@@ -1,4 +1,4 @@
-#summary Describes the Citation Export / Archiving Process for BibApp  (DRAFT ONLY)
+#summary Describes the Citation Export / Archiving Process for BibApp  (Not fully implemented)
 
 = Introduction =
 
