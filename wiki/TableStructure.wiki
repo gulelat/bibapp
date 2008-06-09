@@ -1,23 +1,30 @@
 #summary Table Structure for proposed Version 1.0
 #labels Phase-Requirements,Phase-Design
 
-= OUT OF DATE - 4.2008 =
-
 == Basic Table Structure ==
 
-  * Authors
-  * Authorships
+  * Attachments
+  * CitationArchiveStates
+  * CitationNameStrings
+  * CitationStates
   * Citations
+  * ContributorshipStates
+  * Contributorships
+  * ExternalSystemURIs
+  * ExternalSystems
+  * Groups
+  * Keywordings
+  * Keywords
+  * Memberships
+  * NameStrings
+  * PenNames
+  * People
   * Publications
+  * PublisherSources
   * Publishers
-  * Tags
+  * Roles
+  * RolesUsers
+  * SchemaInfo
   * Taggings
+  * Tags
   * Users
-
-=== TODO - Tables to better understand ===
-
-  * DataSources - What attrs do we need to capture here?
-
-  * Blacklists - polymorphic association, allows a User to "blacklist" another class (Publications, Authors, Keywords, etc...) so an Author record will not incorrectly assume a positive Authorship: "I never publish in Nature, don't make this mistake again", "I never publish with Larson, E.W., don't make this mistake again", "I don't write about Thin Films, never assume I wrote an article about Thin Films again".
-
-  * Blacklistings - Polymorphic bridge for Blacklisted items
