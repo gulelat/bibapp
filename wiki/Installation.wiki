@@ -61,7 +61,7 @@ Unfortunately, we cannot bundle every necessary Ruby Gem within !BibApp.  We've 
      gem install mongrel 
      gem install mongrel_cluster 
      }}}
-  * [http://code.whytheluckystiff.net/hpricot/ HPricot] - an HTML parser used by !BibApp.  This gem unfortunately cannot be packaged with !BibApp as it uses underlying C code which must be compiled on each operating system (But, don't worry, it compiles automatically when you install it.)
+  * [http://code.whytheluckystiff.net/hpricot/ Hpricot] - an HTML parser used by !BibApp.  This gem unfortunately cannot be packaged with !BibApp as it uses underlying C code which must be compiled on each operating system (But, don't worry, it compiles automatically when you install it.)
      {{{ 
      gem install hpricot 
      }}}
@@ -92,6 +92,7 @@ Once you've pulled down the code, you'll need to edit the !BibApp configurations
   * database.yml.example
   * ldap.yml.example
   * personalize.rb.example
+  * smtp.yaml.example
   * solr.yml.example
   * sword.yml.example
 
@@ -100,6 +101,7 @@ You'll need to remove the .example extension from each of these files and person
   * database.yml - Your local database settings 
   * ldap.yml - Your campus LDAP directory settings
   * personalize.rb - Your !BibApp personalization settings
+  * smtp.yaml - Your SMTP settings for user account creation verification emails
   * solr.yml - Your Solr port settings (may not require changes)
   * sword.yml - Your SWORD server settings
 
