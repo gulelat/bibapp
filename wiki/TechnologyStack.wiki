@@ -1,0 +1,17 @@
+#summary Annotated guide to learning Ruby on Rails.
+
+= Introduction =
+
+=== Ruby on Rails ===
+  * Read *the* book
+    * [http://pragprog.com/titles/rails2/agile-web-development-with-rails Agile Web Development with Rails]
+  * Visit the API
+    * [http://api.rubyonrails.org/ Ruby on Rails API]
+  * Visit these excellent sites
+    * [http://peepcode.com/ PeepCode]
+    * [http://railscasts.com/ Railscasts]
+    * [http://www.therailsway.com/ The Rails Way] (no longer active, but a great resource)
+
+=== Ruby ===
+  * [http://www.ruby-lang.org/en/ Visit the Ruby Lang homepage]
+  * [http://tryruby.hobix.com/ Online Ruby Tutorial]
