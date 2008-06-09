@@ -24,6 +24,7 @@
     * Tagging
   * Enhanced citation importing
     * Additional de-duplication measures
+    * Better error handling / report messages
   * Enhanced author-disambiguation 
 
 == Version 0.9 | August 2008 ==
