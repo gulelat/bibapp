@@ -13,7 +13,7 @@
 
   * ~~SWORD~~
 
-== Version 0.8 | July 2008 ==
+== Version 0.8 | August 2008 ==
 
   * Rails 2.1 upgrade
     * Gem dependencies
@@ -27,14 +27,17 @@
     * Better error handling / report messages
   * Enhanced author-disambiguation 
 
-== Version 0.9 | August 2008 ==
+== Version 0.9 | October 2008 ==
 
   * FOAF views
   * Simple citation exporting
     * citeproc-rb
+  * Import citation data in more formats
+  * Export citation data in BibTeX, Endnote, etc.
+  * COinS 
   * Themes
 
-==Version 1.0 | August / September 2008 ==
+==Version 1.0 | December 2008 ==
 
   * Publicly tested
   * Stable release
