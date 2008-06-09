@@ -1,6 +1,8 @@
-#summary Annotated guide to learning Ruby on Rails.
+#summary Helpful resources for learning the BibApp technology stack.
 
 = Introduction =
+
+BibApp is open source and leverages several exciting technologies to its advantage.  If you already are a Rails hacker, you'll be up in no time.  If you are brand new to Ruby on Rails, you'll need to get up to speed. Below, we've listed the major pieces of our technology stack and links to helpful resources to help move you faster through the learning curve.
 
 === Ruby on Rails ===
   * Read *the* book
@@ -15,3 +17,9 @@
 === Ruby ===
   * [http://www.ruby-lang.org/en/ Visit the Ruby Lang homepage]
   * [http://tryruby.hobix.com/ Online Ruby Tutorial]
+
+=== Solr ==
+  * Visit the Solr homepage
+  * Visit the Solr wiki
+  * Sign up for the email listservs
+    * 
