@@ -18,10 +18,10 @@
   * Rails 2.1 upgrade
     * Gem dependencies
     * Refactor for named scope
-    * User requested features:
-      * Highlight citations
-      * Simple citation widgets
-      * Tagging
+  * User requested features:
+    * Highlight citations
+    * Simple citation widgets
+    * Tagging
   * Enhanced citation importing
     * Additional de-duplication measures
   * Enhanced author-disambiguation 
