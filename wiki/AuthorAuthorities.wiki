@@ -89,6 +89,6 @@ Calculate contributorships.score in the following way. Get all verified citation
 || Keywords || 25 points || `(25/total) * matching`  where 'total' is count of number of keywords in citation, and 'matching' is the # that match ||
 || _Total_ || 100 points || Add scores above for total.  Verified citations are then used to calculate the score of other un-verified citations. || 
 
-=== Authorship Assignment Flow Chart ===
+=== Author Disambiguation / Authorship Assignment Flow Chart ===
 
 [http://www.gliffy.com/publish/1371131/ http://www.gliffy.com/pubdoc/1371131/M.jpg]
