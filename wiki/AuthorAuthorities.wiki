@@ -1,4 +1,4 @@
-#summary Author authority control (DRAFT ONLY)
+#summary Author Disambiguation
 #labels Phase-Design
 
 == Introduction ==
