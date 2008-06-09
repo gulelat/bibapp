@@ -28,7 +28,7 @@
       * ~~Add rows param to filters~~
       * ~~Add rows param to search form select options~~
       * `"Nano*"` and `"nano*"` return different results!?!
-      * ~*Bug* Sorting results when there is multiple filters results in the filters being combined into one filter.~
+      * ~~*Bug* Sorting results when there is multiple filters results in the filters being combined into one filter.~~
       * *Bug* The year filter gives back results with years other than that of the filter.
 
     * *Missing Features:*
