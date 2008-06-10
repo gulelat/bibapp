@@ -131,7 +131,13 @@ Now you can generate the !BibApp database structure into your new database!  Fro
     {{{
     rake db:schema:load
     }}}
-You should now have a database with all the tables necessary to run BibApp!
+ 
+Before continuing, you also need to initialize your database with the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  From within your `[bibapp]` directory:
+    {{{
+    rake sherpa:update_publisher_data
+    }}}
+
+Your database should now be setup and initialized properly!
 
 === Startup !BibApp ===
 
