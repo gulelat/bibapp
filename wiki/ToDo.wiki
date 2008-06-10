@@ -14,8 +14,8 @@
       * Hpricot (compiled C code)
     * SHERPA data
 
-  * *Authorization / Authentication (May | Tim)*
-    * Implement Tim's test code
+  * *Authorization (After JCDL | Anyone)*
+    * Cleanup views having to do with adding/removing authorization roles... they could look a little nicer.
 
   * *Citations (Anyone | ASAP)*
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
@@ -64,6 +64,7 @@
     * Groups/index view should allow filtering via (parent_group_id)
     * Groups/index view: Parent/Child groups presentation
     * Citations/show view: Abstract / keywords show when copyright is clear
+    * Citations/show view: Move links to archived content files up by the "Find It" link?  If file is archived in local repository, should we even show the "Find It" link?
     * ~~Citations/apa templates: Create APA templates for all Citation types (or at least a "default" APA template which can be used if a type-specific one isn't found)~~
     * ~~Citations/forms templates: Create edit/new forms for all Citation types (or at least a "default" form which can be used if a type-specific one isn't found)~~
     * ~~Publishers/new view: Cleanup? - especially giant select box~~
