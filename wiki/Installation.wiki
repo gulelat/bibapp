@@ -129,9 +129,10 @@ Make sure your database is named the same as the 'database' setting in your `con
 
 Now you can generate the !BibApp database structure into your new database!  From within your `[bibapp]` directory:
     {{{
-    rake db:schema:load
+    rake db:migrate
     }}}
- 
+You should see a large number of 'migration' messages scroll by.  That's perfectly normal! But, if any errors appear, there are problems which you will have to resolve *before* !BibApp will function properly! 
+
 Before continuing, you also need to initialize your database with the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  This data is used to help researchers determine which of their publications can be deposited in a local repository, for safe keeping.  From within your `[bibapp]` directory:
     {{{
     rake sherpa:update_publisher_data
