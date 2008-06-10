@@ -132,7 +132,7 @@ Now you can generate the !BibApp database structure into your new database!  Fro
     rake db:schema:load
     }}}
  
-Before continuing, you also need to initialize your database with the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  From within your `[bibapp]` directory:
+Before continuing, you also need to initialize your database with the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  This data is used to help researchers determine which of their publications can be deposited in a local repository, for safe keeping.  From within your `[bibapp]` directory:
     {{{
     rake sherpa:update_publisher_data
     }}}
