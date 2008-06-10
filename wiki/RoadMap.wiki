@@ -26,7 +26,8 @@
   * Enhanced citation importing
     * Additional de-duplication measures
     * Better error handling / report messages
-  * Enhanced author-disambiguation 
+  * Enhanced author-disambiguation
+  * Advanced Search
 
 == Version 0.9 | October 2008 ==
 
