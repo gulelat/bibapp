@@ -53,6 +53,7 @@
     * Remove 'citation' terminology...replace with 'research'?
 
   * *Views (Ongoing | Everyone?)*
+    * Homepage (Citations/index): On Firefox 2 on Mac, the &heart; shows up as a vertical pipe (e.g. | )
     * Admin view
     * People/index view should allow filtering via group_id
     * Groups/index view should allow filtering via (parent_group_id)
@@ -67,6 +68,8 @@
     * PenNames/new view: Suggestions are totally wacky... remove initial last_name search?
     * ~~Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)~~
     * Memberships/index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
+    * Contributorships : It'd be nice to have a way to check multiple citations and click "Verify" or "Deny" once.  It's a bit of a pain to go one-by-one when you know multiple are either valid or not.
+
 
   * *Person*
     * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
