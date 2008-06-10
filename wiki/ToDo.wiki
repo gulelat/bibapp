@@ -48,16 +48,18 @@
     * We'll include a local copy in BibApp truck
 
   * *Styles / IA (Ongoing | Eric)*
+    * *Frozen for 0.7 release - 2008.06.10*
     * Groups index
     * People index
     * Print CSS (started...)
+    * *Bug* `&heart;` displays poorly in some browsers, make an image of it.
 
   * *Terminology (June | Everyone?)*
     * Remove 'citation' terminology...replace with 'research'?
 
   * *Views (Ongoing | Everyone?)*
-    * Homepage (Citations/index): On Firefox 2 on Mac, the &heart; shows up as a vertical pipe (e.g. | )
-    * Admin view
+    * Homepage (Citations/index): On Firefox 2 on Mac, the &heart; shows up as a vertical pipe (e.g. | ) noted above
+    * ~~Admin view (link added for admins with system rights)~~
     * People/index view should allow filtering via group_id
     * Groups/index view should allow filtering via (parent_group_id)
     * Groups/index view: Parent/Child groups presentation
@@ -73,13 +75,13 @@
     * Memberships/index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
     * Contributorships : It'd be nice to have a way to check multiple citations and click "Verify" or "Deny" once.  It's a bit of a pain to go one-by-one when you know multiple are either valid or not.
 
-
   * *Person*
     * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
-    * *Possible Bug* - Updating all Preson.citations in Solr does not happen when a membership is deleted.
+    * *Bug* - Updating all Person.citations in Solr does not happen when a membership is deleted. This *must happen*.
 
   * *Group*
     * *Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors.
+    * *Bug* You shouldn't be able to delete groups... just _hide_ them.
 
   * *Membership*
     * A person should be allowed to have multiple memberships to the same group.  This will require some new logic.  Currently throughout the application it is required that there only be one membership for each person and group.
