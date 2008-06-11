@@ -28,6 +28,7 @@
     * Better error handling / report messages
   * Enhanced author-disambiguation
   * Advanced Search
+  * Terminology change:  "citations" => "research"?
 
 == Version 0.9 | October 2008 ==
 
