@@ -1,0 +1,9 @@
+#summary Projects and literature that touch on BibApp capabilities
+
+= Projects =
+
+[http://vivo.library.cornell.edu/ VIVO], Cornell University
+
+= Papers and presentations =
+
+[http://www.apsr.edu.au/researcher_identity/presentations.html APSR presentations] on researcher identity. The Porter talk is especially relevant to BibApp.
