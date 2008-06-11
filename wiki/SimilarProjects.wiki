@@ -3,6 +3,7 @@
 = Projects =
 
 [http://vivo.library.cornell.edu/ VIVO], Cornell University
+[http://www.researcherid.com/ ResearcherID]
 
 = Papers and presentations =
 
