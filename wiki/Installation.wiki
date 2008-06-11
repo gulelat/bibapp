@@ -155,3 +155,20 @@ In order to startup !BibApp on your server, you must do *both* of the following 
      }}}
 
 Try it out!  Assuming your web server is on port 3000 (which is Mongrel's default), you should have !BibApp running at:  http://localhost:3000/
+
+== Using !BibApp ==
+
+=== Logging In For the First Time ===
+
+!BibApp comes with a pre-initialized "admin" user.  The login for this user is "admin" (lowercase), and the default password is "bibapp" (lowercase).
+
+This "admin" user has System Administrator rights, and can do anything within !BibApp.  Therefore, it is _absolutely necessary_ to *login and change the password* for this user as soon as possible.
+
+_Repeat:_ it is _absolutely necessary_ to *login and change the password* for this user as soon as possible.  
+
+So, login and do it now!  
+
+  # After logging in, click on "Welcome: admin" in the upper right, to view your "admin" user's account information.  
+  # Click "Change Password", and fill out the default password along with your new password
+
+Finally, (although not required at this time) you may wish to change the email account associated with this "admin" user.   At this time, !BibApp only uses that email address if you have forgotten your password and request a new one be generated.   So, if you have any concerns about forgetting your "admin" user's password, change the email to point to a valid email address!
