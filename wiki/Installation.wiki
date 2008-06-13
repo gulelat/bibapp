@@ -97,18 +97,18 @@ Once you've pulled down the code, you'll need to edit the !BibApp configurations
   * solr.yml.example
   * sword.yml.example
 
-You'll need to remove the .example extension from each of these files and personalize the contents as necessary.  In the end you should end up with the following:
+You'll need to remove the .example extension from each of these files and personalize the contents as necessary.  Each of the above files include instructions within them describing how to configure them properly at your local institution. In the end you should end up with the following (required configuration files are *bold*):
 
-  * database.yml - Your local database settings 
+  * *database.yml* - Your local database settings 
   * ldap.yml - Your campus LDAP directory settings
-  * personalize.rb - Your !BibApp personalization settings
-  * smtp.yaml - Your SMTP settings for user account creation verification emails
-  * solr.yml - Your Solr port settings (may not require changes)
+    * Having this configuration eases the process of adding people to !BibApp, by allowing you to search your local LDAP directory to pre-populate person information.
+    * You may disable this configuration by leaving the ".example" file extension.
+  * *personalize.rb* - Your !BibApp personalization settings
+  * *smtp.yml* - Your SMTP settings for user account creation verification emails
+  * *solr.yml* - Your Solr port settings (may not require changes)
   * sword.yml - Your SWORD server settings
-
-  {{{
-   TODO:  ADD MORE INFORMATION ABOUT VARIOUS CONFIGURATIONS!!
-  }}}
+    * This configuration is only necessary if you have a local institutional repository which supports [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD (Simple Web-service Offering Repository Deposit)].  If you have a repository supporting SWORD, !BibApp can accept uploaded files, and make deposits directly into your local repository.
+    * You may disable this configuration by leaving the ".example" file extension.
 
 
 === Setup Your !BibApp Database ===
