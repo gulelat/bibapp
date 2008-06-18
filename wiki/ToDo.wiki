@@ -79,10 +79,10 @@
 
   * *Person*
     * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
-    * *Bug* - Updating all Person.citations in Solr does not happen when a membership is deleted. This *must happen*.
+    * ~~*Bug* - Updating all Person.citations in Solr does not happen when a membership is deleted. This *must happen*.~~
 
   * *Group*
-    * *Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors.
+    * *Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors. See comment below.
     * *Bug* You shouldn't be able to delete groups... just _hide_ them.
 
   * *Membership*
