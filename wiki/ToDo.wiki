@@ -33,7 +33,7 @@
       * ~~Add rows param to search form select options~~
       * `"Nano*"` and `"nano*"` return different results!?!
       * ~~*Bug* Sorting results when there is multiple filters results in the filters being combined into one filter.~~
-      * *Bug* The year filter gives back results with years other than that of the filter.
+      * ~~*Bug* The year filter gives back results with years other than that of the filter.~~ - This bug seems to be fixed and I believe it was linked to the 'nil' publication date problem in solr.
 
     * *Missing Features:*
       * Advanced Search?
