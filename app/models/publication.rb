@@ -1,82 +1,58 @@
 class Publication < ActiveRecord::Base
+  
   belongs_to :publisher
-  belongs_to :authority,
-    :class_name => "Publication",
-    :foreign_key => :authority_id
-  has_many :citations, :conditions => ["citation_state_id = 3"]
+      
+  has_many :citations
   
-  after_create do |publication|
-    publication.authority_id = publication.id
-    publication.save
-  end
+  after_save :find_citations
   
-  after_save do |publication|
+  # validates_uniqueness_of :issn_isbn, :scope => :name
+  
+  def self.from_sherpa_api(host, page)
+    require 'rubygems'
+    require 'xmlsimple'
+    require 'net/http'
+
+
+    xml = Net::HTTP.get_response(host, page).response.body
+
+    begin
+    data = XmlSimple.xml_in(xml)
     
-    # If Publication authority changed, we need to echo new authority key
-    # to each related model.
-    
-    logger.debug("\n\nPub: #{publication.id} | Auth: #{publication.authority_id}\n\n")
-    if publication.authority_id != publication.id
+      if data['header'][0]['numhits'][0].to_i == 1+0 and data['publishers'][0].has_key?("publisher")
+        issn_isbn = data['journals'][0]['journal'][0]['issn'][0]
+        name      = data['journals'][0]['journal'][0]['jtitle'][0]
+        sherpa_id = data['publishers'][0]['publisher'][0]['id']
       
-      # Update publications
-      logger.debug("\n\n===Updating Publications===\n\n")
-      publication.authority_for.each do |pub|
-        pub.authority_id = publication.authority_id
-        pub.save
+        add = Publication.find_or_create_by_issn_isbn(issn_isbn)
+        add.update_attributes({
+          'sherpa_id'             => sherpa_id,
+          'issn_isbn'             => issn_isbn,
+          'name'                  => name
+        })
       end
-      
-      # Update citations
-      logger.debug("\n\n===Updating Citations===\n\n")
-      publication.citations.each do |citation|
-        citation.publication_id = publication.authority_id
-        citation.publisher_id = publication.publisher.authority_id
-        citation.save
-      end
-      
-      #TODO: AsyncObserver
-      Index.batch_index
+    rescue Exception => e
+      logger.info("#{e.to_s}")
     end
   end
-  
-  def to_param
-    param_name = name.gsub(" ", "_")
-    param_name = param_name.gsub(/[^A-Za-z0-9_]/, "")
-    "#{id}-#{param_name}"
-  end
 
-  def solr_id
-    "Publication-#{id}"
-  end
-  
-  def form_select
-    "#{name.first(100)+"..."} - #{issn_isbn}"
-  end
-
-  def authority_for
-    authority_for = Publication.find(
-      :all, 
-      :conditions => ["authority_id = ?", self.id]
+  def self.favorites
+    favorite_publications = Publication.find_by_sql(
+      ["select count(id) as count, periodical_full as full_name
+      from citations 
+      where periodical_full is not null
+      group by periodical_full 
+      order by count DESC
+      limit 11"]
     )
-    return authority_for
   end
   
-  class << self
-
-    # return the first letter of each name, ordered alphabetically
-    def letters
-      find(
-        :all,
-        :select => 'DISTINCT SUBSTR(name, 1, 1) AS letter',
-        :order  => 'letter'
-      )
-    end
-  
-    def update_multiple(pub_ids, auth_id)
-      pub_ids.split(",").each do |pub|
-        update = Publication.find_by_id(pub)
-        update.authority_id = auth_id
-        update.save
-      end
+  private
+  def find_citations
+    Citation.find(:all, :conditions => ["issn_isbn = ?", issn_isbn]).each do |c|
+      c.publication = self
+      c.save
     end
   end
+  
 end

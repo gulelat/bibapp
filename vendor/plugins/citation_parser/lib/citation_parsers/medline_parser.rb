@@ -3,7 +3,7 @@ class MedlineParser < CitationParser
   def parse(data)
     data = data.dup
     data.strip!
-    data.gsub!("\r", "\n").gsub!("\t", " ")
+    data.gsub!("\r", "\n")
     if not data =~ /^PMID/
       return nil
     end
@@ -22,15 +22,8 @@ class MedlineParser < CitationParser
         cite.properties[key] = Array.new if cite.properties[key].nil?
         cite.properties[key] << val.strip
       end
-
-      # Map original data for inclusion in database
-      cite.properties["original_data"] = rec
       @citations << cite
     end
-    
-    puts("\nCitations Size: #{@citations.size}\n")
-    puts("\nMEDLINEParser says:#{@citations.each{|c| c.inspect}}\n")
-    
     @citations
   end
   

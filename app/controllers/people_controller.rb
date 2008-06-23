@@ -1,77 +1,80 @@
 class PeopleController < ApplicationController
-  require 'redcloth'
   
-  #Require a user be logged in to create / update / destroy
-  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
+  caches_page :index, :list, :show
   
-  make_resourceful do 
-    build :index, :new, :create, :show, :edit, :update, :destroy
+  before_filter :login_required, :only => [ :edit, :update ]
+  before_filter :find_person, :only => [:edit, :update, :show]
+  
+  def index
+    redirect_to groups_path
+  end
 
-    publish :xml, :json, :yaml, :attributes => [
-      :id, :name, :first_name, :middle_name, :last_name, :prefix, :suffix, :phone, :email, :im, :office_address_line_one, :office_address_line_two, :office_city, :office_state, :office_zip, :research_focus,
-       {:name_strings => [:id, :name]},
-       {:groups => [:id, :name]},
-       {:contributorships => [:citation_id]}
-    ]
-
-    #Add a response for RSS
-    response_for :show do |format| 
-      format.rss  #loads show.rss.rxml
-      format.html  #loads show.html.haml
-    end
-      
-    before :index do
-      # find first letter of last name (in uppercase, for paging mechanism)
-      @a_to_z = Person.letters.collect { |d| d.letter.upcase }
-      
-      if params[:q]
-        query = params[:q]
-        @current_objects = current_objects
-      else
-        @page = params[:page] || @a_to_z[0]
-        @current_objects = Person.find(
-          :all, 
-          :conditions => ["upper(last_name) like ?", "#{@page}%"], 
-          :order => "upper(last_name), upper(first_name)"
-        )
-      end
-      
-      @title = "People"
+  def show
+    
+    @people_coauths = Authorship.coauthors_of(@person)
+    @group_coauths = Authorship.coauthor_groups(@person)
+        
+    # Locate associated tags
+    @tags = @person.tags(10)
+    
+    # Got an image for this person?
+    if !@person.image_url
+      @person.image_url = "/images/question_mark.png"
     end
     
-    before :new do
-      if params[:q]
-        @ldap_results = ldap_search(params[:q])
-      end
-      @title = "Add a Person"
+    # Prepare vcard webservice address
+    # TODO: Generalize this!
+    @vcard = "http://suda.co.uk/projects/X2V/get-vcard.php?uri=http%3A//bibapp.wendtlibrary.org/person/show/#{@person.id.to_s}"
+    @rss_feeds = [{
+      :controller => "rss",
+      :action => "person",
+      :id => @person.id
+    }]
+  end
+
+  def new
+    if params[:q]
+      @ldap_results = ldap_search(params[:q])
     end
-    
-    before :show do
-      # Default SolrRuby params
-      @query        = @current_object.solr_id
-      @filter       = params[:fq] || ""
-      @filter       = @filter.split("+>+").each{|f| f.strip!}
-      @sort         = params[:sort] || "year"
-      @page         = params[:page] || 0
-      @facet_count  = params[:facet_count] || 50
-      @rows         = params[:rows] || 10
-      
-      @q,@docs,@facets = Index.fetch(@query, @filter, @sort, @page, @facet_count, @rows)
-      
-      @view = "all"
-      @title = @current_object.name
-      @research_focus = RedCloth.new(@current_object.research_focus).to_html
-      
-      @feeds = [{
-        :action => "show",
-        :id => @current_object.id,
-        :format => "rss"
-      }]
-      
+  end
+  
+  def create
+    @person = Person.new(params[:person])
+    if @person.save
+      flash[:notice] = 'Person was successfully created.'
+      redirect_to edit_person_path(@person)
+    else
+      render :action => 'new'
     end
   end
 
+  def edit
+    # Prepare unique college affiliations for vcard
+    if !@person.image_url
+      @person.image_url = "/images/question_mark.png"
+    end
+  end
+
+  def update
+    if @person.update_attributes(params[:person])
+      flash[:notice] = "#{@person.display_name} was successfully updated."
+      redirect_to person_path(@person)
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    @person.destroy
+    flash[:notice] = "#{@person.display_name} was deleted."
+    redirect_to people_path
+  end
+  
   private
+  def find_person
+    @person = Person.find(params[:id])
+  end
+  
   def ldap_search(query)
     begin
       require 'rubygems'
@@ -88,12 +91,7 @@ class PeopleController < ApplicationController
         logger.info "Base DN: #{config['base']}"
         logger.info "Search query: #{query}"
         
-        ldap = Net::LDAP.new(
-          :host => config['host'], 
-          :port => config['port'].to_i, 
-          :base => config['base']
-        )
-        
+        ldap = Net::LDAP.new(:host => config['host'], :port => config['port'].to_i, :base => config['base'])
         filt = Net::LDAP::Filter.eq("cn", "*#{query}*")
         res = Array.new
         return ldap.search( :filter => filt ).map{|entry| clean_ldap(entry)}

@@ -1,103 +1,61 @@
 class GroupsController < ApplicationController
   
-  #Require a user be logged in to create / update / destroy
-  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
+  layout "application", :except => ["dot"]
   
-  make_resourceful do 
-    build :all
-
-    publish :xml, :json, :yaml, :attributes => [
-      :id, :name, :url, :description,
-       {:people => [:id, :name]}
-    ]
-    
-    #Add a response for RSS
-    response_for :show do |format| 
-      format.rss  #loads show.rss.rxml
-      format.html  #loads show.html.haml
+  def index
+    @groups_count        = Group.count
+    if @groups_count < 1
+      # redirect_to :controller => :account, :action => :signup
     end
+    @people_count        = Authorship.count('person_id', :distinct => true)
+    @archive_count       = Citation.count(
+                            :conditions => "archive_status_id in (2,4,5,6,7) and citation_state_id = 3")
+    @people              = Authorship.top_authors(30)
+    @publications        = Publication.favorites
+    @publishers          = Publisher.favorites
     
-    before :index do
-      # find first letter of group names (in uppercase, for paging mechanism)
-      @a_to_z = Group.letters.collect { |g| g.letter.upcase }
-      
-      @page = params[:page] || @a_to_z[0]
-      @current_objects = Group.find(
-        :all, 
-        :conditions => ["upper(name) like ?", "#{@page}%"], 
-        :order => "upper(name)"
-      )
-    end
+    @tags = Tag.find_by_sql(
+      "SELECT tags.id, tags.name, count(tags.id) as count
+      FROM tags
+      JOIN taggings ON tags.id = taggings.tag_id
+      GROUP BY tags.id, tags.name
+      ORDER BY count DESC
+      LIMIT 50")
+  end
+  
+  def show
+    url_abbrev = params[:url_abbrev]
+    @group = Group.find(params[:id])
+    @citation_count = @group.citation_count[0]['count']
     
-    before :show do
-      # Default SolrRuby params
-      @query        = @current_object.solr_id
-      @filter       = params[:fq] || ""
-      @filter       = @filter.split("+>+").each{|f| f.strip!}
-      @sort         = params[:sort] || "year"
-      @page         = params[:page] || 0
-      @facet_count  = params[:facet_count] || 50
-      @rows         = params[:rows] || 10
-      
-      @q,@docs,@facets = Index.fetch(@query, @filter, @sort, @page, @facet_count, @rows)
-      
-      @view = "all"
-      @title = @current_object.name
-      
-      @feeds = [{
-        :action => "show",
-        :id => @current_object.id,
-        :format => "rss"
-      }]
-    end
+    # Build the people list, using rails auto-pagination
+    @people_pages, @people = pagination @group.people_who_have_published,
+     :page => params[:page],
+     :per_page => params[:per_page]    
     
-    before :new do
-     @groups = Group.find(:all, :order => "name")
-    end
-   
+    @rss_feeds = [{
+      :controller => "rss",
+      :action => "person",
+      :id => @group.id
+    }]
+  end
+  
+  def dot    
+    @group = Group.find(params[:id])                                  
+    @coauthorships = Hash.new
     
-    before :edit do
-      #'editor' of group can edit that group
-      permit "editor of group"
+    @group.people_who_have_published.each do |person|
+      coauths = Array.new
+      coauths = Authorship.coauthors_of(person)
+      coauth_names = Array.new
+      coauths.each do |coauth|
+        coauth_names << coauth.display_name
+      end
       
-      @groups = Group.find(:all, :order => "name")
+      @coauthorships[person.display_name] = [coauth_names]
     end
   end
   
-  def create_group
-    
-    @duplicategroup = Group.find(:first, :conditions => ["name LIKE ?", params[:group][:name]])
-   
-    
-    if @duplicategroup.nil?
-      @group = Group.find_or_create_by_name(params[:group][:name])
-     
-      respond_to do |format|
-       flash[:notice] = "Group was successfully created."
-       format.html {redirect_to group_url(@group)}
-      end
-    else
-      respond_to do |format|
-       flash[:notice] = "This group already exists"
-       format.html {redirect_to new_group_path}
-      end
-    end
+  def create
   end
-  
-  def auto_complete_for_group_name
-    group_name = params[:group][:name].downcase
-    
-    #search at beginning of name
-    beginning_search = group_name + "%"
-    #search at beginning of any other words in name
-    word_search = "% " + group_name + "%"
-    
-    groups = Group.find(:all, 
-          :conditions => [ "LOWER(name) LIKE ? OR LOWER(name) LIKE ?", beginning_search, word_search ], 
-        :order => 'name ASC',
-        :limit => 8)
-      
-    render :partial => 'autocomplete_list', :locals => {:objects => groups}
-  end 
-  
 end

@@ -1,10 +1,9 @@
 class CitationParser
   
   @@parsers = Array.new
-  
   class << self
     def inherited(subclass)
-      @@parsers << subclass unless @@parsers.include?(subclass)
+      @@parsers << subclass
     end
     
     def parsers
@@ -22,15 +21,10 @@ class CitationParser
   def parse(data)
     @citations = Array.new
     @@parsers.each do |klass|
-      puts("\nTrying to parse using: #{klass}\n")
       parser = klass.new
       @citations = parser.parse(data)
       return @citations unless @citations.nil?
-      puts("\n Parsing was unsuccessful using: #{klass}\n")
     end
-    
-    raise Exception, 'Unable to find a Citation Parser to handle this data'
-
     return nil
   end
   
@@ -47,5 +41,7 @@ class ParsedCitation
     @properties = Hash.new
   end
 end
+
+
 
 Dir["#{File.expand_path(File.dirname(__FILE__))}/citation_parsers/*_parser.rb"].each { |p| require p }

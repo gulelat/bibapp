@@ -1,269 +1,223 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  require 'config/personalize.rb'
-  require 'htmlentities'
+  require 'namecase'
   
-  def ajax_checkbox_toggle(model, person, selected)
-    person = Person.find(person.id)
-    if selected
-      js = remote_function(
-        :url => {
-          :action => :destroy,
-          :person_id => person.id, 
-          "#{model.class.to_s.tableize.singularize}_id".to_sym => model.id},
-        :method => :delete
-      )
+  def link_to_login_or_admin
+    if current_user
+      link_to_unless_current "Admin", :controller => :admin, :action => :index
     else
-      js = remote_function(
-        :url => {
-          :action => :create,
-          :person_id => person.id, 
-          "#{model.class.to_s.tableize.singularize}_id".to_sym => model.id
-          },
-        :method => :post
-      )
-    end
-    check_box_tag("#{model.class.to_s.tableize.singularize}_#{model.id}_toggle", 1, selected, :onclick => js)
-  end
-
-  def letter_link_for(letters, letter, current)
-    if current == true
-      content_tag(:li, (letters.index(letter) ? link_to(letter, {:page=> letter}, :class => "some") : content_tag(:a, letter, :class => 'none')), :class => "current")
-    else
-      content_tag :li, (letters.index(letter) ? link_to(letter, {:page=> letter}, :class => "some") : content_tag(:a, letter, :class => 'none'))
+      link_to_unless_current "Log in", :controller => :account, :action => :login
     end
   end
   
-  def object_by_facet_id(name)
-    klass,id = name.split("-")
-    object = klass.constantize.find(id)
-    object
-  end
-  
-  def link_to_related_citations(citation)
-    #link_to "Related Citations", search_url(:q => "id:#{citation-solr_id}", :qt  => "mlt")
-    "Related Citations"
-  end
-  
-  def link_to_download_from_archive(citation)
-    #link_to "Download from #{$REPOSITORY_NAME}"
-    "Download from #{$REPOSITORY_NAME}"
+  def person_name_link(is_current, person)
+    link_to_unless( is_current,
+      "<span class=\"given-name\">#{h(person.first_name)}</span> <span class=\"family-name\">#{h(person.last_name)}</span>",
+      person_path(person) 
+    )
   end
 
+  def namecase(name)
+    NameCase.new(name).nc!
+  end
+    
+  # TODO: extract lower... add support for other popular reftypes (ordered by importance)
+  # Journal Article
+  # Conference Proceeding
+  # Book, Section
+  # Report
+  # Book, Whole
+  # Dissertation / Thesis
+  
+  def format_citation_apa_to_html(citation)
+    apa = nil
+    apa =  '<span class="person_group"><span class="authors">' + author_format(citation) + '</span></span> '
+    apa += '(<span class="year">' + citation.pub_year.to_s + '</span>). '
+    apa += '<span class="article-title">' + citation.title_primary.titleize + '</span>. '
+    if citation.reftype_id == 5 # Conference Proceeding
+      apa += 'In ' + citation.title_secondary.titleize + ',' if citation.title_secondary
+      apa += '<span class="volume">' + citation.volume + '</span>' if citation.volume && !citation.volume.empty?
+      apa += '(<span class="issue">' + citation.issue + '</span>)' if citation.issue && !citation.issue.empty?
+      apa += ', ' + citation.start_page + '-' if citation.start_page && !citation.start_page.empty?
+      apa += citation.end_page + '.' if citation.end_page && !citation.end_page.empty?
+      apa += citation.place_of_publication + ': ' if citation.place_of_publication && !citation.place_of_publication.empty?
+      apa += citation.publisher + '.' if citation.publisher && !citation.publisher.empty?
+    elsif citation.reftype_id == 4 # Book, Section
+      apa += 'In <span class="source">' + citation.periodical_full.titleize + '</span>, ' if citation.periodical_full && !citation.periodical_full.empty?
+      apa += '<span class="volume">' + citation.volume + '</span>' if citation.volume && !citation.volume.empty?
+      apa += '<span class="issue">' + citation.issue + '</span>)' if citation.issue && !citation.issue.empty?
+      apa += '(' + citation.start_page + '-' if citation.start_page && !citation.start_page.empty?
+      apa += citation.end_page + '). ' if citation.end_page && !citation.end_page.empty?
+      apa += citation.place_of_publication + ': ' if citation.place_of_publication && !citation.place_of_publication.empty?
+      apa += citation.publisher + '.' if citation.publisher && !citation.publisher.empty?
+    elsif citation.reftype_id == 3 # Book, Whole
+      apa += citation.place_of_publication + ': ' if citation.place_of_publication && !citation.place_of_publication.empty?
+      apa += citation.publisher + '.' if citation.publisher && !citation.publisher.empty?
+    elsif citation.reftype_id == 1 # Journal Article
+      apa += '<span class="source">' + citation.periodical_full.titleize + '</span>, ' if citation.periodical_full && !citation.periodical_full.empty?
+      apa += '<span class="volume">' + citation.volume + '</span>' if citation.volume && !citation.volume.empty?
+      apa += '(<span class="issue">' + citation.issue + '</span>)' if citation.issue && !citation.issue.empty?
+      apa += ', ' + citation.start_page + '-' if citation.start_page && !citation.start_page.empty?
+      apa += citation.end_page + '.' if citation.end_page && !citation.end_page.empty?
+    end
+    apa
+  end
+
+  # Used by DSpace batch importer
+  def format_citation_apa_to_s(citation)
+    apa = nil
+    if citation.reftype_id == 5
+      apa = "#{author_format(citation)} (#{citation.pub_year}). #{citation.title_primary}. In #{citation.title_secondary}, #{citation.volume}"
+      apa +=  " (#{citation.issue})" if citation.issue && !citation.issue.empty?
+      apa += ", #{citation.start_page}-#{citation.end_page}."
+    elsif citation.reftype_id == 1
+      apa =  author_format(citation) + ' '
+      apa += '(' + citation.pub_year.to_s + '). ' if citation.pub_year
+      apa += citation.title_primary.titleize + '. ' if citation.title_primary && !citation.title_primary.empty?
+      apa += citation.periodical_full.titleize + ', ' if citation.periodical_full && !citation.periodical_full.empty?
+      apa += citation.volume if citation.volume
+      apa += '(' + citation.issue + ')' if citation.issue
+      apa += ', ' + citation.start_page + '-' if citation.start_page
+      apa += citation.end_page + '.'
+    end
+    apa
+  end
+
+  # TODO: Rename to format_authors
+  def author_format(citation)
+     # determine author_string size
+     # if size > 6
+     citation.authors ||= ""
+     author_array = citation.authors.split(/\|/)
+     if author_array.size > 6
+       append = ', et al.'
+     else
+       append = ""
+     end
+   
+     author_string = author_array.slice(0...6).join(", ")       
+     author_string = author_string.gsub(/(\w+,)(\w+)/, '\1 \2')
+
+     if author_array.size > 6
+       author_string = author_string.gsub(/, ([\w\s]+)(, [\w\. ]+)\z/, ', \1\2')
+     else
+       author_string = author_string.gsub(/, ([\w\s]+)(, [\w\. ]+)\z/, ', & \1\2')
+     end
+
+     # truncates hyphenated first names to initials
+     while author_string =~ /, (\w+)-(\w+)/
+       first_part = $1
+       second_part = $2
+       first_initial = first_part.slice(0,1)
+       second_initial = second_part.slice(0,1)
+       author_string = author_string.sub(/, (\w+)-(\w+)/, ", #{first_initial}.#{second_initial}.")
+     end
+
+     while author_string =~ /and (\w+, )(\w{2,}),?/
+      name = $2
+      initial = name.slice(0,1)
+      author_string = author_string.sub($2, " #{initial}.,")
+     end
+
+     # truncates one-word first names to initials
+     while author_string =~ /(\w+, )(\w{2,})[\.,]/
+      name = $2
+      initial = name.slice(0,1)
+      author_string = author_string.sub($2, " #{initial}.,")
+     end
+
+     author_string = author_string.gsub(/,,/, ',')
+
+     # corrects case of all-caps names
+     while author_string =~ /([A-Z]{2,})/
+       corrected_name = $1.capitalize!
+       author_string = author_string.sub($1, "#{corrected_name}")
+     end
+
+     # deletes potential comma after last author name
+     author_string = author_string.gsub(/,\z/, '')
+
+     # cleans up goofy multiple-initial formatting
+     author_string = author_string.gsub(/([A-Z]\.), ([A-Z]\.)/, '\1\2') 
+
+     # [last name], [first name] [middle initial]." -> "[last name], [first initial]. [middle initial]."
+     while author_string =~ /(\w{2,}), (\w{2,}) ([A-Z]\.)/ || author_string =~ /(\w{2,}), (\w{2,})\z/
+      first_name = $2
+      first_initial = first_name.slice(0,1)
+      author_string = author_string.sub($2, "#{first_initial}.")
+     end
+
+     # changes names with format "[full first name], [full last name]" to APA format
+     while author_string =~ (/(\w{2,}), (\w{2,})/)
+       first_name = $1
+       last_name = $2
+       initial = first_name.slice(0,1)
+       author_string = author_string.sub(/(\w{2,}), (\w{2,})/, "#{last_name}, #{initial}.")
+     end
+
+     # one last correction for names that are still in "[initials], [last name]" format
+     while author_string =~ /([A-Z]\.[A-Z]\.?) (\w+)/
+       initials = $1
+       last_name = $2
+       author_string = author_string.sub(/([A-Z]\.){1,2} (\w+)/, "#{last_name}, #{initials}")
+     end
+
+    author_string = author_string + append
+    author_string = author_string
+  end
+  
+  def random_image
+    image_files = %w( .jpg .gif .png )
+    files = Dir.entries(
+          "#{RAILS_ROOT}/public/images/rotate" 
+      ).delete_if { |x| !image_files.index(x[-4,4]) }
+    files[rand(files.length)]
+  end
+  
+  def tag_cloud(tags, classes)
+    max, min = 0, 0
+    tags.each { |t|
+      max = t.count.to_i if t.count.to_i > max
+      min = t.count.to_i if t.count.to_i < min
+    }
+
+    divisor = ((max - min) / classes.size) + 1
+
+    tags.each { |t|
+      yield t.name, classes[(t.count.to_i - min) / divisor]
+    }
+  end
+  
+  def link_to_resolver(text, citation, resolver_url)
+    suffix="ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;ctx_id=10_1&amp;ctx_tim=2006-5-11T13%3A11%3A1CDT&amp;ctx_ver=Z39.88-2004&amp;res_id=http%3A%2F%2Fsfx.wisconsin.edu%2Fwisc&amp;rft.atitle=#{citation.title_primary.to_s.sub(" ", "+")}&amp;rft.date=#{citation.pub_year.to_s}&amp;rft.issn=#{citation.issn_isbn}&amp;rft.issue=#{citation.issue.to_s}&amp;rft.volume=#{citation.volume.to_s}&amp;rft.spage=#{citation.start_page}"
+    link_to text, "#{resolver_url}?#{suffix}"
+  end
+  
   def link_to_findit(citation)
-    # Set the canonical resolver variables (personalize.rb)
-  	suffix = $CITATION_SUFFIX
-  	base_url = $CITATION_BASE_URL
-    link_text = $CITATION_LINK_TEXT
+    link_to_resolver("Find it", citation, 'http://sfx.wisconsin.edu/wisc')
+  end
 
-    # Obtain the client IP Addess
-    ip = request.env["HTTP_X_FORWARDED_FOR"]
-    logger.debug("Client IP: #{ip}")
-
-    # Test UW-Madison 
-    #ip = "128.104.198.84"
-    
-    # Test UIUC 
-    #ip = "128.174.36.29"
-    
-    # Test Iowa
-    #ip = "128.255.56.180"
-
-    # Initialize ResolverRegistry
-  	client = ResolverRegistry::Client.new
-  	
-  	# @TODO: Can this be improved?
-  	#
-  	# Steps for ResolverRegistry results
-  	# 1) Look up *all* the resolvers held for a university 
-  	# * Some universities have more than one resolver (Iowa has 4!)
-  	# * Some resolvers look specific to ILL
-  	# * Some resolvers are for "Ask a Librarian" type services
-  	#
-  	# 2) If there are no results use the personalize.rb defaults
-  	#
-  	# 3) Loop through results
-  	#
-  	# 4) Choose best resolver option
-  	# * Best option (at least at UW, UIUC, Iowa) seems to be the resolver without specific metadata_formats
-    begin
-      institution = client.lookup_all(ip)
-      
-      # Test the ResolverRegistry results...
-      # If the ResolverRegistry returns nil
-      if institution.nil?
-        # Use the default variables
-      # Else loop and choose the "best option" 
-      else
-        institution.each do |i|
-          if i.resolver.metadata_formats.empty?
-            base_url = i.resolver.base_url
-            link_text = i.resolver.link_text
-          end
-        end
+  def to_dspace_xml(citation)
+    builder = Builder::XmlMarkup.new(:indent => 2)
+    xml = builder.dublin_core { |dc|
+      dc.dcvalue(citation.title_primary, :element => "title", :qualifier => "none") if citation.title_primary and !citation.title_primary.empty?
+      dc.dcvalue(citation.abstract, :element => "description", :qualifier => "abstract") if citation.abstract and !citation.abstract.empty?
+      dc.dcvalue(citation.pub_year, :element => "date", :qualifier => "issued")
+      dc.dcvalue(citation.publisher, :element => "publisher", :qualifier => "none") if citation.publisher and !citation.publisher.empty?
+      dc << copyright_statement(citation)
+      dc << citation.publication.publisher.dspace_xml
+      dc.dcvalue("This material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders. All persons copying this information are expected to adhere to the terms and constraints invoked by each author's copyright. In most cases, these works may not be reposted without the explicit permission of the copyright holder.", :element => "description", :qualifier => "none")
+      dc.dcvalue(format_citation_apa_to_s(citation), :element => "identifier", :qualifier => "citation")
+      dc.dcvalue("application/pdf", :element => "format", :qualifier => "mimetype")
+      citation.author_array.each do |a|
+        dc.dcvalue(a, :element => "contributor", :qualifier => "author")
       end
-    rescue
-      #If errors, do nothing - just use the defaults from personalize.rb
-    end
-    
-    #Substitute citation title
-    suffix = (citation.title_primary.nil?) ? suffix.gsub("[title]", "") : suffix.gsub("[title]", citation.title_primary.to_s.sub(" ", "+"))
-    #Substitute citation year
-    suffix = (citation.publication_date.nil?) ? suffix.gsub("[year]", "") : suffix.gsub("[year]", citation.publication_date.year.to_s)
-    #Substitute citation issue
-    suffix = (citation.issue.nil?) ? suffix.gsub("[issue]", "") : suffix.gsub("[issue]", citation.issue.to_s)
-    #Substitute citation volume
-    suffix = (citation.volume.nil?) ? suffix.gsub("[vol]", "") : suffix.gsub("[vol]", citation.volume.to_s)
-    #Substitute citation start-page
-    suffix = (citation.start_page.nil?) ? suffix.gsub("[fst]", "") : suffix.gsub("[fst]", citation.start_page)
-    #Substitute citation ISSN/ISBN
-    suffix = (citation.publication.nil? || citation.publication.issn_isbn.nil?) ? suffix.gsub("[issn]", "") : suffix.gsub("[issn]", citation.publication.issn_isbn)
-
-    # Prepare link
-    link_to link_text, "#{base_url}?#{suffix}"
-  end
-  
-  def coins(citation)
-    coins = "ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.btitle=The+Wind+in+the+Willows&amp;rft.au=Grahame,+Kenneth"
-=begin
-    # Journal - http://ocoins.info/cobg.html
-    rft.atitle
-    rft.title 
-    rft.jtitle 
-    rft.stitle 
-    rft.date 
-    rft.volume 
-    rft.issue 
-    rft.spage 
-    rft.epage 
-    rft.pages 
-    rft.artnum 
-    rft.issn 
-    rft.eissn 
-    rft.aulast 
-    rft.aufirst 
-    rft.auinit 
-    rft.auinit1 
-    rft.auinitm 
-    rft.ausuffix 
-    rft.au 
-    rft.aucorp 
-    rft.isbn 
-    rft.coden 
-    rft.sici 
-    rft.genre 
-    rft.chron 
-    rft.ssn 
-    rft.quarter 
-    rft.part 
-    
-    #Book - http://ocoins.info/cobgbook.html
-    rft.btitle
-    rft.isbn 
-    rft.aulast 
-    rft.aufirst 
-    rft.auinit 
-    rft.auinit1 
-    rft.auinitm 
-    rft.ausuffix 
-    rft.au 
-    rft.aucorp 
-    rft.atitle 
-    rft.title 
-    rft.place 
-    rft.pub 
-    rft.date 
-    rft.edition 
-    rft.tpages 
-    rft.series 
-    rft.spage 
-    rft.epage 
-    rft.pages 
-    rft.issn 
-    bici 
-    rft.genre 
-=end
-  end
-  
-  def archivable_count
-    if Publisher.find(:all, :conditions => ["publisher_copy = '1'"]).empty?
-      return @archivable_count = 0
-    end
-    
-    archivable_publishers = Publisher.find(
-      :all, 
-      :select => "pub1.id, pub2.id as auth", 
-      :from => "publishers pub1", 
-      :joins => "join publishers pub2 on pub1.id = pub2.authority_id", 
-      :conditions => "pub1.publisher_copy = 1"
-    )
-
-    pub_ids = Array.new
-    archivable_publishers.each do |p|
-      pub_ids << p.auth
-    end
-
-    @archivable_count = Citation.count(
-      :all, 
-      :conditions => ["publisher_id in (#{pub_ids.join(", ")}) and citation_state_id = 3"]
-    )
-    return @archivable_count
-  end
-  
-  def add_filter(query, sort, query_filter, facet, value, count, view, rows)
-    # TODO: Add Sort
-    # If we have >1 filter, we need to join the facet_field:value
-    if query_filter.size > 0 || !query_filter.empty?
-      prepped_filter = Array.new
-      prepped_filter << query_filter.dup
-
-      if(!query_filter.include?('"' + value.to_s + '"'))
-        prepped_filter << '"' + value.to_s + '"'
-      end
-      
-      prepped_filter = prepped_filter.join("+>+")
-
-    # If we have no filters, we need to send the first
-    else
-      prepped_filter = '"' + value.to_s + '"'
-    end
-    
-    link_to "#{value} (#{count})", {
-      :q => query,
-      :sort => sort,
-      :fq => prepped_filter,
-      :view => view,
-      :rows => rows,
-      :anchor => "citations"
     }
+    xml
   end
-  
-  def remove_filter(query, sort, query_filter, value, view, rows)
-    
-    prepped_filter = Array.new
-    prepped_filter = query_filter.dup
-    prepped_filter.delete_at(prepped_filter.index(value))
-    prepped_filter = prepped_filter.join("+>+")
-    
-    link_to "#{value}", {
-      :q => query,
-      :sort => sort,
-      :fq => prepped_filter,
-      :view => view,
-      :rows => rows,
-      :anchor => "citations"
-    }
-  end
-  
-  #Encodes UTF-8 data such that it is valid in HTML
-  def encode_for_html(data)
-    code = HTMLEntities.new
-    code.encode(data, :decimal)
-  end
-  
-  #Encodes UTF-8 data such that it is valid in XML
-  def encode_for_xml(data)
-    code = HTMLEntities.new
-    code.encode(data, :basic)
+
+  private
+  def authors_dspace
+    author_array.map { |a| "<dcvalue element=\"contributor\" qualifier=\"author\">#{a}</dcvalue>" }.join("\n")
   end
 end

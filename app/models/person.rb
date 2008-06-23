@@ -1,156 +1,182 @@
 class Person < ActiveRecord::Base
+  require 'namecase'
   
-  acts_as_authorizable  #some actions on people require authorization
- 
-  serialize :scoring_hash
-  has_many :name_strings, :through => :pen_names
-  has_many :pen_names
-  has_many :groups, :through => :memberships
+  composed_of :name, 
+              :class_name => Name,
+              :mapping => 
+              [ # database ruby 
+                [ :last_name, :last ],
+                [ :first_name, :first ], 
+                [ :middle_name, :middle ]
+              ]
+              
+  before_save   :set_first_last
+
   has_many :memberships
+  has_many :groups,
+    :through  => :memberships,
+    :order    => "name"    
   
-  # Association Extensions - Read more here:
-  # http://blog.hasmanythrough.com/2006/3/1/association-goodness-2
-  
-  has_many :citations, :through => :contributorships do 
+  has_many :authorships
+  has_many :citations,
+    :through => :authorships,
+    :order  =>  "pub_year DESC"
     
-    def unverified
-      #ContributorshipStateId 1 = Calculated
-      find(:all, :conditions => ["contributorships.contributorship_state_id = ?", 1], :order => "publication_date desc")
-    end
-    
-    def verified
-      # ContributorshipStateId 2 = Verifed
-      find(:all, :conditions => ["contributorships.contributorship_state_id = ?", 2], :order => "publication_date desc")
-    end
-    
-    def denied
-      # ContributorshipStateId 3 = Denied
-      find(:all, :conditions => ["contributorships.contributorship_state_id = ?", 3])
-    end
-  end
+  has_many :recent_citations,
+    :class_name => "Citation",
+    :source => :citation,
+    :through => :authorships,
+    :order => "pub_year DESC, id DESC",
+    :limit => 5
   
-  has_many :contributorships do 
-    # Show only non-hidden contributorships
-    # @TODO: Maybe include a "score" threshold here as well?
-    # - Like > 50 we show on the person view, 'cuz they probably wrote it?
-    # - Like < 50 we don't show, 'cuz maybe they didn't write it?
-    def to_show 
-      find(
-        :all, 
-        :conditions => [
-          "contributorships.hide = ? and contributorships.contributorship_state_id = ?", 
-          false, 
-          2
-        ],
-        :include => [:citation]
-      )
-    end
-    
-    def unverified
-      find(:all, :conditions => ["contributorships.contributorship_state_id = 1"], :include => [:citation], :order => "citations.publication_date desc")
-    end
-    
-    def verified
-      # ContributorshipStateId 2 = Verifed
-      find(:all, :conditions => ["contributorships.contributorship_state_id = ?", 2], :include => [:citation], :order => "citations.publication_date desc")
-    end
-    
-    def denied
-      # ContributorshipStateId 3 = Denied
-      find(:all, :conditions => ["contributorships.contributorship_state_id = ?", 3],:include => [:citation], :order => "citations.publication_date desc")
-    end
-  end
-  
-  has_one :image, :as => :asset
-  
-
-  def name
-    "#{first_name} #{last_name}"
-  end
-  
-  def first_last
-    "#{first_name} #{last_name}"
-  end
-  
-  def last_first
-    "#{last_name}, #{first_name}"
-  end
-  
-  def to_param
-    param_name = first_last.gsub(" ", "_")
-    param_name = param_name.gsub(/[^A-Za-z0-9_]/, "")
-    "#{id}-#{param_name}"
-  end
-
-  def solr_id
-    "Person-#{id}"
-  end  
-
   def groups_not
     all_groups = Group.find(:all, :order => "name")
     # TODO: do this right. The vector subtraction is dumb.
     return all_groups - groups
   end
+      
+  def to_param
+    param_name = display_name.gsub(" ", "_")
+    "#{id}-#{param_name}"
+  end
+
+  def display_name_reversed
+    name = "#{last_name}, #{first_name}"
+    nc_name = NameCase.new(name)
+    return nc_name.nc!
+  end
   
-  def name_strings_not
-    suggestions = NameString.find(
-      :all, 
-      :conditions => ["name like ?", "%" + self.last_name + "%"],
-      :order => :name
+  def display_name
+    name = "#{first_name} #{last_name}"
+    nc_name = NameCase.new(name)
+    return nc_name.nc!
+  end
+  
+  def image
+    image = "#{image_url}"
+    if image.empty?
+      image = '/images/question_mark.png'
+    end
+    return image
+  end
+  
+  def first_name_nc
+    name = "#{first_name}"
+    nc_name = NameCase.new(name)
+    return nc_name.nc!
+  end
+  
+  def last_name_nc
+    name = "#{last_name}"
+    nc_name = NameCase.new(name)
+    return nc_name.nc!
+  end
+  
+  def publication_reftypes
+    # This query should work in both MySQL and PostgreSQL  
+    publication_reftypes = Person.find_by_sql(
+      ["select reftype_id, refworks_reftype, count(reftype_id) as count from citations
+      join reftypes on (reftype_id = refworks_id) 
+      join authorships on (citations.id = authorships.citation_id)
+      where authorships.person_id = ?
+      group by reftype_id, refworks_reftype
+      order by reftype_id", id]
     )
-    
-    # TODO: do this right. The vector subtraction is dumb.
-    return suggestions - name_strings
   end
   
-  # Person Contributorship Calculation Fields
-  def verified_publications
-    Contributorship.find_all_by_person_id_and_contributorship_state_id(self.id,2,:include=>[:citation])
+  def favorite_publications
+    # This query should work in both MySQL and PostgreSQL 
+    favorite_publications = Person.find_by_sql(
+      ["select count(c.id) as count, c.issn_isbn, c.periodical_full as full_name, c.title_tertiary
+      from citations c
+      join authorships au on c.id = au.citation_id
+      left join publications publ on c.publication_id = publ.id
+      left join publishers pub on publ.publisher_id = pub.id
+      where au.person_id = ?
+      and length(c.issn_isbn) > 0
+	  and length(c.periodical_full) > 0
+      and c.citation_state_id = 3
+      group by c.issn_isbn, c.periodical_full, c.title_tertiary 
+      order by count DESC, c.periodical_full
+      limit 10", id]
+    )
+    favorite_publications.each{|p| p.full_name = p.title_tertiary if p.full_name.nil? or p.full_name.empty?}
   end
   
-  def update_scoring_hash
-    vps = self.verified_publications
-    
-    known_years = vps.collect{|vp| 
-                 if !vp.citation.publication_date.nil?
-                   vp.citation.publication_date.year 
-                 end
-                   }.uniq
-   known_years.delete(nil)
+  def favorite_publishers
+    favorite_publishers = Person.find_by_sql(
+      ["select count(title_primary) as count, publisher as full_name
+      from citations 
+      join authorships on (citations.id = authorships.citation_id)
+      where length(publisher) > 0 and authorships.person_id = ?
+      group by publisher 
+      order by count DESC
+      limit 10", id]
+    )
+  end
+  
+  def sherpa_publishers
+    # This query should work in both MySQL and PostgreSQL
+    distinct_publishers = Publisher.find_by_sql(
+      ["select distinct(pub.name) as publisher_name, count(c.title_primary) as count, pub.romeo_color
+      from citations c
+      join authorships au on (c.id = au.citation_id)
+      left join publications publ on (c.publication_id = publ.id)
+      left join publishers pub on publ.publisher_id = pub.id
+      where au.person_id = ?
+      group by pub.name, pub.romeo_color
+      order by pub.name ASC", id]
+    )
+  end
+  
+  def sherpa_publications
+    # This query should work in both MySQL and PostgreSQL
+    distinct_publishers = Publication.find_by_sql(
+      ["select distinct(publ.name) as publication_name, count(c.title_primary) as count, pub.name as publisher_name
+      from citations c
+      join authorships au on (c.id = au.citation_id)
+      left join publications publ on (c.publication_id = publ.id)
+      left join publishers pub on publ.publisher_id = pub.id
+      where au.person_id = ?
+      and length(c.issn_isbn) > 0
+      group by publ.name, pub.name
+      order by publ.name ASC", id]
+    )
+  end
 
-    
-    known_publication_ids = vps.collect{|vp| vp.citation.publication.id}.uniq
-    known_collaborator_ids = vps.collect{|vp| vp.citation.name_strings.collect{|ns| ns.id}}.flatten.uniq
-    known_keyword_ids = vps.collect{|vp| vp.citation.keywords.collect{|k| k.id}}.flatten.uniq
-    
-    # Return a hash comprising all the Contributorship scoring methods
-    scoring_hash = {
-      :years => known_years.sort, 
-      :publication_ids => known_publication_ids,
-      :collaborator_ids => known_collaborator_ids,
-      :keyword_ids => known_keyword_ids
-    }
-    self.update_attribute(:scoring_hash, scoring_hash)
+  def tags(count)
+    tags = Tag.find_by_sql(
+      ["select count(taggings.tag_id) as count, name 
+      from tags
+      join taggings on (tags.id = taggings.tag_id)
+      join citations on (taggings.taggable_id = citations.id)
+      join authorships on (citations.id = authorships.citation_id)
+      where authorships.person_id = ?
+      group by name
+      order by count DESC
+      limit ?", id, count]
+    )
   end
   
-  #A person's image file
-  def image_url
-    if !self.image.nil?
-      self.image.public_filename
-    else
-      "man.jpg"
-    end
-    
+  def copyright_analysis
+    # This query should work in both MySQL and PostgreSQL 
+    copyright_analysis = Person.find_by_sql(
+      ["select count(c.id) as count, c.issn_isbn, c.periodical_full, c.title_tertiary,
+          pub.sherpa_id, pub.name as publisher, pub.romeo_color
+      from citations c
+      join authorships au on c.id = au.citation_id
+      left join publications publ on c.publication_id = publ.id
+      left join publishers pub on publ.publisher_id = pub.id
+      where au.person_id = ?
+      and c.citation_state_id = 3
+      group by c.periodical_full, c.issn_isbn, c.title_tertiary,
+          pub.sherpa_id, pub.name, pub.romeo_color
+      order by count DESC, c.periodical_full", id]
+    )
   end
-
-  class << self
-    # return the first letter of each name, ordered alphabetically
-    def letters
-      find(
-        :all,
-        :select => 'DISTINCT SUBSTR(last_name, 1, 1) AS letter',
-        :order  => 'letter'
-      )
-    end
+  
+  def set_first_last
+    self.first_last = "#{self.first_name} #{self.last_name}"
   end
+  
 end

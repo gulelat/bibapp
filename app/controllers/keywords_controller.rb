@@ -1,10 +1,11 @@
 class KeywordsController < ApplicationController
   
-  #Require a user be logged in to create / update / destroy
-  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
+  caches_page :timeline
   
-  make_resourceful do
-    build :all
-
+  def timeline
+    @group = Group.find(params[:id])
+    @year_tags = @group.tags_by_year
+    @all_tags = @year_tags.collect { |yeardata| yeardata.tags.collect {|t| t.name}}.flatten.uniq.sort
   end
+  
 end

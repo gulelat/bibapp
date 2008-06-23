@@ -1,32 +1,8 @@
 class Membership < ActiveRecord::Base
-  belongs_to :person
   belongs_to :group
+  belongs_to :person
   
-  acts_as_list  :scope => :person
-
-  after_create do |membership|
-    # Update Solr!
-    # * Citations have many People...
-    membership.person.contributorships.each do |c|
-      if c.contributorship_state_id == 2
-        c.citation.save_and_set_for_index_without_callbacks
-      end
-    end
-    
-    Index.batch_index
-  end
-  
-  
-  after_destroy do |membership|
-    # Update Solr!
-    # * Citations have many People...
-    membership.person.contributorships.each do |c|
-      if c.contributorship_state_id == 2
-        c.citation.save_and_set_for_index_without_callbacks
-      end
-    end
-    
-    Index.batch_index
-  end
+  validates_presence_of :group_id, :person_id
+  validates_uniqueness_of :person_id, :scope => :group_id
   
 end
