@@ -87,6 +87,7 @@ class Index
     :publisher => Proc.new{|record| record.publisher.authority.name},
     
     :type_facet => Proc.new{|record| record[:type]},
+    :year_facet => Proc.new{|record| record.publication_date.year},
     :citation_id_facet => Proc.new{|record| record.solr_id},
     
     # SpellCheck
@@ -157,12 +158,7 @@ class Index
       #Reindex all citations again  
       records = Citation.find(:all, :conditions => ["citation_state_id = ?", 3])  
       records.each do |record|
-        if record.publication_date != nil
-          doc = Solr::Importer::Mapper.new(SOLR_MAPPING).map(record)
-        else
-          doc = Solr::Importer::Mapper.new(SOLR_MAPPING_NO_DATE).map(record)
-        end
-        
+        doc = Solr::Importer::Mapper.new(SOLR_MAPPING).map(record)
         SOLRCONN.add(doc)
       end
       SOLRCONN.commit
@@ -174,12 +170,7 @@ class Index
     end
   
     def update_solr(record)
-      if record.publication_date != nil
-        doc = Solr::Importer::Mapper.new(SOLR_MAPPING).map(record)
-      else
-        doc = Solr::Importer::Mapper.new(SOLR_MAPPING_NO_DATE).map(record)
-      end
-      
+      doc = Solr::Importer::Mapper.new(SOLR_MAPPING).map(record)
       SOLRCONN.add(doc)
       SOLRCONN.commit
     end
