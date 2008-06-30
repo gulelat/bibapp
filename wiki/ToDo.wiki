@@ -14,6 +14,10 @@
       * Hpricot (compiled C code)
     * SHERPA data
 
+  * *Authorities*
+    * rake script to pull UW-Madison and UIUC authority data
+    * Use Active::Resource
+
   * *Authorization (After JCDL | Anyone)*
     * Cleanup views having to do with adding/removing authorization roles... they could look a little nicer.
 
@@ -21,9 +25,26 @@
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
     * *Bug* - Citation author names over 6 should be dealt with appropriately
     * *Bug* - YAML and JSON views are broken, again...
+    * [http://bibliontology.com/ Bibliographic Ontology] - ramifications? (Everyone | July conference call)
+    * Deduplication
+      * Admin Dupe view
+      * Implement string distance methods?
+      * Investigate [http://amatch.rubyforge.org/ amatch]
 
   * *File Uploads* (Anyone | ?)
     * *Bug* - File upload does not work in Safari 3.1.1
+
+  * *NameStrings*
+    * Make a "machine" friendly db column
+    * RegEx Recipe
+      * Commas and periods become spaces
+      * Remove double spaces
+      * Trim!
+      * Example ("Smith, J.H." => "smith j h " => "smith j h")
+    * Automatically add PenNames upon Person.create
+      * We should be able to guess a couple upon input
+      * Example ("John Smith" => "smith j")
+      * Example ("John Smith" => "smith") # Not sure about this one...
 
   * *Search (Eric)*
     * *Frozen for 0.7 release - 2008.06.02*
@@ -47,6 +68,15 @@
     * Publisher.update_sherpa_data method groks over this xml file
     * Update will have to be via a manual download
     * We'll include a local copy in BibApp truck
+
+  * *Speed*
+    * Move more views entirely into Solr
+    * Rails caching
+    * Asynchronous tasks
+      * Citation import especially
+      * Investigate [http://xph.us/software/beanstalkd/ beanstalkd]
+      * Investigate [http://async-observer.rubyforge.org/ Async Observer]
+    * Session based IP/OpenURL path
 
   * *Styles / IA (Ongoing | Eric)*
     * *Frozen for 0.7 release - 2008.06.10*
@@ -80,6 +110,9 @@
   * *Person*
     * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
     * ~~*Bug* - Updating all Person.citations in Solr does not happen when a membership is deleted. This *must happen*.~~
+    * Display / Design: indicate a "stub" entry, versus a completed entry
+      * CSS or image for doing this
+      * Make this the default true in the database
 
   * *Group*
     * *Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors. See comment below.
@@ -90,11 +123,28 @@
     * ~~*Bug*: Adding a title to a membership does not save.  This is cause by Permissions. In the method "edit_time" in the memberships controller, the call to 'permit'  does not allow an update, even if you should have permission.~~
 
   * *Citation ingest (June? | Conference call)*
-    * Implement simple pubmed API ingest
-    * Implement simple ISI ingest
-    * Implement simple arXiv API
+    * Implement:
+      * [http://wing.comp.nus.edu.sg/parsCit/ ParsCit] importer
+        # Website includes a sample Ruby API script
+        # Make Ruby plugin (Eric | Due: July 15th)
+      * simple pubmed API ingest
+        # UW-Madison Ebling Library partners have experience here
+        # Hold meeting and report back (Eric | Due: July 15th)
+      * simple ISI ingest
+      * simple arXiv API
     * ~~Add newer RefWorks XML format~~
-    * Better error handling for bulk ingest!  Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
+    * Better error handling for bulk ingest!  
+      * Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
+      * Create error report (ex. X good | X bad results)
+
+  * *Citation export (July | Conference call)*
+    * Liam M. has continued work on citeproc-rb
+    * Contacted Liam offering assistanct - Eric 6.30.2008
+
+  * *SWORD* (Tim | July?)
+    * Test Fedora
+    * Test Eprints
+    * Bulk send?
 
   * *Tests (Ongoing | Everyone?)*
     * Add Fixtures
