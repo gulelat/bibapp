@@ -1,13 +1,15 @@
 #summary BibApp Project Roadmap
 #labels Featured
 
+|| _Note:_ As we are a small development team (with limited resources), Roadmap plans may change.  However, we are working hard to keep these releases on-schedule.  We will keep this page up-to-date if any unanticipated release changes occur. ||
+
 == Version 0.7 | JCDL 2008 ==
 
   * ~~Basic Authentication~~
   * ~~Authorization~~
   * ~~Basic authorities~~
 
-  * Solr
+  * ~~Solr~~
     * ~~Faceting~~
     * ~~Spelling suggestions~~
     * ~~Related articles~~
@@ -47,8 +49,8 @@
 
 == Future Development ==
 
-  * BibApp interoperability
+  * !BibApp interoperability
   * Improve SHERPA data
   * Focus on current campus collaboration
   * Cited references
-  * Potentially automate deposits to PubMed Central?
+  * Potentially automate deposits to !PubMed Central?
