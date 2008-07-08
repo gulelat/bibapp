@@ -115,8 +115,8 @@
       * Make this the default true in the database
 
   * *Group*
-    * *Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors. See comment below.
-    * *Bug* You shouldn't be able to delete groups... just _hide_ them.
+    * ~~*Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors. See comment below.~~
+    * ~~*Bug* You shouldn't be able to delete groups... just _hide_ them.~~
 
   * *Membership*
     * A person should be allowed to have multiple memberships to the same group.  This will require some new logic.  Currently throughout the application it is required that there only be one membership for each person and group.
