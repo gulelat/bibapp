@@ -5,14 +5,13 @@
 
   * *Item (Timeframe | Owner)*
 
-  * *Documentation (June | Everyone - Eric)*
-    * Rails
-    * Solr
-    * SVN export
-    * Installation - Started at [Installation]
-      * Personalization
-      * Hpricot (compiled C code)
-    * SHERPA data
+  * *Documentation (Ongoing | Everyone - Eric)*
+    * Admin Documentation
+      * How to create citations, people, groups
+      * How to edit authorities
+      * How to verify/deny contributorships 
+      * How to archive research in a repository
+    * Videocast of major interface features
 
   * *Authorities*
     * rake script to pull UW-Madison and UIUC authority data
@@ -24,7 +23,7 @@
   * *Citations (Anyone | ASAP)*
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
     * *Bug* - Citation author names over 6 should be dealt with appropriately
-    * *Bug* - YAML and JSON views are broken, again...
+    * *Bug* - YAML and JSON views are broken for citations, again...
     * [http://bibliontology.com/ Bibliographic Ontology] - ramifications? (Everyone | July conference call)
     * Deduplication
       * Admin Dupe view
@@ -38,7 +37,7 @@
     * Make a "machine" friendly db column
     * RegEx Recipe
       * Commas and periods become spaces
-      * Remove double spaces
+      * Replace more than one space with a single space
       * Trim!
       * Example ("Smith, J.H." => "smith j h " => "smith j h")
     * Automatically add PenNames upon Person.create
@@ -47,7 +46,6 @@
       * Example ("John Smith" => "smith") # Not sure about this one...
 
   * *Search (Eric)*
-    * *Frozen for 0.7 release - 2008.06.02*
     * *Bugs:*
       * ~~Add param for rows~~
       * ~~Add rows param to filters~~
@@ -61,7 +59,6 @@
       * XSLT2RSS?
 
   * *SHERPA RoMEO data (Eric)*
-    * *Frozen for 0.7 release - 2008.06.02*
     * Sherpa's api data is not cached on their server
     * net/http will *always* timeout
     * added /public/sherpa/publishers.xml file
@@ -79,17 +76,16 @@
     * Session based IP/OpenURL path
 
   * *Styles / IA (Ongoing | Eric)*
-    * *Frozen for 0.7 release - 2008.06.10*
+    * Citations show - needs major cleanup!
     * Groups index
     * People index
     * Print CSS (started...)
-    * *Bug* `&heart;` displays poorly in some browsers, make an image of it.
-
+    * *Bug* `&heart;` displays poorly in some browsers (firefox 2 on mac), make an image of it.
+    
   * *Terminology (June | Everyone?)*
     * Remove 'citation' terminology...replace with 'research'?
 
   * *Views (Ongoing | Everyone?)*
-    * Homepage (Citations/index): On Firefox 2 on Mac, the &heart; shows up as a vertical pipe (e.g. | ) noted above
     * ~~Admin view (link added for admins with system rights)~~
     * People/index view should allow filtering via group_id
     * Groups/index view should allow filtering via (parent_group_id)
@@ -139,7 +135,7 @@
 
   * *Citation export (July | Conference call)*
     * Liam M. has continued work on citeproc-rb
-    * Contacted Liam offering assistanct - Eric 6.30.2008
+    * Contacted Liam offering assistance - Eric 6.30.2008
 
   * *SWORD* (Tim | July?)
     * Test Fedora
