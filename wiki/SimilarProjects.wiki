@@ -4,6 +4,7 @@
 
   * [http://vivo.library.cornell.edu/ VIVO], Cornell University
   * [http://www.researcherid.com/ ResearcherID]
+  * [http://www.researchcrossroads.org/ ResearchCrossroads]
 
 = Papers and presentations =
 
