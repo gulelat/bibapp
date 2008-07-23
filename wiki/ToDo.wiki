@@ -5,6 +5,11 @@
 
   * *Item (Timeframe | Owner)*
 
+  * ~~*Rails 2.1 Upgrade*~~
+    * Begin Using Named Scopes (where applicable)
+    * Look into new caching options
+    * Add Gem Dependencies
+
   * *Documentation (Ongoing | Everyone - Eric)*
     * Admin Documentation
       * How to create citations, people, groups
@@ -23,7 +28,7 @@
   * *Citations (Anyone | ASAP)*
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
     * *Bug* - Citation author names over 6 should be dealt with appropriately
-    * *Bug* - YAML and JSON views are broken for citations, again...
+    * ~~*Bug* - YAML and JSON views are broken for citations, again...~~ (Seemingly fixed by 2.1 upgrade)
     * [http://bibliontology.com/ Bibliographic Ontology] - ramifications? (Everyone | July conference call)
     * Deduplication
       * Admin Dupe view
