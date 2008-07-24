@@ -5,10 +5,14 @@
 
   * *Item (Timeframe | Owner)*
 
-  * ~~*Rails 2.1 Upgrade*~~
+  * *Rails 2.1 Upgrade*
+    * ~~Perform actual upgrade~~
     * Begin Using Named Scopes (where applicable)
     * Look into new caching options
     * Add Gem Dependencies
+      * ~~Add dependency for Hpricot~~
+      * Should we start applying Gem Dependencies rather than *freezing* everything?
+        * If so, we can just add `rake gems:install` as part of the Installation process, as this will go out an install any necessary gems.
 
   * *Documentation (Ongoing | Everyone - Eric)*
     * Admin Documentation
