@@ -29,3 +29,19 @@ Notice the change from `~>0.5` to `~>0.6`.
     * `"~>0.5"` -- require version 0.5 or greater, but don't allow next major version (1.0).
   # *Plugin or Rake task dependencies:*  If you have plugins or rake tasks that `require` particular gems, you may see errors when you run `rake gems:install`, as rake attempts to initialize all plugins and rake tasks.   When this happens, replace your simple `require 'solr-ruby'` statement with: `require 'solr-ruby' if defined? Solr`
     * This tip was found at: http://www.webficient.com/2008/7/11/rails-gem-dependencies-and-plugin-errors
+
+= Plugin Management =
+
+All necessary plugins are "frozen" in /vendor/plugins. 
+
+We are slowly moving towards using [http://piston.rubyforge.org/ Piston] to help with plugin management, as Piston makes it easier to upgrade existing plugins.  
+
+It is recommended that new plugins be added via Piston.  For example:
+{{{
+piston import http://svn.hamptoncatlin.com/make_resourceful/trunk/ make_resourceful
+svn commit -m "Piston: Adding make_resourceful plugin usin Piston"
+}}}
+
+However, it's worth noting a few limitations of Piston at this time:
+  * Piston cannot be used with custom plugins (obviously)
+  * Piston currently only works if the plugin source code is being stored in SVN.  This is a big limitation as many plugin makers now use Git.  However, Piston 2.0 is in the works and is planning to fix this limitation.
