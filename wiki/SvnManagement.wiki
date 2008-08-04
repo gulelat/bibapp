@@ -21,9 +21,15 @@ config.gem "hpricot", :version=>"~>0.6", :source=>"http://code.whytheluckystiff.
 }}}
 Notice the change from `~>0.5` to `~>0.6`.  
 
-Here's a quick guide of how versions are handled within `environment.rb`:
-  * `"0.5"` = require version 0.5 *exactly*
-  * `">=0.5"` = require version 0.5 or greater
-  * `"~>0.5"` = require version 0.5 or greater, but don't allow next major version (1.0).
+*REMEMBER*: after changing a gem version within `environment.rb`, you need to run `rake gems:install` to install that new gem version!
 
-REMEMBER: after changing a gem version within `environment.rb`, you need to run `rake gems:install` to install that new gem version!
+=== Gem Management Tips ===
+
+  # *Versions:* Here's a quick guide of how versions are handled within `environment.rb`:
+    * `"0.5"` = require version 0.5 *exactly*
+    * `">=0.5"` = require version 0.5 or greater
+    * `"~>0.5"` = require version 0.5 or greater, but don't allow next major version (1.0).
+  # *Plugin or Rake task dependencies:*  If you have plugins or rake tasks that `require` particular gems, you may see errors when you run `rake gems:install`, as rake attempts to initialize all plugins and rake tasks.   When this happens, replace your simple `require 'solr-ruby'` statement with: `require 'solr-ruby' if defined? Solr`
+    * This tip was found at: http://www.webficient.com/2008/7/11/rails-gem-dependencies-and-plugin-errors
+
+
