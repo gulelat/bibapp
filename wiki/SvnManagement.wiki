@@ -42,6 +42,5 @@ piston import http://svn.hamptoncatlin.com/make_resourceful/trunk/ make_resource
 svn commit -m "Piston: Adding make_resourceful plugin usin Piston"
 }}}
 
-However, it's worth noting a few limitations of Piston at this time:
-  * Piston cannot be used with custom plugins (obviously)
+However, it's worth noting a major limitation of Piston at this time:
   * Piston currently only works if the plugin source code is being stored in SVN.  This is a big limitation as many plugin makers now use Git.  However, Piston 2.0 is in the works and is planning to fix this limitation.
