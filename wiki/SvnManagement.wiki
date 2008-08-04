@@ -1,0 +1,29 @@
+#summary How BibApp uses SVN to manage it code, required gems and plugins.
+#labels Phase-Implementation
+
+= SVN Management for !BibApp =
+
+== Introduction ==
+
+This page serves as a guide for developers working with !BibApp's SVN to update or modify code, gems or plugins.
+
+== Gem Management ==
+
+All required Gems to run !BibApp are managed in the `/config/environment.rb` as Gem Dependencies (a new feature of Rails as of version 2.1).
+
+To upgrade a version of a Gem, you need only update the dependency listed in `/config/environment.rb`.  For example, to update Hpricot to *minimally require* version 0.6 instead of 0.5, you'd change the following:
+{{{
+config.gem "hpricot", :version=>"~>0.5", :source=>"http://code.whytheluckystiff.net"
+}}}
+To this:
+{{{
+config.gem "hpricot", :version=>"~>0.6", :source=>"http://code.whytheluckystiff.net"
+}}}
+Notice the change from `~>0.5` to `~>0.6`.  
+
+Here's a quick guide of how versions are handled within `environment.rb`:
+  * `"0.5"` = require version 0.5 *exactly*
+  * `">=0.5"` = require version 0.5 or greater
+  * `"~>0.5"` = require version 0.5 or greater, but don't allow next major version (1.0).
+
+REMEMBER: after changing a gem version within `environment.rb`, you need to run `rake gems:install` to install that new gem version!
