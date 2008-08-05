@@ -62,10 +62,12 @@
       * `"Nano*"` and `"nano*"` return different results!?!
       * ~~*Bug* Sorting results when there is multiple filters results in the filters being combined into one filter.~~
       * ~~*Bug* The year filter gives back results with years other than that of the filter.~~ - This bug seems to be fixed and I believe it was linked to the 'nil' publication date problem in solr.
+      * Fix faceting to produce URLs like this example
+        * http://localhost:8983/solr/select?q=nature&facet=true&facet.field=publication_facet&fq=publication_facet:%22Nature%22
+
 
     * *Missing Features:*
       * Advanced Search?
-      * XSLT2RSS?
 
   * *SHERPA RoMEO data (Eric)*
     * Sherpa's api data is not cached on their server
