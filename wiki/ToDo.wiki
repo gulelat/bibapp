@@ -44,6 +44,8 @@
 
   * *NameStrings*
     * Make a "machine" friendly db column
+    * Create view to clean NameString
+      * Ex. "SVIATOSLAVSKY I" => "Sviatoslavsky, I"
     * RegEx Recipe
       * Commas and periods become spaces
       * Replace more than one space with a single space
@@ -144,9 +146,14 @@
       * Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
       * Create error report (ex. X good | X bad results)
 
-  * *Citation export (July | Conference call)*
-    * Liam M. has continued work on citeproc-rb
-    * Contacted Liam offering assistance - Eric 6.30.2008
+  * *Citation export (Aug/Sept)*
+    * Liam M. has released citeproc-rb v0.0.1
+    * ~~Create a simple bibapp filter for the citeproc gem~~
+    * ~~Localize CSL transformation xml files~~
+    * ~~Bug: Authors are sorted alphabetically~~
+    * Sorting citations is odd:
+      * APA  - desc by primary author
+      * IEEE - dunno?
 
   * *SWORD* (Tim | July?)
     * Test Fedora
