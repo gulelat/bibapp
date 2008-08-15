@@ -18,13 +18,13 @@
 
 == Version 0.8 | August 2008 ==
 
-  * Rails 2.1 upgrade
-    * Gem dependencies
-    * Refactor for named scope
+  * ~~Rails 2.1 upgrade~~
+    * ~~Gem dependencies~~
+    * ~~Refactor for named scope~~
   * User requested features:
     * Highlight citations
     * Simple citation widgets
-    * Tagging
+    * ~~Tagging~~
   * Enhanced citation importing
     * Additional de-duplication measures
     * Better error handling / report messages
