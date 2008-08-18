@@ -4,15 +4,9 @@
 === !BibApp 1.0 Todo: ===
 
   * *Item (Timeframe | Owner)*
-
-  * *Rails 2.1 Upgrade*
-    * ~~Perform actual upgrade~~
-    * Begin Using Named Scopes (where applicable)
-    * Look into new caching options
-    * Add Gem Dependencies
-      * ~~Add dependency for Hpricot~~
-      * Should we start applying Gem Dependencies rather than *freezing* everything?
-        * If so, we can just add `rake gems:install` as part of the Installation process, as this will go out an install any necessary gems.
+   
+  * *0.8 Release*
+    * After release, update Install documentation with `rake gems:install` to install all our Gem Dependencies.
 
   * *Documentation (Ongoing | Everyone - Eric)*
     * Admin Documentation
@@ -32,7 +26,7 @@
   * *Citations (Anyone | ASAP)*
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
     * *Bug* - Citation author names over 6 should be dealt with appropriately
-    * ~~*Bug* - YAML and JSON views are broken for citations, again...~~ (Seemingly fixed by 2.1 upgrade)
+    * ~~*Bug* - YAML and JSON views are broken for citations, again...~~ (Seemingly fixed by 2.1 upgrade?)
     * [http://bibliontology.com/ Bibliographic Ontology] - ramifications? (Everyone | July conference call)
     * Deduplication
       * Admin Dupe view
@@ -80,7 +74,7 @@
     * We'll include a local copy in BibApp truck
 
   * *Speed*
-    * Move more views entirely into Solr
+    * ~~Move more views entirely into Solr~~
     * Rails caching
     * Asynchronous tasks
       * Citation import especially
