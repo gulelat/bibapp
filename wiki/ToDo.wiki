@@ -15,6 +15,14 @@
         sudo apt-get install libxml2 libxml2-dev
         }}}
       * Then, re-run the `rake gems:install`
+      * Another potential error:
+        {{{
+        'require': no such file to load -- mkmf (LoadError)
+        }}}
+      * Resolution is to install `ruby1.8-dev`
+        {{{
+        sudo apt-get install ruby1.8-dev
+        }}}
 
   * *Documentation (Ongoing | Everyone - Eric)*
     * Admin Documentation
