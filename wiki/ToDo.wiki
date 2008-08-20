@@ -1,12 +1,20 @@
 #summary The 1.0 TODO List
-#labels Phase-Design
 
 === !BibApp 1.0 Todo: ===
 
   * *Item (Timeframe | Owner)*
    
   * *0.8 Release*
-    * After release, update Install documentation with `rake gems:install` to install all our Gem Dependencies.
+    * After release, update Install documentation with `rake gems:install` to install all our Gem Dependencies.  Also add the following notes:
+      * Note: on Ubuntu/Debian, auto-installing `libxml-ruby` may error out with:
+        {{{
+        ERROR: Filed to build gem native extension.
+        }}}
+      * If you see that error, make sure you have `libxml2` and `libxml2-dev` installed:
+        {{{
+        sudo apt-get install libxml2 libxml2-dev
+        }}}
+      * Then, re-run the `rake gems:install`
 
   * *Documentation (Ongoing | Everyone - Eric)*
     * Admin Documentation
