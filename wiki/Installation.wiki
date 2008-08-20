@@ -123,8 +123,9 @@ Make sure your database is named the same as the 'database' setting in your `con
       CREATE DATABASE bibapp CHARACTER SET = 'utf8';
       }}}
    
-   * *For PostgreSQL:* Use the following command line script to create a database named 'bibapp' with a database owner of 'bibapp_user': 
+   * *For PostgreSQL:* Use the following two commands to first create a !BibApp database user (e.g. named 'bibapp_user') and then create a database named 'bibapp' with a database owner of 'bibapp_user': 
       {{{
+      createuser -dSRP bibapp_user
       createdb -U bibapp_user -E UNICODE bibapp
       }}}
 
@@ -134,7 +135,7 @@ Now you can generate the !BibApp database structure into your new database!  Fro
     }}}
 You should see a large number of 'migration' messages scroll by.  That's perfectly normal! But, if any errors appear, there are problems which you will have to resolve *before* !BibApp will function properly! 
 
-Before continuing, you also need to initialize your database with the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  This data is used to help researchers determine which of their publications can be deposited in a local repository, for safe keeping.  From within your `[bibapp]` directory:
+Before continuing, you also need to initialize your database with the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  This data is used to help researchers determine which of their publications can be deposited in a local repository for safe keeping.  From within your `[bibapp]` directory:
     {{{
     rake sherpa:update_publisher_data
     }}}
