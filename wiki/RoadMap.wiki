@@ -21,6 +21,10 @@
   * ~~Rails 2.1 upgrade~~
     * ~~Gem dependencies~~
     * ~~Refactor for named scope~~
+  * Speed increases
+    * ~~Increase page loading speed by using Solr more heavily~~
+    * ~~Increase processing speed for updates by using more backend processing~~
+      * Note: backend processing only currently enabled for Linux and Mac OSX
   * User requested features:
     * Highlight citations
     * Simple citation widgets
