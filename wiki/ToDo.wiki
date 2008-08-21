@@ -55,10 +55,10 @@
     * *Bug* - File upload does not work in Safari 3.1.1
 
   * *NameStrings*
-    * Make a "machine" friendly db column
-    * Create view to clean NameString
+    * ~~Make a "machine" friendly db column~~
+    * ~~Create view to clean NameString~~
       * Ex. "SVIATOSLAVSKY I" => "Sviatoslavsky, I"
-    * RegEx Recipe
+    * ~~RegEx Recipe~~
       * Commas and periods become spaces
       * Replace more than one space with a single space
       * Trim!
