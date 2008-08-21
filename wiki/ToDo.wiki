@@ -5,24 +5,26 @@
   * *Item (Timeframe | Owner)*
    
   * *0.8 Release*
-    * After release, update Install documentation with `rake gems:install` to install all our Gem Dependencies.  Also add the following notes:
-      * Note: on Ubuntu/Debian, auto-installing `libxml-ruby` may error out with:
-        {{{
-        ERROR: Filed to build gem native extension.
-        }}}
-      * If you see that error, make sure you have `libxml2` and `libxml2-dev` installed:
-        {{{
-        sudo apt-get install libxml2 libxml2-dev
-        }}}
-      * Then, re-run the `rake gems:install`
-      * Another potential error:
-        {{{
-        'require': no such file to load -- mkmf (LoadError)
-        }}}
-      * Resolution is to install `ruby1.8-dev`
-        {{{
-        sudo apt-get install ruby1.8-dev
-        }}}
+    * Necessary Documentation Updates
+      * Update Install documentation with `rake gems:install` to install all our Gem Dependencies.  Also add the following notes:
+        * Note: on Ubuntu/Debian, auto-installing `libxml-ruby` may error out with:
+          {{{
+          ERROR: Filed to build gem native extension.
+          }}}
+        * If you see that error, make sure you have `libxml2` and `libxml2-dev` installed:
+          {{{
+          sudo apt-get install libxml2 libxml2-dev
+          }}}
+        * Then, re-run the `rake gems:install`
+        * Another potential error:
+          {{{
+          'require': no such file to load -- mkmf (LoadError)
+          }}}
+        * Resolution is to install `ruby1.8-dev`
+          {{{
+          sudo apt-get install ruby1.8-dev
+          }}}
+      * Backend, asynchronous processing is only available for Linux / Mac OSX.  !BibApp will still run on Windows, but will be a bit slower during many DB updates.  Therefore, !BibApp is not recommended for Production on Windows.
 
   * *Documentation (Ongoing | Everyone - Eric)*
     * Admin Documentation
