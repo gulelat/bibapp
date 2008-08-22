@@ -112,9 +112,6 @@
 
   * *Views (Ongoing | Everyone?)*
     * ~~Admin view (link added for admins with system rights)~~
-    * People/index view should allow filtering via group_id
-    * Groups/index view should allow filtering via (parent_group_id)
-    * Groups/index view: Parent/Child groups presentation
     * Citations/show view: Abstract / keywords show when copyright is clear
     * Citations/show view: Move links to archived content files up by the "Find It" link?  If file is archived in local repository, should we even show the "Find It" link?
     * ~~Citations/apa templates: Create APA templates for all Citation types (or at least a "default" APA template which can be used if a type-specific one isn't found)~~
@@ -122,28 +119,35 @@
     * ~~Publishers/new view: Cleanup? - especially giant select box~~
     * ~~Publications/new view: Cleanup? - especially giant select box~~
     * ~~Publication lists (in general):  Is there anyway to filter out the "Unknown" publication name which appears for Books?~~
-    * Person/new view: Cleanup? - ~~put LDAP search at Top~~
     * PenNames/new view: Suggestions are totally wacky... remove initial last_name search?
-    * ~~Contributorships View: *Bug* - Clicking "verify" next to two citations in a row ends displays an RJS Error (even though the verification actually seems to work)~~
-    * Memberships/index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
     * Contributorships : It'd be nice to have a way to check multiple citations and click "Verify" or "Deny" once.  It's a bit of a pain to go one-by-one when you know multiple are either valid or not.
 
-  * *Person*
+  * *People*
     * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
     * ~~*Bug* - Updating all Person.citations in Solr does not happen when a membership is deleted. This *must happen*.~~
+    * _Views requiring work:_
+      * new view - needs general cleanup...just a list of fields right now
+      * index view - should allow filtering via group_id
     * Display / Design: indicate a "stub" entry, versus a completed entry
       * CSS or image for doing this
       * Make this the default true in the database
 
-  * *Group*
+  * *Groups*
     * ~~*Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors. See comment below.~~
     * ~~*Bug* You shouldn't be able to delete groups... just _hide_ them.~~
     * *Bug?* If you create a Group through "Add a Group" from `/groups`, that group ends up invisible (as it has no people added to it, and hence no citations).
-
-  * *Membership*
+    * _Views requiring work:_
+      * index view - should allow filtering via (parent_group_id)
+      * index view - Parent/Child groups presentation
+    
+  * *Memberships*
     * A person should be allowed to have multiple memberships to the same group.  This will require some new logic.  Currently throughout the application it is required that there only be one membership for each person and group.
     * ~~*Bug*: Adding a title to a membership does not save.  This is cause by Permissions. In the method "edit_time" in the memberships controller, the call to 'permit'  does not allow an update, even if you should have permission.~~
-
+    * _Views requiring work:_
+      * index view: should list memberships for ?person_id=2, or even better, show memberships for memberships/2-Matthew_S_Allen
+    
+    
+ 
   * *Citation ingest (June? | Conference call)*
     * Implement:
       * [http://wing.comp.nus.edu.sg/parsCit/ ParsCit] importer
