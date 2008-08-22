@@ -104,15 +104,12 @@
       * Investigate [http://async-observer.rubyforge.org/ Async Observer]
     * Session based IP/OpenURL path
 
-  * *Styles / IA (Ongoing | Eric)*
-    * Groups index
-    * People index
+  * *General Styles / IA (Ongoing | Eric)*
     * Print CSS (started...)
     * *Bug* `&heart;` displays poorly in some browsers (firefox 2 on mac), make an image of it.
     
   * *Terminology (June | Everyone?)*
     * Remove 'citation' terminology...replace with 'research'?
-
 
   * *People*
     * ~~*Bug* - editing Group/Memberships (ex. adding a title) throws the :after_save methods to update all Person.citation in Solr ~~
