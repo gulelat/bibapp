@@ -86,6 +86,6 @@ rake solr:start
 rake solr:refresh_index
 }}}
 
-== Startup BibApp and Test ==
+== Startup !BibApp and Test ==
 
 Ok, that should be it...it's now safe to startup your webserver again and make sure everything is working properly!
