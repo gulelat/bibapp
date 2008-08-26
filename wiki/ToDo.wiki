@@ -116,10 +116,15 @@
     * ~~*Bug* - Updating all Person.citations in Solr does not happen when a membership is deleted. This *must happen*.~~
     * _Views requiring work:_
       * new view - needs general cleanup...just a list of fields right now
+      * new view - Need to *remove* the image_url (no longer used), and default the "active" to checked (or remove it altogether).
       * index view - should allow filtering via group_id
     * Display / Design: indicate a "stub" entry, versus a completed entry
       * CSS or image for doing this
       * Make this the default true in the database
+    * _Missing Features:_
+      * Delete people
+      * Single page to add a person.  So, have all the following on the "Add a Person" page: personal info, upload image, add to groups.
+      * Add Citations directly to a person.  This should automatically add the appropriate "contributorships" as they should be considered "verified" citations.
 
   * *Groups*
     * ~~*Bug* Deleting a group does *not* delete the groups corresponding memberships, causing many errors. See comment below.~~
@@ -154,6 +159,7 @@
 
 
   * *Citation ingest (June? | Conference call)*
+    * *BUG:*  Book titles are not being captured as "publications".  This causes citations to book chapters/sections to always have an "Unknown" in them for the Book Title.
     * Implement:
       * [http://wing.comp.nus.edu.sg/parsCit/ ParsCit] importer
         # Website includes a sample Ruby API script
@@ -167,6 +173,9 @@
     * Better error handling for bulk ingest!  
       * Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
       * Create error report (ex. X good | X bad results)
+    * _Missing Features:_
+      * Option to upload a file, instead of cut-and-paste for "Add Citations in Bulk"
+      
 
   * *Citation export (Aug/Sept)*
     * Liam M. has released citeproc-rb v0.0.1
