@@ -44,6 +44,7 @@
   * *Citations (Anyone | ASAP)*
     * *Bug* - Some bad publication date years (ex. 6) cause the citations/edit form's publication date year select options to range badly (ex. 1950-11) 
     * *Bug* - Citation author names over 6 should be dealt with appropriately
+    * *BUG:*  Book titles are not being captured as "publications".  This causes citations to book chapters/sections to always have an "Unknown" in them for the Book Title.
     * ~~*Bug* - YAML and JSON views are broken for citations, again...~~ (Seemingly fixed by 2.1 upgrade?)
     * [http://bibliontology.com/ Bibliographic Ontology] - ramifications? (Everyone | July conference call)
     * Deduplication
@@ -80,8 +81,8 @@
       * `"Nano*"` and `"nano*"` return different results!?!
       * ~~*Bug* Sorting results when there is multiple filters results in the filters being combined into one filter.~~
       * ~~*Bug* The year filter gives back results with years other than that of the filter.~~ - This bug seems to be fixed and I believe it was linked to the 'nil' publication date problem in solr.
-      * Fix faceting to produce URLs like this example
-        * http://localhost:8983/solr/select?q=nature&facet=true&facet.field=publication_facet&fq=publication_facet:%22Nature%22
+      * ~~Fix faceting to produce URLs like this example~~
+        * ~~http://localhost:8983/solr/select?q=nature&facet=true&facet.field=publication_facet&fq=publication_facet:%22Nature%22~~
 
 
     * *Missing Features:*
@@ -159,7 +160,6 @@
 
 
   * *Citation ingest (June? | Conference call)*
-    * *BUG:*  Book titles are not being captured as "publications".  This causes citations to book chapters/sections to always have an "Unknown" in them for the Book Title.
     * Implement:
       * [http://wing.comp.nus.edu.sg/parsCit/ ParsCit] importer
         # Website includes a sample Ruby API script
@@ -174,7 +174,7 @@
       * Currently, if one citation errors out, the entire bulk ingest process halts.  It'd be better to note which citations error, and provide an error report at the end of the bulk import.
       * Create error report (ex. X good | X bad results)
     * _Missing Features:_
-      * Option to upload a file, instead of cut-and-paste for "Add Citations in Bulk"
+      * ~~Option to upload a file, instead of cut-and-paste for "Add Citations in Bulk"~~
       
 
   * *Citation export (Aug/Sept)*
