@@ -59,19 +59,11 @@
   * *File Uploads* (Anyone | ?)
     * *Bug* - File upload does not work in Safari 3.1.1
 
-  * *NameStrings*
+  * *NameStrings - Done 2008.08.29 - EL*
     * ~~Make a "machine" friendly db column~~
     * ~~Create view to clean NameString~~
-      * Ex. "SVIATOSLAVSKY I" => "Sviatoslavsky, I"
     * ~~RegEx Recipe~~
-      * Commas and periods become spaces
-      * Replace more than one space with a single space
-      * Trim!
-      * Example ("Smith, J.H." => "smith j h " => "smith j h")
-    * Automatically add PenNames upon Person.create
-      * We should be able to guess a couple upon input
-      * Example ("John Smith" => "smith j")
-      * Example ("John Smith" => "smith") # Not sure about this one...
+    * ~~Automatically add PenNames upon Person.create~~
 
   * *Search (Eric)*
     * *Bugs:*
