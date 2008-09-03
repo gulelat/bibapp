@@ -34,9 +34,9 @@
   * Advanced Search
   * Add to Cart:
     * Pagination
-    * Send to various formats (see below)
-  * Simple citation formatting
-    * citeproc-rb
+    * Send to various formats (via citeproc-rb)
+  * ~~Simple citation formatting~~
+    * ~~citeproc-rb~~
 
 == Version 0.9 | October 2008 ==
 
