@@ -26,18 +26,18 @@
     * ~~Increase processing speed for updates by using more backend processing~~
       * Note: backend processing only currently enabled for Linux and Mac OSX
   * User requested features:
-    * Highlight citations
-    * Simple citation widgets
     * ~~Tagging~~
   * Enhanced citation importing
     * Additional de-duplication measures
     * Better error handling / report messages
-  * Enhanced author-disambiguation
+  * Terminology change:  "citations" => "works"?
   * Advanced Search
-  * Terminology change:  "citations" => "research"?
 
 == Version 0.9 | October 2008 ==
 
+  * User requested features:
+    * Highlight citations
+    * Simple citation widgets
   * FOAF views
   * Simple citation exporting
     * citeproc-rb
@@ -45,6 +45,7 @@
   * Export citation data in BibTeX, Endnote, etc.
   * COinS 
   * Themes
+  * Enhanced author-disambiguation  
 
 ==Version 1.0 | December 2008 ==
 
