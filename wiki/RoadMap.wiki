@@ -38,7 +38,7 @@
   * ~~Simple citation formatting~~
     * ~~citeproc-rb~~
 
-== Version 0.9 | October 2008 ==
+== Version 0.9 | October/November 2008 ==
 
   * User requested features:
     * Highlight citations
