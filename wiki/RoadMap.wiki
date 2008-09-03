@@ -32,6 +32,9 @@
     * Better error handling / report messages
   * Terminology change:  "citations" => "works"?
   * Advanced Search
+  * Add to Cart:
+    * Pagination
+    * Send to various formats
 
 == Version 0.9 | October 2008 ==
 
