@@ -16,7 +16,7 @@
 
   * ~~SWORD~~
 
-== Version 0.8 | ~~August 2008~~ mid-September 2008 ==
+== Version 0.8 | mid-September 2008 ==
 
   * ~~Rails 2.1 upgrade~~
     * ~~Gem dependencies~~
