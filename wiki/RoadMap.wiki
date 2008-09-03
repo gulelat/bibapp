@@ -34,7 +34,9 @@
   * Advanced Search
   * Add to Cart:
     * Pagination
-    * Send to various formats
+    * Send to various formats (see below)
+  * Simple citation formatting
+    * citeproc-rb
 
 == Version 0.9 | October 2008 ==
 
@@ -42,8 +44,6 @@
     * Highlight citations
     * Simple citation widgets
   * FOAF views
-  * Simple citation exporting
-    * citeproc-rb
   * Import citation data in more formats
   * Export citation data in BibTeX, Endnote, etc.
   * COinS 
