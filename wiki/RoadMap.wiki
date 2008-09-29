@@ -35,7 +35,7 @@
     * Better error handling / report messages
 
   * ~~Terminology change:  "citations" => "works"~~
-  * Advanced Search
+  * ~~Advanced Search~~
 
   * ~~Add to Cart:~~
     * ~~Pagination~~
