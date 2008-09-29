@@ -44,25 +44,21 @@
   * ~~Simple citation formatting~~
     * ~~citeproc-rb~~
 
-== Version 0.9 | November 2008 ==
+== Version 1.0 | November/December 2008 ==
 
   * User requested features:
-    * Highlight citations
     * Simple citation widgets
-  * FOAF views
-  * Import citation data in more formats
-  * Export citation data in BibTeX, Endnote, etc.
-  * COinS 
-  * Themes
-  * Enhanced author-disambiguation  
-
-==Version 1.0 | December 2008 ==
-
+  * Export citation data in RIS
+  * COinS
   * Publicly tested
   * Stable release
 
 == Future Development ==
-
+  * Enhanced author-disambiguation
+  * Import citation data in more formats
+  * Themes
+  * FOAF views
+  * Highlight citations
   * !BibApp interoperability
   * Improve SHERPA data
   * Focus on current campus collaboration
