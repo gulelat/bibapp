@@ -44,6 +44,8 @@
   * ~~Simple citation formatting~~
     * ~~citeproc-rb~~
 
+  * Upgrade bug fixes
+
 == Version 1.0 | November/December 2008 ==
 
   * User requested features:
