@@ -9,6 +9,12 @@ Suggested changes are organized by area of the !BibApp application below.  These
 As a reference, you may browse through the UIUC demo site available at:
 http://www.library.uiuc.edu/bibapp/
 
+== Known Bugs to fix ==
+
+  * Books and Book Chapters are not yet displayed properly in !BibApp.  The Book Title always appears as "Unknown".
+  * Web Services (extracting data via YAML, XML, JSON, etc.) still is buggy from UW.  It seems to work fine for UIUC however.  We need to figure out why it is not consistently working.
+  * Upgrade process from 0.7 to latest code is a bit buggy because of the rename of "Citations" to "Works".  We need to smooth this out, to make it an easy upgrade from 0.7 to 1.0.
+
 
 == General Layout ==
 
@@ -107,12 +113,14 @@ Overall, the general layout looks good. However, the following changes are sugge
     * More ownership?  "John Smith's Works"
    
 
-== Add to Cart / Export Works==
+== Add to Cart / Export Functionality==
   * Question: What is Add to Cart??  (need to make this clearer somehow)
   * Send To:
     * This should export it into a Text file (in APA, etc.)
     * Or, we could export to a giant text area.
-  * Need an Export to various formats (RIS)
+  * Need an Export to various formats.
+    * For 1.0, we will build an export to RIS.  However, it will be a general "plugin", so that we can add more export formats afterwords
+  * COinS - we need to implement so that folks can easily save research from BibApp into Zotero, and similar.
   * What about ability to "Add to Delicious" or other easy linking/export features?
 
 == View Group ==
@@ -161,6 +169,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
     * Delete Works
     * Need to be able to remove/correct authorities
     * Need to be able to generally correct mistakes or easily delete content from !BibApp
+    * Need to be able to manage/remove duplicates from system
 
 == Add a Person ==
 
