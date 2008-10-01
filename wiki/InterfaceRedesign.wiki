@@ -196,6 +196,11 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
   * Need to be able to enter a Primary Title from a person's page
   * Titles/Appointment within a group don't ever appear in !BibApp.  Should they display on the person's page?
 
+==Add Work(s)==
+  * Ability to add work(s) directly to a person
+    * These works should be auto-verified, so that they appear *immediately* on the Person page.
+  * Be able to move authors up and down in the list of authors.  The *ordering* of authors matters, and we need to allow people to change this order easily!
+
 
 ==Review Batch Import==
   * Add links to your next tasks
@@ -203,7 +208,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
   * Also an "Add more..." link
    
 
-==Ready to Archive listing==
+=="Ready to Archive" listing==
   * Need ability to archive many at once (checkboxes)
   * Should be a table with the following info:
     * Citation
@@ -217,15 +222,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
 
   * Change text "Deposit immediately via SWORD" => "Deposit immediately to IDEALS"
     * *Bug:* There's no condition here!  This should be an "Admin-only" task
-  * Change text "Archive Research" => Archive Document or Archive Article  
-
-==Upload Works to a Person==
-  * Upload works directly to a person...should be immediately auto-verified!
-
-==Add a single work==
-  * Ability to add work(s) directly to a person
-    * These works should be auto-verified, so that they appear *immediately* on the Person page.
-  * Be able to move authors up and down in the list of authors.  The *ordering* of authors matters, and we need to allow people to change this order easily!
+  * Change text "Archive Research"?? 
 
 
 ==Verify Contributorships (Admin Interface)==
