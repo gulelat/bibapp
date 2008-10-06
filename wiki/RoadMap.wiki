@@ -30,9 +30,8 @@
   * User requested features:
     * ~~Tagging~~
 
-  * Enhanced citation importing
-    * Additional de-duplication measures
-    * Better error handling / report messages
+  * ~~Enhanced citation importing~~
+    * ~~Better error handling / report messages~~
 
   * ~~Terminology change:  "citations" => "works"~~
   * ~~Advanced Search~~
