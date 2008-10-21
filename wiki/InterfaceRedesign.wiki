@@ -39,11 +39,11 @@ Overall, the general layout looks good. However, the following changes are sugge
   * We need to be able to search at *any level* of application (not just globally)
     * Search within a Publisher, Group, Person, etc.
   * Advanced Search
-    * In personalize.rb, able to customize the examples are underneath each search field
-  * Need to add "Advanced Search" link in header (currently you click on "Search" to get to Advanced Search area)
-  * After a search that returns *zero results*
-    * Display a message stating that no results are found
-    * Add the "Advanced Search" form directly to the page, and suggest that the user may want to perform a more advanced search.
+    * ~~In personalize.rb, able to customize the examples are underneath each search field~~
+  * ~~Need to add "Advanced Search" link in header (currently you click on "Search" to get to Advanced Search area)~~
+  * ~~After a search that returns *zero results*~~
+    * ~~Display a message stating that no results are found~~
+    * ~~Add the "Advanced Search" form directly to the page, and suggest that the user may want to perform a more advanced search.~~
 
 == Browse Groups ==
 
