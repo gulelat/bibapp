@@ -111,7 +111,7 @@ Overall, the general layout looks good. However, the following changes are sugge
     * Make More like a traditional add/remove shopping cart
   * Don't like the heading "Works"  
     * More ownership?  "John Smith's Works"
-   
+  * The way in which a Person's name appears should be configurable (to an extent).  Right now we don't display middle initial or middle name.  However, for folks who actually go by their middle name, they'd obviously want an option to display their name differently! 
 
 == Add to Cart / Export Functionality==
   * Question: What is Add to Cart??  (need to make this clearer somehow)
