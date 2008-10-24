@@ -202,6 +202,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
   * Should be a two column form to save space
   * "Pen Name" should be on a *different* form (or different tab?)
     * Pen Names => "Publishes under these names"
+    * *BUG:* Adding additional pen names doesn't seem to be working right.
   * Need to be able to enter a Primary Title/Appointment to display on a person's page
   * Titles/Appointment within a group are never displayed by !BibApp.  Should they also display on the person's page (maybe as part of the "Groups" listing)?
 
