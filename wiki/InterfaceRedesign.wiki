@@ -1,6 +1,6 @@
 #summary Interface/Workflow Redesign for BibApp 1.0
 
-= !BibApp Interface/Workflow Redesign for 1.0 (DRAFT) =
+= !BibApp Interface/Workflow Redesign for 1.0 =
 
 These notes are from the !BibApp Meeting in Madison, Wisconsin from September 29-30, 2008.  During that meeting, we did a full review of the current !BibApp interface and workflows (to get content into system and out).  These notes detail the brainstorming results of those discussions.
 
