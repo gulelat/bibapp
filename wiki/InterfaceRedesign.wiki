@@ -209,7 +209,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
 ==Add Work(s)==
   * Ability to add work(s) directly to a person
     * These works should be auto-verified, so that they appear *immediately* on the Person page.
-  * Be able to move authors up and down in the list of authors.  The *ordering* of authors matters, and we need to allow people to change this order easily!
+  ~~* Be able to move authors up and down in the list of authors.  The *ordering* of authors matters, and we need to allow people to change this order easily!~~
 
 
 ==Review Batch Import==
