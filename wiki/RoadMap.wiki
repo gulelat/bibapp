@@ -45,7 +45,7 @@
 
   * Upgrade bug fixes
 
-== Version 1.0 | November/December 2008 ==
+== Version 1.0 | December 2008 ==
 
   * InterfaceRedesign
   * User requested features:
