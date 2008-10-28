@@ -47,6 +47,7 @@
 
 == Version 1.0 | November/December 2008 ==
 
+  * InterfaceRedesign
   * User requested features:
     * Simple citation widgets
   * Export citation data in RIS
