@@ -207,8 +207,8 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
   * Titles/Appointment within a group are never displayed by !BibApp.  Should they also display on the person's page (maybe as part of the "Groups" listing)?
 
 ==Add Work(s)==
-  * Ability to add work(s) directly to a person
-    * These works should be auto-verified, so that they appear *immediately* on the Person page.
+  * ~~Ability to add work(s) directly to a person~~
+    * ~~These works should be auto-verified, so that they appear *immediately* on the Person page.~~
   * ~~Be able to move authors up and down in the list of authors.  The *ordering* of authors matters, and we need to allow people to change this order easily!~~
 
 
