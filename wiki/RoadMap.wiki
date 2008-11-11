@@ -16,37 +16,27 @@
 
   * ~~SWORD~~
 
-== ~~Version 0.8 | October 2008~~ (Not gonna happen, we're skipping thru to 1.0!) ==
+== Version 1.0 | January/February 2009 ==
 
   * ~~Rails 2.1 upgrade~~
     * ~~Gem dependencies~~
     * ~~Refactor for named scope~~
-
-  * Speed increases
+  * ~~Speed increases~~
     * ~~Increase page loading speed by using Solr more heavily~~
     * ~~Increase processing speed for updates by using more backend processing~~
       * Note: backend processing only currently enabled for Linux and Mac OSX
-
-  * User requested features:
+  * ~~User requested features:~~
     * ~~Tagging~~
-
   * ~~Enhanced citation importing~~
     * ~~Better error handling / report messages~~
-
   * ~~Terminology change:  "citations" => "works"~~
   * ~~Advanced Search~~
-
   * ~~Add to Cart:~~
     * ~~Pagination~~
     * ~~Send to various formats (via citeproc-rb)~~
-
   * ~~Simple citation formatting~~
     * ~~citeproc-rb~~
-
   * Upgrade bug fixes
-
-== Version 1.0 | December 2008 ==
-
   * InterfaceRedesign
   * User requested features:
     * Simple citation widgets
