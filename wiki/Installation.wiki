@@ -48,6 +48,10 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 === Ruby Gem Pre-requisites ===
 
 Unfortunately, we cannot bundle every necessary Ruby Gem within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
+  * First, auto-install all our gem prerequisites:
+     {{{
+     rake gems:install
+     }}}
   * Database Driver Gem - based on your database of choice
     * If you are using MySQL, install the `mysql` gem:  
      {{{ 
@@ -80,6 +84,11 @@ There are two different ways to install !BibApp:
     svn checkout http://bibapp.googlecode.com/svn/trunk/
     }}}
   # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
+
+  {{{ 
+  We currently recommend installing BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install.
+  }}}
+
 
   {{{
   NOTE: Throughout the remainder of these instructions we use the placeholder [bibapp]
