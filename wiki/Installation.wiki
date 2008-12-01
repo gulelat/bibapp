@@ -77,10 +77,39 @@ There are two different ways to install !BibApp:
   || *Note #2:* Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the !BibApp code! ||
 
 
+=== Configure !BibApp ===
+
+Next, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
+
+  * database.yml.example
+  * ldap.yml.example
+  * personalize.rb.example
+  * smtp.yaml.example
+  * solr.yml.example
+  * sword.yml.example
+
+You'll need to copy each of these files into a file _without_ the `.example` extension and personalize the contents as necessary.  Each of the above files include instructions within them describing how to configure them properly for your institution. In the end you should end up with a file list similar to the following (REQUIRED configuration files are *bold*):
+
+  * *database.yml* - Your local database settings (take a look at the samples for both MySQL and PostgreSQL)
+  * ldap.yml - Your campus LDAP directory settings
+    * Setting this configuration eases the process of adding People to !BibApp by allowing you to search your local LDAP directory to pre-populate person information.
+    * You may disable this configuration by leaving the ".example" file extension on the file.
+  * *personalize.rb* - Your !BibApp personalization settings
+  * *smtp.yml* - Your SMTP settings for user account creation verification emails
+  * *solr.yml* - Your Solr port settings (should not require changes, unless the specified ports are already in use)
+  * sword.yml - Your SWORD server settings
+    * This configuration is only necessary if you have a local digital or institutional repository which supports [http://www.swordapp.org/ SWORD (Simple Web-service Offering Repository Deposit)].  If you have a repository supporting SWORD, !BibApp can accept uploaded files and make deposits (of both files and metadata) directly into your local repository.
+    * You may disable this configuration by leaving the ".example" file extension on the file.
+
+
 === Ruby Gem Installations ===
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
   # First, make sure you have `rake` installed:
+     {{{
+     gem list rake
+     }}}
+    * If it's missing, you'll need to install `rake`:
      {{{
      gem install rake
      }}}
@@ -89,27 +118,28 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{
      rake gems:install
      }}}
-    * *Note #1:* On Ubuntu/MacOSX/Debian systems, you may see this error:
+    * A few common *error messages* you may run across:
+      * Permissions error:
       {{{
       ERROR: While executing gem ... (Gem::FilePermissionError)
       }}}
-      * _Resolution:_ The above error means you need to run the command as a super user.  So, try using `sudo`:
+        * _Resolution for Ubuntu/MacOSX/Debian:_ The above error means you need to run the command as a super user.  So, try using `sudo`:
         {{{
         sudo rake gems:install
         }}}
-    * *Note #2:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
+      * Error building `libxml-ruby` gem:
       {{{
       ERROR: Failed to build gem native extension
       }}}
-      * _Resolution:_ If you see the above error, you should be able to resolve it by making sure you have `libxml2` and `libxml2-dev` installed:
+        * _Resolution for Ubuntu/MacOSX/Debian:_ If you see the above error, you should be able to resolve it by installing `libxml2` and `libxml2-dev`:
         {{{
         sudo apt-get install libxml2 libxml2-dev
         }}} 
-    * *Note #3:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail by throwing the following error:
+      * Loading error:
       {{{
       'require': no such file to load -- mkmf (LoadError)
       }}}
-      * _Resolution:_ If you see the above error, you should be able to resolve it by making sure you have the Ruby development package (`ruby1.8-dev`) installed:
+        * _Resolution for Ubuntu/MacOSX/Debian:_ If you see the above error, you should be able to resolve it by installing the latest Ruby development package (`ruby1.8-dev`):
         {{{
         sudo apt-get install ruby1.8-dev
         }}} 
@@ -127,40 +157,11 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      gem install mongrel 
      gem install mongrel_cluster 
      }}}
-  # [http://code.whytheluckystiff.net/hpricot/ Hpricot] - an HTML parser used by !BibApp.  This gem unfortunately cannot be packaged with !BibApp as it uses underlying C code which must be compiled on each operating system (But, don't worry, it compiles automatically when you install it.)
-     {{{ 
-     gem install hpricot 
-     }}}
-
-
-=== Configure !BibApp ===
-
-Before started up !BibApp, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
-
-  * database.yml.example
-  * ldap.yml.example
-  * personalize.rb.example
-  * smtp.yaml.example
-  * solr.yml.example
-  * sword.yml.example
-
-You'll need to remove the .example extension from each of these files and personalize the contents as necessary.  Each of the above files include instructions within them describing how to configure them properly for your institution. In the end you should end up with a file list similar to the following (REQUIRED configuration files are *bold*):
-
-  * *database.yml* - Your local database settings 
-  * ldap.yml - Your campus LDAP directory settings
-    * Setting this configuration eases the process of adding People to !BibApp by allowing you to search your local LDAP directory to pre-populate person information.
-    * You may disable this configuration by leaving the ".example" file extension on the file.
-  * *personalize.rb* - Your !BibApp personalization settings
-  * *smtp.yml* - Your SMTP settings for user account creation verification emails
-  * *solr.yml* - Your Solr port settings (may not require changes)
-  * sword.yml - Your SWORD server settings
-    * This configuration is only necessary if you have a local digital or institutional repository which supports [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD (Simple Web-service Offering Repository Deposit)].  If you have a repository supporting SWORD, !BibApp can accept uploaded files and make deposits (of both files and metadata) directly into your local repository.
-    * You may disable this configuration by leaving the ".example" file extension on the file.
 
 
 === Setup Your !BibApp Database ===
 
-Now, you'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  Now, it's just a matter of creating a new database!  
+Now, you'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  So, it's just a matter of creating a new database!  
 
 Make sure your database is named the same as the 'database' setting in your `config/database.yml` file!  In addition, you should login as the user specified in your `config/database.yml` when creating your database (to ensure that user owns the database) 
 
@@ -188,6 +189,7 @@ Before continuing, you also need to initialize your database with the current [h
     }}}
 
 Your database should now be setup and initialized properly!
+
 
 === Startup !BibApp ===
 
