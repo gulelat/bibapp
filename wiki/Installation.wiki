@@ -47,11 +47,19 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 
 === Ruby Gem Pre-requisites ===
 
-Unfortunately, we cannot bundle every necessary Ruby Gem within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
+Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
   * First, auto-install all our gem prerequisites:
      {{{
      rake gems:install
      }}}
+    * *Note:* On Ubuntu/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
+      {{{
+      ERROR: Failed to build gem native extension
+      }}}
+    * If you see the above error, you should be able to resolve it by making sure you have `libxml2` and `libxml2-dev` installed:
+      {{{
+      sudo apt-get install libxml2 libxml2-dev
+      }}}
   * Database Driver Gem - based on your database of choice
     * If you are using MySQL, install the `mysql` gem:  
      {{{ 
