@@ -84,11 +84,20 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{
      gem install rake
      }}}
+    * *Note:* On Ubuntu/MacOSX/Debian systems, you will often need to run *all* `gem` commands as a superuser: `sudo gem install rake`
   # Auto-install all our gem prerequisites, via this `rake` command:
      {{{
      rake gems:install
      }}}
-    * *Note #1:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
+    * *Note #1:* On Ubuntu/MacOSX/Debian systems, you may see this error:
+      {{{
+      ERROR: While executing gem ... (Gem::FilePermissionError)
+      }}}
+      * _Resolution:_ The above error means you need to run the command as a super user.  So, try using `sudo`:
+        {{{
+        sudo rake gems:install
+        }}}
+    * *Note #2:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
       {{{
       ERROR: Failed to build gem native extension
       }}}
@@ -96,7 +105,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
         {{{
         sudo apt-get install libxml2 libxml2-dev
         }}} 
-    * *Note #2:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail by throwing the following error:
+    * *Note #3:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail by throwing the following error:
       {{{
       'require': no such file to load -- mkmf (LoadError)
       }}}
