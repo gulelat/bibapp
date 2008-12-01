@@ -223,3 +223,9 @@ So, login and do it now!
   # Click "Change Password", and fill out the default password along with your new password
 
 Finally, (although not required at this time) you may wish to change the email account associated with this "admin" user.   At this time, !BibApp only uses that email address if you have forgotten your password and request a new one be generated.   So, if you have any concerns about forgetting your "admin" user's password, change the email to point to a valid email address!
+
+== Problems / Questions / More Information ==
+
+We're definitely aware that these instructions are a bit lacking.  We're working on updates before our !BibApp 1.0 release.  If you run into any interesting problems or "gotchas" during the installation or setup, let us know!  
+
+The easiest (and preferred) way to contact us is via our [http://groups.google.com/group/bibapp BibApp Google Group].
