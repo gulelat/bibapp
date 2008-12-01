@@ -25,7 +25,7 @@ So, without further ado...
     * Check your version by running `ruby --version` at command line
   * [http://www.rubygems.org/ RubyGems] 1.0.1 or later
     * Check your version by running `gem --version` at command line
-    * If you have an older version of RubyGems, you should be able to update it like this:
+    * If you have an older version of !RubyGems, you should be able to update it like this:
       {{{
       gem update --system
       }}}
