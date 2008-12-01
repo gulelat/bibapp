@@ -66,7 +66,11 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 === Ruby Gem Pre-requisites ===
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
-  # First, auto-install all our gem prerequisites:
+  # First, make sure you have `rake` installed:
+     {{{
+     gem install rake
+     }}}
+  # Auto-install all our gem prerequisites, via this `rake` command:
      {{{
      rake gems:install
      }}}
