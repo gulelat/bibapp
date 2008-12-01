@@ -66,18 +66,18 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 
 There are two different ways to install !BibApp:
 
-  # If you have Subversion installed, you can just pull down the latest code:
+  # If you have Subversion installed, you can just pull down the latest code (the below example checks it out to your `~/bibapp/` directory):
     {{{
-    svn checkout http://bibapp.googlecode.com/svn/trunk/
+    svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
     }}}
   # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
 
   {{{ 
-  *Note #1:* We currently recommend installing BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install.
+NOTE #1: We currently recommend installing BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install.
   }}}
 
   {{{
-  *Note #2:* Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the BibApp code!
+NOTE #2: Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the BibApp code!
   }}}
 
 
