@@ -130,7 +130,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
 
 === Configure !BibApp ===
 
-Once you've pulled down the code, you'll need to edit the !BibApp configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
+Before started up !BibApp, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
 
   * database.yml.example
   * ldap.yml.example
