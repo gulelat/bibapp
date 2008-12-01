@@ -25,6 +25,10 @@ So, without further ado...
     * Check your version by running `ruby --version` at command line
   * [http://www.rubygems.org/ RubyGems] 1.0.1 or later
     * Check your version by running `gem --version` at command line
+    * If you have an older version of RubyGems, you should be able to update it like this:
+      {{{
+      gem update --system
+      }}}
   * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (_note:_ Java 1.5 is also sometimes called Java 5.x, similarly Java 1.6 is also called 6.x)
     * Check your version by running `java -version` at command line
 
