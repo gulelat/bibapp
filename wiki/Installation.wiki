@@ -50,6 +50,17 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
     * `citation_parser` and `citation_importer` - These custom plugins parse citations from our various supported input formats, and import the data into our database structure.  As more citation parsers are created, we'll be able to support more input formats!
     * `sword_client` - This is our custom [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
 
+=== Additional Pre-requisites for Ubuntu/Debian ===
+
+Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
+  * `libxml2` and `libxml2-dev`
+  * Latest Ruby Development package (e.g. `ruby1.8-dev`)
+
+You should be able to install these packages quickly via `apt-get`.  For example:
+  {{{
+  sudo apt-get install libxml2 libxml2-dev ruby1.8-dev
+  }}}
+
 === Ruby Gem Pre-requisites ===
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
