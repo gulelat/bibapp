@@ -18,6 +18,7 @@ So, without further ado...
 == Software Pre-requisities ==
 
 !BibApp should run on any Operating System.  Currently we've had it successfully running on Linux, Mac OS X and Windows XP.
+  * Note: Although !BibApp will run on Windows, it is not recommended for production on Windows systems as our backend, asynchronous processing doesn't currently work for Windows.
 
 !BibApp *requires* the following software to function properly:
   * [http://www.ruby-lang.org/ Ruby] 1.8.5 or later
@@ -48,19 +49,27 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 === Ruby Gem Pre-requisites ===
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
-  * First, auto-install all our gem prerequisites:
+  # First, auto-install all our gem prerequisites:
      {{{
      rake gems:install
      }}}
-    * *Note:* On Ubuntu/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
+    * *Note #1:* On Ubuntu/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
       {{{
       ERROR: Failed to build gem native extension
       }}}
-    * If you see the above error, you should be able to resolve it by making sure you have `libxml2` and `libxml2-dev` installed:
+      * _Resolution:_ If you see the above error, you should be able to resolve it by making sure you have `libxml2` and `libxml2-dev` installed:
+        {{{
+        sudo apt-get install libxml2 libxml2-dev
+        }}} 
+    * *Note #2:* On Ubuntu/Debian systems, `rake gems:install` may fail by throwing the following error:
       {{{
-      sudo apt-get install libxml2 libxml2-dev
+      'require': no such file to load -- mkmf (LoadError)
       }}}
-  * Database Driver Gem - based on your database of choice
+      * _Resolution:_ If you see the above error, you should be able to resolve it by making sure you have the Ruby development package (`ruby1.8-dev`) installed:
+        {{{
+        sudo apt-get install ruby1.8-dev
+        }}} 
+  # Database Driver Gem - based on your database of choice
     * If you are using MySQL, install the `mysql` gem:  
      {{{ 
      gem install mysql -- --with-mysql-dir=/path/to/mysql 
@@ -69,12 +78,12 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{ 
      gem install postgres -- --with-pgsql-dir=/path/to/pgsql 
      }}}
-  * Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended.  We also recommend `mongrel_cluster`, which allows you to run several mongrel instances in a cluster (though, if you are just trying out !BibApp, this isn't really necessary).
+  # Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended.  We also recommend `mongrel_cluster`, which allows you to run several mongrel instances in a cluster (though, if you are just trying out !BibApp, this isn't really necessary).
      {{{ 
      gem install mongrel 
      gem install mongrel_cluster 
      }}}
-  * [http://code.whytheluckystiff.net/hpricot/ Hpricot] - an HTML parser used by !BibApp.  This gem unfortunately cannot be packaged with !BibApp as it uses underlying C code which must be compiled on each operating system (But, don't worry, it compiles automatically when you install it.)
+  # [http://code.whytheluckystiff.net/hpricot/ Hpricot] - an HTML parser used by !BibApp.  This gem unfortunately cannot be packaged with !BibApp as it uses underlying C code which must be compiled on each operating system (But, don't worry, it compiles automatically when you install it.)
      {{{ 
      gem install hpricot 
      }}}
