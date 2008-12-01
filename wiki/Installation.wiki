@@ -18,7 +18,7 @@ So, without further ado...
 == Software Pre-requisities ==
 
 !BibApp should run on any Operating System.  Currently we've had it successfully running on Linux, Mac OS X and Windows XP.
-  * Note: Although !BibApp will run on Windows, it is not recommended for production on Windows systems.  !BibApp runs slightly slower on Windows as the backend, asynchronous processing functionality that !BibApp uses doesn't currently work for Windows.   
+  * _Note:_ Although !BibApp will run on Windows, it is not recommended for production on Windows systems.  !BibApp runs slightly slower on Windows as the backend, asynchronous processing functionality that !BibApp uses doesn't currently work for Windows.   
 
 !BibApp *requires* the following software to function properly:
   * [http://www.ruby-lang.org/ Ruby] 1.8.5 or later
