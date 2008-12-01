@@ -41,15 +41,6 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-== Get Started with !BibApp ==
-
-Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
-  * [http://www.rubyonrails.org/ Rails] 2.0.2  - That's right, you don't even have to install Rails!
-  * [http://lucene.apache.org/solr/ Solr] - Used for all the !BibApp browse/search interfaces
-  * A variety of [http://www.rubygems.org/ Ruby Gems] and Rails Plugins. It's worth highlighting a few custom plugins created specifically for !BibApp:
-    * `citation_parser` and `citation_importer` - These custom plugins parse citations from our various supported input formats, and import the data into our database structure.  As more citation parsers are created, we'll be able to support more input formats!
-    * `sword_client` - This is our custom [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
-
 === Additional Pre-requisites for Ubuntu/Debian ===
 
 Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
@@ -60,6 +51,17 @@ You should be able to install these packages quickly via `apt-get`.  For example
   {{{
   sudo apt-get install libxml2 libxml2-dev ruby1.8-dev
   }}}
+
+== Get Started with !BibApp ==
+
+Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
+  * [http://www.rubyonrails.org/ Rails] 2.0.2  - That's right, you don't even have to install Rails!
+  * [http://lucene.apache.org/solr/ Solr] - Used for all the !BibApp browse/search interfaces
+  * A variety of [http://www.rubygems.org/ Ruby Gems] and Rails Plugins. It's worth highlighting a few custom plugins created specifically for !BibApp:
+    * `citation_parser` and `citation_importer` - These custom plugins parse citations from our various supported input formats, and import the data into our database structure.  As more citation parsers are created, we'll be able to support more input formats!
+    * `sword_client` - This is our custom [http://www.ukoln.ac.uk/repositories/digirep/index/SWORD SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
+
+
 
 === Ruby Gem Pre-requisites ===
 
