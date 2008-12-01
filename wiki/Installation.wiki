@@ -23,7 +23,7 @@ So, without further ado...
 !BibApp *requires* the following software to function properly:
   * [http://www.ruby-lang.org/ Ruby] 1.8.5 or later
     * Check your version by running `ruby --version` at command line
-  * [http://www.rubygems.org/ RubyGems] 1.0.1 or later
+  * [http://www.rubygems.org/ RubyGems] 1.2.0 or later
     * Check your version by running `gem --version` at command line
     * If you have an older version of !RubyGems, you should be able to update it like this:
       {{{
