@@ -70,7 +70,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{
      rake gems:install
      }}}
-    * *Note #1:* On Ubuntu/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
+    * *Note #1:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail to install the `libxml-ruby` gem by throwing the following error:
       {{{
       ERROR: Failed to build gem native extension
       }}}
@@ -78,7 +78,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
         {{{
         sudo apt-get install libxml2 libxml2-dev
         }}} 
-    * *Note #2:* On Ubuntu/Debian systems, `rake gems:install` may fail by throwing the following error:
+    * *Note #2:* On Ubuntu/MacOSX/Debian systems, `rake gems:install` may fail by throwing the following error:
       {{{
       'require': no such file to load -- mkmf (LoadError)
       }}}
