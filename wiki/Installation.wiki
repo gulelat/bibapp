@@ -229,3 +229,10 @@ Finally, (although not required at this time) you may wish to change the email a
 We're definitely aware that these instructions are a bit lacking.  We're working on updates before our !BibApp 1.0 release.  If you run into any interesting problems or "gotchas" during the installation or setup, let us know!  
 
 The easiest (and preferred) way to contact us is via our [http://groups.google.com/group/bibapp BibApp Google Group].
+
+If you ran into problems during the installation, try and send us the following:
+  * Ruby version (run `ruby --version`)
+  * Gem version (run `gem --version`)
+  * Operating system
+  * Task/step you were performing
+  * Error message text
