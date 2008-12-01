@@ -197,8 +197,9 @@ You're almost there!
 
 In order to startup !BibApp on your server, you must do *both* of the following (from within your `[bibapp]` directory):
   * _Start Solr:_ Solr handles all the fancy browsing and searching in !BibApp
-    * On Linux / Mac OS X : `rake solr:start`
-    * On Windows : `rake solr:start_win`
+     {{{
+     rake solr:start
+     }}}
   * _Start your web server:_ We're assuming you installed Mongrel, for the sake of these instructions.
      {{{
      mongrel_rails start
