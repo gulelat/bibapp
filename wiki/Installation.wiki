@@ -62,7 +62,7 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
     * `sword_client` - This is our custom [http://www.swordapp.org SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
 
 
-=== Download !BibApp Application ===
+=== Download !BibApp Code ===
 
 There are two different ways to install !BibApp:
 
