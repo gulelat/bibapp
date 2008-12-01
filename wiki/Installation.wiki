@@ -62,8 +62,26 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
     * `sword_client` - This is our custom [http://www.swordapp.org SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
 
 
+=== Download !BibApp Application ===
 
-=== Ruby Gem Pre-requisites ===
+There are two different ways to install !BibApp:
+
+  # If you have Subversion installed, you can just pull down the latest code:
+    {{{
+    svn checkout http://bibapp.googlecode.com/svn/trunk/
+    }}}
+  # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
+
+  {{{ 
+  *Note #1:* We currently recommend installing BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install.
+  }}}
+
+  {{{
+  *Note #2:* Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the BibApp code!
+  }}}
+
+
+=== Ruby Gem Installations ===
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
   # First, make sure you have `rake` installed:
@@ -109,29 +127,6 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      gem install hpricot 
      }}}
 
-=== Install !BibApp Code ===
-
-  {{{
-  TODO: UPDATE download instructions after official release!!
-  }}}
-
-There are two different ways to install !BibApp:
-
-  # If you have Subversion installed, you can just pull down the latest code:
-    {{{
-    svn checkout http://bibapp.googlecode.com/svn/trunk/
-    }}}
-  # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
-
-  {{{ 
-  We currently recommend installing BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install.
-  }}}
-
-
-  {{{
-  NOTE: Throughout the remainder of these instructions we use the placeholder [bibapp]
-  to represent the location where you have installed the BibApp code!
-  }}}
 
 === Configure !BibApp ===
 
