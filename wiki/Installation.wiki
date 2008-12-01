@@ -72,13 +72,9 @@ There are two different ways to install !BibApp:
     }}}
   # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
 
-  {{{ 
-NOTE #1: We currently recommend installing BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install.
-  }}}
+  || *Note #1:* We currently recommend installing !BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install. ||
 
-  {{{
-NOTE #2: Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the BibApp code!
-  }}}
+  || *Note #2:* Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the !BibApp code! ||
 
 
 === Ruby Gem Installations ===
