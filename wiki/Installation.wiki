@@ -122,7 +122,13 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{
      rake gems:install
      }}}
-    * A few common *error messages* you may run across:
+    * A few common *error/warning messages* you may run across:
+      * Log File warning:
+      {{{
+      Rails Error: Unable to access log file.  Please ensure that
+      /bibapp/log/development.log exists and is chmod 0666.
+      }}}
+        * _Resolution:_ Make sure to change the permissions on this log file, so that it is both _readable_ and _writeable_ to everyone.  For example: `chmod 0666 development.log`
       * Permissions error:
       {{{
       ERROR: While executing gem ... (Gem::FilePermissionError)
