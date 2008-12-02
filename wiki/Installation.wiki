@@ -1,7 +1,10 @@
 #summary Installation Instructions for BibApp
 #labels Featured
 
-== Introduction ==
+*_Table of Contents:_*
+<wiki:toc max_depth="4" />
+
+= Introduction =
 
 !BibApp is a [http://www.rubyonrails.org/ Ruby on Rails] 2.1 web application.  If you are familiar with installing Ruby on Rails applications, !BibApp should be no different!  If this is your first time with Ruby on Rails, don't worry...we've tried to make things easy on you.
 
@@ -15,7 +18,7 @@ Currently, because of a small development/testing team, we have some recommendat
 
 So, without further ado...
 
-== Software Pre-requisities ==
+= Software Pre-requisities =
 
 !BibApp should run on any Operating System.  Currently we've had it successfully running on Linux, Mac OS X and Windows XP.
   * _Note:_ Although !BibApp will run on Windows, it is not recommended for production on Windows systems.  !BibApp runs slightly slower on Windows as the backend, asynchronous processing functionality that !BibApp uses doesn't currently work for Windows.   
@@ -41,7 +44,7 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-=== Additional Pre-requisites for Ubuntu / Mac OS X / Debian ===
+== Additional Pre-requisites for Ubuntu / Mac OS X / Debian ==
 
 Before trying an installation on Ubuntu, Mac OS X or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
   * `libxml2` and `libxml2-dev`
@@ -56,7 +59,7 @@ You should be able to install these packages quickly via `apt-get`.  For example
   }}}
 
 
-== Get Started with !BibApp ==
+= Get Started =
 
 Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
   * [http://www.rubyonrails.org/ Rails] 2.1  - That's right, you don't even have to install Rails!
@@ -66,7 +69,7 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
     * `sword_client` - This is our custom [http://www.swordapp.org SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
 
 
-=== Download !BibApp Code ===
+== Download Code ==
 
 There are two different ways to install !BibApp:
 
@@ -81,7 +84,7 @@ There are two different ways to install !BibApp:
   || *Note #2:* Throughout the remainder of these instructions we use the placeholder [bibapp] to represent the location where you have downloaded the !BibApp code! ||
 
 
-=== Configure !BibApp ===
+== Configure !BibApp ==
 
 Next, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
 
@@ -106,7 +109,7 @@ You'll need to copy each of these files into a file _without_ the `.example` ext
     * You may disable this configuration by leaving the ".example" file extension on the file.
 
 
-=== Ruby Gem Installations ===
+== Ruby Gem Installations ==
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
   # First, make sure you have `rake` installed:
@@ -122,37 +125,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{
      rake gems:install
      }}}
-    * A few common *error/warning messages* you may run across:
-      * Log File warning:
-      {{{
-      Rails Error: Unable to access log file.  Please ensure that
-      /bibapp/log/development.log exists and is chmod 0666.
-      }}}
-        * _Resolution:_ Make sure to change the permissions on this log file, so that it is both _readable_ and _writeable_ to everyone.  For example: `chmod 0666 development.log`
-      * Permissions error:
-      {{{
-      ERROR: While executing gem ... (Gem::FilePermissionError)
-      }}}
-        * _Resolution for Ubuntu/MacOSX/Debian:_ The above error means you need to run the command as a super user.  So, try using `sudo`:
-        {{{
-        sudo rake gems:install
-        }}}
-      * Error building `libxml-ruby` gem:
-      {{{
-      ERROR: Failed to build gem native extension
-      }}}
-        * _Resolution for Ubuntu/MacOSX/Debian:_ If you see the above error, you should be able to resolve it by installing `libxml2` and `libxml2-dev`:
-        {{{
-        sudo apt-get install libxml2 libxml2-dev
-        }}} 
-      * Loading error:
-      {{{
-      'require': no such file to load -- mkmf (LoadError)
-      }}}
-        * _Resolution for Ubuntu/MacOSX/Debian:_ If you see the above error, you should be able to resolve it by installing the latest Ruby development package (`ruby1.8-dev`):
-        {{{
-        sudo apt-get install ruby1.8-dev
-        }}} 
+    * *Note:* There are a few common errors that may occur with this command.  Check the table of *Common Warnings / Errors* below, if you encounter problems. 
   # Database Driver Gem - based on your database of choice
     * If you are using MySQL, install the `mysql` gem:  
      {{{ 
@@ -168,8 +141,15 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      gem install mongrel_cluster 
      }}}
 
+=== Common Warnings / Errors ===
 
-=== Setup Your !BibApp Database ===
+|| *Error / Warning Message* || *Resolution* ||
+|| Log File Warning:<br/>`Rails Error: Unable to access log file.  Please ensure that /bibapp/log/development.log exists and is chmod 0666.` || Make sure to change the permissions on this log file, so that it is both _readable_ and _writeable_ to everyone.  For example: `chmod 0666 development.log` ||
+|| Permissions Error:<br/>`ERROR: While executing gem ... (Gem::FilePermissionError)` || _For Ubuntu/MacOSX/Debian:_ This means you need to run the command as a super user.  So, try adding `sudo` before the command: (e.g.) `sudo rake gems:install` ||
+|| Error building `libxml-ruby` gem:<br/> `ERROR: Failed to build gem native extension` || _For Ubuntu/MacOSX/Debian:_ You should be able to resolve this error by installing `libxml2` and `libxml2-dev`: (e.g.) `sudo apt-get install libxml2 libxml2-dev` ||
+|| Loading error:<br/> `'require': no such file to load -- mkmf (LoadError)` || _For Ubuntu/MacOSX/Debian:_ You should be able to resolve this error by installing the latest Ruby development package (`ruby1.8-dev`): (e.g.) `sudo apt-get install ruby1.8-dev` ||
+
+== Setup Your Database ==
 
 Now, you'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  So, it's just a matter of creating a new database!  
 
@@ -205,7 +185,7 @@ Before continuing, you also need to initialize your database with the current [h
 Your database should now be setup and initialized properly!
 
 
-=== Startup !BibApp ===
+== Startup !BibApp ==
 
 You're almost there!
 
@@ -221,9 +201,9 @@ In order to startup !BibApp on your server, you must do *both* of the following 
 
 Try it out!  Assuming your web server is on port 3000 (which is Mongrel's default), you should have !BibApp running at:  http://localhost:3000/
 
-== Using !BibApp ==
+= Using !BibApp =
 
-=== Logging In For the First Time ===
+== Login For the First Time ==
 
 !BibApp comes with a pre-initialized "admin" user.  The login for this user is "admin" (lowercase), and the default password is "bibapp" (lowercase).
 
@@ -238,7 +218,7 @@ So, login and do it now!
 
 Finally, (although not required at this time) you may wish to change the email account associated with this "admin" user.   At this time, !BibApp only uses that email address if you have forgotten your password and request a new one be generated.   So, if you have any concerns about forgetting your "admin" user's password, change the email to point to a valid email address!
 
-== Problems / Questions / More Information ==
+= Problems / Questions / More Information =
 
 We're definitely aware that these instructions are a bit lacking.  We're working on updates before our !BibApp 1.0 release.  If you run into any interesting problems or "gotchas" during the installation or setup, let us know!  
 
