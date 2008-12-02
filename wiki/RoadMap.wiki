@@ -36,7 +36,7 @@
     * ~~Send to various formats (via citeproc-rb)~~
   * ~~Simple citation formatting~~
     * ~~citeproc-rb~~
-  * Upgrade bug fixes
+  * ~~Upgrade bug fixes~~
   * InterfaceRedesign
   * User requested features:
     * Simple citation widgets
