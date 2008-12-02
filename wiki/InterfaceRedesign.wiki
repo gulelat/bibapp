@@ -25,10 +25,10 @@ Overall, the general layout looks good. However, the following changes are sugge
     * Why is the Institution name at the same level as FAQ and Login (in upper right)?
       * It's already listed in the footer...not necessary in upper right corner
     * Header should provide an "About" link which (by default) will give more information about !BibApp software.  However, institutions can change this default content.
-    * "!BibApp" is a good software name, but it's unlikely any institutions will want to call their installation "!BibApp".  We need to make the Header more configurable!
-      * Need to allow for a custom image for site (to replace "!BibApp logo")
-      * Need to allow for a custom tagline in header (and at the top of the homepage)
-        * Current tagline ("We're putting 100 papers online, for free. This is true.") is probably inappropriate for !BibApp.  We need a better tagline that represents !BibApp software.
+    * ~~"!BibApp" is a good software name, but it's unlikely any institutions will want to call their installation "!BibApp".  We need to make the Header more configurable!~~
+      * ~~Need to allow for a custom image for site (to replace "!BibApp logo")~~
+      * ~~Need to allow for a custom tagline in header (and at the top of the homepage)~~
+        * ~~Current tagline ("We're putting 100 papers online, for free. This is true.") is probably inappropriate for !BibApp.  We need a better tagline that represents !BibApp software.~~
   * *Footer:*
     * We may need a "Contact Us" link somewhere?
   * *Themes/CSS:*
@@ -45,6 +45,7 @@ Overall, the general layout looks good. However, the following changes are sugge
   * ~~After a search that returns *zero results*~~
     * ~~Display a message stating that no results are found~~
     * ~~Add the "Advanced Search" form directly to the page, and suggest that the user may want to perform a more advanced search.~~
+
 
 == Browse Groups ==
 
@@ -211,7 +212,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
   * ~~Ability to add work(s) directly to a person~~
     * ~~These works should be auto-verified, so that they appear *immediately* on the Person page.~~
   * ~~Be able to move authors up and down in the list of authors.  The *ordering* of authors matters, and we need to allow people to change this order easily!~~
-
+  * Can we add back the ability to add Works from an RSS feed (this used to be in the initial version -- !BibApp 0.4)?  This was an easy way to subscribe to updates (from various Article & Indexing services) and import content to !BibApp easily.  (Maybe this would also allow us to pull in new content added to a repository?)
 
 ==Review Batch Import==
   * Add links to your next tasks
