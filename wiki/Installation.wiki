@@ -169,12 +169,16 @@ Now, you'll need to setup a database for !BibApp.  You should already have insta
 
 Make sure your database is named the same as the 'database' setting in your `config/database.yml` file!  In addition, you should login as the user specified in your `config/database.yml` when creating your database (to ensure that user owns the database) 
 
+For this example, we're just setting up a !BibApp Development database.  But, you can use the same concept to also setup a Test and Production database, when you are ready.
 
-   * *For MySQL:*  Connect to MySQL, and create a UTF8 database named 'bibapp_development' using the following SQL query:
+   * *For MySQL:*  Connect to MySQL, create a UTF8 database named 'bibapp_development' and a !BibApp database user (e.g. named 'bibapp') using the following SQL queries:
       {{{
       CREATE DATABASE bibapp_development CHARACTER SET = 'utf8';
+      GRANT ALL ON bibapp_development.* to 'bibapp'@'localhost' identified by 'PASSWORDHERE';
+      FLUSH PRIVILEGES;
       }}}
-   
+   Obviously, remember to change `PASSWORDHERE` to the password you want set for your 'bibapp' database user.   
+
    * *For PostgreSQL:* Use the following two commands to first create a !BibApp database user (e.g. named 'bibapp') and then create a database named 'bibapp_development' with a database owner of 'bibapp': 
       {{{
       createuser -dSRP bibapp
