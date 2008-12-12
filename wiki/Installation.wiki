@@ -44,9 +44,9 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-== Additional Pre-requisites for Ubuntu / Mac OS X / Debian ==
+== Additional Pre-requisites for Ubuntu / Debian ==
 
-Before trying an installation on Ubuntu, Mac OS X or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
+Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
   * `libxml2` and `libxml2-dev`
   * Latest Ruby Development package (e.g. `ruby1.8-dev`)
 
@@ -120,7 +120,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{
      gem install rake
      }}}
-    * *Note:* On Ubuntu/MacOSX/Debian systems, you will often need to run *all* `gem` commands as a superuser: `sudo gem install rake`
+    * *Note:* On Ubuntu/Debian and Mac OS X systems, you will often need to run *all* `gem` commands as a superuser: `sudo gem install rake`
   # Auto-install all our gem prerequisites, via this `rake` command:
      {{{
      rake gems:install
@@ -145,9 +145,9 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
 
 || *Error / Warning Message* || *Resolution* ||
 || Log File Warning:<br/>`Rails Error: Unable to access log file.  Please ensure that /bibapp/log/development.log exists and is chmod 0666.` || Make sure to change the permissions on this log file, so that it is both _readable_ and _writeable_ to everyone.  For example: `chmod 0666 development.log` ||
-|| Permissions Error:<br/>`ERROR: While executing gem ... (Gem::FilePermissionError)` || _For Ubuntu/MacOSX/Debian:_ This means you need to run the command as a super user.  So, try adding `sudo` before the command: (e.g.) `sudo rake gems:install` ||
-|| Error building `libxml-ruby` gem:<br/> `ERROR: Failed to build gem native extension` || _For Ubuntu/MacOSX/Debian:_ You should be able to resolve this error by installing `libxml2` and `libxml2-dev`: (e.g.) `sudo apt-get install libxml2 libxml2-dev` ||
-|| Loading error:<br/> `'require': no such file to load -- mkmf (LoadError)` || _For Ubuntu/MacOSX/Debian:_ You should be able to resolve this error by installing the latest Ruby development package (`ruby1.8-dev`): (e.g.) `sudo apt-get install ruby1.8-dev` ||
+|| Permissions Error:<br/>`ERROR: While executing gem ... (Gem::FilePermissionError)` || _For Ubuntu/Debian or Mac OS X:_ This means you need to run the command as a super user.  So, try adding `sudo` before the command: (e.g.) `sudo rake gems:install` ||
+|| Error building `libxml-ruby` gem:<br/> `ERROR: Failed to build gem native extension` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing `libxml2` and `libxml2-dev`: (e.g.) `sudo apt-get install libxml2 libxml2-dev` ||
+|| Loading error:<br/> `'require': no such file to load -- mkmf (LoadError)` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing the latest Ruby development package (`ruby1.8-dev`): (e.g.) `sudo apt-get install ruby1.8-dev` ||
 
 == Setup Your Database ==
 
