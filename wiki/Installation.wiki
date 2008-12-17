@@ -44,7 +44,7 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-== Additional Pre-requisites for Ubuntu / Debian (not OSX!) ==
+== Additional Pre-requisites for Ubuntu / Debian (not Mac OSX) ==
 
 Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
   * `libxml2` and `libxml2-dev`
@@ -58,21 +58,11 @@ You should be able to install these packages quickly via `apt-get`.  For example
   sudo apt-get install libxml2 libxml2-dev ruby1.8-dev
   }}}
 
-== Additional Pre-requisites for Mac OSX (Eric - 2008.12.17 - Beta! )==
+== Additional Pre-requisites for Mac OSX (Eric - 2008.12.17 - Beta!)==
 
-1. You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools].  Without them, you are likely to run into many problems--ex: installing the mysql gem, using libxml, etc.
+You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools]. 
 
-XCode is packaged on the DVD with every copy of Mac OS X.
-
-2. MySQL users only
-
-Install the mysql gem.  You'll need to point the gem at your specific mysql path, but if you're using Leopard's preinstalled MySQL, this code should help:
-
-{{{
-sudo env ARCHFLAGS="-arch i386" gem install mysql -- \
-  --with-mysql-dir=/usr/local/mysql --with-mysql-lib=/usr/local/mysql/lib \
-  --with-mysql-include=/usr/local/mysql/include
-}}}
+Header files are not delivered by default with Mac OS X, you need to install the Xcode Tools package after installing OSX. You can find it in the Optional Installs / Xcode Tools directory on the Leopard DVD. 
 
 
 = Get Started =
@@ -147,6 +137,14 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{ 
      gem install mysql -- --with-mysql-dir=/path/to/mysql 
      }}}
+      
+      If you're using the stock Leopard MySQL install:
+     {{{
+     sudo env ARCHFLAGS="-arch i386" gem install mysql -- \
+     --with-mysql-dir=/usr/local/mysql --with-mysql-lib=/usr/local/mysql/lib \
+     --with-mysql-include=/usr/local/mysql/include
+     }}}
+   
     * If you are using PostgreSQL, install the `postgres` gem:
      {{{ 
      gem install postgres -- --with-pgsql-dir=/path/to/pgsql 
