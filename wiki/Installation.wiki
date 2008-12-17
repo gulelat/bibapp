@@ -58,6 +58,12 @@ You should be able to install these packages quickly via `apt-get`.  For example
   sudo apt-get install libxml2 libxml2-dev ruby1.8-dev
   }}}
 
+== Additional Pre-requisites for Mac OSX ==
+
+You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools].  Without them, you are likely to run into many problems--ex: installing the mysql gem, using libxml, etc.
+
+XCode is packaged on the DVD with every copy of Mac OS X.
+
 
 = Get Started =
 
