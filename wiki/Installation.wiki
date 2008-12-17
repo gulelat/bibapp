@@ -44,7 +44,7 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-== Additional Pre-requisites for Ubuntu / Debian ==
+== Additional Pre-requisites for Ubuntu / Debian (not OSX!) ==
 
 Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
   * `libxml2` and `libxml2-dev`
