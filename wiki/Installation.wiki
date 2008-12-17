@@ -60,9 +60,19 @@ You should be able to install these packages quickly via `apt-get`.  For example
 
 == Additional Pre-requisites for Mac OSX (Eric - 2008.12.17 - Beta! )==
 
-You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools].  Without them, you are likely to run into many problems--ex: installing the mysql gem, using libxml, etc.
+1. You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools].  Without them, you are likely to run into many problems--ex: installing the mysql gem, using libxml, etc.
 
 XCode is packaged on the DVD with every copy of Mac OS X.
+
+2. MySQL users only
+
+Install the mysql gem.  You'll need to point the gem at your specific mysql path, but if you're using Leopard's preinstalled MySQL, this code should help:
+
+{{{
+sudo env ARCHFLAGS="-arch i386" gem install mysql -- \
+  --with-mysql-dir=/usr/local/mysql --with-mysql-lib=/usr/local/mysql/lib \
+  --with-mysql-include=/usr/local/mysql/include
+}}}
 
 
 = Get Started =
