@@ -137,7 +137,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{ 
      gem install mysql -- --with-mysql-dir=/path/to/mysql 
      }}}
-      * *(Mac OSX only)* If you're using the stock Leopard MySQL install:
+      * *(Mac OSX only)* If you're using the stock Leopard MySQL, run this install instead:
        {{{
        sudo env ARCHFLAGS="-arch i386" gem install mysql -- \
        --with-mysql-dir=/usr/local/mysql --with-mysql-lib=/usr/local/mysql/lib \
