@@ -16,7 +16,7 @@
 
   * ~~SWORD~~
 
-== Version 1.0 | June 2009 ==
+== Version 1.0 | Summer 2009 ==
 
   * ~~Rails 2.1 upgrade~~
     * ~~Gem dependencies~~
