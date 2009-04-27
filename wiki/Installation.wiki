@@ -213,6 +213,61 @@ In order to startup !BibApp on your server, you must do *both* of the following 
 
 Try it out!  Assuming your web server is on port 3000 (which is Mongrel's default), you should have !BibApp running at:  http://localhost:3000/
 
+
+= Updating !BibApp (Bill - 2009.04.27 - Beta!) =
+
+Steps for updating !BibApp with the latest from Subversion. Run all commands as root (sudo).
+
+  # (_Recommended_) Make a full back up of the `bibapp/` directory
+    {{{
+    cp -R bibapp/ bibapp.bak/
+    }}}
+  # (_Recommended_) Back up the database
+    * For PostgreSQL:
+    {{{
+    pg_dump -U bibapp -E UNICODE -f <backup_file_name_path> <database_name>
+    }}}
+  # Stop mongrel
+    * For a single Mongrel:
+    {{{
+    mongrel_rails stop
+    }}}
+    * For Mongrel cluster:
+    {{{
+    mongrel_rails_cluster::stop
+    }}}
+  # Update the source code
+    {{{
+    cd bibapp/ 
+    svn update
+    svn status
+    }}}
+  # Rebuild the database (_only necessary when there are new migration scripts_)
+    {{{
+    rake db:migrate
+    }}}
+  # Check/Edit any updated `config/` files
+    <br />
+  # Restart/Refresh solr (_refresh only necessary when solr configs are updated in `vendor/bibapp-solr`_)
+    {{{
+    rake solr:stop
+    rake solr:start
+    rake solr:refresh_index
+    }}}
+  # Install any new gems (_only necessary when `environment.rb` is changed_)
+    {{{
+    rake gems:install
+    }}}
+  # Start Mongrel
+    * For a single Mongrel:
+    {{{
+    mongrel_rails start
+    }}}
+    * For Mongrel cluster:
+    {{{
+    mongrel_rails_cluster::start
+    }}}
+
 = Using !BibApp =
 
 == Login For the First Time ==
