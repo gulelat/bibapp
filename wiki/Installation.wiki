@@ -234,7 +234,7 @@ Steps for updating !BibApp with the latest from Subversion. Run all commands as 
     }}}
     * For Mongrel cluster:
     {{{
-    mongrel_rails_cluster::stop
+    mongrel_rails cluster::stop
     }}}
   # Update the source code
     {{{
@@ -265,7 +265,7 @@ Steps for updating !BibApp with the latest from Subversion. Run all commands as 
     }}}
     * For Mongrel cluster:
     {{{
-    mongrel_rails_cluster::start
+    mongrel_rails cluster::start
     }}}
 
 = Using !BibApp =
