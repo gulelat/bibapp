@@ -49,54 +49,54 @@ Overall, the general layout looks good. However, the following changes are sugge
 
 == Browse Groups ==
 
-  * Make into a table of columns with basic information
-    * Table should be "zebra-striped"..but, very subtle 
-    * Remove numbering, it's not necessary
-  * A-Z browsing
-    * Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.
-    * Add A-Z letter list at bottom of page
+  * ~~Make into a table of columns with basic information~~
+    * ~~Table should be "zebra-striped"..but, very subtle ~~
+    * ~~Remove numbering, it's not necessary~~
+  * ~~A-Z browsing~~
+    * ~~Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.~~
+    * ~~Add A-Z letter list at bottom of page~~
   * Should have a search box at top, to immediately filter for certain words in name 
   * Is there any way to easily provide cross listing of group names?
     * (E.g.) "Center of Mathematical Sciences" => "Mathematical Sciences, Center of"
 
 == Browse People ==
 
-  * Make into a table of columns with basic information
-    * Table should be "zebra-striped"..but, very subtle 
-    * Remove numbering, it's not necessary
-    * Basic information should include:
-      * Thumbnail of person
-      * Name
-      * # of total works in BibApp
-      * Citation to his/her most recent publication.
-  * A-Z browsing
-    * Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.
-    * Add A-Z letter list at bottom of page
+  * ~~Make into a table of columns with basic information~~
+    * ~~Table should be "zebra-striped"..but, very subtle ~~
+    * ~~Remove numbering, it's not necessary~~
+    * ~~Basic information should include:~~
+      * ~~Thumbnail of person~~
+      * ~~Name~~
+      * ~~# of total works in BibApp~~
+      * ~~Citation to his/her most recent publication.~~
+  * ~~A-Z browsing~~
+    * ~~Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.~~
+    * ~~Add A-Z letter list at bottom of page~~
   * Should have a search box at top, to immediately filter names
 
 == Browse Publications ==
 
-  * Make into a table of columns with basic information
-    * Table should be "zebra-striped"..but, very subtle 
-    * Remove numbering, it's not necessary
-  * A-Z browsing
-    * Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.
-    * Add A-Z letter list at bottom of page
+  * ~~Make into a table of columns with basic information~~
+    * ~~Table should be "zebra-striped"..but, very subtle ~~
+    * ~~Remove numbering, it's not necessary~~
+  * ~~A-Z browsing~~
+    * ~~Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.~~
+    * ~~Add A-Z letter list at bottom of page~~
   * Should have a search box at top, to immediately filter names
   * Should have faceted "types", so that you can browse just journals, or just books, etc.
 
 == Browse Publishers ==
 
-  * Make into a table of columns with basic information
-    * Table should be "zebra-striped"..but, very subtle 
-    * Remove numbering, it's not necessary
-    * Basic Info to show:
-      * Name
-      * # of publications in !BibApp
-      * Most recent year of publication
-  * A-Z browsing
-    * Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.
-    * Add A-Z letter list at bottom of page
+  * ~~Make into a table of columns with basic information~~
+    * ~~Table should be "zebra-striped"..but, very subtle ~~
+    * ~~Remove numbering, it's not necessary~~
+    * ~~Basic Info to show:~~
+      * ~~Name~~
+      * ~~# of publications in !BibApp~~
+      * ~~Most recent year of publication~~
+  * ~~A-Z browsing~~
+    * ~~Get rid of the letter in parens after title. Instead, highlight the current letter in the A-Z letter list.~~
+    * ~~Add A-Z letter list at bottom of page~~
   * Should have a search box at top, to immediately filter names
   * Should have faceted "types", so that you can browse just journals, or just books, etc.
 
