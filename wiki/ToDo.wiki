@@ -2,7 +2,7 @@
 
 = DEPRECATED / OUT OF DATE =
 
-(May-2009) This To-Do list needs major updates! A more active To-Do list for our upcoming BibApp 1.0 release is available on the [http://code.google.com/p/bibapp/wiki/InterfaceRedesign InterfaceRedesign] page of the wiki.
+(May-2009) This To-Do list needs major updates! A more active To-Do list for our upcoming !BibApp 1.0 release is available on the [http://code.google.com/p/bibapp/wiki/InterfaceRedesign InterfaceRedesign] page of the wiki.
 
 
 ~~= !BibApp To-Do: =~~
