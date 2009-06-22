@@ -15,8 +15,8 @@ http://www.library.uiuc.edu/bibapp/
 Overall, the general layout looks good. However, the following changes are suggested:
 
   * *Header:*
-    * Why is the Institution name at the same level as FAQ and Login (in upper right)?
-      * It's already listed in the footer...not necessary in upper right corner
+    * ~~Why is the Institution name at the same level as FAQ and Login (in upper right)?~~
+      * ~~It's already listed in the footer...not necessary in upper right corner~~
     * Header should provide an "About" link which (by default) will give more information about !BibApp software.  However, institutions can change this default content.
     * ~~"!BibApp" is a good software name, but it's unlikely any institutions will want to call their installation "!BibApp".  We need to make the Header more configurable!~~
       * ~~Need to allow for a custom image for site (to replace "!BibApp logo")~~
@@ -95,8 +95,8 @@ Overall, the general layout looks good. However, the following changes are sugge
 
 == View A Person ==
 
-  * Tabbed view (more like Vivo, others).  There is too much content on one page & too much scrolling
-    * Entire works list (with filters) should be in a separate *tab*
+  * ~~Tabbed view (more like Vivo, others).  There is too much content on one page & too much scrolling~~
+    * ~~Entire works list (with filters) should be in a separate *tab*~~
   * What about last name's under co-author images?  Is last name only in appropriate, or should we have the full name?
   * Numbers on co-author person image...will anyone understand them??
   * Do we really need pictures of co-authors - Why not just a small table listing full names (and # of publications)
@@ -120,9 +120,9 @@ Overall, the general layout looks good. However, the following changes are sugge
 
 == View Group ==
 
-  * Should have tabbed views, to limit the amount of scrolling on a page 
-    * Browse People
-    * Browse Works
+  * ~~Should have tabbed views, to limit the amount of scrolling on a page~~ 
+    * ~~Browse People~~
+    * ~~Browse Works~~
   * It always shows *EVERYONE* in a group.  This makes for a very large page when you have large groups of people.
     * Instead, show just the following 10 people by default:
       * Department/Group Chair(s) 
@@ -156,7 +156,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
 
 == Admin Page ==
   
-  * Should have an easily browseable list of all available admin functions:  "Add Group, Add Person, etc."
+  * ~~Should have an easily browseable list of all available admin functions:  "Add Group, Add Person, etc."~~
   * Functions that are missing:
     * Delete People
     * Delete Groups
@@ -164,38 +164,38 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
     * Delete Works
     * Need to be able to remove/correct authorities
     * Need to be able to generally correct mistakes or easily delete content from !BibApp
-    * Need to be able to manage/remove duplicates from system
+    * ~~Need to be able to manage/remove duplicates from system~~
 
 == Add a Person ==
 
-  * Text should say search "Campus Directory" instead of LDAP! (most won't know what "LDAP" means)
-  * "Use Me" text for matches from LDAP => needs to change to "select" or something?
-  * What does "active?" option do? Eric & Tim think it is obsolete, so we should remove it.
+  * ~~Text should say search "Campus Directory" instead of LDAP! (most won't know what "LDAP" means)~~
+  * ~~"Use Me" text for matches from LDAP => needs to change to "select" or something?~~
+  * ~~What does "active?" option do? Eric & Tim think it is obsolete, so we should remove it.~~
   * LDAP search is buggy...needs fixing
     * UW gets back title & group information for names that match
     * UIUC gets back title & university name for names that match
     * We need to be able to allow for customizing of the returned fields from LDAP
     * Also look at First & Middle names...may need to split/parse these, since LDAP tends to put them both in a single "given name" field.
     * What if you do a generic search for "Smith"
-      * *Bug:* we get no results in BibApp...campus directory returns "too many results"
-    * Need a recommended format for searching names (e.g. "Smith, Mark")
+      * ~~*Bug:* we get no results in BibApp...campus directory returns "too many results"~~
+    * ~~Need a recommended format for searching names (e.g. "Smith, Mark")~~
     * Strangely, "Mark Smith" returns different results from "Smith, Mark"
   * Auto-add to group (with appointment title) with the departmental information returned from LDAP search. 
   * If only one results for a LDAP person search, we should auto-populate the form fields below 
-  * Need ability to clear the form, in case we accidentally got a bad match.
+  * ~~Need ability to clear the form, in case we accidentally got a bad match.~~
   * If person already exists in !BibApp system...we should return a "did you mean" with a link to the existing person (rather than creating a duplicate person!)
-  * The Add a Person page should actually be one big form that allows you to do *all* of the following:
-    * Add an Image
+  * ~~The Add a Person page should actually be one big form that allows you to do *all* of the following:~~
+    * ~~Add an Image~~
        * Should also be able to enter a URL for the image (rather than an upload)
-    * Add a Group
-       * Ability to type in a name
+    * ~~Add a Group~~
+       * ~~Ability to type in a name~~
        * Nested List of Groups (similar to our nested Communities in DSpace)...*all groups* in a javascript hierarchy
        * "Title" for Group => "Appointment"
        * Get rid of checkbox...Just add a "remove" link to remove affiliation
        * Get rid of numbered list
     * Ability to "Add Another" for fields which allow multiple values
-  * Should be a two column form to save space
-  * "Pen Name" should be on a *different* form (or different tab?)
+  * ~~Should be a two column form to save space~~
+  * ~~"Pen Name" should be on a *different* form (or different tab?)~~
     * Pen Names => "Publishes under these names"
     * *BUG:* Adding additional pen names doesn't seem to be working right.
   * Need to be able to enter a Primary Title/Appointment to display on a person's page
@@ -245,7 +245,7 @@ Currently, !BibApp only comes with authentication against usernames/passwords st
     * Search for "Elsevier" => see everthing with Elsevier in it
     * Search for "Blackwell" or "Wiley" => get results from both and make authorities from there.
   * Checkboxes for selecting -- rather than "select"/"remove" options
-  * Once you click "make authority", a button should appear next to it which says "save"
+  * ~~Once you click "make authority", a button should appear next to it which says "save"~~
   * No feedback on which ones are already "authorities"
     * Need a pulldown list of varients which belong to an authority
     * Need a way to then undo existing authorities (if you made a mistake)
