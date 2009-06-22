@@ -47,6 +47,10 @@
   * User requested features:
     * Simple citation widgets ([http://www.simile-widgets.org/exhibit/ Exhibit])
   * Export citation data in RIS
+  * Polymorphic Identifiers
+  * Publications Model subclasses
+    * Books
+    * Journals
   * COinS
   * Publicly tested
   * Stable release
