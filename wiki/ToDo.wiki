@@ -1,5 +1,89 @@
 #summary The General TODO List
 
+*_Table of Contents:_*
+<wiki:toc max_depth="4" />
+
+= Current !BibApp TODO List (25 June 2009) =
+
+== People ==
+
+=== Add a new person ===
+  * LDAP - better integration. 
+    * Config file for mapping institution-specific fields
+    * Get middle name from LDAP (also show middle in display name)
+    * Require unique identifier (can be different depending on institution)
+    * Disallow duplicates
+    * Require other fields? last name? maybe just uid
+    * Combine address fields (line one, line two, city, state, ...) into one address block
+    * Ditto for office address
+  * General Workflow
+    * Streamline the process so that no steps are omitted (personal info >> pen names >>  groups >> photo)
+  * Setting pen names
+    * Take away the checkboxes; instead have trashcan icon for removing 
+    * Combine? Add and Add suggestions - too confusing 
+  * Groups
+    * Sort All Groups alphabetically 
+  * Photo
+    * Separate this away from Personal Info, since it can't be done until the new person has an ID
+
+=== Editing a person ===
+  * Workflow
+    * Same as add user (personal info >> pen names >>  groups >> photo)
+    * Changes to personal info may generate new pen names - we need to make sure the user is aware of that
+
+=== Deleting a person ===
+  * Nothing done yet
+  * Relationships w/other objects
+    * Destroy contributorships - this needs to be a background process; it may be overlong
+    * Destroy memberships - probably quick enough
+    * Destroy pen_names  
+    * Photo - delete it or keep it? 
+    * All require a solr re-index
+    
+== Works ==
+
+=== Adding a work ===
+  * Subclasses
+    * Need a better list of work subclasses
+    * These will all need individual input forms
+    * Batch upload citation parser will have to be smart enough to assign proper subclass
+    * Fix mappings for books
+    * Add URL field for journal articles
+  * Authors/Editors/Keywords/Tags
+    * Currently, if you don't hit the add button they are not added, even if you hit save - confusing
+    * It might be better to ask for a delimited list, and we do the parsing
+  * Batch uploads
+    * These take too long - the user needs to see something; also, the browser will time out
+    * Review Batch needs to be more of a report of what went in, what errored, etc, as well as duplicates
+  * Adding works directly to a person
+    * Not doing anything currently
+    * Should automatically verify contributorships for the person once the batch is confirmed
+    * User should be alerted of works not matching any of his pen names, and allowed to add those pen names immediately 
+  * Bugs
+    * ISSN/ISBN linked to publisher data, but if the latter is missing the ISSN/ISBN becomes associated with UNKNOWN 
+    * RIS import for year dates (e.g., PY - 2001) gets assigned as null
+    * RIS citation importer ignores a lot of valid RIS tags
+    
+=== Show a work === 
+  * Need better display of the citation
+  
+=== Delete a work ===
+  * Delete a batch of works on a person
+    * Needs a view for this - not yet possible
+    * Needs to run as a background process; solr reindex
+  
+=== Duplicate works ===
+  * List needs a facet for person
+  * Merge Duplicates needs to be simple or not at all
+  * Deleting a work that has duplicate(s) is not possible. Can we make this easier on the user?
+  
+
+== Solr/Searching/Faceting ==
+  * People with no works don't show up on searches
+
+
+----
+
 = DEPRECATED / OUT OF DATE =
 
 (May-2009) This To-Do list needs major updates! A more active To-Do list for our upcoming !BibApp 1.0 release is available on the [http://code.google.com/p/bibapp/wiki/InterfaceRedesign InterfaceRedesign] page of the wiki.
