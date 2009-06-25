@@ -38,6 +38,7 @@
     * ~~citeproc-rb~~
   * ~~Upgrade bug fixes~~
   * InterfaceRedesign
+  * ToDo list
   * Bugs to Fix (moved here from Interface Redesign)
     * Books and Book Chapters are not yet displayed properly in !BibApp.  The Book Title always appears as "Unknown".
     * Web Services (extracting data via YAML, XML, JSON/JSONP, etc.)
