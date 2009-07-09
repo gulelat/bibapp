@@ -33,11 +33,11 @@
 
 === Deleting a person ===
   * ~~Nothing done yet~~
-  * Relationships w/other objects
+  * ~~Relationships w/other objects~~
     * ~~Destroy contributorships - this needs to be a background process; it may be overlong~~
     * ~~Destroy memberships - probably quick enough~~
     * ~~Destroy pen_names~~  
-    * Photo - delete it or keep it? 
+    * ~~Photo - delete it or keep it?~~
     * ~~All require a solr re-index~~
     
 == Works ==
