@@ -24,21 +24,21 @@
   * Groups
     * Sort All Groups alphabetically 
   * Photo
-    * Separate this away from Personal Info, since it can't be done until the new person has an ID
+    * ~~Separate this away from Personal Info, since it can't be done until the new person has an ID~~
 
 === Editing a person ===
   * Workflow
-    * Same as add user (personal info >> pen names >>  groups >> photo)
+    * ~~Same as add user (personal info >> pen names >>  groups >> photo)~~
     * Changes to personal info may generate new pen names - we need to make sure the user is aware of that
 
 === Deleting a person ===
-  * Nothing done yet
+  * ~~Nothing done yet~~
   * Relationships w/other objects
-    * Destroy contributorships - this needs to be a background process; it may be overlong
-    * Destroy memberships - probably quick enough
-    * Destroy pen_names  
+    * ~~Destroy contributorships - this needs to be a background process; it may be overlong~~
+    * ~~Destroy memberships - probably quick enough~~
+    * ~~Destroy pen_names~~  
     * Photo - delete it or keep it? 
-    * All require a solr re-index
+    * ~~All require a solr re-index~~
     
 == Works ==
 
