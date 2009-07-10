@@ -17,7 +17,7 @@
     * Combine address fields (line one, line two, city, state, ...) into one address block
     * Ditto for office address
   * General Workflow
-    * Streamline the process so that no steps are omitted (personal info >> pen names >>  groups >> photo)
+    * ~~Streamline the process so that no steps are omitted (personal info >> pen names >>  groups >> photo)~~
   * Setting pen names
     * Take away the checkboxes; instead have trashcan icon for removing 
     * Combine? Add and Add suggestions - too confusing 
@@ -29,7 +29,7 @@
 === Editing a person ===
   * Workflow
     * ~~Same as add user (personal info >> pen names >>  groups >> photo)~~
-    * Changes to personal info may generate new pen names - we need to make sure the user is aware of that
+    * ~~Changes to personal info may generate new pen names - we need to make sure the user is aware of that~~
 
 === Deleting a person ===
   * ~~Nothing done yet~~
