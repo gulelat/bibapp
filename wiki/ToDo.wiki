@@ -73,8 +73,8 @@
     * Needs to run as a background process; solr reindex
   
 === Duplicate works ===
-  * List needs a facet for person
-  * Merge Duplicates needs to be simple or not at all
+  * ~~List needs a facet for person~~
+  * ~~Select and delete multiple duplicate works~~
   * Deleting a work that has duplicate(s) is not possible. Can we make this easier on the user?
   
 
