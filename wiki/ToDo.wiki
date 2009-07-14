@@ -6,6 +6,9 @@
 = Current !BibApp TODO List (25 June 2009) =
 
 == People ==
+  * New DB fields
+    * displayName - full name or _pretty name_ (i.e., J. Stephen Downey)
+    * UID
 
 === Add a new person ===
   * LDAP - better integration. 
@@ -79,7 +82,14 @@
   
 
 == Solr/Searching/Faceting ==
+  * Upgrade
   * People with no works don't show up on searches
+  * People/Works has a hidden facet on Person, but the person's name still shows up in the list of facets -- needs straightening out
+  * Indexes needed for
+    * People
+    * Groups
+    * Publishers
+    * Publications
 
 
 ----
