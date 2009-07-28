@@ -34,3 +34,56 @@
   end
 
 }}}
+
+== Book (whole) ==
+
+Contributors:
+author, editor, translator, illustrator
+
+title_primary
+title_secondary
+title_tertiary
+end_page (number of pages? or does this need a new field?)
+publisher_id
+publication_date
+language
+copyright_holder
+
+== Book (section) ==
+
+== Monograph ==
+
+== Journal article ==
+
+Contributors:
+author
+
+title_primary
+title_secondary
+title_tertiary
+start_page
+end_page
+publication_id
+publisher_id
+publication_date
+language
+copyright_holder
+
+== Jrnl (edited) ==
+== Conf paper ==
+== Conf poster ==
+== Conf proceeding ==
+== Conf presentation ==
+== Book review ==
+== Artwork ==
+== Dissertation ==
+== Patent ==
+== Web page ==
+== Exhibition ==
+== Performance ==
+== Composition ==
+== Recording (sound) ==
+== Movie ==
+== Working paper ==
+== Tech report ==
+== Grant ==
