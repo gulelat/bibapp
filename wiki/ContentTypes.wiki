@@ -51,7 +51,14 @@ author, editor, translator, illustrator
 
 == Book (section) ==
 
+Contributors:
+section author, book editor
+
+(otherwise same as book?)
+
 == Monograph ==
+
+(same as book?)
 
 == Journal article ==
 
