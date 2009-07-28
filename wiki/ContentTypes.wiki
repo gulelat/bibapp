@@ -40,14 +40,14 @@
 Contributors:
 author, editor, translator, illustrator
 
-title_primary
-title_secondary
-title_tertiary
-end_page (number of pages? or does this need a new field?)
-publisher_id
-publication_date
-language
-copyright_holder
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * end_page (number of pages? or does this need a new field?)
+  * publisher_id
+  * publication_date
+  * language
+  * copyright_holder
 
 == Book (section) ==
 
@@ -58,16 +58,16 @@ copyright_holder
 Contributors:
 author
 
-title_primary
-title_secondary
-title_tertiary
-start_page
-end_page
-publication_id
-publisher_id
-publication_date
-language
-copyright_holder
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * start_page
+  * end_page
+  * publication_id
+  * publisher_id
+  * publication_date
+  * language
+  * copyright_holder
 
 == Jrnl (edited) ==
 == Conf paper ==
