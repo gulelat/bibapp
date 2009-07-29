@@ -78,6 +78,7 @@ author
   * language
   * copyright_holder
   * abstract
+  * *url-like identifier* (DOI, Handle, whatever)
 
 == Journal (edited) ==
 
@@ -144,12 +145,18 @@ reviewer
 
 == Artwork ==
 
+Per MLA Handbook: "state the artist's name first, when available. In general, italicize the title and then list the date of composition (if the year is unknown, write N.d.) Indicate the medium of composition. Name the institution that houses the work (e.g., a museum), or, for a work in a private collection, give the name of the collection (Collection of...), and then provide the name of the city where the institution or collection is located. If the collector is unknown or wishes to be anonymous, use Private collection without a city name."
+
 Contributors:
 artist
 
   * title_primary
   * title_secondary
   * title_tertiary
+  * date
+  * *medium* (photograph, print, sculpture, etc)
+  * *current location* (gallery, museum, private collection, etc)
+  * *city where located*
 
 == Thesis/Dissertation ==
 
@@ -168,6 +175,16 @@ author, advisor
 
 == Patent ==
 == Web page ==
+
+Contributors:
+(corporate?) author
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * *url*
+  * *date of last visit*
+ 
 == Exhibition ==
 == Performance ==
 == Composition ==
