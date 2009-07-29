@@ -1,5 +1,7 @@
 #summary Content types and related fields in BibApp
 
+*Bold type* means a field that doesn't seem to exist in the table yet.
+
 = Schema =
 
 {{{
@@ -75,15 +77,95 @@ author
   * publication_date
   * language
   * copyright_holder
+  * abstract
 
-== Jrnl (edited) ==
-== Conf paper ==
-== Conf poster ==
-== Conf proceeding ==
-== Conf presentation ==
+== Journal (edited) ==
+
+Contributors:
+editor (various types!), board member?, peer reviewer?
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * publication_id
+  * publisher_id
+  * *start date*?
+  * *end date*?
+
+== Conference paper ==
+
+Contributors:
+author
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * publication_id
+  * publisher_id
+  * *conference title*
+  * *conference location*
+  * *conference dates*
+  * start_page
+  * end_page
+  * copyright_holder
+  * abstract
+
+== Conference poster ==
+
+Contributors:
+author
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * *conference title*
+  * *conference location*
+  * *conference dates*
+  * copyright_holder (automatically same as author?)
+  * abstract?
+
+== Conference proceeding (edited) ==
+
+Contributors:
+editor
+
+(otherwise same as conference paper?)
+
+== Conference presentation ==
+
+(same as conference poster?)
+
 == Book review ==
+
+Contributors:
+reviewer
+
+(otherwise same as journal article?)
+
 == Artwork ==
-== Dissertation ==
+
+Contributors:
+artist
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+
+== Thesis/Dissertation ==
+
+Contributors:
+author, advisor
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * end_page (pagecount?)
+  * *degree level*
+  * *discipline*
+  * *institution name*
+  * abstract
+  * degree date
+
 == Patent ==
 == Web page ==
 == Exhibition ==
