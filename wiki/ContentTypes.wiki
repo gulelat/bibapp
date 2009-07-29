@@ -226,7 +226,54 @@ composer
   * publication_date
 
 == Recording (sound) ==
+
+Contributors:
+
+  * Corporate: musical ensemble, recording label
+  * Individual: musician, performer, interviewer, interviewee
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * publisher_id
+  * publication_date
+  * copyright_holder
+
 == Movie ==
+
+Contributors: director, producer, actor (usually these are the only people actually cited, yes?)
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * publication_date
+  * *production company* (corporate contributor?)
+
 == Working paper ==
+
+Contributors: author
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * date
+  * *series number*
+  * *series name*
+
 == Tech report ==
+
+(same as working paper?)
+
 == Grant ==
+
+Contributors:
+
+  * Corporate: grant agency, institution
+  * Individual: PI, other investigator
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * *start date*
+  * *end date*
+  * *grant number*
