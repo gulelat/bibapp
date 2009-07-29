@@ -148,7 +148,7 @@ reviewer
 Per MLA Handbook: "state the artist's name first, when available. In general, italicize the title and then list the date of composition (if the year is unknown, write N.d.) Indicate the medium of composition. Name the institution that houses the work (e.g., a museum), or, for a work in a private collection, give the name of the collection (Collection of...), and then provide the name of the city where the institution or collection is located. If the collector is unknown or wishes to be anonymous, use Private collection without a city name."
 
 Contributors:
-artist
+artist, curator?
 
   * title_primary
   * title_secondary
@@ -188,7 +188,7 @@ Contributors:
 == Exhibition ==
 
 Contributors:
-artist
+artist, curator
 
   * title_primary
   * title_secondary
@@ -214,6 +214,17 @@ Contributors:
   * *venue location*
 
 == Composition ==
+
+Contributors:
+composer
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * *instrumentation*
+  * publisher_id
+  * publication_date
+
 == Recording (sound) ==
 == Movie ==
 == Working paper ==
