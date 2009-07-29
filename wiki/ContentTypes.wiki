@@ -186,7 +186,33 @@ Contributors:
   * *date of last visit*
  
 == Exhibition ==
+
+Contributors:
+artist
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * date
+  * *venue*
+  * *venue location*
+
 == Performance ==
+
+Contributors:
+
+  * Personal: director, conductor, actor, musician, dancer, costume designer, lighting designer, choreographer, composer, etc.
+  * Corporate: company, orchestra (or other instrumental ensemble), choir, band 
+
+  * title_primary
+  * title_secondary
+  * title_tertiary
+  * *performance title* (if the performance is part of a larger whole)
+  * start_date
+  * *end_date*
+  * *venue*
+  * *venue location*
+
 == Composition ==
 == Recording (sound) ==
 == Movie ==
