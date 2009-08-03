@@ -42,6 +42,8 @@
   * funder
   * notes
 
+Also note that we need to add a location field to the Publisher entity in order to properly display the citation for books.
+
 == Book (whole) ==
 
 Contributors:
@@ -50,7 +52,7 @@ author, editor, translator, illustrator
   * `*`title_primary
   * title_secondary
   * title_tertiary
-  * end_page (should equal number of pages; so should be labeled as Pages in the display)
+  * end_page (should equal number of pages; so displayLabel=Pages)
   * publisher_id
   * publication_date
   * language
@@ -88,15 +90,15 @@ Contributors:
 == Journal (edited) ==
 
 Contributors:
-editor (managing, ), ~~board member?~~, ~~peer reviewer?~~
+editor (editor in chief, managing, consulting (though this sometimes means the same as an editorial board member ), board member, ~~peer reviewer?~~ (I'm not sure that we need this one right now)
 
   * `*`title_primary
   * title_secondary
   * title_tertiary
   * publication_id
   * `*`publisher_id
-  * *start date*?
-  * *end date*?
+  * *start date* - need to connect this to the contributor role, however, since it's less about the work then about the time spent as editor
+  * *end date* - need to connect this to the contributor role, however, since it's less about the work then about the time spent as editor
 
 == Conference paper ==
 
@@ -127,15 +129,25 @@ author
   * `*`*conference title*
   * *conference location*
   * *conference dates*
-  * copyright_holder (automatically same as author?)
-  * abstract?
+  * copyright_holder (automatically same as author - probably not)
+  * abstract
 
 == Conference proceeding (edited) ==
 
 Contributors:
 `*`editor
 
-(otherwise same as conference paper?)
+  * `*`title_primary
+  * title_secondary
+  * title_tertiary
+  * publication_id
+  * publisher_id
+  * `*`*conference title*
+  * *conference location*
+  * *conference dates*
+  * end_page (should equal number of pages; so displayLabel=Pages)
+  * copyright_holder
+  * abstract
 
 == Conference presentation ==
 
