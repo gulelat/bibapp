@@ -47,7 +47,7 @@
 Contributors:
 author, editor, translator, illustrator
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * end_page (should equal number of pages; so should be labeled as Pages in the display)
@@ -59,7 +59,7 @@ author, editor, translator, illustrator
 == Book (section) ==
 
 Contributors:
-section author, book editor
+`*`section author, book editor
 
 (otherwise same as book?)
 
@@ -70,16 +70,16 @@ section author, book editor
 == Journal article ==
 
 Contributors:
-author
+`*`author
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * start_page
   * end_page
-  * publication_id
+  * `*`publication_id
   * publisher_id
-  * publication_date
+  * `*`publication_date
   * language
   * copyright_holder
   * abstract
@@ -90,25 +90,25 @@ author
 Contributors:
 editor (managing, ), ~~board member?~~, ~~peer reviewer?~~
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * publication_id
-  * publisher_id
+  * `*`publisher_id
   * *start date*?
   * *end date*?
 
 == Conference paper ==
 
 Contributors:
-author
+`*`author
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * publication_id
   * publisher_id
-  * *conference title*
+  * `*`*conference title*
   * *conference location*
   * *conference dates*
   * start_page
@@ -121,10 +121,10 @@ author
 Contributors:
 author
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
-  * *conference title*
+  * `*`*conference title*
   * *conference location*
   * *conference dates*
   * copyright_holder (automatically same as author?)
@@ -133,7 +133,7 @@ author
 == Conference proceeding (edited) ==
 
 Contributors:
-editor
+`*`editor
 
 (otherwise same as conference paper?)
 
@@ -144,7 +144,7 @@ editor
 == Book review ==
 
 Contributors:
-reviewer
+`*`reviewer
 
 (otherwise same as journal article?)
 
@@ -153,62 +153,62 @@ reviewer
 Per MLA Handbook: "state the artist's name first, when available. In general, italicize the title and then list the date of composition (if the year is unknown, write N.d.) Indicate the medium of composition. Name the institution that houses the work (e.g., a museum), or, for a work in a private collection, give the name of the collection (Collection of...), and then provide the name of the city where the institution or collection is located. If the collector is unknown or wishes to be anonymous, use Private collection without a city name."
 
 Contributors:
-artist, curator?
+`*`artist, curator?
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * date
-  * *medium* (photograph, print, sculpture, etc)
-  * *current location* (gallery, museum, private collection, etc)
+  * `*`*medium* (photograph, print, sculpture, etc)
+  * `*`*current location* (gallery, museum, private collection, etc)
   * *city where located*
 
 == Thesis/Dissertation ==
 
 Contributors:
-author, advisor
+`*`author, advisor
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * end_page (pagecount?)
-  * *degree level*
-  * *discipline*
-  * *institution name*
+  * `*`*degree level*
+  * `*`*discipline*
+  * `*`*institution name*
   * abstract
-  * degree date
+  * `*`degree date
 
 == Patent ==
 
 Contributors:
-patent owner
+`*`patent owner
 
-  * title_primary
-  * *filing date*
+  * `*`title_primary
+  * `*`*filing date*
   * *issue date*
-  * *patent number*
+  * `*`*patent number*
 
 == Web page ==
 
 Contributors:
-(corporate?) author
+`*`(corporate?) author
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
-  * *url*
-  * *date of last visit*
+  * `*`*url*
+  * `*`*date of last visit* (default to today)
  
 == Exhibition ==
 
 Contributors:
-artist, curator
+`*`artist, curator
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
-  * date
-  * *venue*
+  * `*`date
+  * `*`*venue*
   * *venue location*
 
 == Performance ==
@@ -218,7 +218,7 @@ Contributors:
   * Personal: director, conductor, actor, musician, dancer, costume designer, lighting designer, choreographer, composer, etc.
   * Corporate: company, orchestra (or other instrumental ensemble), choir, band 
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * *performance title* (if the performance is part of a larger whole)
@@ -230,9 +230,9 @@ Contributors:
 == Composition ==
 
 Contributors:
-composer
+`*`composer
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * *instrumentation*
@@ -246,7 +246,7 @@ Contributors:
   * Corporate: musical ensemble, recording label
   * Individual: musician, performer, interviewer, interviewee
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * publisher_id
@@ -257,7 +257,7 @@ Contributors:
 
 Contributors: director, producer, actor (usually these are the only people actually cited, yes?)
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * publication_date
@@ -265,9 +265,9 @@ Contributors: director, producer, actor (usually these are the only people actua
 
 == Working paper ==
 
-Contributors: author
+Contributors: `*`author
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * date
@@ -282,12 +282,12 @@ Contributors: author
 
 Contributors:
 
-  * Corporate: grant agency, institution
+  * Corporate: `*`grant agency, institution
   * Individual: PI, other investigator
 
-  * title_primary
+  * `*`title_primary
   * title_secondary
   * title_tertiary
   * *start date*
   * *end date*
-  * *grant number*
+  * `*`*grant number*
