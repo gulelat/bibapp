@@ -97,8 +97,8 @@ editor (editor in chief, managing, consulting (though this sometimes means the s
   * title_tertiary
   * publication_id
   * `*`publisher_id
-  * *start date* - need to connect this to the contributor role, however, since it's less about the work then about the time spent as editor
-  * *end date* - need to connect this to the contributor role, however, since it's less about the work then about the time spent as editor
+  * *start date* - need to connect this to the contributor role, however, since it's less about the work then about the time spent as editor; this is probably too complex for 1.0 so we need to make it clear in the display that we're referring to the role.
+  * *end date* - need to connect this to the contributor role, however, since it's less about the work then about the time spent as editor; this is probably too complex for 1.0 so we need to make it clear in the display that we're referring to the role.
 
 == Conference paper ==
 
