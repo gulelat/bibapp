@@ -150,22 +150,33 @@ Contributors:
   * abstract
 
 == Conference presentation ==
+wondering if we should actually label this just presentation? So it could take in a variety of presentations and lectures. It would still essentially be the same as conference poster except that we would want the display labels to be slightly different as noted below.
 
-(same as conference poster?)
+Contributors:
+author
+
+  * `*`title_primary
+  * title_secondary
+  * title_tertiary
+  * `*`*conference title* - displayLabel="Presentation Venue"?
+  * *conference location* - displayLabel="Location"
+  * *conference dates* - displayLabel="Date"
+  * copyright_holder (automatically same as author - yes)
+  * abstract
 
 == Book review ==
 
 Contributors:
 `*`reviewer
 
-(otherwise same as journal article?)
+(otherwise same as journal article - yes)
 
 == Artwork ==
 
 Per MLA Handbook: "state the artist's name first, when available. In general, italicize the title and then list the date of composition (if the year is unknown, write N.d.) Indicate the medium of composition. Name the institution that houses the work (e.g., a museum), or, for a work in a private collection, give the name of the collection (Collection of...), and then provide the name of the city where the institution or collection is located. If the collector is unknown or wishes to be anonymous, use Private collection without a city name."
 
 Contributors:
-`*`artist, curator?
+`*`artist, curator (yes - there seems to be places where faculty are serving as curators rather than the artist)
 
   * `*`title_primary
   * title_secondary
@@ -174,21 +185,22 @@ Contributors:
   * `*`*medium* (photograph, print, sculpture, etc)
   * `*`*current location* (gallery, museum, private collection, etc)
   * *city where located*
+  * *url-like identifier* - mostly for digital exhibits
 
 == Thesis/Dissertation ==
 
 Contributors:
-`*`author, advisor
+`*`author, advisor, committee chair, committee member, research chair (these are the four that we're calling out in our ETD implementation)
 
   * `*`title_primary
   * title_secondary
   * title_tertiary
-  * end_page (pagecount?)
+  * end_page (pagecount - yes)
   * `*`*degree level*
   * `*`*discipline*
-  * `*`*institution name*
+  * `*`*institution name* - could this be the same as publisher but with a displayLabel="Granting institution"
   * abstract
-  * `*`degree date
+  * `*`degree date - this could the same as date but with a displayLabel="Degree Date"
 
 == Patent ==
 
@@ -203,7 +215,7 @@ Contributors:
 == Web page ==
 
 Contributors:
-`*`(corporate?) author
+`*`(corporate?) author - do we call out corporate authors separately? or do these need to be treated as publishers?
 
   * `*`title_primary
   * title_secondary
@@ -264,6 +276,7 @@ Contributors:
   * publisher_id
   * publication_date
   * copyright_holder
+  * identifier (are there identifiers for published sound recordings?)
 
 == Movie ==
 
@@ -277,7 +290,7 @@ Contributors: director, producer, actor (usually these are the only people actua
 
 == Working paper ==
 
-Contributors: `*`author
+Contributors: `*`author, editor
 
   * `*`title_primary
   * title_secondary
@@ -285,10 +298,11 @@ Contributors: `*`author
   * date
   * *series number*
   * *series name*
+  * publisher id - we probably want to include the publishing party (Dept. of Economics, University of Illinois at Urbana-Champaign)
 
 == Tech report ==
 
-(same as working paper?)
+(same as working paper)
 
 == Grant ==
 
@@ -303,3 +317,4 @@ Contributors:
   * *start date*
   * *end date*
   * `*`*grant number*
+  * abstract
