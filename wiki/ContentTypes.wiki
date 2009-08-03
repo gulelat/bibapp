@@ -187,7 +187,7 @@ Contributors:
   * `*`*medium* (photograph, print, sculpture, etc)
   * `*`*current location* (gallery, museum, private collection, etc)
   * *city where located*
-  * *url-like identifier* - mostly for digital exhibits
+  * links (for digital artwork)
 
 == Thesis/Dissertation ==
 
