@@ -117,6 +117,7 @@ Contributors:
   * end_page
   * copyright_holder
   * abstract
+  * date (I've noticed that some conference proceedings are published later than the actual conference - do we need to call out the publication date separately?)
 
 == Conference poster ==
 
@@ -148,6 +149,7 @@ Contributors:
   * end_page (should equal number of pages; so displayLabel=Pages)
   * copyright_holder
   * abstract
+  * date (I've noticed that some conference proceedings are published later than the actual conference - do we need to call out the publication date separately?)
 
 == Conference presentation ==
 wondering if we should actually label this just presentation? So it could take in a variety of presentations and lectures. It would still essentially be the same as conference poster except that we would want the display labels to be slightly different as noted below.
