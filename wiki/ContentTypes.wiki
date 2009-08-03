@@ -37,6 +37,11 @@
 
 }}}
 
+== General Fields to Add to All Types ==
+
+  * funder
+  * notes
+
 == Book (whole) ==
 
 Contributors:
@@ -45,7 +50,7 @@ author, editor, translator, illustrator
   * title_primary
   * title_secondary
   * title_tertiary
-  * end_page (number of pages? or does this need a new field?)
+  * end_page (should equal number of pages; so should be labeled as Pages in the display)
   * publisher_id
   * publication_date
   * language
@@ -60,7 +65,7 @@ section author, book editor
 
 == Monograph ==
 
-(same as book?)
+(same as book)
 
 == Journal article ==
 
@@ -83,7 +88,7 @@ author
 == Journal (edited) ==
 
 Contributors:
-editor (various types!), board member?, peer reviewer?
+editor (managing, ), ~~board member?~~, ~~peer reviewer?~~
 
   * title_primary
   * title_secondary
