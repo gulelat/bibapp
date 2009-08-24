@@ -1,4 +1,4 @@
-Steps for migrating !BibApp from Mongrel clusters to Phusion Passenger (mod_rails).
+Steps for migrating !BibApp from Mongrel clusters to Phusion Passenger (mod_rails). Passenger deploys Rails applications using the the industry standard [http://httpd.apache.org/ Apache web server] or the fast and lightweight [http://www.nginx.net/ Nginx web server]. One of these must be installed first (we use Apache).
 
 =Passenger Installation=
   # Install via the gem: 
