@@ -147,11 +147,12 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      {{{ 
      gem install postgres -- --with-pgsql-dir=/path/to/pgsql 
      }}}
-  # Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended.  We also recommend `mongrel_cluster`, which allows you to run several mongrel instances in a cluster (though, if you are just trying out !BibApp, this isn't really necessary).
-     {{{ 
+  # ~~Ruby Web Server - [http://mongrel.rubyforge.org/ Mongrel] is recommended.  We also recommend `mongrel_cluster`, which allows you to run several mongrel instances in a cluster (though, if you are just trying out !BibApp, this isn't really necessary).~~
+     {{{
      gem install mongrel 
      gem install mongrel_cluster 
      }}}
+    We are now recommending the Apache2 web server with Phusion Passenger (aka mod_rails). See the wiki page Mongrel2PassengerMigration for instructions. 
 
 === Common Warnings / Errors ===
 
