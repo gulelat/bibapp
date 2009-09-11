@@ -1,0 +1,5 @@
+#summary Problems that may arise when importing citations from Zotero into BibApp.
+
+= Known problems =
+
+  * Zotero exports editors as authors.
