@@ -18,8 +18,8 @@ Currently, because of a small development/testing team, we have some recommendat
 
 So, without further ado...
 
-= NEW! BibApp and Ruby on Rails stack installation on Ubuntu Linux =
-BibApp and Rails stack on Ubuntu
+= NEW! !BibApp and Ruby on Rails stack installation on Ubuntu Linux =
+!BibApp and Rails stack on Ubuntu
   # Install RubyEE
     # Download the .deb package: http://www.rubyenterpriseedition.com/download.html
     # Install the deb: sudo dpkg -i path/to/deb/file
@@ -87,7 +87,7 @@ PassengerRuby /opt/ruby-enterprise/bin/ruby
     }}}
     * More on this at Step 16.
   # Install PostgreSQL
-  # Download BibApp code
+  # Download !BibApp code
     {{{
 svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
     }}}
