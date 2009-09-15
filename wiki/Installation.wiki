@@ -18,6 +18,126 @@ Currently, because of a small development/testing team, we have some recommendat
 
 So, without further ado...
 
+= NEW! BibApp and Ruby on Rails stack installation on Ubuntu Linux =
+BibApp and Rails stack on Ubuntu
+  # Install RubyEE
+    # Download the .deb package: http://www.rubyenterpriseedition.com/download.html
+    # Install the deb: sudo dpkg -i path/to/deb/file
+    # Add /opt/ruby-enterprise/bin to PATH in /etc/environment
+    # Create sym links to RubyEE executables 
+      {{{
+ln -s /opt/ruby-enterprise/bin/ruby /usr/bin/ruby
+ln -s /opt/ruby-enterprise/bin/gem /usr/bin/gem
+ln -s /opt/ruby-enterprise/bin/ri /usr/bin/ri
+ln -s /opt/ruby-enterprise/bin/rdoc /usr/bin/rdoc
+ln -s /opt/ruby-enterprise/bin/irb /usr/bin/irb
+      }}}
+    # Ubuntu sudo is set to a secure path, so you need to tell it where rake is
+      {{{
+sudo ln -s `which rake` /usr/local/bin/
+      }}}
+  # Install Apache 2
+    {{{
+sudo apt-get apache2
+    }}}
+  # Install Apache 2 development headers:
+    {{{
+sudo apt-get install apache2-prefork-dev 
+    }}}
+  # Install Apache Portable Runtime (APR) development headers:
+    {{{
+sudo apt-get install libapr1-dev 
+    }}}
+  # Install Apache Portable Runtime Utility (APU) development headers:
+    {{{
+sudo apt-get install libaprutil1-dev
+    }}}
+  # Install Phusion Passenger
+    # Get the gem 
+      {{{
+sudo gem install passenger
+      }}}
+    # Install and follow the instructions 
+      {{{
+sudo /opt/ruby-enterprise/bin/passenger-install-apache2-module
+      }}}
+  # Add these lines to /etc/apache2/apache2.conf
+    {{{
+LoadModule passenger_module /opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-2.2.5/ext/apache2/mod_passenger.so
+PassengerRoot /opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-2.2.5
+PassengerRuby /opt/ruby-enterprise/bin/ruby
+
+<VirtualHost *:80>
+  ServerName localhost
+  DocumentRoot /path/to/rails_projects
+  RailsBaseURI /bibapp
+  <Directory /path/to/rails_projects>
+    AllowOverride All
+    Options Indexes FollowSymLinks MultiViews
+    Order allow,deny
+    Allow from all
+  </Directory>
+  RailsEnv development
+</VirtualHost>
+    }}}
+    * NB. The /path/to/rails_projects will be the path to where you create symbolic links to your bibapp/public folder. In order for Passenger to process sub-URLs correctly, this sym link has to have the same name as your sub-URL. 
+    {{{
+(e.g., URL      => http://mydomain.edu/bibapp
+       sym link => ln -s /path/to/bibapp/public /path/to/rails_projects/bibapp)
+    }}}
+    * More on this at Step 16.
+  # Install PostgreSQL
+  # Download BibApp code
+    {{{
+svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
+    }}}
+  # Adjust permissions for attachment and logs
+  # Configure BibApp settings in the config/ directory
+  # Install rake
+    {{{
+gem list rake #see if it's there
+gem install rake #if not, install it
+    }}}
+  # Install database driver gem
+    {{{
+gem install postgres -- --with-pgsql-dir=/path/to/pgsql 
+    }}}
+  # Database Setup:
+    # Create bibapp user
+      {{{
+createuser -dSRP bibapp
+      }}}
+    # Create bibapp database
+      {{{
+createdb -U bibapp -E UNICODE bibapp_development
+      }}}
+  # Generate BibApp database structure
+    {{{
+rake db:schema:load
+    }}}
+  # Create an 'admin' user, and assign as System Administrator
+    * Run from script/console
+      {{{
+admin = User.create(:login                 => 'admin',
+                    :email                 => 'admin@myu.edu',
+                    :password              => 'bibapp',
+                    :password_confirmation => 'bibapp')   
+admin.activate            
+admin.roles << Role.create( :name => 'admin', :authorizable_type => 'System')
+      }}}
+  # Create a symbolic link to your bibapp/public directory
+    {{{
+ln -s ~/bibapp/public ~/rails_projects/bibapp
+    }}}
+  # Start solr
+    {{{
+sudo rake solr:start 
+    }}}
+  # Start delayed jobs
+    {{{
+rake jobs:work &
+    }}}
+
 = Software Pre-requisities =
 
 !BibApp should run on any Operating System.  Currently we've had it successfully running on Linux, Mac OS X and Windows XP.
