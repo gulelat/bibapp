@@ -92,6 +92,7 @@ PassengerRuby /opt/ruby-enterprise/bin/ruby
 svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
     }}}
   # Adjust permissions for attachment and logs
+    * NB. Passenger implements user switching based on the owner of config/environment.rb, so ifconfig/environment.rb is owned by joe, Passenger will launch the corresponding Rails application as joe as well
   # Configure BibApp settings in the config/ directory
   # Install rake
     {{{
