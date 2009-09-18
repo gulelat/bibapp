@@ -6,7 +6,7 @@
 
 = Introduction =
 
-!BibApp is a [http://www.rubyonrails.org/ Ruby on Rails] 2.1 web application.  If you are familiar with installing Ruby on Rails applications, !BibApp should be no different!  If this is your first time with Ruby on Rails, don't worry...we've tried to make things easy on you.
+!BibApp is a [http://www.rubyonrails.org/ Ruby on Rails] 2.3 web application.  If you are familiar with installing Ruby on Rails applications, !BibApp should be no different!  If this is your first time with Ruby on Rails, don't worry...we've tried to make things easy on you.
 
 At a basic level, Ruby on Rails applications require the following:
   * A Web server
