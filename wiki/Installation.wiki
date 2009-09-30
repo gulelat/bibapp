@@ -116,27 +116,18 @@ createdb -U bibapp -E UNICODE bibapp_development
     {{{
 rake db:schema:load
     }}}
-  # Create an 'admin' user, and assign as System Administrator
+  # Create an 'admin' user, and load publishers from SHERPA/RoMEO
     * Run from script/console
       {{{
-admin = User.create(:login                 => 'admin',
-                    :email                 => 'admin@myu.edu',
-                    :password              => 'bibapp',
-                    :password_confirmation => 'bibapp')   
-admin.activate            
-admin.roles << Role.create( :name => 'admin', :authorizable_type => 'System')
+rake db:seed
       }}}
   # Create a symbolic link to your bibapp/public directory
     {{{
 ln -s ~/bibapp/public ~/rails_projects/bibapp
     }}}
-  # Start solr
+  # Start !BibApp (starts solr, delayed_job, and passenger)
     {{{
-sudo rake solr:start 
-    }}}
-  # Start delayed jobs
-    {{{
-rake jobs:work &
+rake bibapp:start
     }}}
 
 = Software Pre-requisities =
