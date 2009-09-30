@@ -117,10 +117,9 @@ createdb -U bibapp -E UNICODE bibapp_development
 rake db:schema:load
     }}}
   # Create an 'admin' user, and load publishers from SHERPA/RoMEO
-    * Run from script/console
-      {{{
+    {{{
 rake db:seed
-      }}}
+    }}}
   # Create a symbolic link to your bibapp/public directory
     {{{
 ln -s ~/bibapp/public ~/rails_projects/bibapp
