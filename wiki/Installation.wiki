@@ -169,12 +169,15 @@ You should be able to install these packages quickly via `apt-get`.  For example
   sudo apt-get install libxml2 libxml2-dev ruby1.8-dev
   }}}
 
-== Additional Pre-requisites for Mac OSX (Eric - 2008.12.17 - Beta!)==
+== Additional Pre-requisites for Mac OSX ==
 
 You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools]. 
 
 Header files are not delivered by default with Mac OS X, you need to install the Xcode Tools package after installing OSX. You can find it in the Optional Installs / Xcode Tools directory on the Leopard DVD. 
 
+If you want to launch BibApp using Apache & Phusion Passenger, you will need to start up Mac OSX's built in Apache Web Server.
+
+Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
 
 = Get Started =
 
