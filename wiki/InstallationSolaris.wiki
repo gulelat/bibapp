@@ -47,10 +47,12 @@ Java install notes:
   # Configure the JDK environment
     * Add JAVA_HOME to ~bibappadm/.profile, modify the PATH:
 
-                    JAVA_HOME=/bibapp-qa/jdk/jdk-1.6.0_16
-                    export JAVA_HOME
-                    PATH=$JAVA_HOME/bin:$PATH
-                    export PATH
+    {{{
+       JAVA_HOME=/bibapp-qa/jdk/jdk-1.6.0_16
+       export JAVA_HOME
+       PATH=$JAVA_HOME/bin:$PATH
+       export PATH
+    }}}
                   
 ===Ruby===
 
@@ -89,27 +91,25 @@ Ruby install notes:
           * $ . ~/.profile
   # Get Ruby Enterprise Edition, unpack:
     * $ cd /bibapp/__build__/source/ruby
-    * $ wget http://rubyforge.org/frs/download.php/58677/ruby-enterprise-1.8.6-20090610.tar.gz
-    * $ tar xvfz ruby-enterprise-1.8.6-20090610.tar.gz
-    * $ cd ruby-enterprise-1.8.6-20090610
+    * $ wget http://rubyforge.org/frs/download.php/64475/ruby-enterprise-1.8.7-20090928.tar.gz
+    * $ tar xvfz ruby-enterprise-1.8.7-20090928.tar.gz
+    * $ cd ruby-enterprise-1.8.7-20090928
   # Install Ruby Enterprise Edition:
     * $ cd /bibapp/__build__/source/ruby
     * $ export CFLAGS="-I/usr/sfw/include"
-    * $ ./ruby-enterprise-1.8.6-20090610/installer
+    * $ ./ruby-enterprise-1.8.7-20090928/installer
     * Where would you like to install Ruby Enterprise Edition to?
-      * [/opt/ruby-enterprise-1.8.6-20090610] : /bibapp-qa/ruby/ruby-enterprise-1.8.6-20090610
+      * [/opt/ruby-enterprise-1.8.7-20090928] : /bibapp-qa/ruby/ruby-enterprise-1.8.7-20090928
   # Configure the Ruby Enterprise Edition environment, overriding the base ruby install performed earlier:
     * Edit ~/.profile:
-
-                      RUBY_HOME=/bibapp-qa/ruby/ruby-enterprise-1.8.6-20090610
-                      export RUBY_HOME
-                      PATH=$RUBY_HOME/bin:$PATH
-                      export PATH
-                    
-
+      {{{
+         RUBY_HOME=/bibapp-qa/ruby/ruby-enterprise-1.8.7-20090928
+         export RUBY_HOME
+         PATH=$RUBY_HOME/bin:$PATH
+         export PATH
+      }}}           
     * $ unset PATH
     * $ . ~/.profile
-
 
 ===Apache===
 
