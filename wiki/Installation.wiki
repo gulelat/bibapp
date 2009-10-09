@@ -70,7 +70,7 @@ If you want to launch BibApp using Apache & Phusion Passenger, you will need to 
 
 Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
 
-= Installation =
+= Stack Installation =
 
 == Ubuntu Linux == 
 
