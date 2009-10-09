@@ -72,8 +72,8 @@ Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal We
 
 = Installation =
 
-  * InstallationUbuntuLinux
-  * InstallationSolaris
+== InstallationUbuntuLinux == 
+== InstallationSolaris ==
 
 = Get Started =
 
