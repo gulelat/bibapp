@@ -68,11 +68,11 @@ Ruby install notes:
     * $ mkdir /bibapp/logs/ruby
     * $ cd /bibapp/__build__/source
     * $ mkdir ruby; cd ruby
-    * $ wget ftp://ftp.ruby-lang.org/pub/ruby/ruby-1.8.6-p383.tar.gz
-    * $ tar xvfz ruby-1.8.6-p383.tar.gz
-    * $ cd ruby-1.8.6-p383
+    * $ wget ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p174.tar.gz
+    * $ tar xvfz ruby-1.8.7-p174.tar.gz
+    * $ cd ruby-1.8.7-p174
   # Compile, make, make install:
-    * $ ./configure --prefix=/bibapp/ruby/ruby-1.8.6-p383 --enable-pthread
+    * $ ./configure --prefix=/bibapp/ruby/ruby-1.8.7-p174 --enable-pthread
     * $ cd ext/openssl
     * $ ruby extconf.rb --with-openssl-dir=/usr/sfw
     * $ cd ../..
@@ -81,14 +81,13 @@ Ruby install notes:
     * $ make install
   # Configure the Ruby environment:
     * Add RUBY_HOME to ~bibappadm/.profile, modify the PATH:
-
-                    RUBY_HOME=/bibapp-qa/ruby/ruby-1.8.6
-                    export RUBY_HOME
-                    PATH=$RUBY_HOME/bin:$PATH
-                    export PATH
-                  
-
-          * $ . ~/.profile
+      {{{
+         RUBY_HOME=/bibapp-qa/ruby/ruby-1.8.7-p174
+         export RUBY_HOME
+         PATH=$RUBY_HOME/bin:$PATH
+         export PATH
+      }}}         
+    * $ . ~/.profile
   # Get Ruby Enterprise Edition, unpack:
     * $ cd /bibapp/__build__/source/ruby
     * $ wget http://rubyforge.org/frs/download.php/64475/ruby-enterprise-1.8.7-20090928.tar.gz
