@@ -46,10 +46,6 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 That's everything you need to get started...
 
-== OS Specific Installation ==
-
-  * InstallationUbuntuLinux
-
 == Additional Pre-requisites for Ubuntu / Debian (not Mac OSX) ==
 
 Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
@@ -73,6 +69,10 @@ Header files are not delivered by default with Mac OS X, you need to install the
 If you want to launch BibApp using Apache & Phusion Passenger, you will need to start up Mac OSX's built in Apache Web Server.
 
 Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
+
+= Installation =
+
+  * InstallationUbuntuLinux
 
 = Get Started =
 
