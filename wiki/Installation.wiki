@@ -73,7 +73,12 @@ Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal We
 = Installation =
 
 == InstallationUbuntuLinux == 
+
+Installation instructions for Ubuntu (Illinois).
+
 == InstallationSolaris ==
+
+Installation instructions for Solaris (Wisconsin).
 
 = Get Started =
 
