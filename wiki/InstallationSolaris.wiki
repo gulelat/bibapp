@@ -117,3 +117,30 @@ Apache 2.2.13 webserver (/bibapp/apache/apache-2.2.13)
     The webserver contains the basic set of modules, plus mod_ssl, mod_proxy*, and mod_rewrite.
 
 Apache install notes
+
+  # Get Apache, unpack:
+    * mkdir /bibapp/apache
+    * mkdir /bibapp/logs/apache
+    * mkdir /bibapp/apache/content
+    * cd /bibapp/__build__/source
+    * mkdir apache/apache-2.2.13; cd apache/apache-2.2.13
+    * wget http://mirror.atlanticmetro.net/apache/httpd/httpd-2.2.13.tar.gz
+    * wget http://www.apache.org/dist/httpd/httpd-2.2.13.tar.gz.md5
+    * md5sum httpd-2.2.13.tar.gz
+    * md5sum -c httpd-2.2.13.tar.gz.md5
+    * tar xvfz httpd-2.2.13.tar.gz
+  # Configure, make, make install:
+    * cd /bibapp/__build__/source/apache/apache-2.2.13/httpd-2.2.13
+    * ./configure --prefix=/bibapp/apache/apache-2.2.13 \ --with-mpm=prefork \ --enable-mods-shared=most \ --enable-proxy \ --enable-ssl \ --with-ssl=/usr/sfw
+    * make
+    * make install
+  # Compile and install Passenger (from gem)
+    * gem install passenger --version'=2.2.2'
+    * export APXS2=/bibapp-qa/apache/apache-2.2.13/bin/apxs; passenger-install-apache2-module
+  # Set up the webserver
+    * cd /bibapp/apache/apache-2.2.11
+    * rm -rf manual logs man cgi-bin htdocs
+    * # Set up the Apache configurations for the webserver
+    * cd conf
+    * mv httpd.conf bibapp.conf
+    * vi bibapp.conf
