@@ -134,7 +134,7 @@ Apache install notes
     * make install
   # Compile and install Passenger (from gem)
     * gem install passenger --version'=2.2.2'
-    * export APXS2=/bibapp-qa/apache/apache-2.2.13/bin/apxs; passenger-install-apache2-module
+    * export APXS2=/bibapp/apache/apache-2.2.13/bin/apxs; passenger-install-apache2-module
   # Set up the webserver
     * cd /bibapp/apache/apache-2.2.11
     * rm -rf manual logs man cgi-bin htdocs
@@ -142,3 +142,76 @@ Apache install notes
     * cd conf
     * mv httpd.conf bibapp.conf
     * vi bibapp.conf
+
+---- 
+
+== Same as Ubuntu ==
+
+  # Add passenger lines to /bibapp/apache/apache-2.2.13/conf/bibapp.conf
+    {{{
+LoadModule passenger_module /opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-2.2.5/ext/apache2/mod_passenger.so
+PassengerRoot /opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-2.2.5
+PassengerRuby /opt/ruby-enterprise/bin/ruby
+
+<VirtualHost *:80>
+  ServerName localhost
+  DocumentRoot /path/to/rails_projects
+  RailsBaseURI /bibapp
+  <Directory /path/to/rails_projects>
+    AllowOverride All
+    Options Indexes FollowSymLinks MultiViews
+    Order allow,deny
+    Allow from all
+  </Directory>
+  RailsEnv development
+</VirtualHost>
+    }}}
+    * NB. The /path/to/rails_projects will be the path to where you create symbolic links to your bibapp/public folder. In order for Passenger to process sub-URLs correctly, this sym link has to have the same name as your sub-URL. 
+    {{{
+(e.g., URL      => http://mydomain.edu/bibapp
+       sym link => ln -s /path/to/bibapp/public /path/to/rails_projects/bibapp)
+    }}}
+    * More on this at Step 16.
+  # Install PostgreSQL or MySQL
+  # Download !BibApp code
+    {{{
+svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
+    }}}
+  # Adjust permissions for attachment and logs
+    * NB. Passenger implements user switching based on the owner of config/environment.rb, so ifconfig/environment.rb is owned by joe, Passenger will launch the corresponding Rails application as joe as well
+  # Configure BibApp settings in the config/ directory
+  # Install rake
+    {{{
+gem list rake #see if it's there
+gem install rake #if not, install it
+    }}}
+  # Install database driver gem
+    {{{
+gem install postgres -- --with-pgsql-dir=/path/to/pgsql 
+gem install mysql -- --with-mysql-dir=/path/to/mysql 
+    }}}
+  # Database Setup:
+    # Create bibapp user
+      {{{
+createuser -dSRP bibapp
+      }}}
+    # Create bibapp database
+      {{{
+createdb -U bibapp -E UNICODE bibapp_development
+      }}}
+  # Generate BibApp database structure
+    {{{
+rake db:schema:load
+    }}}
+  # Create an 'admin' user, and load publishers from SHERPA/RoMEO
+    {{{
+rake db:seed
+    }}}
+  # Create a symbolic link to your bibapp/public directory
+    {{{
+ln -s ~/bibapp/public ~/rails_projects/bibapp
+    }}}
+  # Start !BibApp (starts solr, delayed_job, and passenger)
+    {{{
+rake bibapp:start
+    }}}
