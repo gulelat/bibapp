@@ -34,15 +34,13 @@ For each toolkit or application installed, there will be a sub-directory for eac
 Java 1.6.0_16 (/bibapp/jdk/jdk-1.6.0_16)
     This is the Java installation to be used for the bibapp application. Please do not use any other java installations you may find on the host.
 
-Java install notes
+Java install notes:
 
-  # Login to the zone, su to bibappadm:
-    * $ sudo su - bibappadm
   # Get the JDK from Sun source, unpack:
     * mkdir /bibapp/__build__/source/jdk/jdk-6u16; cd /bibapp/__build__/source/jdk/jdk-6u16
     * Download, then sftp to SWAPP jdk-6u16-solaris-sparc.sh
     * Download, then sftp to SWAPP jdk-6u16-solaris-sparcv9.sh
-    * chmod +x jdk-6u16-solaris-sparc*.sh
+    * chmod +x `jdk-6u16-solaris-sparc*.sh`
     * cd /bibapp/jdk
     * /bibapp/__build__/source/jdk/jdk-6u16/jdk-6u16-solaris-sparc.sh
     * /bibapp/__build__/source/jdk/jdk-6u16/jdk-6u16-solaris-sparcv9.sh
@@ -54,10 +52,6 @@ Java install notes
                     PATH=$JAVA_HOME/bin:$PATH
                     export PATH
                   
-
-
-
-
 ===Ruby===
 
 Ruby Enterprise Edition 1.8.6 (/bibapp/ruby/ruby-enterprise-1.8.6)
@@ -65,7 +59,57 @@ Ruby Enterprise Edition 1.8.6 (/bibapp/ruby/ruby-enterprise-1.8.6)
     BibApp uses the Apache + Passenger stack to serve pages
     The BibApp application is deployed to /bibapp/ruby/bibapp/ 
 
-Ruby install notes
+Ruby install notes:
+
+  # Get Ruby, unpack:
+    * $ mkdir /bibapp/ruby
+    * $ mkdir /bibapp/logs/ruby
+    * $ cd /bibapp/__build__/source
+    * $ mkdir ruby; cd ruby
+    * $ wget ftp://ftp.ruby-lang.org/pub/ruby/ruby-1.8.6-p383.tar.gz
+    * $ tar xvfz ruby-1.8.6-p383.tar.gz
+    * $ cd ruby-1.8.6-p383
+  # Compile, make, make install:
+    * $ ./configure --prefix=/bibapp/ruby/ruby-1.8.6-p383 --enable-pthread
+    * $ cd ext/openssl
+    * $ ruby extconf.rb --with-openssl-dir=/usr/sfw
+    * $ cd ../..
+    * $ make
+    * $ make test
+    * $ make install
+  # Configure the Ruby environment:
+    * Add RUBY_HOME to ~bibappadm/.profile, modify the PATH:
+
+                    RUBY_HOME=/bibapp-qa/ruby/ruby-1.8.6
+                    export RUBY_HOME
+                    PATH=$RUBY_HOME/bin:$PATH
+                    export PATH
+                  
+
+          * $ . ~/.profile
+  # Get Ruby Enterprise Edition, unpack:
+    * $ cd /bibapp/__build__/source/ruby
+    * $ wget http://rubyforge.org/frs/download.php/58677/ruby-enterprise-1.8.6-20090610.tar.gz
+    * $ tar xvfz ruby-enterprise-1.8.6-20090610.tar.gz
+    * $ cd ruby-enterprise-1.8.6-20090610
+  # Install Ruby Enterprise Edition:
+    * $ cd /bibapp/__build__/source/ruby
+    * $ export CFLAGS="-I/usr/sfw/include"
+    * $ ./ruby-enterprise-1.8.6-20090610/installer
+    * Where would you like to install Ruby Enterprise Edition to?
+      * [/opt/ruby-enterprise-1.8.6-20090610] : /bibapp-qa/ruby/ruby-enterprise-1.8.6-20090610
+  # Configure the Ruby Enterprise Edition environment, overriding the base ruby install performed earlier:
+    * Edit ~/.profile:
+
+                      RUBY_HOME=/bibapp-qa/ruby/ruby-enterprise-1.8.6-20090610
+                      export RUBY_HOME
+                      PATH=$RUBY_HOME/bin:$PATH
+                      export PATH
+                    
+
+    * $ unset PATH
+    * $ . ~/.profile
+
 
 ===Apache===
 
