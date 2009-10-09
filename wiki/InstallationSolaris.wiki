@@ -47,13 +47,12 @@ Java install notes:
     * /bibapp/__build__/source/jdk/jdk-6u16/jdk-6u16-solaris-sparcv9.sh
   # Configure the JDK environment
     * Add JAVA_HOME to ~bibappadm/.profile, modify the PATH:
-
-    {{{
-       JAVA_HOME=/bibapp-qa/jdk/jdk-1.6.0_16
-       export JAVA_HOME
-       PATH=$JAVA_HOME/bin:$PATH
-       export PATH
-    }}}
+      {{{
+         JAVA_HOME=/bibapp-qa/jdk/jdk-1.6.0_16
+         export JAVA_HOME
+         PATH=$JAVA_HOME/bin:$PATH
+         export PATH
+      }}}
                   
 ===Ruby===
 
