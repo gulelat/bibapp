@@ -1,0 +1,27 @@
+#summary Installation instructions for BibApp on Solaris
+
+Instructions for building a bibapp "zone".
+
+=Directory layout=
+
+The BIBAPP root is /bibapp.
+
+/bibapp/
+
+    __build__/: directory containing source and notes to rebuild the environment from scratch
+    source/: source packages for installed software, libraries, etc.
+    notes/: notes, copies of build process
+    logs/: all application and script logs
+
+    jdk/: the Java JDK(s)
+
+    ruby/: the Ruby environment
+
+    apache/: Apache webserver
+
+    apache/content/: Apache document root
+
+For each toolkit or application installed, there will be a sub-directory for each installed version of the software package. For example: the active Apache directory tree will be /bibapp/apache/apache-2.2.11.
+
+
+
