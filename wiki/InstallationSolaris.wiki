@@ -2,7 +2,9 @@
 
 Instructions for building a bibapp "zone".
 
-=Directory layout=
+=Unix Environment=
+
+==Directory layout==
 
 The BIBAPP root is /bibapp.
 
@@ -23,5 +25,52 @@ The BIBAPP root is /bibapp.
 
 For each toolkit or application installed, there will be a sub-directory for each installed version of the software package. For example: the active Apache directory tree will be /bibapp/apache/apache-2.2.11.
 
+=Tools/Servers/Applications installed=
+
+==Programming languages/toolkits==
+
+===Java JDK===
+
+Java 1.6.0_16 (/bibapp/jdk/jdk-1.6.0_16)
+    This is the Java installation to be used for the bibapp application. Please do not use any other java installations you may find on the host.
+
+Java install notes
+
+  # Login to the zone, su to bibappadm:
+    * $ sudo su - bibappadm
+  # Get the JDK from Sun source, unpack:
+    * mkdir /bibapp/__build__/source/jdk/jdk-6u16; cd /bibapp/__build__/source/jdk/jdk-6u16
+    * Download, then sftp to SWAPP jdk-6u16-solaris-sparc.sh
+    * Download, then sftp to SWAPP jdk-6u16-solaris-sparcv9.sh
+    * chmod +x jdk-6u16-solaris-sparc*.sh
+    * cd /bibapp/jdk
+    * /bibapp/__build__/source/jdk/jdk-6u16/jdk-6u16-solaris-sparc.sh
+    * /bibapp/__build__/source/jdk/jdk-6u16/jdk-6u16-solaris-sparcv9.sh
+  # Configure the JDK environment
+    * Add JAVA_HOME to ~bibappadm/.profile, modify the PATH:
+
+                    JAVA_HOME=/bibapp-qa/jdk/jdk-1.6.0_16
+                    export JAVA_HOME
+                    PATH=$JAVA_HOME/bin:$PATH
+                    export PATH
+                  
 
 
+
+
+===Ruby===
+
+Ruby Enterprise Edition 1.8.6 (/bibapp/ruby/ruby-enterprise-1.8.6)
+    This is the Ruby installation to be used for the bibapp ruby-on-rails application. Will contain installed third party modules.
+    BibApp uses the Apache + Passenger stack to serve pages
+    The BibApp application is deployed to /bibapp/ruby/bibapp/ 
+
+Ruby install notes
+
+===Apache===
+
+Apache 2.2.13 webserver (/bibapp/apache/apache-2.2.13)
+    The Apache webserver is the semi-public face of the bibapp. as well as static HTML. 
+    The webserver contains the basic set of modules, plus mod_ssl, mod_proxy*, and mod_rewrite.
+
+Apache install notes
