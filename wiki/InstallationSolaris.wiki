@@ -26,8 +26,6 @@ The BIBAPP root is /bibapp.
 
 For each toolkit or application installed, there will be a sub-directory for each installed version of the software package. For example: the active Apache directory tree will be /bibapp/apache/apache-2.2.11.
 
-=Tools/Servers/Applications installed=
-
 ==Programming languages/toolkits==
 
 ===Java JDK===
