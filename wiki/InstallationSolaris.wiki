@@ -54,7 +54,7 @@ Java install notes:
                   
 ===Ruby===
 
-Ruby Enterprise Edition 1.8.6 (/bibapp/ruby/ruby-enterprise-1.8.6)
+Ruby Enterprise Edition 1.8.7 (/bibapp/ruby/ruby-enterprise-1.8.7)
     This is the Ruby installation to be used for the bibapp ruby-on-rails application. Will contain installed third party modules.
     BibApp uses the Apache + Passenger stack to serve pages
     The BibApp application is deployed to /bibapp/ruby/bibapp/ 
