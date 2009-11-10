@@ -67,7 +67,7 @@ PassengerRuby /opt/ruby-enterprise/bin/ruby
 (e.g., URL      => http://mydomain.edu/bibapp
        sym link => ln -s /path/to/bibapp/public /path/to/rails_projects/bibapp)
     }}}
-    * More on this at Step 16.
+    * More on this at Step 17.
   # Install PostgreSQL
   # Download !BibApp code
     {{{
@@ -94,7 +94,7 @@ createuser -dSRP bibapp
       {{{
 createdb -U bibapp -E UNICODE bibapp_development
       }}}
-  # Generate BibApp database structure
+  # Generate !BibApp database structure
     {{{
 rake db:schema:load
     }}}
