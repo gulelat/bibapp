@@ -1,4 +1,4 @@
-#summary Installation instructions for !BibApp on !RHEL 4
+#summary Installation instructions for BibApp on RHEL 4
 
 
 *_Table of Contents:_*
