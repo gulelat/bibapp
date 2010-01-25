@@ -1,5 +1,7 @@
 #summary Installation instructions for BibApp on RHEL 4
 
+<wiki:toc max_depth="1" />
+
 == Installation Procedure ==
 
 || This procedure details how to install and configure all software required to be managed by the !BibApp Service Manager. The installation instructions should be followed in the order they are displayed below. ||
