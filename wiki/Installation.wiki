@@ -24,6 +24,7 @@ So, without further ado...
   * _Note:_ Although !BibApp will run on Windows, it is not recommended for production on Windows systems.  !BibApp runs slightly slower on Windows as the backend, asynchronous processing functionality that !BibApp uses doesn't currently work for Windows.   
 
 !BibApp *requires* the following software to function properly:
+  * *For best results* we recommend Ruby Enterprise Edition with Phusion Passenger 
   * [http://www.ruby-lang.org/ Ruby] 1.8.7
     * Check your version by running `ruby --version` at command line
     * [http://www.rubyenterpriseedition.com/ Ruby Enterprise Edition] 1.8.7-20090928 is highly suggested.
@@ -66,19 +67,25 @@ You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode to
 
 Header files are not delivered by default with Mac OS X, you need to install the Xcode Tools package after installing OSX. You can find it in the Optional Installs / Xcode Tools directory on the Leopard DVD. 
 
-If you want to launch BibApp using Apache & Phusion Passenger, you will need to start up Mac OSX's built in Apache Web Server.
+If you want to launch !BibApp using Apache & Phusion Passenger, you will need to start up Mac OSX's built in Apache Web Server.
 
 Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
 
 = Stack Installation =
 
+== Red Hat Enterprise Linux 4 == 
+
+Installation instructions for RHEL4 (Illinois) - [InstallationRHEL4].
+  || *Note:* The RHEL instructions include !BibApp installation and configuration instructions as well. Many will apply to other Unix-like operating systems. ||  
+
 == Ubuntu Linux == 
 
-Installation instructions for Ubuntu (Illinois) - InstallationUbuntuLinux.
+Installation instructions for Ubuntu (Illinois) - [InstallationUbuntuLinux].
+  || *Note:* These were experimental and may be out of date. ||
 
 == Solaris ==
 
-Installation instructions for Solaris (Wisconsin) - InstallationSolaris.
+Installation instructions for Solaris (Wisconsin) - [InstallationSolaris].
 
 = Get Started =
 
