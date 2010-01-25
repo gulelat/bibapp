@@ -194,7 +194,7 @@ Now you should be able to use `start-postgres` and `stop-postgres` to start and 
 
 === V. Ruby Enterprise Edition Setup & Configuration ===
 
-== A. Pre Installation ==
+==== A. Pre Installation ====
 
 An initial Ruby interpreter needs to be installed in order to use the REE installer. Also needed are:
 
