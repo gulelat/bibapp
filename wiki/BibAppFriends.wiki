@@ -2,10 +2,10 @@
 
 = Instructions =
 
-Hi!  If you think the BibApp could be an important tool for your school, drop your name and affiliation below.  We'll be in touch.
+Hi!  If you think the !BibApp could be an important tool for your school, drop your name and affiliation below.  We'll be in touch.
 
 
-== Friends of BibApp ==
+== Friends of !BibApp ==
 
   * Eric Larson - University of Wisconsin - Madison | elarson at library.wisc.edu
   * Nathan Vack - University of Wisconsin - Madison | njvack at wisc.edu
@@ -16,3 +16,4 @@ Hi!  If you think the BibApp could be an important tool for your school, drop yo
   * John Furfey - MBLWHOI Library at Woods Hole, MA | jfurfey at mbl.edu
   * Jason Stirnaman - University of Kansas Medical Center - Kansas City, KS | jstirnaman at kumc.edu
   * Susan Parham - Georgia Tech | susan.parham at library.gatech.edu
+  * Bill Ingram - University of Illinois at Urbana-Champaign | wingram2 at illinois.edu
