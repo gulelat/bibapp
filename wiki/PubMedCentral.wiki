@@ -1,4 +1,0 @@
-#summary Info about PubMedCentral submission
-
-  * [http://www.nihms.nih.gov/web-help/index.html Screencasts and slideshows] on depositing to PMC. Still no API, sorry!
-  * [http://www.pubmedcentral.nih.gov/fprender.fcgi?cmd=full_view List of journals] that do direct deposit of the publisher's final version. NOTE THAT a "Yes" in the final column means the author STILL needs to do a separate deposit! List can be downloaded as a CSV file.
