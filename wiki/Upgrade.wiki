@@ -1,4 +1,4 @@
-#summary Upgrade Instructions for BibApp (DRAFT ONLY)
+#summary Upgrade Instructions for !BibApp (DRAFT ONLY)
 
 == Introduction ==
 
@@ -6,14 +6,14 @@ These upgrade instructions assume you are currently running !BibApp 0.7 or great
 
 At a basic level, this upgrade process involves the following:
   # Backup database and installation directory
-  # Pull down new version of BibApp
+  # Pull down new version of !BibApp
   # Update gems and database
   # Update configs
   # Re-index via Solr
 
 == Backup !BibApp Installation ==
 
-*Before* you begin to even think about upgrading, you should make sure you have successfully backed up your entire BibApp installation.
+*Before* you begin to even think about upgrading, you should make sure you have successfully backed up your entire !BibApp installation.
 
 Although your upgrade process _should_ go smoothly, there's always a chance something could go wrong which may or may not cause data loss.  Therefore, it's imperative that you've backed up your data before continuing.
 
@@ -31,29 +31,41 @@ We cannot say it enough...so, we'll say it one last time:
 == Shutdown !BibApp ==
 
 Before continuing with the upgrade, you should also shutdown your !BibApp installation.  This requires shutting down the following:
-  # Your webserver
+  # Your webserver (if you're running WEBrick or Mongrel)
   # Solr
     {{{ 
     rake solr:stop 
     }}}
-
+  # delayed_job
+    {{{ 
+    script/delayed_job stop ENV['RAILS_ENV']
+    }}}
+  * *All in one* - The simplest way to shutdown !BibApp is to use the bibapp rake task, which will stop Solr and delayed_job
+    {{{ 
+    rake bibapp:stop 
+    }}}
+  * Note: !BibApp shutdown will sometimes fail. To be safe, check your process status.
+    {{{ 
+    ps -eaf | grep solr
+    ps -eaf | grep delayed
+    }}}
 
 == Download the latest version of !BibApp ==
 
-There are two different ways to pull down the latest version of BibApp
+There are two different ways to pull down the latest version of !BibApp
 
-  * If you originally used Subversion to install BibApp, you can just update your checkout similar to this:
+  * If you originally used Subversion to install !BibApp, you can just update your checkout similar to this:
     {{{
     svn up
     }}}
   * Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
 
-In either case you should be installing the latest version of BibApp *into your pre-existing `[bibapp]` installation directory*.  So, if you pulled down the Zip file, you will unzip it into your `[bibapp]` install directory.
+In either case you should be installing the latest version of !BibApp *into your pre-existing `[bibapp]` installation directory*.  So, if you pulled down the Zip file, you will unzip it into your `[bibapp]` install directory.
 
 
 == Update your Gem Dependencies  ==
 
-Rails makes it easy to update your gems to the version that !BibApp requires.  Simply run the following from your `[bibapp]` directory:
+Rails makes it easy to update your gems to the version that !BibApp requires.  Simply run the following from your `[bibapp]` directory (_only necessary when `environment.rb` is changed_):
 {{{
 rake gems:install
 }}}
@@ -62,7 +74,7 @@ If there are any newly required gems, or any that need updating, you'll see them
 
 == Update your Database ==
 
-Rails also makes it easy to update your database for the new version of !BibApp.  Simply run the following from your `[bibapp]` directory:
+Rails also makes it easy to update your database for the new version of !BibApp. Simply run the following from your `[bibapp]` directory (_only necessary when there are new migration scripts_):
 {{{
 rake db:migrate
 }}}
@@ -88,4 +100,9 @@ rake solr:refresh_index
 
 == Startup !BibApp and Test ==
 
-Ok, that should be it...it's now safe to startup your webserver again and make sure everything is working properly!
+Ok, that should be it...it's now safe to startup the !BibApp again and make sure everything is working properly!
+{{{ 
+rake bibapp:start
+}}}
+
+The above command will start Solr, delayed_job, and restart Passenger. If you've already started Solr, it will throw a warning, but will not hurt anything. *Note on Passenger* - to restart Passenger without running the bibapp rake script, simply touch `tmp/restart.txt`.
