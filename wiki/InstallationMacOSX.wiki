@@ -283,7 +283,7 @@ rake db:seed
 
 ==For Passenger + Apache Installs (Production)==
 
-If you installed Passenger + Apache to run BibApp, just run the following from your `[bibapp]` directory:
+If you installed Passenger + Apache to run !BibApp, just run the following from your `[bibapp]` directory:
 {{{
 rake bibapp:start
 }}}
@@ -292,7 +292,7 @@ rake bibapp:start
 
 ==For Mongrel Installs (Development/Demo)==
 
-If you are using Mongrel to run a development version of BibApp, just run the following from your `[bibapp]` directory:
+If you are using Mongrel to run a development version of !BibApp, just run the following from your `[bibapp]` directory:
 {{{
 rake bibapp:start
 mongrel_rails start
