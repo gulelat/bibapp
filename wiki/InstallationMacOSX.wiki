@@ -40,7 +40,7 @@ _Check the latest required versions of the below software from the [Installation
 _Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
   * Subversion (`svn`) comes with Leopard and Snow Leopard
 
-= Mac OSX Specific Pre-Requisities =
+= Additional Mac OSX Pre-Requisities =
 
 You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools], as it includes various developer tools needed to build some of the Ruby Gems that !BibApp uses.  You can find the Apple XCode tools in the Optional Installs / Xcode Tools directory on the Leopard DVD, or via the above link on the Apple website.
 
