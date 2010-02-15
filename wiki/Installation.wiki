@@ -43,12 +43,12 @@ So, without further ado...
   * *A Database:* !BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
     * [http://www.mysql.com/ MySQL] 4.1 or 5.0+, OR
     * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work, though it's untested)
-    * NOTE: The below section on [#Install_Database_Software Install Database Software] can help you install and configure your database software of choice.
+    * NOTE: The below section on [#2._Install_Database_Software Install Database Software] can help you install and configure your database software of choice.
   * *A Web Server:* There are two possible web server setups.  A Development one, and a Production one:
     * [http://mongrel.rubyforge.org/ Mongrel] (Development/Demo only)
       * *Never run Mongrel in Production* as it can only handle one request at a time!
     * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
-    * NOTE: The below section on [#Install_Web_Server Install Web Server] can help you install and configure your web server software of choice.
+    * NOTE: The below section on [#3._Install_Web_Server Install Web Server] can help you install and configure your web server software of choice.
 
 (_Optional:_) If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
 
@@ -82,7 +82,7 @@ Installation instructions for Mac OSX (Leopard and Snow Leopard) - [Installation
 
 These installation instructions are purposely written to be no-specific.  They are meant as a guide for administrators who are trying to install !BibApp on an operating system which is not listed above.
 
-== Get Started ==
+== Before We Get Started ==
 
 Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
   * [http://www.rubyonrails.org/ Rails] - That's right, you don't even have to install Rails!
@@ -91,7 +91,7 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
     * `citation_parser` and `citation_importer` - These custom plugins parse citations from our various supported input formats, and import the data into our database structure.  As more citation parsers are created, we'll be able to support more input formats!
     * `sword_client` - This is our custom [http://www.swordapp.org SWORD (Simple Web-service Offering Repository Deposit)] client.  It lets you deposit research (both metadata and files) into your local repository directly from !BibApp!
 
-== Download !BibApp Code ==
+== 1. Download !BibApp Code ==
 
 There are two different ways to install !BibApp:
 
@@ -105,7 +105,7 @@ There are two different ways to install !BibApp:
 
   || *Note #2:* Throughout the remainder of these instructions we use the placeholder `[bibapp]` to represent the location where you have downloaded the !BibApp code! ||
 
-== Install Database Software ==
+== 2. Install Database Software ==
 
 !BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
   * [http://www.mysql.com/ MySQL]
@@ -142,7 +142,7 @@ Based on your database of choice, you will need to install one of the following 
 
 If you run into problems installing the appropriate gem, try searching for the gem name and your operating system on Google (e.g. "mysql gem, Ubuntu").  Oftentimes you can find a more detailed installation guide specific to your operating system.
 
-== Install Web Server ==
+== 3. Install Web Server ==
 
 !BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
   * [http://mongrel.rubyforge.org/ Mongrel] (Development/Demo only)
@@ -201,7 +201,7 @@ The last command will report several lines of instructions at the end.  Follow t
   * Restart Apache web server
 
 
-== Configure !BibApp ==
+== 4. Configure !BibApp ==
 
 Next, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
 
@@ -226,7 +226,7 @@ You'll need to copy each of these files into a file _without_ the `.example` ext
     * You may disable this configuration by leaving the ".example" file extension on the file.
 
 
-== Ruby Gem Installations ==
+== 5. Ruby Gem Installations ==
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
   # First, make sure you have `rake` installed:
@@ -252,7 +252,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
 || Error building `libxml-ruby` gem:<br/> `ERROR: Failed to build gem native extension` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing `libxml2` and `libxml2-dev`: (e.g.) `sudo apt-get install libxml2 libxml2-dev` ||
 || Loading error:<br/> `'require': no such file to load -- mkmf (LoadError)` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing the latest Ruby development package (`ruby1.8-dev`): (e.g.) `sudo apt-get install ruby1.8-dev` ||
 
-== Create Your !BibApp Database ==
+== 6. Initialize Your !BibApp Database ==
 
 Now, you'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  So, it's just a matter of creating a new database!  
 
@@ -288,11 +288,11 @@ Before continuing, you also need to initialize your database with an Administrat
 Your database should now be setup and initialized properly!
 
 
-== Startup !BibApp ==
+== 7. Startup !BibApp ==
 
 You're almost there!
 
-==For Passenger + Apache Installs (Production)==
+=== For Passenger + Apache Installs (Production) ===
 
 If you installed Passenger + Apache to run BibApp, just run the following from your `[bibapp]` directory:
 {{{
@@ -301,7 +301,7 @@ rake bibapp:start
 
 Try it out! !BibApp should now be available at:  http://localhost:3000/
 
-==For Mongrel Installs (Development/Demo)==
+=== For Mongrel Installs (Development/Demo) ===
 
 If you are using Mongrel to run a development version of BibApp, just run the following from your `[bibapp]` directory:
 {{{
