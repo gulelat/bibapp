@@ -1,5 +1,7 @@
 #summary Installation instructions for BibApp on Ubuntu Linux
 
+= !BibApp and Ruby on Rails stack installation on Ubuntu Linux =
+
 == Additional Pre-requisites for Ubuntu / Debian ==
 
 Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
@@ -15,7 +17,6 @@ You should be able to install these packages quickly via `apt-get`.  For example
   }}}
 
 
-= !BibApp and Ruby on Rails stack installation on Ubuntu Linux =
 !BibApp and Rails stack on Ubuntu
   # Install RubyEE
     # Download the .deb package: http://www.rubyenterpriseedition.com/download.html
