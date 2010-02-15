@@ -56,7 +56,8 @@ You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode to
   OR
   * [http://www.postgresql.org/ PostgreSQL]
 
-See below for instructions on installing your database of choice.
+See below for instructions on installing your database of choice. 
+*CHOOSE ONLY ONE DATABASE TO INSTALL.*
 
 == Installing MySQL on Mac OSX ==
 
@@ -118,6 +119,9 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
   * Mongrel (Development/Demo only)
     * *Never run Mongrel in Production* as it can only handle one request at a time!
   * [http://www.modrails.com/ Phusion Passenger] and Apache (Production)
+
+See below for instructions on installing your web server of choice. 
+*CHOOSE ONLY ONE WEB SERVER TO INSTALL.*
 
 == Install Mongrel (Development/Demo Only) ==
 
