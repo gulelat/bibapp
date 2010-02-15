@@ -83,7 +83,7 @@ You will also need to install the `mysql` Gem to allow Ruby to communicate with 
 
   # For Leopard, you can use the one-click PostgreSQL installer available from: http://www.postgresql.org/download/macosx
     * One click installer will install PostgreSQL to `/Library/PostgreSQL/` 
-  # Install the `pg` Gem to allow Ruby to communicate with MySQL.  Note the needed `ARCHFLAGS` as Leopard is a 32-bit/i386 operating system:
+  # Install the `pg` Gem to allow Ruby to communicate with PostgreSQL.  Note the needed `ARCHFLAGS` as Leopard is a 32-bit/i386 operating system:
     {{{
     sudo env ARCHFLAGS="-arch i386" gem install pg
     }}}
@@ -107,7 +107,7 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
          sudo port install postgres84 postgres84-server
         }}}
         * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/`   
-  # Install the `pg` Gem to allow Ruby to communicate with MySQL.  Note the needed `ARCHFLAGS` as Snow Leopard is a 64-bit/x86_64 operating system:
+  # Install the `pg` Gem to allow Ruby to communicate with PostgreSQL.  Note the needed `ARCHFLAGS` as Snow Leopard is a 64-bit/x86_64 operating system:
     {{{
     sudo env ARCHFLAGS="-arch x86_64" gem install pg
     }}}
@@ -151,14 +151,23 @@ The last command will report several lines of instructions at the end.  Follow t
     PassengerRoot /Library/Ruby/Gems/1.8/gems/passenger-2.2.9
     PassengerRuby /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
     }}}
-  * Add the following Virtual Host to `httpd.conf`:
+  * Add the following Virtual Host and Directory settings to `httpd.conf`:
     {{{
      <VirtualHost *:80>
         ServerName localhost
         DocumentRoot /full/path/to/bibapp-user/bibapp/public
      </VirtualHost>
+
+     <Directory "/full/path/to/bibapp-user/bibapp/public">
+        Options ExecCGI FollowSymLinks
+        AllowOverride all
+        Allow from all
+     </Directory>
     }}}
-  * 
+  * Restart Apache by running the following from Terminal
+    {{{
+    sudo apachectl -k restart
+    }}}
 
 = Download Code =
 
@@ -196,3 +205,43 @@ You'll need to copy each of these files into a file _without_ the `.example` ext
   * sword.yml - Your SWORD server settings
     * This configuration is only necessary if you have a local digital or institutional repository which supports [http://www.swordapp.org/ SWORD (Simple Web-service Offering Repository Deposit)].  If you have a repository supporting SWORD, !BibApp can accept uploaded files and make deposits (of both files and metadata) directly into your local repository.
     * You may disable this configuration by leaving the ".example" file extension on the file.
+
+== Ruby Gem Installations ==
+
+Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
+  # First, make sure you have `rake` installed:
+     {{{
+     sudo gem list rake
+     }}}
+    * If it's missing, you'll need to install `rake`:
+     {{{
+     sudo gem install rake
+     }}}
+  # Auto-install all our gem pre-requisites, via this `rake` command.  This command should be run from your `[bibapp]` directory:
+     {{{
+     sudo rake gems:install
+     }}}
+
+== Initialize the BibApp Database ==
+
+First, you must create the database user and database as listed in your `[bibapp]/config/database.yml` file.  For more information on doing this, see the main Installation guide: http://code.google.com/p/bibapp/wiki/Installation#Setup_Your_Database
+
+Next, we need to initialize and prepopulate some basic data in your BibApp database. Again, from your `[bibapp]` directory, run:
+
+{{{
+rake db:schema:load
+rake db:seed
+}}}
+
+= Finally, Start up BibApp =
+
+If you installed Passenger + Apache to run BibApp, just run the following from your `[bibapp]` directory:
+{{{
+rake bibapp:start
+}}}
+
+If you are using Mongrel to run a development version of BibApp, just run the following from your `[bibapp]` directory:
+{{{
+rake bibapp:start
+mongrel_rails start
+}}}
