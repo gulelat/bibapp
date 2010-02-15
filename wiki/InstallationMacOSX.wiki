@@ -59,6 +59,13 @@ _Optional:_ If you want to be able to pull down !BibApp directly from our !Googl
 
 You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools], as it includes various developer tools needed to build some of the Ruby Gems that !BibApp uses.  You can find the Apple XCode tools in the Optional Installs / Xcode Tools directory on the Leopard DVD, or via the above link on the Apple website.
 
+In addition, you should add the following to your user's `~/.profile` or `~/.bash_profile` file, to ensure Mac OSX can locate all Ruby binaries:
+{{{
+# Add /usr/local/ directories to path
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+}}}
+
+
 = Download !BibApp Code =
 
 There are two different ways to install !BibApp:
@@ -92,6 +99,12 @@ See one of the following resources:
   * MySQL on Snow Leopard (10.6)
     * http://hivelogic.com/articles/compiling-mysql-on-snow-leopard/
 
+You should add the following to your user's `~/.profile` or `~/.bash_profile` file, to ensure Mac OSX can locate all MySQL scripts (change `/path/to/mysql` to appropriate path, e.g. `/usr/local/mysql`):
+{{{
+# Add /path/to/mysql directories to path
+export PATH="/path/to/mysql:$PATH"
+}}}
+
 You will also need to install the `mysql` Gem to allow Ruby to communicate with MySQL
   * For Leopard (32-bit/i386)
     {{{
@@ -108,10 +121,17 @@ You will also need to install the `mysql` Gem to allow Ruby to communicate with 
 
   # For Leopard, you can use the one-click PostgreSQL installer available from: http://www.postgresql.org/download/macosx
     * One click installer will install PostgreSQL to `/Library/PostgreSQL/` 
+  # Add PostgreSQL scripts to your `PATH`.  Modify your user's `~/.profile` or `~/.bash_profile` and add the following (you may need to modify the folder path):
+    {{{
+    # Add /Library/PostgreSQL/ directories to path
+    export PATH="/Library/PostgreSQL/8.4/bin:$PATH"
+    }}}
   # Install the `pg` Gem to allow Ruby to communicate with PostgreSQL.  Note the needed `ARCHFLAGS` as Leopard is a 32-bit/i386 operating system:
     {{{
     sudo env ARCHFLAGS="-arch i386" gem install pg
     }}}
+
+
 
 === PostgreSQL on Snow Leopard (10.6) ===
 
@@ -131,7 +151,14 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
         {{{
          sudo port install postgres84 postgres84-server
         }}}
-        * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/`   
+        * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/` 
+      * Add PostgreSQL scripts to your `PATH`.  Modify your user's `~/.profile` or `~/.bash_profile` and add the following (you may need to modify the folder path):
+        {{{
+        # Add /opt/local/lib/postgresql directories to path
+        export PATH="/opt/local/lib/postgresql84/bin:$PATH"
+        # Specify location of PostgreSQL database directory (may be optional)
+        export PGDATA="/opt/local/var/db/postgresql84"
+        }}} 
   # Install the `pg` Gem to allow Ruby to communicate with PostgreSQL.  Note the needed `ARCHFLAGS` as Snow Leopard is a 64-bit/x86_64 operating system:
     {{{
     sudo env ARCHFLAGS="-arch x86_64" gem install pg
