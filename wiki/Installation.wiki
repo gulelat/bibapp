@@ -122,8 +122,8 @@ For some operating systems, you may need to modify your `PATH` environment varia
 
 For example:
 {{{
-DATABASE_HOME=/full/path/to/database/folder/
-PATH=$PATH:$DATABASE_HOME/bin
+DATABASE_HOME="/full/path/to/database/install/directory/"
+PATH="$PATH:$DATABASE_HOME/bin"
 }}}
 
 === Install Appropriate Database Driver ===
