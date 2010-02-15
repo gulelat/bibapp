@@ -48,7 +48,7 @@ That's everything you need to get started...
 
 = OS-specific Installation Guides =
 
-We've already written several installation guides for various operating systems.  If you want to install !BibApp on one of the below operating systems, we suggest using the corresponding guide as your reference.   If your operating system is not listed, we have General Instructions available below.
+We've already written several installation guides for various operating systems.  If you want to install !BibApp on one of the below operating systems, we suggest using the corresponding guide as your reference.   If your operating system is not listed, we have [#General_Installation_Instructions General Installation Instructions] available below.
 
 == Red Hat Enterprise Linux 4 == 
 
