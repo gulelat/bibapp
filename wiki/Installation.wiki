@@ -34,6 +34,10 @@ So, without further ado...
       {{{
       gem update --system
       }}}
+    * After Ruby Gems is installed, remember to enable it by adding the following to your system's `PATH`:
+      {{{
+      RUBYOPT=rubygems
+      }}}
   * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (_note:_ Java 1.5 is also sometimes called Java 5.x, similarly Java 1.6 is also called 6.x)
     * Check your version by running `java -version` at command line
   * *A Database:* !BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
@@ -111,6 +115,16 @@ There are two different ways to install !BibApp:
 Visit the appropriate website above to install the database of your choice.
 
 *CHOOSE ONLY ONE DATABASE TO INSTALL.*
+
+=== Add Database Scripts to PATH ===
+
+For some operating systems, you may need to modify your `PATH` environment variable to reference the location of the newly installed database's scripts (usually in a `bin/` directory).
+
+For example:
+{{{
+DATABASE_HOME=/full/path/to/database/folder/
+PATH=$PATH:$DATABASE_HOME/bin
+}}}
 
 === Install Appropriate Database Driver ===
 
