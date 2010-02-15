@@ -3,7 +3,7 @@
 *_Table of Contents:_*
 <wiki:toc max_depth="4" />
 
-= Introduction =
+= Install Introduction =
 
 The below instructions are based on a fresh installation of BibApp on Mac OSX 10.6 (Snow Leopard).  They should also work on 10.5 (Leopard), and I've added notes detailing some known differences on Leopard.
 
@@ -32,13 +32,17 @@ _Check the latest required versions of the below software from the [Installation
     * Java 1.5 comes with Leopard (10.5)
     * Java 1.6 comes with Snow Leopard (10.6)
 
-!BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
-  * [http://www.mysql.com/ MySQL]
-  OR
-  * [http://www.postgresql.org/ PostgreSQL]
-
 _Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
   * Subversion (`svn`) comes with Leopard and Snow Leopard
+
+== Ruby on Rails Resources for Mac OSX ==
+
+Here are a few good online guides which detail how to install Ruby on Rails applications on Leopard and Snow Leopard.  As !BibApp is a Ruby on Rails application, these guides can be useful tools to get your initial pre-requisities installed.
+
+  * Ruby on Rails on Leopard (10.5)
+    * http://hivelogic.com/articles/ruby-rails-leopard
+  * Ruby on Rails on Snow Leopard (10.6)
+    * http://hivelogic.com/articles/compiling-ruby-rubygems-and-rails-on-snow-leopard/
 
 = Additional Mac OSX Pre-Requisities =
 
@@ -46,3 +50,85 @@ You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode to
 
 If you want to launch !BibApp using Apache & Phusion Passenger (recommended for Production installs, optional for developer/demo versions), you will need to start up Mac OSX's built in Apache Web Server.
   * Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
+
+= Install a database =
+
+!BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
+  * [http://www.mysql.com/ MySQL]
+  OR
+  * [http://www.postgresql.org/ PostgreSQL]
+
+See below for instructions on installing your database of choice.
+
+== Installing MySQL on Mac OSX ==
+
+See one of the following resources:
+
+  * MySQL on Leopard (10.5)
+    * http://hivelogic.com/articles/installing-mysql-on-mac-os-x/
+  * MySQL on Snow Leopard (10.6)
+    * http://hivelogic.com/articles/compiling-mysql-on-snow-leopard/
+
+== Installing PostgreSQL on Mac OSX ==
+
+  * PostgreSQL on Leopard (10.5)
+    * For Leopard, you can use the one-click PostgreSQL installer available from: http://www.postgresql.org/download/macosx
+    * One click installer will install PostgreSQL to `/Library/PostgreSQL/`
+  * PostgreSQL on Snow Leopard (10.6)
+    * *WARNING: DO NOT USE THE ONE CLICK INSTALLER* 
+    * *WARNING: DO NOT USE THE ONE CLICK INSTALLER* 
+    * *WARNING: DO NOT USE THE ONE CLICK INSTALLER*
+    * The one-click installer will install 32-bit PostgreSQL, which isn't compatible with 64-bit Ruby on Snow Leopard. 
+    * Instead, you will have to compile/build PostgreSQL from source.  Your options are one of the following:
+      * (Not for faint of heart) Compile from source: http://www.postgresql.org/ftp/source/
+      * (Recommended) Use [http://www.macports.org/ MacPorts] or [www.finkproject.org Fink] to build/compile it for you.  I'd suggest the MacPorts installation.  Here's some tips for using MacPorts:
+        * First, install [http://www.macports.org/ MacPorts]
+        * Then install PostgreSQL 8.4 (or latest version), both the client and server:
+          * `sudo port install postgres84 postgres84-server`
+          * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/`   
+
+= Install either Passenger or Mongrel =
+
+!BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
+  * Mongrel (Development/Demo only)
+    * *Never run Mongrel in Production* as it can only handle one request at a time!
+  * Phusion Passenger and Apache (Production)
+    
+
+
+= Download Code =
+
+There are two different ways to install !BibApp:
+
+  # (Recommended ) you can just pull down the latest code (the below example checks it out to your user's `~/bibapp/` directory):
+    {{{
+    svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
+    }}}
+  # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
+
+  || *Note:* Throughout the remainder of these instructions we use the placeholder `[bibapp]` to represent the location where you have downloaded the !BibApp code! ||
+
+
+== Configure !BibApp ==
+
+Next, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
+
+  * database.yml.example
+  * ldap.yml.example
+  * personalize.rb.example
+  * smtp.yaml.example
+  * solr.yml.example
+  * sword.yml.example
+
+You'll need to copy each of these files into a file _without_ the `.example` extension and personalize the contents as necessary.  Each of the above files include instructions within them describing how to configure them properly for your institution. In the end you should end up with a file list similar to the following (REQUIRED configuration files are *bold*):
+
+  * *database.yml* - Your local database settings (take a look at the samples for both MySQL and PostgreSQL)
+  * ldap.yml - Your campus LDAP directory settings
+    * Setting this configuration eases the process of adding People to !BibApp by allowing you to search your local LDAP directory to pre-populate person information.
+    * You may disable this configuration by leaving the ".example" file extension on the file.
+  * *personalize.rb* - Your !BibApp personalization settings
+  * *smtp.yml* - Your SMTP settings for user account creation verification emails
+  * *solr.yml* - Your Solr port settings (should not require changes, unless the specified ports are already in use)
+  * sword.yml - Your SWORD server settings
+    * This configuration is only necessary if you have a local digital or institutional repository which supports [http://www.swordapp.org/ SWORD (Simple Web-service Offering Repository Deposit)].  If you have a repository supporting SWORD, !BibApp can accept uploaded files and make deposits (of both files and metadata) directly into your local repository.
+    * You may disable this configuration by leaving the ".example" file extension on the file.
