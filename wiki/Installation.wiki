@@ -299,7 +299,7 @@ If you installed Passenger + Apache to run BibApp, just run the following from y
 rake bibapp:start
 }}}
 
-Try it out! !BibApp should now be available at:  http://localhost:3000/
+Try it out! !BibApp should now be available at:  http://localhost/
 
 === For Mongrel Installs (Development/Demo) ===
 
