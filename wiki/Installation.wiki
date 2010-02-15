@@ -127,7 +127,7 @@ Based on your database of choice, you will need to install one of the following 
 
 If you run into problems installing the appropriate gem, try searching for the gem name and your operating system on Google (e.g. "mysql gem, Ubuntu").  Oftentimes you can find a more detailed installation guide specific to your operating system.
 
-== Install either Passenger or Mongrel ==
+== Install Web Server ==
 
 !BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
   * [http://mongrel.rubyforge.org/ Mongrel] (Development/Demo only)
