@@ -5,11 +5,11 @@
 These upgrade instructions assume you are currently running !BibApp 0.7 or greater, and wish to upgrade to the next version of !BibApp.
 
 At a basic level, this upgrade process involves the following:
-  * Backup database and installation directory
-  * Pull down new version of BibApp
-  * Update gems and database
-  * Update configs
-  * Re-index via Solr
+  # Backup database and installation directory
+  # Pull down new version of BibApp
+  # Update gems and database
+  # Update configs
+  # Re-index via Solr
 
 == Backup !BibApp Installation ==
 
