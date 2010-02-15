@@ -278,10 +278,31 @@ An initial Ruby interpreter needs to be installed in order to use the REE instal
   * `ldap.yml` 
 {{{
  production:
-   host: ldap.myu.edu
-   port: 389
-   base: dc=myu,dc=edu
-   middlename: <your university's ldap mapping for middle name> 
+   host:                 ldap.myu.edu
+   port:                 389
+   base:                 dc=myu,dc=edu
+   uid:                  uid
+   ou:                   ou
+   cn:                   cn
+   givenname:            givenname
+   middlename:           middlename
+   sn:                   sn
+   generationqualifier:  generationqualifier
+   displayname:          displayname
+   title:                title
+   postaladdress:        postaladdress
+   mail:                 mail
+   telephone:            telephone
+
+ # Active Directory users might have something like this:
+   host:                 ad.myu.edu
+   port:                 636
+   base:                 dc=ad,dc=myu,dc=edu
+   uid:                  samaccountname
+   ou:                   department
+   username:             CN=username,OU=Library,DC=ad,DC=uiuc,DC=edu
+   password:             password
+   ...
 }}}
  
   * `smtp.yml` 
