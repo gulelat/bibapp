@@ -104,7 +104,8 @@ There are two different ways to install !BibApp:
   OR
   * [http://www.postgresql.org/ PostgreSQL]
 
-Visit the appropriate website above to install the database of your choice
+Visit the appropriate website above to install the database of your choice.
+
 *CHOOSE ONLY ONE DATABASE TO INSTALL.*
 
 === Install Appropriate Database Driver ===
@@ -129,7 +130,8 @@ If you run into problems installing the appropriate gem, try searching for the g
     * *Never run Mongrel in Production* as it can only handle one request at a time!
   * [http://www.modrails.com/ Phusion Passenger] and Apache (Production)
 
-See below for instructions on installing your web server of choice. 
+See below for instructions on installing your web server of choice.
+ 
 *CHOOSE ONLY ONE WEB SERVER TO INSTALL.*
 
 === How to Install Mongrel (Development/Demo Only) ===
