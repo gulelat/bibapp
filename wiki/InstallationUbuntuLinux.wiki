@@ -1,5 +1,20 @@
 #summary Installation instructions for BibApp on Ubuntu Linux
 
+== Additional Pre-requisites for Ubuntu / Debian ==
+
+Before trying an installation on Ubuntu or Debian-based operating systems, there are a couple of libraries you'll want to make sure you have installed:
+  * `libxml2` and `libxml2-dev`
+  * Latest Ruby Development package (e.g. `ruby1.8-dev`)
+
+In addition, if you are planning to install !BibApp on MySQL, you will need to MySQL development package.  This is unnecessary if you will be using PostgreSQL.
+  * `libmysqlclient-dev`
+
+You should be able to install these packages quickly via `apt-get`.  For example:
+  {{{
+  sudo apt-get install libxml2 libxml2-dev ruby1.8-dev
+  }}}
+
+
 = !BibApp and Ruby on Rails stack installation on Ubuntu Linux =
 !BibApp and Rails stack on Ubuntu
   # Install RubyEE
