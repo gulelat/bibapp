@@ -11,10 +11,38 @@ Before we begin, a few notes:
   * These instructions are based on a MacBook Pro Install, for a basic development environment.  These instructions attempt to use as much pre-installed software as possible to simplify the install process.  Therefore, they may not be tailored to Production level installs on Mac OSX Servers.
   * You must be comfortable with using the Terminal (`/Applications/Utilities/Terminal`) to install Mac OSX.
 
-= Mac OSX Specific Pre-Requisities =
 
+= Software Pre-Requisities =
+
+_Check the latest required versions of the below software from the [Installation#Software_Pre-requisities Software Pre-Requisities] section of the primary Installation documentation._
 
   * [http://www.ruby-lang.org/ Ruby] 
+    * Check your version by running `ruby --version` from Terminal
     * Ruby 1.8.6 comes with Leopard (10.5)
     * Ruby 1.8.7 comes with Snow Leopard (10.6)
     * *NOTE:* Production installations should look into installing [http://www.rubyenterpriseedition.com/ Ruby Enterprise Edition] as it provides better stability and speed than basic Ruby.
+  * [http://www.rubygems.org/ RubyGems] 1.2.0 or later
+    * Check your version by running `gem --version` at command line
+    * If you have an older version of !RubyGems, you should be able to update it like this:
+      {{{
+      gem update --system
+      }}}
+  * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (_note:_ Java 1.5 is also sometimes called Java 5.x, similarly Java 1.6 is also called 6.x)
+    * Check your version by running `java -version` at command line
+    * Java 1.5 comes with Leopard (10.5)
+    * Java 1.6 comes with Snow Leopard (10.6)
+
+!BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
+  * [http://www.mysql.com/ MySQL]
+  OR
+  * [http://www.postgresql.org/ PostgreSQL]
+
+_Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
+  * Subversion (`svn`) comes with Leopard and Snow Leopard
+
+= Mac OSX Specific Pre-Requisities =
+
+You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools], as it includes various developer tools needed to build some of the Ruby Gems that !BibApp uses.  You can find the Apple XCode tools in the Optional Installs / Xcode Tools directory on the Leopard DVD, or via the above link on the Apple website.
+
+If you want to launch !BibApp using Apache & Phusion Passenger (recommended for Production installs, optional for developer/demo versions), you will need to start up Mac OSX's built in Apache Web Server.
+  * Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
