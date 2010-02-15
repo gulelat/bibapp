@@ -41,12 +41,16 @@ _Check the latest required versions of the below software from the [Installation
     * Check your version by running `java -version` at command line
     * Java 1.5 comes with Leopard (10.5)
     * Java 1.6 comes with Snow Leopard (10.6)
+  * *A Database:* !BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
+    * [http://www.mysql.com/ MySQL] 4.1 or 5.0+, OR
+    * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work, though it's untested)
+    * The below section on [#Install_Database_Software Install Database Software] can help you install and configure your database software of choice.
+  * *A Web Server:* There are two possible web server setups.  A Development one, and a Production one:
+    * [http://mongrel.rubyforge.org/ Mongrel] (Development/Demo only)
+      * *Never run Mongrel in Production* as it can only handle one request at a time!
+    * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
+    * The below section on [#Install_Web_Server Install Web Server] can help you install and configure your web server software of choice.
 
-!BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
-  * [http://www.mysql.com/ MySQL] 4.1 or 5.0+
-  OR
-  * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work, though it's untested)
-See below section on [#Install_Database_Software Install Database Software] for more hints/tips on installing a database.
 
 _Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
   * Subversion (`svn`) comes with Leopard and Snow Leopard
@@ -133,7 +137,7 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
     sudo env ARCHFLAGS="-arch x86_64" gem install pg
     }}}
 
-= Install either Passenger or Mongrel =
+= Install Web Server =
 
 !BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
   * Mongrel (Development/Demo only)
