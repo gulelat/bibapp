@@ -1,4 +1,4 @@
-#summary Installation on Mac OSX
+#summary Installation on Mac OSX (DRAFT / INCOMPLETE)
 
 *_Table of Contents:_*
 <wiki:toc max_depth="4" />
