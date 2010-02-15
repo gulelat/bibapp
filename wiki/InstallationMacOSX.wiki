@@ -1,0 +1,20 @@
+#summary Installation on Mac OSX
+
+*_Table of Contents:_*
+<wiki:toc max_depth="4" />
+
+= Introduction =
+
+The below instructions are based on a fresh installation of BibApp on Mac OSX 10.6 (Snow Leopard).  They should also work on 10.5 (Leopard), and I've added notes detailing some known differences on Leopard.
+
+Before we begin, a few notes: 
+  * These instructions are based on a MacBook Pro Install, for a basic development environment.  These instructions attempt to use as much pre-installed software as possible to simplify the install process.  Therefore, they may not be tailored to Production level installs on Mac OSX Servers.
+  * You must be comfortable with using the Terminal (`/Applications/Utilities/Terminal`) to install Mac OSX.
+
+= Mac OSX Specific Pre-Requisities =
+
+
+  * [http://www.ruby-lang.org/ Ruby] 
+    * Ruby 1.8.6 comes with Leopard (10.5)
+    * Ruby 1.8.7 comes with Snow Leopard (10.6)
+    * *NOTE:* Production installations should look into installing [http://www.rubyenterpriseedition.com/ Ruby Enterprise Edition] as it provides better stability and speed than basic Ruby.
