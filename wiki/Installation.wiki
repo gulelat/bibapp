@@ -118,13 +118,14 @@ Visit the appropriate website above to install the database of your choice.
 
 === Add Database Scripts to PATH ===
 
-For some operating systems, you may need to modify your `PATH` environment variable to reference the location of the newly installed database's scripts (usually in a `bin/` directory).
+For some operating systems, you may need to modify your `PATH` environment variable to reference the location of the newly installed database's scripts (usually in a `bin/` sub-directory of the database installation location).
 
 For example:
 {{{
-DATABASE_HOME="/full/path/to/database/install/directory/"
-PATH="$PATH:$DATABASE_HOME/bin"
+PATH="$PATH:/full/path/to/database/directory/bin"
 }}}
+
+*NOTE:* Many one-click installers will do this for you.  So, if you downloaded an auto-installer, it's likely you don't need to worry about this step.
 
 === Install Appropriate Database Driver ===
 
