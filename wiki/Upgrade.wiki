@@ -1,4 +1,4 @@
-#summary Upgrade Instructions for !BibApp (DRAFT ONLY)
+#summary Upgrade Instructions for BibApp (DRAFT)
 
 == Introduction ==
 
