@@ -12,29 +12,6 @@ Before we begin, a few notes:
   * You must be comfortable with using the Terminal (`/Applications/Utilities/Terminal`) to install Mac OSX.
 
 
-= Software Pre-Requisities =
-
-_Check the latest required versions of the below software from the [Installation#Software_Pre-requisities Software Pre-Requisities] section of the primary Installation documentation._
-
-  * [http://www.ruby-lang.org/ Ruby] 
-    * Check your version by running `ruby --version` from Terminal
-    * Ruby 1.8.6 comes with Leopard (10.5)
-    * Ruby 1.8.7 comes with Snow Leopard (10.6)
-    * *NOTE:* Production installations should look into installing [http://www.rubyenterpriseedition.com/ Ruby Enterprise Edition] as it provides better stability and speed than basic Ruby.
-  * [http://www.rubygems.org/ RubyGems] 1.2.0 or later
-    * Check your version by running `gem --version` at command line
-    * If you have an older version of !RubyGems, you should be able to update it like this:
-      {{{
-      gem update --system
-      }}}
-  * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (_note:_ Java 1.5 is also sometimes called Java 5.x, similarly Java 1.6 is also called 6.x)
-    * Check your version by running `java -version` at command line
-    * Java 1.5 comes with Leopard (10.5)
-    * Java 1.6 comes with Snow Leopard (10.6)
-
-_Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
-  * Subversion (`svn`) comes with Leopard and Snow Leopard
-
 == Ruby on Rails Resources for Mac OSX ==
 
 Here are a few good online guides which detail how to install Ruby on Rails applications on Leopard and Snow Leopard.  As !BibApp is a Ruby on Rails application, these guides can be useful tools to get your initial pre-requisities installed.
@@ -44,12 +21,33 @@ Here are a few good online guides which detail how to install Ruby on Rails appl
   * Ruby on Rails on Snow Leopard (10.6)
     * http://hivelogic.com/articles/compiling-ruby-rubygems-and-rails-on-snow-leopard/
 
+
+= Software Pre-Requisities =
+
+_Check the latest required versions of the below software from the [Installation#Software_Pre-requisities Software Pre-Requisities] section of the primary Installation documentation._
+
+  * [http://www.ruby-lang.org/ Ruby] 
+    * Check your version by running `ruby --version` from Terminal
+    * Ruby 1.8.6 comes with Leopard (10.5)
+    * Ruby 1.8.7 comes with Snow Leopard (10.6)
+    * *NOTE:* Production installations should look into installing [http://www.rubyenterpriseedition.com/ Ruby Enterprise Edition] as it provides better stability and speed than basic Ruby.
+  * [http://www.rubygems.org/ RubyGems]
+    * Check your version by running `gem --version` at command line
+    * If you have an older version of !RubyGems, you should be able to update it like this:
+      {{{
+      sudo gem update --system
+      }}}
+  * [http://java.sun.com/javase/downloads/index.jsp Java] 1.5 or later (_note:_ Java 1.5 is also sometimes called Java 5.x, similarly Java 1.6 is also called 6.x)
+    * Check your version by running `java -version` at command line
+    * Java 1.5 comes with Leopard (10.5)
+    * Java 1.6 comes with Snow Leopard (10.6)
+
+_Optional:_ If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
+  * Subversion (`svn`) comes with Leopard and Snow Leopard
+
 = Additional Mac OSX Pre-Requisities =
 
 You'll need to install [http://developer.apple.com/Tools/xcode/ Apple's XCode tools], as it includes various developer tools needed to build some of the Ruby Gems that !BibApp uses.  You can find the Apple XCode tools in the Optional Installs / Xcode Tools directory on the Leopard DVD, or via the above link on the Apple website.
-
-If you want to launch !BibApp using Apache & Phusion Passenger (recommended for Production installs, optional for developer/demo versions), you will need to start up Mac OSX's built in Apache Web Server.
-  * Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
 
 = Install a database =
 
@@ -69,31 +67,84 @@ See one of the following resources:
   * MySQL on Snow Leopard (10.6)
     * http://hivelogic.com/articles/compiling-mysql-on-snow-leopard/
 
+You will also need to install the `mysql` Gem to allow Ruby to communicate with MySQL
+  * For Leopard (32-bit/i386)
+    {{{
+    sudo env ARCHFLAGS="-arch i386" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+    }}}
+  * For Snow Leopard (64-bit/x86_64)
+    {{{
+    sudo env ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+    }}}
+
 == Installing PostgreSQL on Mac OSX ==
 
-  * PostgreSQL on Leopard (10.5)
-    * For Leopard, you can use the one-click PostgreSQL installer available from: http://www.postgresql.org/download/macosx
-    * One click installer will install PostgreSQL to `/Library/PostgreSQL/`
-  * PostgreSQL on Snow Leopard (10.6)
-    * *WARNING: DO NOT USE THE ONE CLICK INSTALLER* 
-    * *WARNING: DO NOT USE THE ONE CLICK INSTALLER* 
-    * *WARNING: DO NOT USE THE ONE CLICK INSTALLER*
-    * The one-click installer will install 32-bit PostgreSQL, which isn't compatible with 64-bit Ruby on Snow Leopard. 
-    * Instead, you will have to compile/build PostgreSQL from source.  Your options are one of the following:
-      * (Not for faint of heart) Compile from source: http://www.postgresql.org/ftp/source/
-      * (Recommended) Use [http://www.macports.org/ MacPorts] or [http://www.finkproject.org Fink] to build/compile it for you.  Here are some tip for installing via !MacPorts (Installing via Fink should be similar, but check their documentation for more details):
-        * First, install [http://www.macports.org/ MacPorts]
-        * Then install PostgreSQL 8.4 (or latest version), both the client and server:
-          * `sudo port install postgres84 postgres84-server`
-          * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/`   
+=== PostgreSQL on Leopard (10.5) ===
+
+  # For Leopard, you can use the one-click PostgreSQL installer available from: http://www.postgresql.org/download/macosx
+    * One click installer will install PostgreSQL to `/Library/PostgreSQL/` 
+  # Install the `pg` Gem to allow Ruby to communicate with MySQL.  Note the needed `ARCHFLAGS` as Leopard is a 32-bit/i386 operating system:
+    {{{
+    sudo env ARCHFLAGS="-arch i386" gem install pg
+    }}}
+
+=== PostgreSQL on Snow Leopard (10.6) ===
+
+*WARNING: DO NOT USE THE ONE CLICK INSTALLER*
+
+*WARNING: DO NOT USE THE ONE CLICK INSTALLER*
+
+*WARNING: DO NOT USE THE ONE CLICK INSTALLER*
+
+The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't compatible with 64-bit Ruby on Snow Leopard.  If you use this installer on Snow Leopard, you will be unable to use PostgreSQL with any Ruby on Rails application.
+
+  # Instead, you will have to compile/build PostgreSQL from source.  Your options are one of the following:
+    * (_Not for faint of heart_) Compile manually from source: http://www.postgresql.org/ftp/source/
+    * (_Recommended_) Use [http://www.macports.org/ MacPorts] or [http://www.finkproject.org Fink] to build/compile it for you.  Here are some tip for installing via !MacPorts (Installing via Fink should be similar, but check their documentation for more details):
+      * First, install [http://www.macports.org/ MacPorts]
+      * Then install PostgreSQL 8.4 (or latest version), both the client and server:
+        * `sudo port install postgres84 postgres84-server`
+        * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/`   
+  # Install the `pg` Gem to allow Ruby to communicate with MySQL.  Note the needed `ARCHFLAGS` as Snow Leopard is a 64-bit/x86_64 operating system:
+    {{{
+    sudo env ARCHFLAGS="-arch x86_64" gem install pg
+    }}}
 
 = Install either Passenger or Mongrel =
 
 !BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
   * Mongrel (Development/Demo only)
     * *Never run Mongrel in Production* as it can only handle one request at a time!
-  * Phusion Passenger and Apache (Production)
+  * [http://www.modrails.com/ Phusion Passenger] and Apache (Production)
+
+== Install Mongrel (Development/Demo Only) ==
+
+Again, never use Mongrel for Production.  Mongrel can only handle a single request at a time, and will slow down to an extreme crawl under Production scenarios.
+
+Installing Mongrel is easy:
+  * `sudo gem install mongrel`
     
+== Install Passenger and Apache (Production) ==
+
+Apache comes pre-installed on Mac OSX.  However, it is turned off by default.
+Here's how to start up Mac OSX's built in Apache Web Server:
+  * Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
+
+Next, you'll need to install Passenger, which is an Apache module that allows Apache to run Ruby on Rails applications.
+  * `sudo gem install -r passenger`
+  * `sudo passenger-install-apache2-module`
+
+The last command will report several lines of instructions at the end.  Follow these instructions to configure Apache so that it loads the new Passenger module.  Below are the general instructions, but you may need to change version numbers for your system:
+
+  * Edit the `/etc/apache2/httpd.conf` file in the editor of your choice.  Don't forget to use `sudo` to ensure you have rights to edit it!
+  * Add the following Virtual Host to `httpd.conf`:
+     {{{
+      <VirtualHost *:80>
+        ServerName localhost
+        DocumentRoot /full/path/to/bibapp-user/bibapp/public
+      </VirtualHost>
+     }}}
+  * 
 
 = Download Code =
 
