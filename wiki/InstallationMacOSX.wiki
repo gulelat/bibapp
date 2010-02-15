@@ -81,7 +81,7 @@ See one of the following resources:
     * The one-click installer will install 32-bit PostgreSQL, which isn't compatible with 64-bit Ruby on Snow Leopard. 
     * Instead, you will have to compile/build PostgreSQL from source.  Your options are one of the following:
       * (Not for faint of heart) Compile from source: http://www.postgresql.org/ftp/source/
-      * (Recommended) Use [http://www.macports.org/ MacPorts] or [www.finkproject.org Fink] to build/compile it for you.  I'd suggest the MacPorts installation.  Here's some tips for using MacPorts:
+      * (Recommended) Use [http://www.macports.org/ MacPorts] or [http://www.finkproject.org Fink] to build/compile it for you.  Here are some tip for installing via !MacPorts (Installing via Fink should be similar, but check their documentation for more details):
         * First, install [http://www.macports.org/ MacPorts]
         * Then install PostgreSQL 8.4 (or latest version), both the client and server:
           * `sudo port install postgres84 postgres84-server`
@@ -94,7 +94,6 @@ See one of the following resources:
     * *Never run Mongrel in Production* as it can only handle one request at a time!
   * Phusion Passenger and Apache (Production)
     
-
 
 = Download Code =
 
