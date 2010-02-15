@@ -159,6 +159,9 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
         # Specify location of PostgreSQL database directory (may be optional)
         export PGDATA="/opt/local/var/db/postgresql84"
         }}} 
+    * A few useful guides to installing PostgreSQL via MacPorts:
+      * http://shifteleven.com/articles/2008/03/21/installing-postgresql-on-leopard-using-macports
+      * http://blog.marcchung.com/notes/postgres-on-macosx.html
   # Install the `pg` Gem to allow Ruby to communicate with PostgreSQL.  Note the needed `ARCHFLAGS` as Snow Leopard is a 64-bit/x86_64 operating system:
     {{{
     sudo env ARCHFLAGS="-arch x86_64" gem install pg
