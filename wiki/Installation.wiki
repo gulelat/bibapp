@@ -277,17 +277,24 @@ Your database should now be setup and initialized properly!
 
 You're almost there!
 
-In order to startup !BibApp on your server, you must do *both* of the following (from within your `[bibapp]` directory):
-  * _Start Solr:_ Solr handles all the fancy browsing and searching in !BibApp
-     {{{
-     rake solr:start
-     }}}
-  * _Start your web server:_ We're assuming you installed Mongrel, for the sake of these instructions.
-     {{{
-     mongrel_rails start
-     }}}
+==For Passenger + Apache Installs (Production)==
 
-Try it out!  Assuming your web server is on port 3000 (which is Mongrel's default), you should have !BibApp running at:  http://localhost:3000/
+If you installed Passenger + Apache to run BibApp, just run the following from your `[bibapp]` directory:
+{{{
+rake bibapp:start
+}}}
+
+Try it out! !BibApp should now be available at:  http://localhost:3000/
+
+==For Mongrel Installs (Development/Demo)==
+
+If you are using Mongrel to run a development version of BibApp, just run the following from your `[bibapp]` directory:
+{{{
+rake bibapp:start
+mongrel_rails start
+}}}
+
+Try it out! !BibApp should now be available at (port 3000 is the default port for Mongrel):  http://localhost:3000/
 
 
 = Using !BibApp =
