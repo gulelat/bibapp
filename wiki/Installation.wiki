@@ -119,7 +119,7 @@ If you run into problems installing the appropriate gem, try searching for the g
 See below for instructions on installing your web server of choice. 
 *CHOOSE ONLY ONE WEB SERVER TO INSTALL.*
 
-=== Install Mongrel (Development/Demo Only) ===
+=== How to Install Mongrel (Development/Demo Only) ===
 
 Again, *never use Mongrel for Production*.  Mongrel can only handle a single request at a time, and will slow down to an extreme crawl under Production scenarios.
 
@@ -128,7 +128,7 @@ Installing Mongrel is easy.  From the command line run:
   gem install mongrel
   }}}
     
-=== Install Passenger and Apache (Production) ===
+=== How to Install Passenger and Apache (Production) ===
 
 ==== Install Apache 2 ====
 
