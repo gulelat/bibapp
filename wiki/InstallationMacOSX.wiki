@@ -103,7 +103,9 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
     * (_Recommended_) Use [http://www.macports.org/ MacPorts] or [http://www.finkproject.org Fink] to build/compile it for you.  Here are some tip for installing via !MacPorts (Installing via Fink should be similar, but check their documentation for more details):
       * First, install [http://www.macports.org/ MacPorts]
       * Then install PostgreSQL 8.4 (or latest version), both the client and server:
-        * `sudo port install postgres84 postgres84-server`
+        {{{
+         sudo port install postgres84 postgres84-server
+        }}}
         * Above command installs PostgreSQL to `/opt/local/lib/postgresql84/`   
   # Install the `pg` Gem to allow Ruby to communicate with MySQL.  Note the needed `ARCHFLAGS` as Snow Leopard is a 64-bit/x86_64 operating system:
     {{{
@@ -122,28 +124,40 @@ The PostgreSQL one-click installer will install 32-bit PostgreSQL, which isn't c
 Again, never use Mongrel for Production.  Mongrel can only handle a single request at a time, and will slow down to an extreme crawl under Production scenarios.
 
 Installing Mongrel is easy:
-  * `sudo gem install mongrel`
+  {{{
+  sudo gem install mongrel
+  }}}
     
 == Install Passenger and Apache (Production) ==
+
+_These instructions are based on those available at:_ http://sheldonconaty.com/?p=58
 
 Apache comes pre-installed on Mac OSX.  However, it is turned off by default.
 Here's how to start up Mac OSX's built in Apache Web Server:
   * Go to your 'System Preferences' > 'Sharing' > 'Services' and enable 'Personal Web Sharing'.  This will start up Apache for you, and you should be able to access it by visiting http://localhost/ in your web browser.
 
 Next, you'll need to install Passenger, which is an Apache module that allows Apache to run Ruby on Rails applications.
-  * `sudo gem install -r passenger`
-  * `sudo passenger-install-apache2-module`
+  {{{
+  sudo gem install -r passenger
+  sudo passenger-install-apache2-module
+  }}}
 
 The last command will report several lines of instructions at the end.  Follow these instructions to configure Apache so that it loads the new Passenger module.  Below are the general instructions, but you may need to change version numbers for your system:
 
   * Edit the `/etc/apache2/httpd.conf` file in the editor of your choice.  Don't forget to use `sudo` to ensure you have rights to edit it!
+  * Add the following to enable Passenger in `httpd.conf` (You may need to modify paths or version numbers below!):
+    {{{
+    LoadModule passenger_module /Library/Ruby/Gems/1.8/gems/passenger-2.2.9/ext/apache2/mod_passenger.so
+    PassengerRoot /Library/Ruby/Gems/1.8/gems/passenger-2.2.9
+    PassengerRuby /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
+    }}}
   * Add the following Virtual Host to `httpd.conf`:
-     {{{
-      <VirtualHost *:80>
+    {{{
+     <VirtualHost *:80>
         ServerName localhost
         DocumentRoot /full/path/to/bibapp-user/bibapp/public
-      </VirtualHost>
-     }}}
+     </VirtualHost>
+    }}}
   * 
 
 = Download Code =
