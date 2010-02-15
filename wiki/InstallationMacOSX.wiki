@@ -169,7 +169,7 @@ The last command will report several lines of instructions at the end.  Follow t
     sudo apachectl -k restart
     }}}
 
-= Download Code =
+= Download !BibApp Code =
 
 There are two different ways to install !BibApp:
 
@@ -182,7 +182,7 @@ There are two different ways to install !BibApp:
   || *Note:* Throughout the remainder of these instructions we use the placeholder `[bibapp]` to represent the location where you have downloaded the !BibApp code! ||
 
 
-== Configure !BibApp ==
+= Configure !BibApp =
 
 Next, you'll need to edit the configurations for your local settings.  In the `[bibapp]/config` directory, look for the following "example" configurations:
 
@@ -206,7 +206,7 @@ You'll need to copy each of these files into a file _without_ the `.example` ext
     * This configuration is only necessary if you have a local digital or institutional repository which supports [http://www.swordapp.org/ SWORD (Simple Web-service Offering Repository Deposit)].  If you have a repository supporting SWORD, !BibApp can accept uploaded files and make deposits (of both files and metadata) directly into your local repository.
     * You may disable this configuration by leaving the ".example" file extension on the file.
 
-== Ruby Gem Installations ==
+= Ruby Gem Installations =
 
 Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
   # First, make sure you have `rake` installed:
@@ -222,7 +222,7 @@ Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to mini
      sudo rake gems:install
      }}}
 
-== Initialize the BibApp Database ==
+= Initialize the !BibApp Database =
 
 First, you must create the database user and database as listed in your `[bibapp]/config/database.yml` file.  For more information on doing this, see the main Installation guide: http://code.google.com/p/bibapp/wiki/Installation#Setup_Your_Database
 
@@ -233,15 +233,23 @@ rake db:schema:load
 rake db:seed
 }}}
 
-= Finally, Start up BibApp =
+= Finally, Start up !BibApp =
+
+==For Passenger + Apache Installs (Production)==
 
 If you installed Passenger + Apache to run BibApp, just run the following from your `[bibapp]` directory:
 {{{
 rake bibapp:start
 }}}
 
+!BibApp will be available at http://localhost/
+
+==For Mongrel Installs (Development/Demo)==
+
 If you are using Mongrel to run a development version of BibApp, just run the following from your `[bibapp]` directory:
 {{{
 rake bibapp:start
 mongrel_rails start
 }}}
+
+!BibApp will be available at http://localhost:3000/
