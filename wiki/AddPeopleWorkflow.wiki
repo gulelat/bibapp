@@ -1,0 +1,20 @@
+#A summary of how to add people to your BibApp installation.
+
+= Summary =
+
+This is a summary of how to add people to your BibApp installation. 
+
+We find it helps to start with:
+
+- a list of researchers (on a department or center website for example)
+- access to images of faculty members
+- the groups that each faculty member belongs to and to have these groups already entered into BibApp.
+
+Once you have logged into BibApp, you can 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
