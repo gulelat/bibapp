@@ -8,8 +8,8 @@
 The below instructions are based on a fresh installation of !BibApp on Mac OSX 10.6 (Snow Leopard).  They should also work on 10.5 (Leopard), and I've added notes detailing some known differences on Leopard.
 
 Before we begin, a few notes: 
-  * These instructions are based on a MacBook Pro Install, for a basic development environment.  These instructions attempt to use as much pre-installed software as possible to simplify the install process.  Therefore, they may not be tailored to Production level installs on Mac OSX Servers.
-  * You must be comfortable with using the Terminal (`/Applications/Utilities/Terminal`) to install Mac OSX.
+  * These instructions are based on a !MacBook Pro installation, for a basic development environment.  These instructions attempt to use as much pre-installed software as possible to simplify the install process.  Therefore, they may not be tailored to Production level installs on Mac OSX Servers.
+  * You must be comfortable with using the Terminal (`/Applications/Utilities/Terminal`) to install !BibApp on Mac OSX.
 
 
 == Ruby on Rails Resources for Mac OSX ==
