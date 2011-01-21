@@ -144,6 +144,8 @@ First, you will need to download and install [http://httpd.apache.org/ Apache 2 
 
 ==== Install Passenger Module ====
 
+Note: I haven't tried this since switching to bundler for the gems. The instructions may require some modification in that case.
+
 Next, you'll need to install Passenger, which is an Apache module that allows Apache to run Ruby on Rails applications.  Run the following from the command line:
   {{{
   gem install -r passenger
