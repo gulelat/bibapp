@@ -6,7 +6,7 @@
 
 = Introduction =
 
-*IMPORTANT* If you are installing from the trunk code on or after 2011-01-20, please go to TrunkInstallationPostJan2011, as there have been some significant changes and   updated documentation will be there.
+*IMPORTANT:* If you are installing from the trunk code on or after 2011-01-21, please go to [TrunkInstallationPostJan2011 New Trunk installation], as there have been some significant changes and updated documentation will be there.  
 
 !BibApp is a [http://www.rubyonrails.org/ Ruby on Rails] 2.3 web application.  If you are familiar with installing Ruby on Rails applications, !BibApp should be no different!  If this is your first time with Ruby on Rails, don't worry...we've tried to make things easy on you.
 
