@@ -270,12 +270,12 @@ RAILS_ENV=test rake db:create
 
 Now you can generate the !BibApp database structure into your new database!  Here there are two options:
 
-  # From within your `[bibapp]` directory:
+  * From within your `[bibapp]` directory:
     {{{
     rake db:schema:load
     }}}
 You should see a large number of 'create table' messages scroll by.  That's perfectly normal! But, if any errors appear, there are problems which you will have to resolve *before* !BibApp will function properly! 
-  # You can also run the migrations. One of the migrations requires that solr is running, though. Since you've already configured solr, you can do:
+  * *OR* You can also run the migrations. One of the migrations requires that solr is running, though. Since you've already configured solr, you can do:
 
 {{{
    rake solr:start
