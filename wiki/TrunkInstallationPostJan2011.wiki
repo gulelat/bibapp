@@ -51,8 +51,7 @@ So, without further ado...
       * Thin is a replacement for Mongrel. It is convenient for development work. By running several thin servers with a load balancing proxy in front of them it may also be used for production, but that is beyond the scope of this document. 
     * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
     * NOTE: The below section on [#3._Install_Web_Server Install Web Server] can help you install and configure your web server software of choice.
-    * [http://subversion.tigris.org/ Subversion (svn)] - a Subversion client will
-be needed to get the trunk code.
+    * [http://subversion.tigris.org/ Subversion (svn)] - a Subversion client will be needed to get the trunk code.
 
 That's everything you need to get started...
 
