@@ -125,7 +125,7 @@ Later we'll install a driver to use the database from Ruby.
 !BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
 
     * [http://code.macournoyer.com/thin/ Thin] (Development/Demo)
-      * Thin is a lightweight webserver that is convenient for development work and that integrates easily with Rails (via Rack). By running several thin servers with a load balancing proxy in front of them it may also be used for production, but that is beyond the scope of this document. 
+      * Thin is a lightweight webserver that is convenient for development work and that integrates easily with Rails (via Rack). By running several thin servers behind a load balancing proxy (e.g. Apache or Nginx) it may also be used for production, but that is beyond the scope of this document. 
     * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
 
 See below for instructions on installing your web server of choice.
