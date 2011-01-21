@@ -46,18 +46,14 @@ So, without further ado...
     * [http://www.mysql.com/ MySQL] 4.1 or 5.0+, OR
     * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work, though it's untested. It's likely that 9.x will also work, though that is also untested.)
     * NOTE: The below section on [#2._Install_Database_Software Install Database Software] can help you install and configure your database software of choice.
-  * *A Web Server:* There are two possible web server setups.  A Development one, and a Production one:
-    * [http://code.macournoyer.com/thin/ Thin] (Development/Demo)
-      * Thin is a replacement for Mongrel. It is convenient for development work. By running several thin servers with a load balancing proxy in front of them it may also be used for production, but that is beyond the scope of this document. 
-    * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
-    * NOTE: The below section on [#3._Install_Web_Server Install Web Server] can help you install and configure your web server software of choice.
+  * *A Web Server:* We recommend one of two possible web server setups, as documented below in [#3._Install_Web_Server Install Web Server].
     * [http://subversion.tigris.org/ Subversion (svn)] - a Subversion client will be needed to get the trunk code.
 
 That's everything you need to get started...
 
 = OS-specific Installation Guides =
 
-We've already written several installation guides for various operating systems.  If you want to install !BibApp on one of the below operating systems, we suggest using the corresponding guide as your reference.   If your operating system is not listed, we have [#General_Installation_Instructions General Installation Instructions] available below.
+The following guides are from the previous installation instructions. They may still contain helpful information, but you'll want to use them in conjunction with this page.
 
 == Red Hat Enterprise Linux 4 == 
 
@@ -86,7 +82,6 @@ These installation instructions are purposely written to be no-specific.  They a
 == Before We Get Started ==
 
 Before we jump in, it's worth explaining a bit about what software !BibApp has bundled (Rails uses the term "frozen") within it.  You don't need to understand what everything is doing, but we just want to let you know it's there! When you download !BibApp, it already comes pre-packaged with the following:
-  * [http://www.rubyonrails.org/ Rails] - That's right, you don't even have to install Rails!
   * [http://lucene.apache.org/solr/ Solr] - Used for all the !BibApp browse/search interfaces
   * A variety of [http://www.rubygems.org/ Ruby Gems] and Rails Plugins. It's worth highlighting a few custom plugins created specifically for !BibApp:
     * `citation_parser` and `citation_importer` - These custom plugins parse citations from our various supported input formats, and import the data into our database structure.  As more citation parsers are created, we'll be able to support more input formats!
@@ -94,17 +89,12 @@ Before we jump in, it's worth explaining a bit about what software !BibApp has b
 
 == 1. Download !BibApp Code ==
 
-There are two different ways to install !BibApp:
-
-  # If you have Subversion installed, you can just pull down the latest code (the below example checks it out to your `~/bibapp/` directory):
+  # With Subversion installed, just pull down the latest code (the below example checks it out to your `~/bibapp/` directory):
     {{{
     svn checkout http://bibapp.googlecode.com/svn/trunk/ ~/bibapp/
     }}}
-  # Otherwise, you can download the latest Zipped up release from the [http://code.google.com/p/bibapp/downloads/list Downloads] 
 
-  || *Note #1:* We currently recommend installing !BibApp from our Subversion "trunk".  That version is not only more stable than the old 0.7 release, but it also should be easier to install. ||
-
-  || *Note #2:* Throughout the remainder of these instructions we use the placeholder `[bibapp]` to represent the location where you have downloaded the !BibApp code! ||
+*Note:* Throughout the remainder of these instructions we use the placeholder `[bibapp]` to represent the location where you have downloaded the !BibApp code!
 
 == 2. Install Database Software ==
 
@@ -128,40 +118,23 @@ PATH="$PATH:/full/path/to/database/directory/bin"
 
 *NOTE:* Many one-click installers will do this for you.  So, if you downloaded an auto-installer, it's likely you don't need to worry about this step.
 
-=== Install Appropriate Database Driver ===
-
-Based on your database of choice, you will need to install one of the following Database Driver Gems (this allows Ruby to communicate with your database software):
-    
-  * If you are using MySQL, install the `mysql` gem:  
-     {{{ 
-     gem install mysql -- --with-mysql-dir=/path/to/mysql 
-     }}}
-  * If you are using PostgreSQL, install the `pg` gem:
-     {{{ 
-     gem install pg -- --with-pgsql-dir=/path/to/pgsql 
-     }}}
-
-If you run into problems installing the appropriate gem, try searching for the gem name and your operating system on Google (e.g. "mysql gem, Ubuntu").  Oftentimes you can find a more detailed installation guide specific to your operating system.
+Later we'll install a driver to use the database from Ruby.
 
 == 3. Install Web Server ==
 
 !BibApp requires a web server that understands Ruby/Rails to run.  There are two main options available:
-  * [http://mongrel.rubyforge.org/ Mongrel] (Development/Demo only)
-    * *Never run Mongrel in Production* as it can only handle one request at a time!
-  * [http://www.modrails.com/ Phusion Passenger] and Apache (Production)
+
+    * [http://code.macournoyer.com/thin/ Thin] (Development/Demo)
+      * Thin is a replacement for Mongrel. It is convenient for development work. By running several thin servers with a load balancing proxy in front of them it may also be used for production, but that is beyond the scope of this document. 
+    * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
 
 See below for instructions on installing your web server of choice.
  
 *CHOOSE ONLY ONE WEB SERVER TO INSTALL.*
 
-=== How to Install Mongrel (Development/Demo Only) ===
+=== How to Install Thin (Development/Demo) ===
 
-Again, *never use Mongrel for Production*.  Mongrel can only handle a single request at a time, and will slow down to an extreme crawl under Production scenarios.
-
-Installing Mongrel is easy.  From the command line run:
-  {{{
-  gem install mongrel
-  }}}
+Thin will automatically be installed when we install the other gems.
     
 === How to Install Passenger and Apache (Production) ===
 
@@ -229,27 +202,45 @@ You'll need to copy each of these files into a file _without_ the `.example` ext
 
 == 5. Ruby Gem Installations ==
 
-Unfortunately, we cannot bundle everything  within !BibApp.  We've tried to minimize your need to install Gems, but there are still a few you'll need to install yourself:
-  # First, make sure you have `rake` installed:
-     {{{
-     gem list rake
-     }}}
-    * If it's missing, you'll need to install `rake`:
-     {{{
-     gem install rake
-     }}}
-    * *Note:* On Ubuntu/Debian and Mac OS X systems, you will often need to run *all* `gem` commands as a superuser: (e.g.) `sudo gem install rake`
-  # Auto-install all our gem prerequisites, via this `rake` command. Run this command from your `[bibapp]` directory:
-     {{{
-     rake gems:install
-     }}}
-    * *Note:* There are a few common errors that may occur with this command.  Check the table of *Common Warnings / Errors* below, if you encounter problems.  
+In addition to gems explicitly bundled with the !BibApp source code we need to 
+install some other gems. We use the Bundler gem to do this in a straightforward way. If you do not already have the bundler gem installed, then install it:
+
+{{{
+gem install bundler
+}}}
+
+Bundler will then use the file `[bibapp]/Gemfile` in the code checkout to install all of the necessary gem requirements. 
+
+If you are using mysql, edit this fild and replace the line:
+
+{{{
+gem 'pg'
+}}}
+
+with 
+
+{{{
+gem 'mysql'
+}}}
+
+You can then install all the gems (including the database drive and the thin webserver) by:
+
+{{{
+bundle install
+}}}
+
+If your database is installed to a non-standard location you may see some errors when you do this. In this case you'll need to let bundler know where the installation is located (replace 'mysql' with 'pg' if appropriate):
+
+{{{
+bundle config build.mysql --with-mysql-config=/path/to/mysql_config
+bundle install
+}}}
+
 
 === Common Warnings / Errors ===
 
 || *Error / Warning Message* || *Resolution* ||
 || Log File Warning:<br/>`Rails Error: Unable to access log file.  Please ensure that /bibapp/log/development.log exists and is chmod 0666.` || Make sure to change the permissions on this log file, so that it is both _readable_ and _writeable_ to everyone.  For example: `chmod 0666 development.log` ||
-|| Permissions Error:<br/>`ERROR: While executing gem ... (Gem::FilePermissionError)` || _For Ubuntu/Debian or Mac OS X:_ This means you need to run the command as a super user.  So, try adding `sudo` before the command: (e.g.) `sudo rake gems:install` ||
 || Error building `libxml-ruby` gem:<br/> `ERROR: Failed to build gem native extension` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing `libxml2` and `libxml2-dev`: (e.g.) `sudo apt-get install libxml2 libxml2-dev` ||
 || Loading error:<br/> `'require': no such file to load -- mkmf (LoadError)` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing the latest Ruby development package (`ruby1.8-dev`): (e.g.) `sudo apt-get install ruby1.8-dev` ||
 
