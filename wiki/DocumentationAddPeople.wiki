@@ -1,0 +1,13 @@
+#summary Documentation on how to add people to BibApp
+
+=How to Add People to !BibApp=
+
+This page describes how to add people to !BibApp. It assumes that you have already configured your !BibApp to be hooked to your campus LDAP (see http://code.google.com/p/bibapp/wiki/Installation#4._Configure_BibApp for more information). Note that as of the current release (1.01) it is not possible to upload multiple people at once through the user interface.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
