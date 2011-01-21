@@ -12,7 +12,8 @@ As you start this process, it is helpful to have:
   * access to images of these researchers (if you wish to add those); and
   * the groups that the researchers are a part of. You may want to add these groups to !BibApp before you begin.
 
-
+test image
+http://bibapp.org/wp-content/themes/blueprint/images/uw_logo_50H.gif
 
 
 Add your content here.  Format your content with:
