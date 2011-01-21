@@ -248,29 +248,42 @@ bundle install
 
 Now, you'll need to setup a database for !BibApp.  You should already have installed either MySQL or PostgreSQL.  So, it's just a matter of creating a new database!  
 
-Make sure your database is named the same as the 'database' setting in your `config/database.yml` file!  In addition, you should login as the user specified in your `config/database.yml` when creating your database (to ensure that user owns the database) 
+Assuming that you've set database names, users, and passwords (if needed) in your
+database.yml file, you should be able to do:
 
-For this example, we're just setting up a !BibApp Development database.  But, you can use the same concept to also setup a Test and Production database, when you are ready.
+{{{
+rake db:create:all
+}}}
 
-   * *For MySQL:*  Connect to MySQL, create a UTF8 database named 'bibapp_development' and a !BibApp database user (e.g. named 'bibapp') using the following SQL queries:
+to create a database for each environment that you've defined. If you only want to do it for a specific environment, then you should be able to do (replacing test with the appropriate environment):
+
+{{{
+RAILS_ENV=test rake db:create
+}}}
+
+   * *For MySQL:*  (Untested, but based on previous instructions - useful if a MySQL user could weigh in on this) You may have to do a bit more work to get the permissions right. Assuming you've created bibapp_development database with user/password bibapp/bibapppw. You may need to something like: 
       {{{
-      CREATE DATABASE bibapp_development CHARACTER SET = 'utf8';
-      GRANT ALL ON bibapp_development.* to 'bibapp'@'localhost' identified by 'PASSWORDHERE';
+      GRANT ALL ON bibapp_development.* to 'bibapp'@'localhost' identified by 'bibapppw';
       FLUSH PRIVILEGES;
       }}}
-   Obviously, remember to change `PASSWORDHERE` to the password you want set for your 'bibapp' database user.   
 
-   * *For PostgreSQL:* Use the following two commands to first create a !BibApp database user (e.g. named 'bibapp') and then create a database named 'bibapp_development' with a database owner of 'bibapp': 
-      {{{
-      createuser -dSRP bibapp
-      createdb -U bibapp -E UNICODE bibapp_development
-      }}}
 
-Now you can generate the !BibApp database structure into your new database!  From within your `[bibapp]` directory:
+Now you can generate the !BibApp database structure into your new database!  Here there are two options:
+
+  # From within your `[bibapp]` directory:
     {{{
     rake db:schema:load
     }}}
 You should see a large number of 'create table' messages scroll by.  That's perfectly normal! But, if any errors appear, there are problems which you will have to resolve *before* !BibApp will function properly! 
+  # You can also run the migrations. One of the migrations requires that solr is running, though. Since you've already configured solr, you can do:
+
+{{{
+   rake solr:start
+   rake db:migrate
+   rake solr:stop
+}}}
+
+Either of these should give the same result, assuming that the schema.rb file is kept up to date.
 
 Before continuing, you also need to initialize your database with an Administrator account and the current [http://www.sherpa.ac.uk/romeo.php SHERPA RoMEO] publisher policy data.  This data is used to help researchers determine which of their publications can be deposited in a local repository for safe keeping.  From within your `[bibapp]` directory:
     {{{
@@ -293,15 +306,17 @@ rake bibapp:start
 
 Try it out! !BibApp should now be available at:  http://localhost/
 
-=== For Mongrel Installs (Development/Demo) ===
+=== For Thin Installs (Development/Demo) ===
 
-If you are using Mongrel to run a development version of !BibApp, just run the following from your `[bibapp]` directory:
+If you are using Thin to run a development version of !BibApp, just run the following from your `[bibapp]` directory:
 {{{
 rake bibapp:start
-mongrel_rails start
+bundle exec thin start
 }}}
 
-Try it out! !BibApp should now be available at (port 3000 is the default port for Mongrel):  http://localhost:3000/
+(Note: It is important to do `bundle exec thin start` and not simply `thin start`. The latter may cause gem dependency problems.)
+
+Try it out! !BibApp should now be available at:  http://localhost:3000/
 
 
 = Using !BibApp =
@@ -323,7 +338,7 @@ Finally, (although not required at this time) you may wish to change the email a
 
 = Problems / Questions / More Information =
 
-We're definitely aware that these instructions are a bit lacking.  We're working on updates before our !BibApp 1.0 release.  If you run into any interesting problems or "gotchas" during the installation or setup, let us know!  
+We're definitely aware that these instructions are a bit lacking. If you run into any interesting problems or "gotchas" during the installation or setup, let us know!  
 
 The easiest (and preferred) way to contact us is via our [http://groups.google.com/group/bibapp BibApp Google Group].
 
