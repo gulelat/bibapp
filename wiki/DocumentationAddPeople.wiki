@@ -58,9 +58,9 @@ As you start this process, it is helpful to have:
 
 ==Pen Names==
 
-BibApp automatically creates possible pen names for the person based upon the information gathered via LDAP and entered at the personal information stage. BibApp will also search its database to find any other possible pen names. You can add other pen names if you know them.
+!BibApp automatically creates possible pen names for the person based upon the information gathered via LDAP and entered at the personal information stage. !BibApp will also search its database to find any other possible pen names. You can add other pen names if you know them.
 
- || Note: BibApp's generation of pen names will only be as good as the information fed it; if a researcher publishes under another name (a maiden name, for example), but LDAP only has the researcher listed under a married name, there may not be matches found for the published pen name.||
+ || Note: !BibApp's generation of pen names will only be as good as the information fed it; if a researcher publishes under another name (a maiden name, for example), but LDAP only has the researcher listed under a married name, there may not be matches found for the published pen name.||
 
  http://bibapp.org/wp-content/uploads/2011/01/PenNames.png
 
