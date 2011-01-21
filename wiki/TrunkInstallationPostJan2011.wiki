@@ -1,5 +1,8 @@
 #summary Installation Instructions for BibApp
 
+Note: these instructions currently apply to the trunk code on or after 2011-01-21.
+For previous trunk code or one of the current releases see Installation.
+
 *_Table of Contents:_*
 <wiki:toc max_depth="4" />
 
