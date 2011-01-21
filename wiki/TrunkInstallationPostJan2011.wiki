@@ -44,15 +44,15 @@ So, without further ado...
     * Check your version by running `java -version` at command line
   * *A Database:* !BibApp gives you a few options when it comes to your database.  Currently, we support either of the following:
     * [http://www.mysql.com/ MySQL] 4.1 or 5.0+, OR
-    * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work, though it's untested)
+    * [http://www.postgresql.org/ PostgreSQL] 8.x (7.4 may also work, though it's untested. It's likely that 9.x will also work, though that is also untested.)
     * NOTE: The below section on [#2._Install_Database_Software Install Database Software] can help you install and configure your database software of choice.
   * *A Web Server:* There are two possible web server setups.  A Development one, and a Production one:
-    * [http://mongrel.rubyforge.org/ Mongrel] (Development/Demo only)
-      * *Never run Mongrel in Production* as it can only handle one request at a time!
+    * [http://code.macournoyer.com/thin/ Thin] (Development/Demo only)
+      * Thin is a replacement for Mongrel. It is convenient for development work. By running several thin servers with a load balancing proxy in front of them it may also be used for production, but that is beyond the scope of this document. 
     * [http://www.modrails.com/ Phusion Passenger] and [http://httpd.apache.org/ Apache 2] (Production)
     * NOTE: The below section on [#3._Install_Web_Server Install Web Server] can help you install and configure your web server software of choice.
-
-(_Optional:_) If you want to be able to pull down !BibApp directly from our !GoogleCode site, you may also wish to install [http://subversion.tigris.org/ Subversion (svn)].
+  * [http://subversion.tigris.org/ Subversion (svn)] - a Subversion client will
+be needed to get the trunk code.
 
 That's everything you need to get started...
 
