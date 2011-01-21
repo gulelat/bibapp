@@ -1,6 +1,6 @@
 #summary Documentation on how to add people to BibApp
 
-=How to Add and People in BibApp=
+!=How to Add and People in !BibApp=
 
 <wiki:toc max_depth="2" />
 
