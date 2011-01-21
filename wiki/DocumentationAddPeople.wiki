@@ -1,6 +1,6 @@
 #summary Documentation on how to add people to BibApp
 
-!=How to Add and People in !BibApp=
+<h1>How to Add and People in !BibApp</h1>
 
 <wiki:toc max_depth="2" />
 
@@ -48,15 +48,29 @@ As you start this process, it is helpful to have:
 
 ==Editing a Person==
 
+1. Log in to !BibApp.
 
+2. Navigate to the person that you wish to edit. There will be a bar below the tabs with a "Edit this Person link" link.
 
-6. After you save the personal information, you will be directed to the Pen Name page. BibApp automatically creates possible pen names for the person based upon the information gathered via LDAP and entered at the personal information stage. BibApp will also search its database to find any other possible pen names. You can add other pen names if you know them.
+ http://bibapp.org/wp-content/uploads/2011/01/EditPerson.png
 
-Note: BibApp's generation of pen names will only be as good as the information fed it; if a researcher publishes under another name (a maiden name, for example), but LDAP only has the researcher listed under a married name, there may not be matches found for the published pen name.
+3. Clicking on this link will allow you to edit their personal information, pen names, groups, photo, and unverified contributorships. See below for more information on these sections.
 
-7. Click the Photo link on the navigation bar. On this page you can upload a photo if you have one. Once you have browsed to the appropriate file, click the upload file button to upload the photo.
+==Pen Names==
 
-8. Click the Groups link on the navigation bar. On this page you can add the person to as many groups as necessary. Note that adding a person to a subgroup will automatically give them membership in the parent group. Click the Join Selected Groups button to add the person to the groups.
+BibApp automatically creates possible pen names for the person based upon the information gathered via LDAP and entered at the personal information stage. BibApp will also search its database to find any other possible pen names. You can add other pen names if you know them.
+
+ || Note: BibApp's generation of pen names will only be as good as the information fed it; if a researcher publishes under another name (a maiden name, for example), but LDAP only has the researcher listed under a married name, there may not be matches found for the published pen name.||
+
+ http://bibapp.org/wp-content/uploads/2011/01/PenNames.png
+
+==Photos==
+
+On the *Photo* page you can upload a photo if you have one. Once you have browsed to the appropriate file, click the upload file button to upload the photo.
+
+==Groups==
+
+On the *Groups* page you can add the person to as many groups as necessary. Note that adding a person to a subgroup will automatically give them membership in the parent group. Click the Join Selected Groups button to add the person to the groups.
 
 
 9. Once you have clicked "Join Selected Groups" and the verification box, you will see the groups that the person is a member of, as well as space to indicate their role and the dates associated with the group. Click Save after adding each role and dates.
