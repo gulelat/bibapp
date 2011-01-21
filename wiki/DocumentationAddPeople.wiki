@@ -25,6 +25,14 @@ As you start this process, it is helpful to have:
 2. You can add people from two locations:
 
   * Click the Admin tab, then People, then Add a Person
-  * Click the People tab, then Add a Person
+  * Click the People tab, then Add a Person (in the bar under the main tabs)
 
-3. 
+3. At the New Person screen, you can search your LDAP for the researcher.
+
+http://bibapp.org/wp-content/uploads/2011/01/NewPersonPage.png
+
+4. The LDAP search will present you with possible matches. You can select the appropriate one, and the directory information will be populated into !BibApp.
+
+http://bibapp.org/wp-content/uploads/2011/01/PopulatedNewPersonPage.png
+
+4. Note that depending on how your LDAP and !BibApp are configured, you may pull in more or less information. You can add more information at this point to this screen before saving.
