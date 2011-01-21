@@ -211,7 +211,7 @@ gem install bundler
 
 Bundler will then use the file `[bibapp]/Gemfile` in the code checkout to install all of the necessary gem requirements. 
 
-If you are using mysql, edit this fild and replace the line:
+If you are using mysql, edit `[bibapp]/Gemfile` and replace the line:
 
 {{{
 gem 'pg'
