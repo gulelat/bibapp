@@ -45,8 +45,14 @@ As you start this process, it is helpful to have:
 
 7. Click the Photo link on the navigation bar. On this page you can upload a photo if you have one. Once you have browsed to the appropriate file, click the upload file button to upload the photo.
 
-8. Click the Groups link on the navigation bar. On this page you can add the person to as many groups as necessary. Note that adding a person to a subgroup will automatically give them membership in the parent group.
+8. Click the Groups link on the navigation bar. On this page you can add the person to as many groups as necessary. Note that adding a person to a subgroup will automatically give them membership in the parent group. Click the Join Selected Groups button to add the person to the groups.
 
  http://bibapp.org/wp-content/uploads/2011/01/GroupMembership.png
 
-9. 
+9. Once you have clicked "Join Selected Groups" and the verification box, you will see the groups that the person is a member of, as well as space to indicate their role and the dates associated with the group. Click Save after adding each role and dates.
+
+ || *Note:* As of the current (1.01) release of !BibApp, these dates do not have any function. There is a feature request in the Issue queue to add functionality that would make use of these dates, but no indication yet of the priority for this. ||
+
+ http://bibapp.org/wp-content/uploads/2011/01/RoleGroups.png
+
+10. 
