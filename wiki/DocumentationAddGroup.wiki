@@ -12,3 +12,28 @@ As you start this process, it is useful to have:
 
  * a list of the groups you want to add including parent or child groups; and
  * the URLs for homepages of those groups (if applicable)
+
+==Who Can Add Groups?==
+
+  * Sitewide administrators
+  * Sitewide editors
+  * Admins of Groups
+  * Editors of Groups
+
+==Who Can Edit Groups?==
+
+  * Sitewide administrators
+  * Sitewide editors
+  * Admins of Groups
+  * Editors of Groups
+
+==Adding a Group==
+
+1. Log into your !BibApp install.
+
+2. You can add groups from two locations:
+
+  * Click the Admin tab, then Group, then Add a Person (only available to system administrators and editors)
+  * Click the People tab, then Add a Person (in the bar under the main tabs)
+
+3. At the new Group page you can add the name of your group, a description, and URL. You can also add the parent group if there is one. For example, a department may belong to a college (as in below).
