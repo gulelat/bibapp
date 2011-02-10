@@ -1,13 +1,14 @@
-#summary Describes how to add a group to !BibApp.
+#summary Describes how to add a group to BibApp.
 
-= Introduction =
+<h1>How to Add and Edit Groups in !BibApp</h1>
 
-Add your content here.
+<wiki:toc max_depth="2" />
 
+This page describes how to add and edit groups in !BibApp.
 
-= Details =
+Note that as of !BibApp 1.01 it is not possible to upload multiple groups via the user interface.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+As you start this process, it is useful to have:
+
+ * a list of the groups you want to add including parent or child groups; and
+ * the URLs for homepages of those groups (if applicable)
