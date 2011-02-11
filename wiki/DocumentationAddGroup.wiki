@@ -1,4 +1,5 @@
 #summary Describes how to add a group to BibApp.
+#labels User-Documentation,Featured
 
 <h1>How to Add and Edit Groups in !BibApp</h1>
 
@@ -37,3 +38,17 @@ As you start this process, it is useful to have:
   * Click the People tab, then Add a Person (in the bar under the main tabs)
 
 3. At the new Group page you can add the name of your group, a description, and URL. You can also add the parent group if there is one. For example, a department may belong to a college (as in below).
+
+ http://bibapp.org/wp-content/uploads/2011/02/AddGroup.png
+
+4. Click save. At this point you will see the new group. It will have no works or people associated with it so it will be empty.
+
+ http://bibapp.org/wp-content/uploads/2011/02/NewGroup.png
+
+==Editing a Group==
+
+1. Log into your !BibApp install.
+
+2. Navigate to the group over which you have permissions. You should see an Edit Group link.
+
+3. Clicking on this link will allow you to edit the same screen that you see when you add a new group.
