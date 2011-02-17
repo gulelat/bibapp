@@ -94,3 +94,84 @@ Now from the development machine:
 }}}
 
 This will checkout the latest version of the code into [deploy_to]/releases/XYZ, where XYZ is basically a timestamp. It will link [deploy_to]/current to this checkout directory. Bundler will install any gems that are needed.
+
+If you are migrating, at this point you may want to shutdown your old copy of bibapp. On the server (if you have apache serving more than Bibapp you may want to be more circumspect here): 
+
+{{{
+ apachectl stop
+ rake bibapp:stop (from the old bibapp directory on the server)
+}}}
+
+If you are migrating you may want to backup your production database (database dependent - no instructions here). From your development machine:
+
+{{{
+  cap deploy:migrate
+}}}
+
+This will run any database migrations since your old checkout.
+
+If this is a new installation, then you'll need to login to the server first and create the database. You should be able to do this by changing to the [deploy_to]/current directory on the server and running:
+
+{{{
+  RAILS_ENV=production rake db:create
+}}}
+
+Then from the development machine:
+
+{{{
+  cap deploy:migrate
+}}}
+
+which will create the database structure you need. Back on the server you'll then
+need to do
+
+{{{
+  RAILS_ENV=production rake db:seed
+}}}
+
+For a migration, you'll now need to go to the public directory in your old bibapp installation. From there copy or move the attachments, groups, and people subdirectories into [deploy_to]/shared/system. (If you have other customizations you can get capistrano to deal with them as well, but that's beyond the scope of this guide for now).
+
+We're almost done. You can either modify the apache configuration on your server now so that the passenger root is correct for the new capistrano installation (for a new installation consult the section on passenger elsewhere on this wiki). E.g. you'd be changing:
+
+{{{
+ .../old_bibapp_dir/public
+}}}
+
+to 
+
+{{{
+   [deploy_to]/current/public
+}}}
+
+As an alternative if Apache is configured to allow transversal of symlinks you can move old_bibapp_dir somewhere else and then symlink [deploy_to]/current to old_bibapp_dir.
+
+Now you should be able to do on the server:
+
+{{{
+ apachectl start
+}}}
+
+For simplicity I recommend now doing (from your development machine):
+
+{{{
+  cap deploy
+}}}
+
+This will deploy another checkout of the code, but it should also make sure that the 'rake bibapp:start' task is run on the server.
+
+Now whenever you want to deploy a new version of the code to the server, on your development machine you can just do:
+
+{{{
+  cap deploy
+  cap deploy:migrate (only necessary when there are new migration, but it doesn't hurt to run it)
+}}}
+
+This will stop Bibapp, check out the new code, run migrations, link/copy all the shared assets/configuration, restart bibapp, reindex, point passenger at the new copy of the code, and restart passenger.
+
+If you do:
+
+{{{
+  cap -T
+}}}
+
+you'll see a variety of other things you can do. For example, from your development machine you can start/stop bibapp or force a solr reindexing.
