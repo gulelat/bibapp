@@ -1,0 +1,30 @@
+#Capistrano installation
+
+= Introduction =
+
+Capistrano is a tool that makes it easy to deploy and update applications on remote servers. We have set Bibapp up so that you can use Capistrano to manage your Bibapp
+deployment.
+
+This guide is still rough.
+
+= Details =
+
+== Configure Capistrano ==
+
+  # Install capistrano on your development machine. You can do this by doing:
+
+{{{
+ gem install capistrano
+}}}
+
+  # Edit capistrano deployment file
+
+Copy config/deploy.rb.template to config/deploy.rb in your development machine. Here are a variety of settings that control how Capistrano will control your deployment. You'll need to change some of the settings marked with 'set' or 'role'. Important ones include:
+
+  * set :deploy_to - change to the directory on your server where you want Bibapp to live
+  * set :user - change to the user that will be running Bibapp on the server. You will need for the ssh public key from your development machine to be in the authorized_keys for this user on the server
+  * role :web, role :app, role :db - in a typical Bibapp installation these may all be set to the same machine; however, the main web server (e.g. Apache running passenger), application server(s) (the actual running instances of Rails with Bibapp loaded up), and database server(s) may be different.
+
+This should be all you need to do, but Capistrano has other settings if you need them.
+
+  
