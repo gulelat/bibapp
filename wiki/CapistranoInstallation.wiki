@@ -174,4 +174,4 @@ If you do:
   cap -T
 }}}
 
-you'll see a variety of other things you can do. For example, from your development machine you can start/stop bibapp or force a solr reindexing.
+you'll see a variety of other things you can do. For example, from your development machine you can start/stop bibapp, force a solr reindexing, or remove old checkouts of the code once you're confident that the new one is working correctly (you have to do this manually, and even when you do by default a few old copies are kept around).
