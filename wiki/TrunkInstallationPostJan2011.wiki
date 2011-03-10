@@ -245,6 +245,7 @@ bundle install
 || Log File Warning:<br/>`Rails Error: Unable to access log file.  Please ensure that /bibapp/log/development.log exists and is chmod 0666.` || Make sure to change the permissions on this log file, so that it is both _readable_ and _writeable_ to everyone.  For example: `chmod 0666 development.log` ||
 || Error building `libxml-ruby` gem:<br/> `ERROR: Failed to build gem native extension` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing `libxml2` and `libxml2-dev`: (e.g.) `sudo apt-get install libxml2 libxml2-dev` ||
 || Loading error:<br/> `'require': no such file to load -- mkmf (LoadError)` || _For Ubuntu/Debian:_ You should be able to resolve this error by installing the latest Ruby development package (`ruby1.8-dev`): (e.g.) `sudo apt-get install ruby1.8-dev` ||
+||Error building `eventmachine` gem `ERROR: Failed to build gem native extension` ||_For Solaris:_ You should be able to resolve this error by setting a CXX environment variable to g++ and then running `bundle install` again: (e.g.) `sudo export CXX=g++` ||
 
 == 6. Initialize Your !BibApp Database ==
 
